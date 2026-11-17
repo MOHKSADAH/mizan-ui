@@ -1,9 +1,17 @@
-import type { ManifestItem } from '../manifest';
+import type { Category, ManifestItem } from '../manifest';
 
 const lib = (name: string, file: string, description: string): ManifestItem => ({
   name,
   type: 'registry:lib',
   files: [`registry/lib/gulf/${file}.ts`],
+  description,
+});
+
+const ui = (name: string, category: Category, description: string): ManifestItem => ({
+  name,
+  type: 'registry:ui',
+  category,
+  files: [`registry/ui/${name}.tsx`],
   description,
 });
 
@@ -13,4 +21,5 @@ export const gulfItems: ManifestItem[] = [
   lib('zatca-qr', 'zatca-qr', 'ZATCA Phase 1 invoice QR payload (TLV, base64) encoder and decoder.'),
   lib('saudi-regions', 'saudi-regions', 'Saudi administrative regions with main cities, in Arabic and English.'),
   lib('hijri', 'hijri', 'Umm al-Qura Hijri date formatting and parts through Intl.'),
+  ui('saudi-id-input', 'forms', 'A 10-digit national ID or Iqama field with Arabic-Indic digit input and a Luhn format check on blur.'),
 ];
