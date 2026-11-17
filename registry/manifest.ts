@@ -1,6 +1,7 @@
 import { asciiItems } from './manifests/ascii';
 import { blockItems } from './manifests/blocks';
 import { gulfItems } from './manifests/gulf';
+import { inputsItems } from './manifests/inputs';
 
 export type Category = 'forms' | 'data-display' | 'overlays' | 'navigation' | 'feedback' | 'layout' | 'commerce' | 'ascii';
 
@@ -46,6 +47,7 @@ export const uiItems: ManifestItem[] = [
   ),
   ...gulfItems,
   ...asciiItems,
+  ...inputsItems,
 ];
 
 export const manifest: ManifestItem[] = [
