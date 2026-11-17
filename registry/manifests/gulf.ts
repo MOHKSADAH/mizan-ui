@@ -29,4 +29,5 @@ export const gulfItems: ManifestItem[] = [
   ui('saudi-address-form', 'forms', 'A composed Saudi address form: region and city, district, street, building, postal and additional numbers, and the national short address.'),
   ui('hijri-calendar', 'forms', 'A Hijri (Umm al-Qura) and Gregorian month grid with a calendar toggle, APG keyboard support and optional Fri and Sat weekend styling.'),
   ui('hijri-date-picker', 'forms', 'A date picker that shows the Hijri and Gregorian dates together in its trigger.'),
+  ui('date-range-picker', 'forms', 'A range picker on the Calendar with presets, a nights count for bookings and an optional Hijri display.'),
 ];
