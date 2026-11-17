@@ -1353,6 +1353,21 @@
       ]
     },
     {
+      "name": "block-types",
+      "type": "registry:lib",
+      "title": "Block types",
+      "description": "Shared types for blocks: Action, Media, Money, Vat, Plural and BlockBase.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format"
+      ],
+      "files": [
+        {
+          "path": "registry/lib/block-types.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
