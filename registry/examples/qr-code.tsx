@@ -3,8 +3,8 @@ import type { ExampleDoc, ExampleProps } from '@/registry/examples/types';
 
 export const doc: ExampleDoc = {
   description: {
-    en: 'A QR code drawn as one SVG path in the current text color, on the card background, with an optional center logo.',
-    ar: 'رمز QR مرسوم كمسار SVG واحد بلون النص الحالي على خلفية البطاقة، مع شعار اختياري في الوسط.',
+    en: 'A QR code drawn as one SVG path, black on a white chip in every theme, with an optional center logo.',
+    ar: 'رمز QR مرسوم كمسار SVG واحد، أسود على خلفية بيضاء في كل الأوضاع، مع شعار اختياري في الوسط.',
   },
   usage: `import { QrCode } from "@/components/ui/qr-code"\n\n<QrCode value="https://example.com/menu" label="Menu link" />`,
   examples: {
@@ -17,8 +17,8 @@ export const doc: ExampleDoc = {
       ar: 'التسمية المطلوبة تصف غرض الرمز وليس محتواه.',
     },
     {
-      en: 'The code is never mirrored in RTL and keeps a quiet zone of 4 modules. Test scanning in dark themes, because the code inverts there.',
-      ar: 'لا يُعكس الرمز في RTL ويحتفظ بهامش هادئ من 4 وحدات. جرّب المسح في الأوضاع الداكنة لأن الرمز ينعكس فيها.',
+      en: 'The code is never mirrored in RTL and keeps a quiet zone of 4 modules. It stays dark on light in dark themes, because many scanners cannot read an inverted code.',
+      ar: 'لا يُعكس الرمز في RTL ويحتفظ بهامش هادئ من 4 وحدات. يبقى داكنا على خلفية فاتحة في الأوضاع الداكنة، لأن كثيرا من الماسحات لا تقرأ الرمز المعكوس.',
     },
   ],
 };
