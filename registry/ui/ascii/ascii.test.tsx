@@ -133,7 +133,7 @@ describe("Terminal", () => {
   ] as const
 
   test("renders ltr window, neutral dots, title, prompt and a labelled copy button", () => {
-    const html = renderToString(<Terminal title="zsh" lines={[...lines]} copyLabel="Copy" copiedLabel="Copied" />)
+    const html = renderToString(<Terminal title="zsh" lines={[...lines]} copyLabel="Copy" copiedLabel="Copied" copyFailedLabel="Copy failed" />)
     expect(html).toContain('dir="ltr"')
     expect(html.match(/bg-muted-foreground\/40/g)).toHaveLength(3)
     expect(html).toContain(">zsh<")
@@ -143,9 +143,14 @@ describe("Terminal", () => {
     expect(html).toContain(">bun add x<")
     expect(html).toContain(">done<")
   })
+  test("renders an empty polite live region and no clipboard fallback until a copy fails", () => {
+    const html = renderToString(<Terminal lines={[...lines]} copyLabel="Copy" copiedLabel="Copied" copyFailedLabel="Copy failed" />)
+    expect(html).toContain('<span aria-live="polite" class="sr-only"></span>')
+    expect(html).not.toContain("<textarea")
+  })
 
   test("typing mode hides the text until it plays", () => {
-    const html = renderToString(<Terminal lines={[...lines]} typing copyLabel="Copy" copiedLabel="Copied" />)
+    const html = renderToString(<Terminal lines={[...lines]} typing copyLabel="Copy" copiedLabel="Copied" copyFailedLabel="Copy failed" />)
     expect(html).not.toContain("<span>bun add x</span>")
     expect(html).toContain('<span class="invisible">bun add x</span>')
   })

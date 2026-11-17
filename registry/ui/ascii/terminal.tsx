@@ -1,6 +1,6 @@
 "use client"
 
-import { Check, Copy } from "@phosphor-icons/react"
+import { CheckIcon, CopyIcon } from "@phosphor-icons/react"
 import { useEffect, useRef, useState } from "react"
 
 import { commandText, type TerminalLine, typedText, typingCost } from "@/registry/lib/ascii"
@@ -14,14 +14,24 @@ type TerminalProps = {
   typing?: boolean
   copyLabel: string
   copiedLabel: string
+  copyFailedLabel: string
   className?: string
 }
 
-export function Terminal({ title, lines, typing = false, copyLabel, copiedLabel, className }: TerminalProps) {
+export function Terminal({ title, lines, typing = false, copyLabel, copiedLabel, copyFailedLabel, className }: TerminalProps) {
   const total = lines.reduce((sum, line) => sum + typingCost(line), 0)
   const [step, setStep] = useState(0)
   const [copied, setCopied] = useState(false)
+  const [failed, setFailed] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
+  const fallbackRef = useRef<HTMLTextAreaElement>(null)
+
+  useEffect(() => {
+    if (!failed) return
+    fallbackRef.current?.select()
+    const id = setTimeout(() => setFailed(false), 4000)
+    return () => clearTimeout(id)
+  }, [failed])
 
   useEffect(() => {
     if (!typing) return
@@ -44,10 +54,14 @@ export function Terminal({ title, lines, typing = false, copyLabel, copiedLabel,
   }, [typing, total])
 
   function copy() {
-    navigator.clipboard.writeText(commandText(lines)).then(() => {
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    })
+    navigator.clipboard
+      .writeText(commandText(lines))
+      .then(() => {
+        setFailed(false)
+        setCopied(true)
+        setTimeout(() => setCopied(false), 2000)
+      })
+      .catch(() => setFailed(true))
   }
 
   return (
@@ -69,7 +83,7 @@ export function Terminal({ title, lines, typing = false, copyLabel, copiedLabel,
           aria-label={copied ? copiedLabel : copyLabel}
           className="inline-flex size-7 items-center justify-center justify-self-end rounded-md text-muted-foreground hover:bg-background hover:text-foreground focus-visible:outline-2 focus-visible:outline-ring"
         >
-          {copied ? <Check /> : <Copy />}
+          {copied ? <CheckIcon /> : <CopyIcon />}
         </button>
       </div>
       <pre className="overflow-x-auto p-4 leading-relaxed">
@@ -89,6 +103,12 @@ export function Terminal({ title, lines, typing = false, copyLabel, copiedLabel,
           )
         })}
       </pre>
+      <span aria-live="polite" className="sr-only">
+        {failed ? copyFailedLabel : ""}
+      </span>
+      {failed && (
+        <textarea ref={fallbackRef} readOnly aria-label={copyLabel} value={commandText(lines)} className="sr-only" />
+      )}
     </div>
   )
 }

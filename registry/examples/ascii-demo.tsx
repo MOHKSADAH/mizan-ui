@@ -81,8 +81,8 @@ const install = [
 export function TerminalDemo() {
   return (
     <div className="flex flex-col gap-6">
-      <Terminal title="bash" lines={[...install]} copyLabel="Copy commands" copiedLabel="Copied" />
-      <Terminal title="bash" lines={[...install]} typing copyLabel="Copy commands" copiedLabel="Copied" />
+      <Terminal title="bash" lines={[...install]} copyLabel="Copy commands" copiedLabel="Copied" copyFailedLabel="Copy failed" />
+      <Terminal title="bash" lines={[...install]} typing copyLabel="Copy commands" copiedLabel="Copied" copyFailedLabel="Copy failed" />
     </div>
   )
 }
