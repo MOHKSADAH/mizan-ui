@@ -81,8 +81,11 @@ function SwatchSelect({
               disabled={option.outOfStock}
               aria-label={option.outOfStock ? `${option.label}, ${t.outOfStock}` : option.label}
               className={cn(
-                "relative inline-flex shrink-0 items-center justify-center overflow-hidden border border-border text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50 data-checked:border-foreground data-checked:ring-2 data-checked:ring-foreground data-disabled:cursor-not-allowed data-disabled:opacity-60",
-                swatch ? "size-8 rounded-full" : "h-8 min-w-8 rounded-lg px-2.5 data-checked:bg-primary data-checked:text-primary-foreground data-checked:ring-0",
+                "relative inline-flex shrink-0 items-center justify-center overflow-hidden border border-border text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50 data-checked:border-foreground data-disabled:cursor-not-allowed data-disabled:opacity-60",
+                // The selected mark is an outline, so the focus ring (a box shadow) still shows on the checked swatch.
+                swatch
+                  ? "size-8 rounded-full data-checked:outline-2 data-checked:outline-offset-2 data-checked:outline-solid data-checked:outline-foreground"
+                  : "h-8 min-w-8 rounded-lg px-2.5 data-checked:bg-primary data-checked:text-primary-foreground",
                 option.outOfStock && !swatch && "line-through"
               )}
             >

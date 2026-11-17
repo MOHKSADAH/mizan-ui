@@ -37,3 +37,9 @@ test("a single image has no thumbnails or arrows", () => {
   expect(html).not.toContain("Choose an image")
   expect(html).not.toContain("Next slide")
 })
+
+test("the current thumbnail mark never replaces the focus ring", () => {
+  const html = renderToString(<ProductGallery images={images} />)
+  expect(html).not.toMatch(/aria-\[current=true\]:ring-/)
+  expect(html).toContain("aria-[current=true]:outline-solid")
+})

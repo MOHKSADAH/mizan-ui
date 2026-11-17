@@ -29,3 +29,9 @@ test("renders size and image swatches in ar", () => {
   expect(html).toContain("line-through")
   expect(html).toContain("/p.png")
 })
+
+test("the selected mark never replaces the focus ring", () => {
+  const html = renderToString(<SwatchSelect label="Size" options={[{ value: "s", label: "S" }, ...colors]} defaultValue="s" />)
+  expect(html).not.toMatch(/data-checked:ring-/)
+  expect(html).toContain("data-checked:outline-solid")
+})

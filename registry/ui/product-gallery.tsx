@@ -141,7 +141,7 @@ function ProductGallery({
                 aria-label={item.alt}
                 aria-current={index === selected ? "true" : undefined}
                 onClick={() => api?.scrollTo(index)}
-                className="block size-16 overflow-hidden rounded-lg border border-border outline-none focus-visible:ring-3 focus-visible:ring-ring/50 aria-[current=true]:border-foreground aria-[current=true]:ring-2 aria-[current=true]:ring-foreground"
+                className="block size-16 overflow-hidden rounded-lg border border-border outline-none focus-visible:ring-3 focus-visible:ring-ring/50 aria-[current=true]:border-foreground aria-[current=true]:outline-2 aria-[current=true]:outline-offset-2 aria-[current=true]:outline-solid aria-[current=true]:outline-foreground"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={item.src} alt="" loading="lazy" draggable={false} className="size-full object-cover" />
