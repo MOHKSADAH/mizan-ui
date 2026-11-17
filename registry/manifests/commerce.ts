@@ -20,4 +20,5 @@ export const commerceItems: ManifestItem[] = [
   item('coupon-input', 'Coupon code field with apply and remove, pending, success and error states and an applied-code chip.'),
   item('product-gallery', 'Product image gallery with Embla swipe, thumbnails, RTL direction and optional zoom dialog.'),
   item('stock-indicator', 'Stock status line: in stock, low stock with a plural count, and out of stock, with an icon and text.'),
+  item('delivery-estimate', 'Arrival date in a given time zone, a city slot and a free shipping progress bar.'),
 ];

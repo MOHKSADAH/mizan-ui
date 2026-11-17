@@ -1592,6 +1592,30 @@
       ]
     },
     {
+      "name": "delivery-estimate",
+      "type": "registry:ui",
+      "title": "Delivery Estimate",
+      "description": "Arrival date in a given time zone, a city slot and a free shipping progress bar.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/progress",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/delivery-estimate.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
