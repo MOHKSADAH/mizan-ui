@@ -89,4 +89,12 @@ export const marketingBlocks: ManifestItem[] = [
     description: 'Three plan cards with a monthly and yearly toggle and one highlighted plan.',
     files: ['registry/blocks/pricing/pricing-01.tsx'],
   },
+  {
+    name: 'faq-02',
+    type: 'registry:block',
+    family: 'faq',
+    title: 'FAQ 02',
+    description: 'Heading and contact column beside a single-open accordion of questions.',
+    files: ['registry/blocks/faq/faq-02.tsx'],
+  },
 ];

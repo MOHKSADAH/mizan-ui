@@ -1685,6 +1685,27 @@
       ]
     },
     {
+      "name": "faq-02",
+      "type": "registry:block",
+      "title": "FAQ 02",
+      "description": "Heading and contact column beside a single-open accordion of questions.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/accordion",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/whatsapp-button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/faq/faq-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
