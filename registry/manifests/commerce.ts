@@ -12,4 +12,5 @@ export const commerceItems: ManifestItem[] = [
   item('quantity-stepper', 'Minus, number and plus quantity control with min, max, remove at the minimum and live announcements.'),
   item('rating', 'Read-only star rating with partial fills that mirror in RTL, a spoken value and a review count.'),
   item('swatch-select', 'Color, size and image swatches as a radio group with a selected name and out-of-stock state.'),
+  item('filter-chips', 'Removable active-filter chips with clear all, a live result count and a scrolling row.'),
 ];
