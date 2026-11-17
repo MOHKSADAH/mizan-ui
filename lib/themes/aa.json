@@ -1,0 +1,586 @@
+{
+ "mizan-base": {
+  "light": [],
+  "dark": []
+ },
+ "mizan-souq": {
+  "light": [],
+  "dark": []
+ },
+ "mizan-noir": {
+  "light": [],
+  "dark": []
+ },
+ "mizan-oasis": {
+  "light": [],
+  "dark": []
+ },
+ "mizan-sand": {
+  "light": [],
+  "dark": []
+ },
+ "shadcn-base-neutral": {
+  "light": [],
+  "dark": []
+ },
+ "shadcn-base-stone": {
+  "light": [],
+  "dark": []
+ },
+ "shadcn-base-zinc": {
+  "light": [],
+  "dark": []
+ },
+ "shadcn-base-mauve": {
+  "light": [],
+  "dark": []
+ },
+ "shadcn-base-olive": {
+  "light": [
+   "muted-foreground/background",
+   "muted-foreground/card"
+  ],
+  "dark": []
+ },
+ "shadcn-base-mist": {
+  "light": [],
+  "dark": []
+ },
+ "shadcn-base-taupe": {
+  "light": [],
+  "dark": []
+ },
+ "shadcn-accent-amber": {
+  "light": [
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "primary/background"
+  ]
+ },
+ "shadcn-accent-blue": {
+  "light": [],
+  "dark": [
+   "primary/background",
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "shadcn-accent-cyan": {
+  "light": [
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "primary/background"
+  ]
+ },
+ "shadcn-accent-emerald": {
+  "light": [
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "primary/background"
+  ]
+ },
+ "shadcn-accent-fuchsia": {
+  "light": [
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "primary/background",
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "shadcn-accent-green": {
+  "light": [
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "primary/background",
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "shadcn-accent-indigo": {
+  "light": [],
+  "dark": [
+   "primary/background",
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "shadcn-accent-lime": {
+  "light": [
+   "primary/background",
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": []
+ },
+ "shadcn-accent-orange": {
+  "light": [
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "primary/background",
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "shadcn-accent-pink": {
+  "light": [
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "primary/background",
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "shadcn-accent-purple": {
+  "light": [],
+  "dark": [
+   "primary/background",
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "shadcn-accent-red": {
+  "light": [
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "primary/background",
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "shadcn-accent-rose": {
+  "light": [
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "primary/background",
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "shadcn-accent-sky": {
+  "light": [
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "primary/background"
+  ]
+ },
+ "shadcn-accent-teal": {
+  "light": [
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "primary/background"
+  ]
+ },
+ "shadcn-accent-violet": {
+  "light": [],
+  "dark": [
+   "primary/background",
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "shadcn-accent-yellow": {
+  "light": [
+   "primary/background",
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "tweakcn-modern-minimal": {
+  "light": [
+   "primary-foreground/primary",
+   "destructive-foreground/destructive",
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "primary-foreground/primary",
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "tweakcn-violet-bloom": {
+  "light": [
+   "destructive-foreground/destructive",
+   "accent-foreground/accent"
+  ],
+  "dark": [
+   "primary-foreground/primary",
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "tweakcn-t3-chat": {
+  "light": [],
+  "dark": [
+   "primary/background",
+   "destructive-foreground/destructive"
+  ]
+ },
+ "tweakcn-twitter": {
+  "light": [
+   "primary-foreground/primary",
+   "primary/background",
+   "destructive-foreground/destructive",
+   "accent-foreground/accent",
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "primary-foreground/primary",
+   "sidebar-primary-foreground/sidebar-primary",
+   "muted-foreground/card"
+  ]
+ },
+ "tweakcn-mocha-mousse": {
+  "light": [
+   "muted-foreground/background",
+   "primary-foreground/primary",
+   "secondary-foreground/secondary",
+   "sidebar-primary-foreground/sidebar-primary",
+   "muted-foreground/card"
+  ],
+  "dark": [
+   "secondary-foreground/secondary"
+  ]
+ },
+ "tweakcn-bubblegum": {
+  "light": [
+   "muted-foreground/background",
+   "primary-foreground/primary",
+   "destructive-foreground/destructive",
+   "sidebar-primary-foreground/sidebar-primary",
+   "muted-foreground/card"
+  ],
+  "dark": [
+   "accent-foreground/accent",
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "tweakcn-amethyst-haze": {
+  "light": [
+   "primary-foreground/primary",
+   "destructive-foreground/destructive",
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": []
+ },
+ "tweakcn-notebook": {
+  "light": [
+   "destructive-foreground/destructive"
+  ],
+  "dark": [
+   "secondary-foreground/secondary"
+  ]
+ },
+ "tweakcn-doom-64": {
+  "light": [
+   "destructive-foreground/destructive",
+   "accent-foreground/accent",
+   "muted-foreground/card"
+  ],
+  "dark": [
+   "primary-foreground/primary",
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "tweakcn-catppuccin": {
+  "light": [
+   "muted-foreground/background",
+   "accent-foreground/accent"
+  ],
+  "dark": []
+ },
+ "tweakcn-graphite": {
+  "light": [],
+  "dark": [
+   "muted-foreground/background",
+   "muted-foreground/card"
+  ]
+ },
+ "tweakcn-perpetuity": {
+  "light": [
+   "muted-foreground/background",
+   "primary-foreground/primary",
+   "sidebar-primary-foreground/sidebar-primary",
+   "muted-foreground/card"
+  ],
+  "dark": []
+ },
+ "tweakcn-kodama-grove": {
+  "light": [
+   "muted-foreground/background",
+   "primary-foreground/primary",
+   "primary/background",
+   "destructive-foreground/destructive",
+   "sidebar-primary-foreground/sidebar-primary",
+   "muted-foreground/card"
+  ],
+  "dark": [
+   "muted-foreground/card"
+  ]
+ },
+ "tweakcn-cosmic-night": {
+  "light": [
+   "destructive-foreground/destructive"
+  ],
+  "dark": []
+ },
+ "tweakcn-tangerine": {
+  "light": [
+   "muted-foreground/background",
+   "primary-foreground/primary",
+   "destructive-foreground/destructive",
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "primary-foreground/primary",
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "tweakcn-quantum-rose": {
+  "light": [
+   "muted-foreground/background",
+   "primary-foreground/primary",
+   "destructive-foreground/destructive",
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": []
+ },
+ "tweakcn-nature": {
+  "light": [],
+  "dark": [
+   "destructive-foreground/destructive",
+   "accent-foreground/accent"
+  ]
+ },
+ "tweakcn-bold-tech": {
+  "light": [
+   "primary-foreground/primary",
+   "destructive-foreground/destructive",
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "primary-foreground/primary",
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "tweakcn-elegant-luxury": {
+  "light": [],
+  "dark": [
+   "primary/background"
+  ]
+ },
+ "tweakcn-amber-minimal": {
+  "light": [
+   "primary/background",
+   "destructive-foreground/destructive",
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "tweakcn-supabase": {
+  "light": [
+   "primary/background"
+  ],
+  "dark": [
+   "primary/background",
+   "destructive-foreground/destructive"
+  ]
+ },
+ "tweakcn-neo-brutalism": {
+  "light": [
+   "primary-foreground/primary",
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": []
+ },
+ "tweakcn-solar-dusk": {
+  "light": [
+   "secondary-foreground/secondary",
+   "muted-foreground/card"
+  ],
+  "dark": [
+   "primary-foreground/primary",
+   "destructive-foreground/destructive",
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "tweakcn-claymorphism": {
+  "light": [
+   "muted-foreground/background",
+   "primary-foreground/primary",
+   "destructive-foreground/destructive",
+   "sidebar-primary-foreground/sidebar-primary",
+   "muted-foreground/card"
+  ],
+  "dark": []
+ },
+ "tweakcn-cyberpunk": {
+  "light": [
+   "primary-foreground/primary",
+   "destructive-foreground/destructive",
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "primary-foreground/primary",
+   "sidebar-primary-foreground/sidebar-primary",
+   "muted-foreground/card"
+  ]
+ },
+ "tweakcn-pastel-dreams": {
+  "light": [
+   "muted-foreground/background",
+   "primary-foreground/primary",
+   "primary/background",
+   "destructive-foreground/destructive",
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": []
+ },
+ "tweakcn-clean-slate": {
+  "light": [
+   "primary-foreground/primary",
+   "destructive-foreground/destructive",
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": []
+ },
+ "tweakcn-caffeine": {
+  "light": [
+   "destructive-foreground/destructive"
+  ],
+  "dark": []
+ },
+ "tweakcn-ocean-breeze": {
+  "light": [
+   "primary-foreground/primary",
+   "primary/background",
+   "destructive-foreground/destructive",
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "muted-foreground/background",
+   "accent-foreground/accent",
+   "muted-foreground/card"
+  ]
+ },
+ "tweakcn-retro-arcade": {
+  "light": [
+   "secondary-foreground/secondary",
+   "destructive-foreground/destructive"
+  ],
+  "dark": [
+   "secondary-foreground/secondary",
+   "destructive-foreground/destructive"
+  ]
+ },
+ "tweakcn-midnight-bloom": {
+  "light": [
+   "destructive-foreground/destructive",
+   "accent-foreground/accent"
+  ],
+  "dark": [
+   "accent-foreground/accent"
+  ]
+ },
+ "tweakcn-candyland": {
+  "light": [
+   "primary/background",
+   "destructive-foreground/destructive"
+  ],
+  "dark": []
+ },
+ "tweakcn-northern-lights": {
+  "light": [
+   "primary-foreground/primary",
+   "secondary-foreground/secondary",
+   "primary/background",
+   "destructive-foreground/destructive",
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "primary-foreground/primary",
+   "secondary-foreground/secondary",
+   "accent-foreground/accent",
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "tweakcn-vintage-paper": {
+  "light": [
+   "primary-foreground/primary",
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "destructive-foreground/destructive"
+  ]
+ },
+ "tweakcn-sunset-horizon": {
+  "light": [
+   "primary-foreground/primary",
+   "secondary-foreground/secondary",
+   "primary/background",
+   "destructive-foreground/destructive",
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "primary-foreground/primary",
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ },
+ "tweakcn-starry-night": {
+  "light": [
+   "accent-foreground/accent"
+  ],
+  "dark": [
+   "primary/background",
+   "destructive-foreground/destructive",
+   "muted-foreground/card"
+  ]
+ },
+ "tweakcn-claude": {
+  "light": [
+   "muted-foreground/background",
+   "primary-foreground/primary",
+   "sidebar-primary-foreground/sidebar-primary",
+   "muted-foreground/card"
+  ],
+  "dark": [
+   "primary-foreground/primary"
+  ]
+ },
+ "tweakcn-vercel": {
+  "light": [
+   "destructive-foreground/destructive"
+  ],
+  "dark": []
+ },
+ "tweakcn-darkmatter": {
+  "light": [
+   "primary-foreground/primary",
+   "destructive-foreground/destructive",
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": []
+ },
+ "tweakcn-mono": {
+  "light": [],
+  "dark": []
+ },
+ "tweakcn-soft-pop": {
+  "light": [
+   "secondary-foreground/secondary",
+   "destructive-foreground/destructive"
+  ],
+  "dark": []
+ },
+ "tweakcn-sage-garden": {
+  "light": [
+   "primary-foreground/primary",
+   "sidebar-primary-foreground/sidebar-primary"
+  ],
+  "dark": [
+   "sidebar-primary-foreground/sidebar-primary"
+  ]
+ }
+}
