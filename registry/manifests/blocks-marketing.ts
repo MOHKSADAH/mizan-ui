@@ -49,4 +49,12 @@ export const marketingBlocks: ManifestItem[] = [
     description: 'Centered section header over a responsive grid of icon cards.',
     files: ['registry/blocks/features/features-01.tsx'],
   },
+  {
+    name: 'features-07',
+    type: 'registry:block',
+    family: 'features',
+    title: 'Features 07',
+    description: 'Compact store-features strip with icon, title and one line of text.',
+    files: ['registry/blocks/features/features-07.tsx'],
+  },
 ];

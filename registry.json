@@ -1577,6 +1577,27 @@
       ]
     },
     {
+      "name": "features-07",
+      "type": "registry:block",
+      "title": "Features 07",
+      "description": "Compact store-features strip with icon, title and one line of text.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/features/features-07.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
