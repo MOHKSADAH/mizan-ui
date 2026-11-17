@@ -1509,6 +1509,29 @@
       ]
     },
     {
+      "name": "region-city-select",
+      "type": "registry:ui",
+      "title": "Region City Select",
+      "description": "Two linked comboboxes for Saudi region and city, in Arabic or English, with Arabic-aware search.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
+        "MOHKSADAH/mizan-ui/combobox",
+        "MOHKSADAH/mizan-ui/field",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/saudi-regions",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/region-city-select.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

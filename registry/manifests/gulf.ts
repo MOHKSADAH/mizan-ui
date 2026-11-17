@@ -25,4 +25,5 @@ export const gulfItems: ManifestItem[] = [
   ui('phone-input', 'forms', 'A country combobox (GCC first, default +966) and a national number field with as-you-type formatting and E.164 output.'),
   ui('iban-input', 'forms', 'A Saudi IBAN field shown in groups of 4, always LTR, with a mod-97 format check and a copy button.'),
   ui('vat-input', 'forms', 'A Saudi VAT number field shown in groups of 4, always LTR, with a format check and a copy button.'),
+  ui('region-city-select', 'forms', 'Two linked comboboxes for Saudi region and city, in Arabic or English, with Arabic-aware search.'),
 ];
