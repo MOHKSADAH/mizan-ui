@@ -1706,6 +1706,28 @@
       ]
     },
     {
+      "name": "cta-04",
+      "type": "registry:block",
+      "title": "CTA 04",
+      "description": "WhatsApp call to action with response-time note, phone number and opening hours.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/whatsapp-button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/cta-04.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

@@ -97,4 +97,12 @@ export const marketingBlocks: ManifestItem[] = [
     description: 'Heading and contact column beside a single-open accordion of questions.',
     files: ['registry/blocks/faq/faq-02.tsx'],
   },
+  {
+    name: 'cta-04',
+    type: 'registry:block',
+    family: 'cta',
+    title: 'CTA 04',
+    description: 'WhatsApp call to action with response-time note, phone number and opening hours.',
+    files: ['registry/blocks/cta/cta-04.tsx'],
+  },
 ];
