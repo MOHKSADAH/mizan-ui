@@ -1497,6 +1497,35 @@
       ]
     },
     {
+      "name": "dashboard-01",
+      "type": "registry:block",
+      "title": "Dashboard 01",
+      "description": "Sales dashboard with KPI cards, an area chart with a comparison line, a bar chart and recent orders.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10",
+        "recharts@^3.8.0"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/chart",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/select",
+        "MOHKSADAH/mizan-ui/table",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/dashboard/dashboard-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

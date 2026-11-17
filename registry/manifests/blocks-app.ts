@@ -17,4 +17,12 @@ export const appBlocks: ManifestItem[] = [
     description: 'Admin shell whose sidebar collapses to an icon rail with tooltips.',
     files: ['registry/blocks/app-shell/app-shell-02.tsx'],
   },
+  {
+    name: 'dashboard-01',
+    type: 'registry:block',
+    family: 'dashboard',
+    title: 'Dashboard 01',
+    description: 'Sales dashboard with KPI cards, an area chart with a comparison line, a bar chart and recent orders.',
+    files: ['registry/blocks/dashboard/dashboard-01.tsx'],
+  },
 ];
