@@ -1657,6 +1657,32 @@
       ]
     },
     {
+      "name": "opening-hours",
+      "type": "registry:ui",
+      "title": "Opening Hours",
+      "description": "Weekly opening hours with an open-now status, split shifts, a Ramadan override and an editor.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/date-range-picker",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/select",
+        "MOHKSADAH/mizan-ui/switch",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/opening-hours.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

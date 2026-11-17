@@ -31,4 +31,5 @@ export const gulfItems: ManifestItem[] = [
   ui('hijri-date-picker', 'forms', 'A date picker that shows the Hijri and Gregorian dates together in its trigger.'),
   ui('date-range-picker', 'forms', 'A range picker on the Calendar with presets, a nights count for bookings and an optional Hijri display.'),
   ui('slot-picker', 'forms', 'A day strip and morning, afternoon and evening time chips for bookings, with radiogroup semantics and Arabic AM and PM.'),
+  ui('opening-hours', 'data-display', 'Weekly opening hours with an open-now status, split shifts, a Ramadan override and an editor.'),
 ];
