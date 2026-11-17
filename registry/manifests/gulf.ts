@@ -26,4 +26,5 @@ export const gulfItems: ManifestItem[] = [
   ui('iban-input', 'forms', 'A Saudi IBAN field shown in groups of 4, always LTR, with a mod-97 format check and a copy button.'),
   ui('vat-input', 'forms', 'A Saudi VAT number field shown in groups of 4, always LTR, with a format check and a copy button.'),
   ui('region-city-select', 'forms', 'Two linked comboboxes for Saudi region and city, in Arabic or English, with Arabic-aware search.'),
+  ui('saudi-address-form', 'forms', 'A composed Saudi address form: region and city, district, street, building, postal and additional numbers, and the national short address.'),
 ];

@@ -1532,6 +1532,32 @@
       ]
     },
     {
+      "name": "saudi-address-form",
+      "type": "registry:ui",
+      "title": "Saudi Address Form",
+      "description": "A composed Saudi address form: region and city, district, street, building, postal and additional numbers, and the national short address.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
+        "MOHKSADAH/mizan-ui/field",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/region-city-select",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/saudi-address-form.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
