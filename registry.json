@@ -1353,6 +1353,41 @@
       ]
     },
     {
+      "name": "sparkline",
+      "type": "registry:lib",
+      "title": "Sparkline",
+      "files": [
+        {
+          "path": "registry/lib/sparkline.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "stat-card",
+      "type": "registry:ui",
+      "title": "Stat Card",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/skeleton",
+        "MOHKSADAH/mizan-ui/sparkline",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/stat-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
