@@ -20,4 +20,5 @@ export const displayItems: ManifestItem[] = [
   { name: 'mega-menu', type: 'registry:ui', category: 'navigation', files: ['registry/ui/mega-menu.tsx'] },
   { name: 'avatar-group', type: 'registry:ui', category: 'data-display', files: ['registry/ui/avatar-group.tsx'] },
   { name: 'timeline', type: 'registry:ui', category: 'data-display', files: ['registry/ui/timeline.tsx'] },
+  { name: 'back-to-top', type: 'registry:ui', category: 'navigation', files: ['registry/ui/back-to-top.tsx'] },
 ];

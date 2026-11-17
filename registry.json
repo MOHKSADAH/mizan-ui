@@ -1707,6 +1707,27 @@
       ]
     },
     {
+      "name": "back-to-top",
+      "type": "registry:ui",
+      "title": "Back To Top",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/back-to-top.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
