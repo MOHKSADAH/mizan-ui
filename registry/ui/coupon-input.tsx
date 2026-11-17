@@ -61,8 +61,19 @@ function CouponInput({
   const t = { ...defaultLabels, ...labels }
   const messageId = React.useId()
   const [code, setCode] = React.useState("")
+  const input = React.useRef<HTMLInputElement>(null)
+  const remove = React.useRef<HTMLButtonElement>(null)
+  const refocus = React.useRef(false)
   const pending = status === "pending"
   const text = message ?? (status === "pending" ? t.pending : status === "success" ? t.success : status === "error" ? t.error : "")
+
+  // Apply and remove swap the input and the chip, and pending disables apply, so focus can drop to the body.
+  // When the result arrives, put focus on the control that is now shown.
+  React.useEffect(() => {
+    if (pending || !refocus.current) return
+    refocus.current = false
+    if (document.activeElement === document.body) (appliedCode ? remove : input).current?.focus()
+  }, [appliedCode, pending])
 
   return (
     <form
@@ -71,7 +82,9 @@ function CouponInput({
       onSubmit={(event) => {
         event.preventDefault()
         const trimmed = code.trim()
-        if (trimmed && !pending) onApply(trimmed)
+        if (!trimmed || pending) return
+        refocus.current = true
+        onApply(trimmed)
       }}
       {...props}
     >
@@ -81,8 +94,12 @@ function CouponInput({
           <bdi dir="ltr">{appliedCode}</bdi>
           <button
             type="button"
+            ref={remove}
             aria-label={t.remove(appliedCode)}
-            onClick={onRemove}
+            onClick={() => {
+              refocus.current = true
+              onRemove()
+            }}
             className="inline-flex size-6 items-center justify-center rounded-full outline-none hover:bg-muted focus-visible:ring-3 focus-visible:ring-ring/50"
           >
             <XIcon aria-hidden="true" weight="bold" className="size-3" />
@@ -91,6 +108,7 @@ function CouponInput({
       ) : (
         <div className="flex gap-2">
           <Input
+            ref={input}
             dir="ltr"
             autoComplete="off"
             value={code}
