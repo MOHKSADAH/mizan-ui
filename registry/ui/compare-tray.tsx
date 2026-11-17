@@ -4,7 +4,7 @@ import * as React from "react"
 import { XIcon } from "@phosphor-icons/react"
 
 import { cn } from "@/registry/lib/utils"
-import { formatNumber, type Digits, type Lang } from "@/registry/lib/format"
+import { formatNumber, plural, type Digits, type Lang, type Locale } from "@/registry/lib/format"
 import { Button } from "@/registry/ui/button"
 
 type CompareItem = {
@@ -16,7 +16,7 @@ type CompareItem = {
 type CompareTrayLabels = {
   region: string
   count: (n: string, max: string) => string
-  needMore: (min: string) => string
+  needMore: (min: number, locale?: Locale) => string
   remove: (name: string) => string
   clear: string
   compare: string
@@ -25,7 +25,8 @@ type CompareTrayLabels = {
 const defaultLabels: CompareTrayLabels = {
   region: "Product comparison",
   count: (n, max) => `${n} of ${max} products`,
-  needMore: (min) => `Add at least ${min} products to compare`,
+  needMore: (min, locale = { lang: "en" }) =>
+    plural(min, { one: "Add at least {n} product to compare", other: "Add at least {n} products to compare" }, locale),
   remove: (name) => `Remove ${name} from the comparison`,
   clear: "Clear all",
   compare: "Compare",
@@ -33,8 +34,19 @@ const defaultLabels: CompareTrayLabels = {
 
 const compareTrayLabelsAr: CompareTrayLabels = {
   region: "مقارنة المنتجات",
-  count: (n, max) => `${n} من ${max} منتجات`,
-  needMore: (min) => `أضف ${min} منتجات على الأقل للمقارنة`,
+  count: (n, max) => `المنتجات: ${n} من ${max}`,
+  needMore: (min, locale = { lang: "ar" }) =>
+    plural(
+      min,
+      {
+        one: "أضف منتجًا واحدًا على الأقل للمقارنة",
+        two: "أضف منتجين على الأقل للمقارنة",
+        few: "أضف {n} منتجات على الأقل للمقارنة",
+        many: "أضف {n} منتجًا على الأقل للمقارنة",
+        other: "أضف {n} منتج على الأقل للمقارنة",
+      },
+      locale
+    ),
   remove: (name) => `إزالة ${name} من المقارنة`,
   clear: "مسح الكل",
   compare: "قارن",
@@ -84,7 +96,7 @@ function CompareTray({
         <p role="status" aria-live="polite" className="font-medium">
           {t.count(formatNumber(items.length, locale), formatNumber(max, locale))}
         </p>
-        {!ready && <p className="text-xs text-muted-foreground">{t.needMore(formatNumber(min, locale))}</p>}
+        {!ready && <p className="text-xs text-muted-foreground">{t.needMore(min, locale)}</p>}
       </div>
       <ul className="flex min-w-0 flex-1 items-center gap-2 overflow-x-auto py-1">
         {items.map((item) => (

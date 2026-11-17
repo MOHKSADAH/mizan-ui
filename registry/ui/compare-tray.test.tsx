@@ -33,7 +33,14 @@ test("renders in ar and an empty tray has no clear button", () => {
   const html = renderToString(
     <CompareTray items={[]} onRemove={noop} onClear={noop} onCompare={noop} lang="ar" labels={compareTrayLabelsAr} />
   )
-  expect(html).toContain("0 من 4 منتجات")
+  expect(html).toContain("المنتجات: 0 من 4")
   expect(html).toContain("قارن")
   expect(html).not.toContain("مسح الكل")
+})
+
+test("the minimum label agrees with its number", () => {
+  expect(compareTrayLabelsAr.needMore(2)).toBe("أضف منتجين على الأقل للمقارنة")
+  expect(compareTrayLabelsAr.needMore(3)).toBe("أضف 3 منتجات على الأقل للمقارنة")
+  const one = renderToString(<CompareTray items={[]} min={1} onRemove={noop} onClear={noop} onCompare={noop} />)
+  expect(one).toContain("Add at least 1 product to compare")
 })
