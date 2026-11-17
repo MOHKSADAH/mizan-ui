@@ -9,4 +9,5 @@ export const displayItems: ManifestItem[] = [
   { name: 'announcement-bar', type: 'registry:ui', category: 'feedback', files: ['registry/ui/announcement-bar.tsx'] },
   { name: 'countdown-parts', type: 'registry:lib', files: ['registry/lib/countdown-parts.ts'] },
   { name: 'countdown', type: 'registry:ui', category: 'data-display', files: ['registry/ui/countdown.tsx'] },
+  { name: 'sticky-action-bar', type: 'registry:ui', category: 'commerce', files: ['registry/ui/sticky-action-bar.tsx'] },
 ];

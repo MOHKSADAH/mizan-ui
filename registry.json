@@ -1503,6 +1503,23 @@
       ]
     },
     {
+      "name": "sticky-action-bar",
+      "type": "registry:ui",
+      "title": "Sticky Action Bar",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/sticky-action-bar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
