@@ -13,4 +13,5 @@ export const commerceItems: ManifestItem[] = [
   item('rating', 'Read-only star rating with partial fills that mirror in RTL, a spoken value and a review count.'),
   item('swatch-select', 'Color, size and image swatches as a radio group with a selected name and out-of-stock state.'),
   item('filter-chips', 'Removable active-filter chips with clear all, a live result count and a scrolling row.'),
+  item('status-badge', 'Order status badge (pending to refunded) with an icon, text and a status token color.'),
 ];
