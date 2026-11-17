@@ -1682,6 +1682,29 @@
       ]
     },
     {
+      "name": "compare-tray",
+      "type": "registry:ui",
+      "title": "Compare Tray",
+      "description": "Tray of products chosen for comparison with a live count, remove, clear all and compare.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/compare-tray.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

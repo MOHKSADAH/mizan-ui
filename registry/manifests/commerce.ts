@@ -24,4 +24,5 @@ export const commerceItems: ManifestItem[] = [
   item('order-stepper', 'Checkout steps in an ordered list with aria-current, completed checks and a compact mode.'),
   item('floating-contact', 'Floating WhatsApp, call and chat launcher that lifts above a sticky bar and respects safe areas.'),
   item('wishlist-button', 'Heart toggle with aria-pressed and a live announcement for saving to a wishlist.'),
+  item('compare-tray', 'Tray of products chosen for comparison with a live count, remove, clear all and compare.'),
 ];
