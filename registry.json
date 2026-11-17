@@ -1505,6 +1505,26 @@
       ]
     },
     {
+      "name": "vat-summary",
+      "type": "registry:ui",
+      "title": "Vat Summary",
+      "description": "Order totals with subtotal, discount, shipping, VAT (rate, inclusive or exclusive) and total.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/vat-summary.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

@@ -16,4 +16,5 @@ export const commerceItems: ManifestItem[] = [
   item('status-badge', 'Order status badge (pending to refunded) with an icon, text and a status token color.'),
   item('payment-method-select', 'Radio group of payment methods with icon slots, fee, disabled reason and a details panel.'),
   item('installments', 'A "4 payments of X" widget with a dated schedule, eligibility range and a provider slot.'),
+  item('vat-summary', 'Order totals with subtotal, discount, shipping, VAT (rate, inclusive or exclusive) and total.'),
 ];
