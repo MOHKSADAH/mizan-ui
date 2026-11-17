@@ -8,4 +8,6 @@ export const inputsItems: ManifestItem[] = [
   { name: 'number-field', type: 'registry:ui', category: 'forms', files: ['registry/ui/number-field.tsx'] },
   { name: 'time-picker', type: 'registry:ui', category: 'forms', files: ['registry/ui/time-picker.tsx'] },
   { name: 'password-input', type: 'registry:ui', category: 'forms', files: ['registry/ui/password-input.tsx'] },
+  { name: 'mask', type: 'registry:lib', files: ['registry/lib/mask.ts'] },
+  { name: 'input-mask', type: 'registry:ui', category: 'forms', files: ['registry/ui/input-mask.tsx'] },
 ];
