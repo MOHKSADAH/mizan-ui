@@ -3,6 +3,7 @@ import { AsciiBarChart, AsciiSparkline } from "@/registry/ui/ascii/ascii-chart"
 import { AsciiProgress } from "@/registry/ui/ascii/ascii-progress"
 import { AsciiSpinner } from "@/registry/ui/ascii/ascii-spinner"
 import { AsciiText } from "@/registry/ui/ascii/ascii-text"
+import { Terminal } from "@/registry/ui/ascii/terminal"
 
 export function AsciiTextDemo() {
   return (
@@ -66,6 +67,22 @@ export function AsciiChartDemo() {
     <div className="flex flex-col gap-6">
       <AsciiBarChart data={visits} width={24} caption="Visits per day" />
       <AsciiSparkline data={visits} format={(n) => `${n} visits`} caption="Visits per day" />
+    </div>
+  )
+}
+
+const install = [
+  { type: "comment", text: "add the component" },
+  { type: "command", text: "npx shadcn@latest add @mizan/terminal" },
+  { type: "output", text: "Done." },
+  { type: "command", text: "bun dev" },
+] as const
+
+export function TerminalDemo() {
+  return (
+    <div className="flex flex-col gap-6">
+      <Terminal title="bash" lines={[...install]} copyLabel="Copy commands" copiedLabel="Copied" />
+      <Terminal title="bash" lines={[...install]} typing copyLabel="Copy commands" copiedLabel="Copied" />
     </div>
   )
 }

@@ -1,6 +1,16 @@
 import { describe, expect, test } from "bun:test"
 
-import { blockBar, percentOf, renderBar, sparkline, SPINNER_FRAMES } from "./ascii"
+import {
+  blockBar,
+  commandText,
+  percentOf,
+  renderBar,
+  sparkline,
+  SPINNER_FRAMES,
+  type TerminalLine,
+  typedText,
+  typingCost,
+} from "./ascii"
 
 describe("SPINNER_FRAMES", () => {
   test("every variant has frames of equal width", () => {
@@ -87,5 +97,31 @@ describe("sparkline", () => {
   test("empty array and all zeros", () => {
     expect(sparkline([])).toBe("")
     expect(sparkline([0, 0])).toBe("▁▁")
+  })
+})
+
+describe("terminal helpers", () => {
+  const lines: TerminalLine[] = [
+    { type: "comment", text: "install" },
+    { type: "command", text: "bun add x" },
+    { type: "output", text: "done" },
+    { type: "command", text: "bun dev" },
+  ]
+
+  test("commandText keeps commands only", () => {
+    expect(commandText(lines)).toBe("bun add x\nbun dev")
+    expect(commandText([])).toBe("")
+  })
+
+  test("typingCost is the length for commands and 1 otherwise", () => {
+    expect(lines.map(typingCost)).toEqual([1, 9, 1, 7])
+  })
+
+  test("typedText types commands per character and reveals other lines at once", () => {
+    expect(typedText(lines[1], -1)).toBe("")
+    expect(typedText(lines[1], 3)).toBe("bun")
+    expect(typedText(lines[1], 99)).toBe("bun add x")
+    expect(typedText(lines[2], 0)).toBe("")
+    expect(typedText(lines[2], 1)).toBe("done")
   })
 })

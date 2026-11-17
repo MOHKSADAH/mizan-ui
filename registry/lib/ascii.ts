@@ -34,3 +34,21 @@ export function sparkline(values: number[]) {
   const max = Math.max(0, ...values)
   return values.map((v) => SPARK_LEVELS[Math.round(ratio(v, max) * (SPARK_LEVELS.length - 1))]).join("")
 }
+
+export type TerminalLine = { type: "command" | "output" | "comment"; text: string }
+
+export function commandText(lines: TerminalLine[]) {
+  return lines
+    .filter((line) => line.type === "command")
+    .map((line) => line.text)
+    .join("\n")
+}
+
+export function typingCost(line: TerminalLine) {
+  return line.type === "command" ? line.text.length : 1
+}
+
+export function typedText(line: TerminalLine, step: number) {
+  if (line.type !== "command") return step >= 1 ? line.text : ""
+  return line.text.slice(0, Math.max(0, step))
+}

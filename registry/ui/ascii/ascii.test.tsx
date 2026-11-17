@@ -7,6 +7,7 @@ import { AsciiBarChart, AsciiSparkline } from "@/registry/ui/ascii/ascii-chart"
 import { AsciiProgress } from "@/registry/ui/ascii/ascii-progress"
 import { AsciiSpinner } from "@/registry/ui/ascii/ascii-spinner"
 import { AsciiText } from "@/registry/ui/ascii/ascii-text"
+import { Terminal } from "@/registry/ui/ascii/terminal"
 
 describe("AsciiText", () => {
   test("renders aria-hidden pre, sr-only text and forces ltr", () => {
@@ -121,5 +122,31 @@ describe("AsciiSparkline", () => {
     const html = renderToString(<AsciiSparkline data={[{ label: "a", value: 0 }, { label: "b", value: 7 }]} />)
     expect(html).toContain(">▁█<")
     expect(html).toContain('<th scope="row">b</th><td>7</td>')
+  })
+})
+
+describe("Terminal", () => {
+  const lines = [
+    { type: "comment", text: "install" },
+    { type: "command", text: "bun add x" },
+    { type: "output", text: "done" },
+  ] as const
+
+  test("renders ltr window, neutral dots, title, prompt and a labelled copy button", () => {
+    const html = renderToString(<Terminal title="zsh" lines={[...lines]} copyLabel="Copy" copiedLabel="Copied" />)
+    expect(html).toContain('dir="ltr"')
+    expect(html.match(/bg-muted-foreground\/40/g)).toHaveLength(3)
+    expect(html).toContain(">zsh<")
+    expect(html).toContain("$ ")
+    expect(html).toContain("# ")
+    expect(html).toContain('aria-label="Copy"')
+    expect(html).toContain(">bun add x<")
+    expect(html).toContain(">done<")
+  })
+
+  test("typing mode hides the text until it plays", () => {
+    const html = renderToString(<Terminal lines={[...lines]} typing copyLabel="Copy" copiedLabel="Copied" />)
+    expect(html).not.toContain("<span>bun add x</span>")
+    expect(html).toContain('<span class="invisible">bun add x</span>')
   })
 })
