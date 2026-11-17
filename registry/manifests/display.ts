@@ -7,4 +7,6 @@ export const displayItems: ManifestItem[] = [
   { name: 'copy-button', type: 'registry:ui', category: 'forms', files: ['registry/ui/copy-button.tsx'] },
   { name: 'share-button', type: 'registry:ui', category: 'forms', files: ['registry/ui/share-button.tsx'] },
   { name: 'announcement-bar', type: 'registry:ui', category: 'feedback', files: ['registry/ui/announcement-bar.tsx'] },
+  { name: 'countdown-parts', type: 'registry:lib', files: ['registry/lib/countdown-parts.ts'] },
+  { name: 'countdown', type: 'registry:ui', category: 'data-display', files: ['registry/ui/countdown.tsx'] },
 ];

@@ -1473,6 +1473,36 @@
       ]
     },
     {
+      "name": "countdown-parts",
+      "type": "registry:lib",
+      "title": "Countdown Parts",
+      "files": [
+        {
+          "path": "registry/lib/countdown-parts.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "countdown",
+      "type": "registry:ui",
+      "title": "Countdown",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/countdown-parts",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/countdown.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
