@@ -113,4 +113,12 @@ export const marketingBlocks: ManifestItem[] = [
     description: 'Contact info cards beside a validated message form with topic select and status message.',
     files: ['registry/blocks/contact/contact-01.tsx'],
   },
+  {
+    name: 'footer-01',
+    type: 'registry:block',
+    family: 'footer',
+    title: 'Footer 01',
+    description: 'Brand block, three link columns and contact details, with a legal and social row below.',
+    files: ['registry/blocks/footer/footer-01.tsx'],
+  },
 ];
