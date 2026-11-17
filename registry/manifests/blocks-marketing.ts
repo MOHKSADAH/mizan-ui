@@ -73,4 +73,12 @@ export const marketingBlocks: ManifestItem[] = [
     description: 'Centered grid of large values with labels, as a definition list.',
     files: ['registry/blocks/stats/stats-01.tsx'],
   },
+  {
+    name: 'testimonials-02',
+    type: 'registry:block',
+    family: 'testimonials',
+    title: 'Testimonials 02',
+    description: 'Responsive grid of quote cards with rating, avatar, name and role.',
+    files: ['registry/blocks/testimonials/testimonials-02.tsx'],
+  },
 ];

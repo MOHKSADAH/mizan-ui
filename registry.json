@@ -1637,6 +1637,28 @@
       ]
     },
     {
+      "name": "testimonials-02",
+      "type": "registry:block",
+      "title": "Testimonials 02",
+      "description": "Responsive grid of quote cards with rating, avatar, name and role.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/testimonials/testimonials-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
