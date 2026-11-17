@@ -16,6 +16,21 @@ test.each([
   '"scroll-ml-4"',
   '@apply pr-2;',
   '"hover:!pl-1"',
+  '"data-[side=left]:border-e left-0"',
+  '"float-left"',
+  '"float-right"',
+  '"origin-left"',
+  '"origin-top-right"',
+  '"bg-left"',
+  '"object-right"',
+  '"slide-in-from-left-2"',
+  '"slide-out-to-right"',
+  '"flex space-x-2"',
+  '"divide-x"',
+  '"-translate-x-1/2"',
+  'style={{ marginLeft: 4 }}',
+  'style={{ paddingRight: 2 }}',
+  'style={{ left: 0, top: 0 }}',
 ])('flags %s', (line) => {
   expect(findPhysicalLines(line)).toEqual([1]);
 });
@@ -29,6 +44,14 @@ test.each([
   'margin-left: 0;',
   '"ml-2" // mizan-allow-physical',
   'const copyright-holder = 1',
+  '"data-[side=left]:left-0 group-data-[side=right]:-right-4 data-[side=left]:-right-1"',
+  '"-translate-x-1/2 rtl:translate-x-1/2"',
+  '"ltr:-translate-x-1/2 rtl:-translate-x-1/2"',
+  '"-space-x-1 rtl:space-x-reverse"',
+  '"divide-x rtl:divide-x-reverse"',
+  '"slide-in-from-start-2 origin-(--transform-origin) object-cover bg-center"',
+  'style={{ marginInlineStart: 4, insetInlineStart: 0 }}',
+  '"data-[side=right]:slide-in-from-left-2"',
 ])('allows %s', (line) => {
   expect(findPhysicalLines(line)).toEqual([]);
 });
