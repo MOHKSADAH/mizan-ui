@@ -81,4 +81,12 @@ export const marketingBlocks: ManifestItem[] = [
     description: 'Responsive grid of quote cards with rating, avatar, name and role.',
     files: ['registry/blocks/testimonials/testimonials-02.tsx'],
   },
+  {
+    name: 'pricing-01',
+    type: 'registry:block',
+    family: 'pricing',
+    title: 'Pricing 01',
+    description: 'Three plan cards with a monthly and yearly toggle and one highlighted plan.',
+    files: ['registry/blocks/pricing/pricing-01.tsx'],
+  },
 ];
