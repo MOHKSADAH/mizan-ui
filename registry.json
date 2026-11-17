@@ -1386,6 +1386,24 @@
       ]
     },
     {
+      "name": "section",
+      "type": "registry:ui",
+      "title": "Section",
+      "description": "Page section with vertical rhythm, and SectionHeader with eyebrow, heading, description and actions.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/section.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "layout"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

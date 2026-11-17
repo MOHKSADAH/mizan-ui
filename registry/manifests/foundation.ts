@@ -15,4 +15,11 @@ export const foundationItems: ManifestItem[] = [
     description: 'Centered page container with four max widths and responsive inline padding.',
     files: ['registry/ui/container.tsx'],
   },
+  {
+    name: 'section',
+    type: 'registry:ui',
+    category: 'layout',
+    description: 'Page section with vertical rhythm, and SectionHeader with eyebrow, heading, description and actions.',
+    files: ['registry/ui/section.tsx'],
+  },
 ];
