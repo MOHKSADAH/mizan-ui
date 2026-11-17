@@ -1534,6 +1534,37 @@
       ]
     },
     {
+      "name": "color",
+      "type": "registry:lib",
+      "title": "Color",
+      "files": [
+        {
+          "path": "registry/lib/color.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "color-picker",
+      "type": "registry:ui",
+      "title": "Color Picker",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/color",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/color-picker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

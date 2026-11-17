@@ -10,4 +10,6 @@ export const inputsItems: ManifestItem[] = [
   { name: 'password-input', type: 'registry:ui', category: 'forms', files: ['registry/ui/password-input.tsx'] },
   { name: 'mask', type: 'registry:lib', files: ['registry/lib/mask.ts'] },
   { name: 'input-mask', type: 'registry:ui', category: 'forms', files: ['registry/ui/input-mask.tsx'] },
+  { name: 'color', type: 'registry:lib', files: ['registry/lib/color.ts'] },
+  { name: 'color-picker', type: 'registry:ui', category: 'forms', files: ['registry/ui/color-picker.tsx'] },
 ];
