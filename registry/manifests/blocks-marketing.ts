@@ -65,4 +65,12 @@ export const marketingBlocks: ManifestItem[] = [
     description: 'Centered title above one wrapping row of customer logos.',
     files: ['registry/blocks/logo-cloud/logo-cloud-01.tsx'],
   },
+  {
+    name: 'stats-01',
+    type: 'registry:block',
+    family: 'stats',
+    title: 'Stats 01',
+    description: 'Centered grid of large values with labels, as a definition list.',
+    files: ['registry/blocks/stats/stats-01.tsx'],
+  },
 ];
