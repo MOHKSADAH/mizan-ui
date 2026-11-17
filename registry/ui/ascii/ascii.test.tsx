@@ -2,6 +2,7 @@ import { describe, expect, test } from "bun:test"
 import { renderToString } from "react-dom/server"
 
 import { SPINNER_FRAMES, type SpinnerVariant } from "@/registry/lib/ascii"
+import { AsciiBox, AsciiDivider } from "@/registry/ui/ascii/ascii-box"
 import { AsciiProgress } from "@/registry/ui/ascii/ascii-progress"
 import { AsciiSpinner } from "@/registry/ui/ascii/ascii-spinner"
 import { AsciiText } from "@/registry/ui/ascii/ascii-text"
@@ -53,5 +54,43 @@ describe("AsciiProgress", () => {
     expect(html).toContain('aria-valuenow="0"')
     expect(html).toContain("[....]")
     expect(html).not.toContain("%</bdi>")
+  })
+})
+
+describe("AsciiBox", () => {
+  test("renders a titled fieldset with real DOM children", () => {
+    const html = renderToString(
+      <AsciiBox variant="double" title="Status">
+        <p>All good</p>
+      </AsciiBox>,
+    )
+    expect(html).toContain("<fieldset")
+    expect(html).toContain('<legend class="px-[1ch]">Status</legend>')
+    expect(html).toContain("border-double")
+    expect(html).toContain("<p>All good</p>")
+  })
+
+  test("renders every style, and a plain div without a title", () => {
+    for (const variant of ["single", "double", "rounded", "heavy", "ascii"] as const) {
+      const html = renderToString(<AsciiBox variant={variant}>x</AsciiBox>)
+      expect(html).toStartWith("<div")
+      expect(html).not.toContain("legend")
+    }
+  })
+})
+
+describe("AsciiDivider", () => {
+  test("renders a separator with a centered label between two lines", () => {
+    const html = renderToString(<AsciiDivider variant="double" label="Or" />)
+    expect(html).toContain('role="separator"')
+    expect(html).toContain('aria-label="Or"')
+    expect(html.match(/═/g)?.length).toBe(600)
+    expect(html).toContain("<span>Or</span>")
+  })
+
+  test("renders one line without a label", () => {
+    const html = renderToString(<AsciiDivider variant="ascii" />)
+    expect(html).not.toContain("aria-label")
+    expect(html.match(/-{300}/g)).toHaveLength(1)
   })
 })

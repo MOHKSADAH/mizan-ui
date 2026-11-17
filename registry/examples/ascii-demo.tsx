@@ -1,3 +1,4 @@
+import { AsciiBox, AsciiDivider } from "@/registry/ui/ascii/ascii-box"
 import { AsciiProgress } from "@/registry/ui/ascii/ascii-progress"
 import { AsciiSpinner } from "@/registry/ui/ascii/ascii-spinner"
 import { AsciiText } from "@/registry/ui/ascii/ascii-text"
@@ -32,6 +33,21 @@ export function AsciiProgressDemo() {
       <AsciiProgress value={57} width={14} />
       <AsciiProgress value={3} max={8} fill="=" empty="." width={24} />
       <AsciiProgress value={100} showPercent={false} />
+    </div>
+  )
+}
+
+export function AsciiBoxDemo() {
+  return (
+    <div className="flex flex-col gap-6">
+      {(["single", "double", "rounded", "heavy", "ascii"] as const).map((variant) => (
+        <AsciiBox key={variant} variant={variant} title={variant}>
+          <p>Content stays real DOM.</p>
+        </AsciiBox>
+      ))}
+      <AsciiDivider />
+      <AsciiDivider variant="double" label="or" />
+      <AsciiDivider variant="ascii" label="end" />
     </div>
   )
 }
