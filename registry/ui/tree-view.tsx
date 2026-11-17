@@ -24,9 +24,11 @@ type TreeViewProps = Omit<React.ComponentProps<"ul">, "children" | "role" | "onS
 function TreeView({ nodes, label, defaultExpanded = [], defaultSelected, onSelect, className, ...props }: TreeViewProps) {
   const [expanded, setExpanded] = React.useState(() => new Set(defaultExpanded))
   const [selected, setSelected] = React.useState(defaultSelected)
-  const [focused, setFocused] = React.useState(nodes[0]?.id)
+  const [focused, setFocused] = React.useState(defaultSelected ?? nodes[0]?.id)
   const items = React.useRef(new Map<string, HTMLLIElement>())
   const rows = flattenTree(nodes, expanded)
+  // Falls back to the first row when the focused node is hidden or gone, so the tree keeps its tab stop.
+  const tabStop = rows.some((row) => row.node.id === focused) ? focused : rows[0]?.node.id
 
   const focusRow = (id?: string) => {
     if (!id) return
@@ -81,7 +83,7 @@ function TreeView({ nodes, label, defaultExpanded = [], defaultSelected, onSelec
           aria-posinset={row.posInSet}
           aria-expanded={row.expanded}
           aria-selected={selected === row.node.id}
-          tabIndex={focused === row.node.id ? 0 : -1}
+          tabIndex={tabStop === row.node.id ? 0 : -1}
           style={{ paddingInlineStart: `${(row.level - 1) * 1.25 + 0.25}rem` }}
           className="flex min-h-7 cursor-default items-center gap-1 rounded-md pe-2 outline-none hover:bg-muted focus-visible:ring-3 focus-visible:ring-ring/50 aria-selected:bg-muted aria-selected:font-medium"
           onKeyDown={(e) => onKeyDown(e, index)}

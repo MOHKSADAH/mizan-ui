@@ -23,3 +23,12 @@ test('collapsed parents hide children, and ar renders', () => {
   expect(html).toContain('aria-expanded="false"');
   expect(html).not.toContain('ملف<');
 });
+
+const tabStop = (html: string) => html.split('<li').find((li) => li.includes('tabindex="0"'))?.replace(/^[^>]*>|<[^>]+>/g, '');
+
+test('the tab stop starts on the selected node and falls back to the first row when it is hidden', () => {
+  expect(tabStop(renderToString(<TreeView label="Files" nodes={nodes} defaultExpanded={['src']} defaultSelected="ui" />))).toBe('ui');
+  const hidden = renderToString(<TreeView label="Files" nodes={nodes} defaultSelected="ui" />);
+  expect(hidden.match(/tabindex="0"/g)).toHaveLength(1);
+  expect(tabStop(hidden)).toBe('src');
+});
