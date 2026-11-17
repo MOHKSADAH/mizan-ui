@@ -21,4 +21,6 @@ export const displayItems: ManifestItem[] = [
   { name: 'avatar-group', type: 'registry:ui', category: 'data-display', files: ['registry/ui/avatar-group.tsx'] },
   { name: 'timeline', type: 'registry:ui', category: 'data-display', files: ['registry/ui/timeline.tsx'] },
   { name: 'back-to-top', type: 'registry:ui', category: 'navigation', files: ['registry/ui/back-to-top.tsx'] },
+  { name: 'tree', type: 'registry:lib', files: ['registry/lib/tree.ts'] },
+  { name: 'tree-view', type: 'registry:ui', category: 'data-display', files: ['registry/ui/tree-view.tsx'] },
 ];
