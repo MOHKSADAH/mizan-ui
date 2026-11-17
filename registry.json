@@ -1632,6 +1632,26 @@
       ]
     },
     {
+      "name": "cookie-consent",
+      "type": "registry:ui",
+      "title": "Cookie Consent",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/dialog",
+        "MOHKSADAH/mizan-ui/switch",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/cookie-consent.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "feedback"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

@@ -16,4 +16,5 @@ export const displayItems: ManifestItem[] = [
   { name: 'marquee', type: 'registry:ui', category: 'layout', files: ['registry/ui/marquee.tsx'] },
   { name: 'use-scrollspy', type: 'registry:hook', files: ['registry/hooks/use-scrollspy.ts'] },
   { name: 'toc', type: 'registry:ui', category: 'navigation', files: ['registry/ui/toc.tsx'] },
+  { name: 'cookie-consent', type: 'registry:ui', category: 'feedback', files: ['registry/ui/cookie-consent.tsx'] },
 ];
