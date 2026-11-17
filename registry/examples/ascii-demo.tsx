@@ -1,3 +1,4 @@
+import { AsciiSpinner } from "@/registry/ui/ascii/ascii-spinner"
 import { AsciiText } from "@/registry/ui/ascii/ascii-text"
 
 export function AsciiTextDemo() {
@@ -7,6 +8,19 @@ export function AsciiTextDemo() {
       <AsciiText text="Mizan" font="Small" />
       <AsciiText text="Mizan" font="ANSI Shadow" as="h2" />
       <AsciiText text="Mizan" font="Big" className="text-muted-foreground" />
+    </div>
+  )
+}
+
+export function AsciiSpinnerDemo() {
+  return (
+    <div className="flex flex-wrap items-center gap-6 text-muted-foreground">
+      {(["dots", "line", "braille", "arc", "bounce"] as const).map((variant) => (
+        <span key={variant} className="inline-flex items-center gap-2">
+          <AsciiSpinner variant={variant} label={`Loading (${variant})`} />
+          <span className="font-mono text-sm">{variant}</span>
+        </span>
+      ))}
     </div>
   )
 }
