@@ -1,3 +1,4 @@
+import { AsciiProgress } from "@/registry/ui/ascii/ascii-progress"
 import { AsciiSpinner } from "@/registry/ui/ascii/ascii-spinner"
 import { AsciiText } from "@/registry/ui/ascii/ascii-text"
 
@@ -21,6 +22,16 @@ export function AsciiSpinnerDemo() {
           <span className="font-mono text-sm">{variant}</span>
         </span>
       ))}
+    </div>
+  )
+}
+
+export function AsciiProgressDemo() {
+  return (
+    <div className="flex flex-col gap-3 text-muted-foreground">
+      <AsciiProgress value={57} width={14} />
+      <AsciiProgress value={3} max={8} fill="=" empty="." width={24} />
+      <AsciiProgress value={100} showPercent={false} />
     </div>
   )
 }
