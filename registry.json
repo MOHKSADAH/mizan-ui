@@ -1468,6 +1468,35 @@
       ]
     },
     {
+      "name": "app-shell-02",
+      "type": "registry:block",
+      "title": "App shell 02",
+      "description": "Admin shell whose sidebar collapses to an icon rail with tooltips.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/breadcrumb",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/dropdown-menu",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/separator",
+        "MOHKSADAH/mizan-ui/sidebar",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/app-shell/app-shell-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
