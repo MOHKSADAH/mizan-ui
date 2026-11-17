@@ -129,4 +129,12 @@ export const marketingBlocks: ManifestItem[] = [
     description: 'Store footer with features strip, four link columns, contact, payment chip slots and CR and VAT legal row.',
     files: ['registry/blocks/footer/footer-04.tsx'],
   },
+  {
+    name: 'banner-01',
+    type: 'registry:block',
+    family: 'banner',
+    title: 'Banner 01',
+    description: 'Full-width announcement bar with a centered message, link and dismiss button.',
+    files: ['registry/blocks/banner/banner-01.tsx'],
+  },
 ];
