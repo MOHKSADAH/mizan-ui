@@ -32,12 +32,13 @@ function QrCode({ value, label, size = 160, ecc, margin = 4, logo, className, st
   const { data, size: modules } = encode(value, { ecc: ecc ?? (logo ? "H" : "M"), border: 0 })
   const total = modules + margin * 2
   return (
+    // Scanners need dark modules on a light background, so the chip stays black on white in every theme.
     <div
       data-slot="qr-code"
       role="img"
       aria-label={label}
       dir="ltr"
-      className={cn("relative inline-block shrink-0 bg-card text-card-foreground", className)}
+      className={cn("relative inline-block shrink-0 bg-white text-black", className)}
       style={{ width: size, height: size, ...style }}
       {...props}
     >
@@ -47,7 +48,7 @@ function QrCode({ value, label, size = 160, ecc, margin = 4, logo, className, st
       {logo && (
         <div
           data-slot="qr-code-logo"
-          className="absolute inset-0 m-auto flex size-1/5 items-center justify-center overflow-hidden rounded-md bg-card"
+          className="absolute inset-0 m-auto flex size-1/5 items-center justify-center overflow-hidden rounded-md bg-white"
         >
           {logo}
         </div>
