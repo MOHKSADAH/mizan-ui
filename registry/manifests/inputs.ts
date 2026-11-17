@@ -7,4 +7,5 @@ export const inputsItems: ManifestItem[] = [
   { name: 'multi-select', type: 'registry:ui', category: 'forms', files: ['registry/ui/multi-select.tsx'] },
   { name: 'number-field', type: 'registry:ui', category: 'forms', files: ['registry/ui/number-field.tsx'] },
   { name: 'time-picker', type: 'registry:ui', category: 'forms', files: ['registry/ui/time-picker.tsx'] },
+  { name: 'password-input', type: 'registry:ui', category: 'forms', files: ['registry/ui/password-input.tsx'] },
 ];
