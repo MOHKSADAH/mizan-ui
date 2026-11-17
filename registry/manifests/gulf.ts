@@ -27,4 +27,6 @@ export const gulfItems: ManifestItem[] = [
   ui('vat-input', 'forms', 'A Saudi VAT number field shown in groups of 4, always LTR, with a format check and a copy button.'),
   ui('region-city-select', 'forms', 'Two linked comboboxes for Saudi region and city, in Arabic or English, with Arabic-aware search.'),
   ui('saudi-address-form', 'forms', 'A composed Saudi address form: region and city, district, street, building, postal and additional numbers, and the national short address.'),
+  ui('hijri-calendar', 'forms', 'A Hijri (Umm al-Qura) and Gregorian month grid with a calendar toggle, APG keyboard support and optional Fri and Sat weekend styling.'),
+  ui('hijri-date-picker', 'forms', 'A date picker that shows the Hijri and Gregorian dates together in its trigger.'),
 ];
