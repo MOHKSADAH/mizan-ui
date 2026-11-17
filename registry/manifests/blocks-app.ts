@@ -25,4 +25,12 @@ export const appBlocks: ManifestItem[] = [
     description: 'Sales dashboard with KPI cards, an area chart with a comparison line, a bar chart and recent orders.',
     files: ['registry/blocks/dashboard/dashboard-01.tsx'],
   },
+  {
+    name: 'data-table-01',
+    type: 'registry:block',
+    family: 'data-table',
+    title: 'Data table 01',
+    description: 'Orders table with sorting, column visibility, search, row selection with a bulk action bar and pagination.',
+    files: ['registry/blocks/data-table/data-table-01.tsx'],
+  },
 ];

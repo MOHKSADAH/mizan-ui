@@ -1526,6 +1526,35 @@
       ]
     },
     {
+      "name": "data-table-01",
+      "type": "registry:block",
+      "title": "Data table 01",
+      "description": "Orders table with sorting, column visibility, search, row selection with a bulk action bar and pagination.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10",
+        "@tanstack/react-table@^9.3.1"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/checkbox",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/dropdown-menu",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/input-group",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/table",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/data-table/data-table-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
