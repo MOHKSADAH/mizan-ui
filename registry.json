@@ -1485,6 +1485,26 @@
       ]
     },
     {
+      "name": "installments",
+      "type": "registry:ui",
+      "title": "Installments",
+      "description": "A \"4 payments of X\" widget with a dated schedule, eligibility range and a provider slot.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/installments.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

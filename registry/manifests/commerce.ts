@@ -15,4 +15,5 @@ export const commerceItems: ManifestItem[] = [
   item('filter-chips', 'Removable active-filter chips with clear all, a live result count and a scrolling row.'),
   item('status-badge', 'Order status badge (pending to refunded) with an icon, text and a status token color.'),
   item('payment-method-select', 'Radio group of payment methods with icon slots, fee, disabled reason and a details panel.'),
+  item('installments', 'A "4 payments of X" widget with a dated schedule, eligibility range and a provider slot.'),
 ];
