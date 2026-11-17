@@ -25,4 +25,12 @@ export const marketingBlocks: ManifestItem[] = [
     description: 'Centered text hero with eyebrow, heading, lead and primary, secondary or WhatsApp buttons.',
     files: ['registry/blocks/hero/hero-01.tsx'],
   },
+  {
+    name: 'hero-02',
+    type: 'registry:block',
+    family: 'hero',
+    title: 'Hero 02',
+    description: 'Split hero with text at the start and a fixed-ratio image or slot at the end.',
+    files: ['registry/blocks/hero/hero-02.tsx'],
+  },
 ];
