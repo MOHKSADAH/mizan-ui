@@ -1,4 +1,5 @@
 import { AsciiBox, AsciiDivider } from "@/registry/ui/ascii/ascii-box"
+import { AsciiBarChart, AsciiSparkline } from "@/registry/ui/ascii/ascii-chart"
 import { AsciiProgress } from "@/registry/ui/ascii/ascii-progress"
 import { AsciiSpinner } from "@/registry/ui/ascii/ascii-spinner"
 import { AsciiText } from "@/registry/ui/ascii/ascii-text"
@@ -48,6 +49,23 @@ export function AsciiBoxDemo() {
       <AsciiDivider />
       <AsciiDivider variant="double" label="or" />
       <AsciiDivider variant="ascii" label="end" />
+    </div>
+  )
+}
+
+const visits = [
+  { label: "Mon", value: 120 },
+  { label: "Tue", value: 86 },
+  { label: "Wed", value: 142 },
+  { label: "Thu", value: 31 },
+  { label: "Fri", value: 97 },
+]
+
+export function AsciiChartDemo() {
+  return (
+    <div className="flex flex-col gap-6">
+      <AsciiBarChart data={visits} width={24} caption="Visits per day" />
+      <AsciiSparkline data={visits} format={(n) => `${n} visits`} caption="Visits per day" />
     </div>
   )
 }

@@ -3,6 +3,7 @@ import { renderToString } from "react-dom/server"
 
 import { SPINNER_FRAMES, type SpinnerVariant } from "@/registry/lib/ascii"
 import { AsciiBox, AsciiDivider } from "@/registry/ui/ascii/ascii-box"
+import { AsciiBarChart, AsciiSparkline } from "@/registry/ui/ascii/ascii-chart"
 import { AsciiProgress } from "@/registry/ui/ascii/ascii-progress"
 import { AsciiSpinner } from "@/registry/ui/ascii/ascii-spinner"
 import { AsciiText } from "@/registry/ui/ascii/ascii-text"
@@ -92,5 +93,33 @@ describe("AsciiDivider", () => {
     const html = renderToString(<AsciiDivider variant="ascii" />)
     expect(html).not.toContain("aria-label")
     expect(html.match(/-{300}/g)).toHaveLength(1)
+  })
+})
+
+describe("AsciiBarChart", () => {
+  const data = [
+    { label: "Mon", value: 8 },
+    { label: "Tue", value: 4 },
+  ]
+
+  test("hides the visible text and exposes an sr-only table", () => {
+    const html = renderToString(<AsciiBarChart data={data} width={4} format={(n) => `${n}k`} caption="Visits" />)
+    expect(html).toContain('aria-hidden="true"')
+    expect(html).toContain("████")
+    expect(html).toContain("██<")
+    expect(html).toContain('<table class="sr-only"><caption>Visits</caption>')
+    expect(html).toContain('<th scope="row">Mon</th><td>8k</td>')
+  })
+
+  test("renders an empty array", () => {
+    expect(renderToString(<AsciiBarChart data={[]} />)).toContain('<table class="sr-only">')
+  })
+})
+
+describe("AsciiSparkline", () => {
+  test("renders the sparkline and the table", () => {
+    const html = renderToString(<AsciiSparkline data={[{ label: "a", value: 0 }, { label: "b", value: 7 }]} />)
+    expect(html).toContain(">▁█<")
+    expect(html).toContain('<th scope="row">b</th><td>7</td>')
   })
 })

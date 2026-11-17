@@ -1,6 +1,6 @@
 import { describe, expect, test } from "bun:test"
 
-import { percentOf, renderBar, SPINNER_FRAMES } from "./ascii"
+import { blockBar, percentOf, renderBar, sparkline, SPINNER_FRAMES } from "./ascii"
 
 describe("SPINNER_FRAMES", () => {
   test("every variant has frames of equal width", () => {
@@ -48,5 +48,44 @@ describe("percentOf", () => {
     expect(percentOf(-1, 100)).toBe(0)
     expect(percentOf(500, 100)).toBe(100)
     expect(percentOf(1, 0)).toBe(0)
+  })
+})
+
+describe("blockBar", () => {
+  test("never exceeds width, 0 is empty, 100% is full", () => {
+    for (const v of [-5, 0, 1, 33, 57, 99, 100, 250]) {
+      expect(blockBar(v, 100, 10).length).toBeLessThanOrEqual(10)
+    }
+    expect(blockBar(0, 100, 10)).toBe("")
+    expect(blockBar(100, 100, 4)).toBe("████")
+  })
+
+  test("uses partial blocks for the remainder", () => {
+    expect(blockBar(1, 8, 1)).toBe("▏")
+    expect(blockBar(4, 8, 1)).toBe("▌")
+    expect(blockBar(7, 8, 1)).toBe("▉")
+    expect(blockBar(50, 100, 5)).toBe("██▌")
+  })
+
+  test("negative values clamp to empty, max 0 does not throw", () => {
+    expect(blockBar(-3, 10, 5)).toBe("")
+    expect(blockBar(3, 0, 5)).toBe("")
+  })
+})
+
+describe("sparkline", () => {
+  test("maps the max to the tallest block and 0 to the lowest", () => {
+    expect(sparkline([0, 7])).toBe("▁█")
+    expect(sparkline([0, 1, 2, 3, 4, 5, 6, 7])).toBe("▁▂▃▄▅▆▇█")
+  })
+
+  test("returns one character per value, clamps negatives", () => {
+    expect(sparkline([5, -9, 5])).toHaveLength(3)
+    expect(sparkline([5, -9, 5])).toBe("█▁█")
+  })
+
+  test("empty array and all zeros", () => {
+    expect(sparkline([])).toBe("")
+    expect(sparkline([0, 0])).toBe("▁▁")
   })
 })
