@@ -1635,6 +1635,28 @@
       ]
     },
     {
+      "name": "slot-picker",
+      "type": "registry:ui",
+      "title": "Slot Picker",
+      "description": "A day strip and morning, afternoon and evening time chips for bookings, with radiogroup semantics and Arabic AM and PM.",
+      "dependencies": [
+        "@base-ui/react@^1.9.0"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/slot-picker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
