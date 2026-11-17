@@ -23,4 +23,6 @@ export const gulfItems: ManifestItem[] = [
   lib('hijri', 'hijri', 'Umm al-Qura Hijri date formatting and parts through Intl.'),
   ui('saudi-id-input', 'forms', 'A 10-digit national ID or Iqama field with Arabic-Indic digit input and a Luhn format check on blur.'),
   ui('phone-input', 'forms', 'A country combobox (GCC first, default +966) and a national number field with as-you-type formatting and E.164 output.'),
+  ui('iban-input', 'forms', 'A Saudi IBAN field shown in groups of 4, always LTR, with a mod-97 format check and a copy button.'),
+  ui('vat-input', 'forms', 'A Saudi VAT number field shown in groups of 4, always LTR, with a format check and a copy button.'),
 ];
