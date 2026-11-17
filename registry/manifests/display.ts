@@ -17,4 +17,5 @@ export const displayItems: ManifestItem[] = [
   { name: 'use-scrollspy', type: 'registry:hook', files: ['registry/hooks/use-scrollspy.ts'] },
   { name: 'toc', type: 'registry:ui', category: 'navigation', files: ['registry/ui/toc.tsx'] },
   { name: 'cookie-consent', type: 'registry:ui', category: 'feedback', files: ['registry/ui/cookie-consent.tsx'] },
+  { name: 'mega-menu', type: 'registry:ui', category: 'navigation', files: ['registry/ui/mega-menu.tsx'] },
 ];
