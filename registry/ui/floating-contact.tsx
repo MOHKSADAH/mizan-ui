@@ -116,6 +116,7 @@ function FloatingContact({ whatsapp, phone, onChat, defaultOpen = false, labels,
                 size="lg"
                 className={action}
                 onClick={() => {
+                  toggle.current?.focus()
                   setOpen(false)
                   onChat()
                 }}
