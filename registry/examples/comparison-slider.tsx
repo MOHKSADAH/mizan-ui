@@ -27,8 +27,8 @@ export function Default({ lang }: ExampleProps) {
       className="max-w-lg"
       lang={lang}
       labels={ar ? comparisonSliderLabelsAr : undefined}
-      before={{ src: 'https://picsum.photos/id/1015/1200/675?grayscale', alt: ar ? 'النهر قبل' : 'River before', caption: ar ? 'قبل' : 'Before' }}
-      after={{ src: 'https://picsum.photos/id/1015/1200/675', alt: ar ? 'النهر بعد' : 'River after', caption: ar ? 'بعد' : 'After' }}
+      before={{ src: '/examples/comparison-before.svg', alt: ar ? 'المنظر قبل' : 'Scene before', caption: ar ? 'قبل' : 'Before' }}
+      after={{ src: '/examples/comparison-after.svg', alt: ar ? 'المنظر بعد' : 'Scene after', caption: ar ? 'بعد' : 'After' }}
     />
   );
 }

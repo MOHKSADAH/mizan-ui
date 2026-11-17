@@ -23,16 +23,11 @@ export const doc: ExampleDoc = {
   ],
 };
 
-const make = (ar: boolean) =>
-  [
-    { id: 11, alt: ar ? 'منظر أمامي' : 'Front view' },
-    { id: 12, alt: ar ? 'منظر جانبي' : 'Side view' },
-    { id: 13, alt: ar ? 'منظر خلفي' : 'Back view' },
-  ].map(({ id, alt }) => ({
-    src: `https://picsum.photos/id/${id}/1200/800`,
-    thumb: `https://picsum.photos/id/${id}/300/300`,
-    alt,
-  }));
+const make = (ar: boolean) => [
+  { src: '/examples/lightbox-front.svg', alt: ar ? 'منظر أمامي' : 'Front view' },
+  { src: '/examples/lightbox-side.svg', alt: ar ? 'منظر جانبي' : 'Side view' },
+  { src: '/examples/lightbox-back.svg', alt: ar ? 'منظر خلفي' : 'Back view' },
+];
 
 export function Default({ lang }: ExampleProps) {
   const ar = lang === 'ar';
