@@ -15,4 +15,5 @@ export const inputsItems: ManifestItem[] = [
   { name: 'signature-pad', type: 'registry:ui', category: 'forms', files: ['registry/ui/signature-pad.tsx'] },
   { name: 'inline-edit', type: 'registry:ui', category: 'forms', files: ['registry/ui/inline-edit.tsx'] },
   { name: 'rating-input', type: 'registry:ui', category: 'forms', files: ['registry/ui/rating-input.tsx'] },
+  { name: 'segmented-control', type: 'registry:ui', category: 'forms', files: ['registry/ui/segmented-control.tsx'] },
 ];
