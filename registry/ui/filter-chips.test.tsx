@@ -37,3 +37,8 @@ test("keeps the live region when no filters are active", () => {
   expect(html).not.toContain("Clear all")
   expect(html).toContain("0 results")
 })
+
+test("the root can take focus when the last chip or clear all unmounts", () => {
+  const html = renderToString(<FilterChips filters={filters} onRemove={() => {}} onClearAll={() => {}} />)
+  expect(html).toMatch(/^<div[^>]*data-slot="filter-chips"[^>]*tabindex="-1"/)
+})

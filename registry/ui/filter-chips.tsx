@@ -1,5 +1,7 @@
+"use client"
+
 import * as React from "react"
-import { XIcon } from "@phosphor-icons/react/ssr"
+import { XIcon } from "@phosphor-icons/react"
 
 import { cn } from "@/registry/lib/utils"
 import { plural, type Digits, type Lang, type Locale } from "@/registry/lib/format"
@@ -56,9 +58,16 @@ function FilterChips({
   ...props
 }: FilterChipsProps) {
   const t = { ...defaultLabels, ...labels }
+  const root = React.useRef<HTMLDivElement>(null)
 
   return (
-    <div data-slot="filter-chips" className={cn("flex min-w-0 flex-col gap-2", className)} {...props}>
+    <div
+      ref={root}
+      data-slot="filter-chips"
+      tabIndex={-1}
+      className={cn("flex min-w-0 flex-col gap-2 outline-none", className)}
+      {...props}
+    >
       {filters.length > 0 && (
         <div className="flex items-center gap-2">
           <ul
@@ -75,7 +84,15 @@ function FilterChips({
                 <button
                   type="button"
                   aria-label={t.remove(filter.label)}
-                  onClick={() => onRemove(filter.id)}
+                  onClick={(event) => {
+                    // The button unmounts, so focus moves to the next chip, else the previous one, else the root.
+                    const item = event.currentTarget.closest("li")
+                    const next =
+                      item?.nextElementSibling?.querySelector("button") ??
+                      item?.previousElementSibling?.querySelector("button")
+                    ;(next ?? root.current)?.focus()
+                    onRemove(filter.id)
+                  }}
                   className="inline-flex size-6 items-center justify-center rounded-full outline-none hover:bg-muted focus-visible:ring-3 focus-visible:ring-ring/50"
                 >
                   <XIcon aria-hidden="true" weight="bold" className="size-3" />
@@ -83,7 +100,15 @@ function FilterChips({
               </li>
             ))}
           </ul>
-          <Button variant="ghost" size="sm" onClick={onClearAll} className="shrink-0">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => {
+              root.current?.focus()
+              onClearAll()
+            }}
+            className="shrink-0"
+          >
             {t.clearAll}
           </Button>
         </div>
