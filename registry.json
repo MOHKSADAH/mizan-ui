@@ -1638,6 +1638,28 @@
       ]
     },
     {
+      "name": "floating-contact",
+      "type": "registry:ui",
+      "title": "Floating Contact",
+      "description": "Floating WhatsApp, call and chat launcher that lifts above a sticky bar and respects safe areas.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/floating-contact.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

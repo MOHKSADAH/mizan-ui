@@ -22,4 +22,5 @@ export const commerceItems: ManifestItem[] = [
   item('stock-indicator', 'Stock status line: in stock, low stock with a plural count, and out of stock, with an icon and text.'),
   item('delivery-estimate', 'Arrival date in a given time zone, a city slot and a free shipping progress bar.'),
   item('order-stepper', 'Checkout steps in an ordered list with aria-current, completed checks and a compact mode.'),
+  item('floating-contact', 'Floating WhatsApp, call and chat launcher that lifts above a sticky bar and respects safe areas.'),
 ];
