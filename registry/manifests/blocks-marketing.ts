@@ -57,4 +57,12 @@ export const marketingBlocks: ManifestItem[] = [
     description: 'Compact store-features strip with icon, title and one line of text.',
     files: ['registry/blocks/features/features-07.tsx'],
   },
+  {
+    name: 'logo-cloud-01',
+    type: 'registry:block',
+    family: 'logo-cloud',
+    title: 'Logo Cloud 01',
+    description: 'Centered title above one wrapping row of customer logos.',
+    files: ['registry/blocks/logo-cloud/logo-cloud-01.tsx'],
+  },
 ];

@@ -1598,6 +1598,26 @@
       ]
     },
     {
+      "name": "logo-cloud-01",
+      "type": "registry:block",
+      "title": "Logo Cloud 01",
+      "description": "Centered title above one wrapping row of customer logos.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/logo-cloud/logo-cloud-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
