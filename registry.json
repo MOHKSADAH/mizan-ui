@@ -1839,6 +1839,29 @@
       ]
     },
     {
+      "name": "legal-01",
+      "type": "registry:block",
+      "title": "Legal 01",
+      "description": "Legal page with prose sections and a sticky table of contents that collapses on mobile.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/collapsible",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/legal/legal-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

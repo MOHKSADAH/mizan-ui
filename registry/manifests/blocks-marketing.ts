@@ -145,4 +145,12 @@ export const marketingBlocks: ManifestItem[] = [
     description: 'Centered 404 page with error code, search field and home button.',
     files: ['registry/blocks/utility/utility-01.tsx'],
   },
+  {
+    name: 'legal-01',
+    type: 'registry:block',
+    family: 'legal',
+    title: 'Legal 01',
+    description: 'Legal page with prose sections and a sticky table of contents that collapses on mobile.',
+    files: ['registry/blocks/legal/legal-01.tsx'],
+  },
 ];
