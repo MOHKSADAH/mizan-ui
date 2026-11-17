@@ -1368,6 +1368,24 @@
       ]
     },
     {
+      "name": "container",
+      "type": "registry:ui",
+      "title": "Container",
+      "description": "Centered page container with four max widths and responsive inline padding.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/container.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "layout"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
