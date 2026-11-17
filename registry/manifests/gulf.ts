@@ -22,4 +22,5 @@ export const gulfItems: ManifestItem[] = [
   lib('saudi-regions', 'saudi-regions', 'Saudi administrative regions with main cities, in Arabic and English.'),
   lib('hijri', 'hijri', 'Umm al-Qura Hijri date formatting and parts through Intl.'),
   ui('saudi-id-input', 'forms', 'A 10-digit national ID or Iqama field with Arabic-Indic digit input and a Luhn format check on blur.'),
+  ui('phone-input', 'forms', 'A country combobox (GCC first, default +966) and a national number field with as-you-type formatting and E.164 output.'),
 ];

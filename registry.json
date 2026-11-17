@@ -1437,6 +1437,34 @@
       ]
     },
     {
+      "name": "phone-input",
+      "type": "registry:ui",
+      "title": "Phone Input",
+      "description": "A country combobox (GCC first, default +966) and a national number field with as-you-type formatting and E.164 output.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10",
+        "libphonenumber-js@^1.13.16"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/combobox",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/label",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/phone-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
