@@ -41,4 +41,12 @@ export const marketingBlocks: ManifestItem[] = [
     description: 'Store banner carousel with a flat text panel, dot indicators and labelled slides.',
     files: ['registry/blocks/hero/hero-08.tsx'],
   },
+  {
+    name: 'features-01',
+    type: 'registry:block',
+    family: 'features',
+    title: 'Features 01',
+    description: 'Centered section header over a responsive grid of icon cards.',
+    files: ['registry/blocks/features/features-01.tsx'],
+  },
 ];
