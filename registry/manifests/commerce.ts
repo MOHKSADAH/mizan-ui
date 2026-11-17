@@ -14,4 +14,5 @@ export const commerceItems: ManifestItem[] = [
   item('swatch-select', 'Color, size and image swatches as a radio group with a selected name and out-of-stock state.'),
   item('filter-chips', 'Removable active-filter chips with clear all, a live result count and a scrolling row.'),
   item('status-badge', 'Order status badge (pending to refunded) with an icon, text and a status token color.'),
+  item('payment-method-select', 'Radio group of payment methods with icon slots, fee, disabled reason and a details panel.'),
 ];

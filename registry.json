@@ -1464,6 +1464,27 @@
       ]
     },
     {
+      "name": "payment-method-select",
+      "type": "registry:ui",
+      "title": "Payment Method Select",
+      "description": "Radio group of payment methods with icon slots, fee, disabled reason and a details panel.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/radio-group",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/payment-method-select.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
