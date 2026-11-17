@@ -46,7 +46,8 @@ type VatTotals = { base: number; vat: number; total: number }
 // Rounds to the currency's minor unit. Inclusive prices pull VAT out of the base, exclusive prices add it.
 function computeVat(base: number, { rate, included }: Vat, currency: string): VatTotals {
   const unit = 10 ** minorUnits(currency)
-  const round = (n: number) => Math.round(n * unit) / unit
+  // toPrecision drops float noise first, so 0.495 rounds up to 0.50 and not down to 0.49.
+  const round = (n: number) => Math.round(Number((n * unit).toPrecision(15))) / unit
   const vat = round(included ? (base * rate) / (1 + rate) : base * rate)
   return { base, vat, total: included ? base : round(base + vat) }
 }
