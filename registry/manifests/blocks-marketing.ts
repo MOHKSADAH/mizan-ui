@@ -17,4 +17,12 @@ export const marketingBlocks: ManifestItem[] = [
     description: 'Navbar with a contact utility bar (phone, WhatsApp, language) above a single main bar and mobile sheet.',
     files: ['registry/blocks/navbar/navbar-04.tsx'],
   },
+  {
+    name: 'hero-01',
+    type: 'registry:block',
+    family: 'hero',
+    title: 'Hero 01',
+    description: 'Centered text hero with eyebrow, heading, lead and primary, secondary or WhatsApp buttons.',
+    files: ['registry/blocks/hero/hero-01.tsx'],
+  },
 ];
