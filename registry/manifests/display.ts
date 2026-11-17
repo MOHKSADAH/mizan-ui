@@ -18,4 +18,5 @@ export const displayItems: ManifestItem[] = [
   { name: 'toc', type: 'registry:ui', category: 'navigation', files: ['registry/ui/toc.tsx'] },
   { name: 'cookie-consent', type: 'registry:ui', category: 'feedback', files: ['registry/ui/cookie-consent.tsx'] },
   { name: 'mega-menu', type: 'registry:ui', category: 'navigation', files: ['registry/ui/mega-menu.tsx'] },
+  { name: 'avatar-group', type: 'registry:ui', category: 'data-display', files: ['registry/ui/avatar-group.tsx'] },
 ];
