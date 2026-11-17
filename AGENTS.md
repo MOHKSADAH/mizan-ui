@@ -53,6 +53,7 @@ bun run lint
 bun run typecheck
 bun test
 bun run check:physical
+bun run check:blocks
 ```
 
 ## New-item checklist
@@ -91,6 +92,15 @@ bun run check:physical
 - Directional icons we add get `rtl:rotate-180`. shadcn's own components flip theirs already.
 - Server Components import icons from `@phosphor-icons/react/ssr` and pass `weight` on each icon. `IconContext` works only in client trees.
 - Numbers, prices and IDs inside Arabic text go in `<bdi>` or `dir="ltr"`.
+
+## Blocks
+
+- File `registry/blocks/<family>/<family>-NN.tsx`, with one manifest entry `{ name: '<family>-NN', type: 'registry:block', family: '<family>', title, description, files: [that file] }`.
+- It exports a named PascalCase component and also `export default` of it. The root is `Section` or `Container`.
+- It exports `labelsEn` and `labelsAr` (typed labels; strings and `Plural` functions only).
+- It exports `demo: { en: Props; ar: Props }`, realistic sample data in each language. The docs page renders `<Default {...demo[lang]} />`, so that render must look complete.
+- No variant imports another variant. Shared code comes only from `registry/ui`, `registry/lib` or `registry/hooks`.
+- `bun run check:blocks` enforces the exports, `Section`/`Container` and no hex or rgb colors.
 
 ## Commits
 
