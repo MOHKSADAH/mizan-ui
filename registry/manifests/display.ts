@@ -13,4 +13,5 @@ export const displayItems: ManifestItem[] = [
   { name: 'bottom-nav', type: 'registry:ui', category: 'navigation', files: ['registry/ui/bottom-nav.tsx'] },
   { name: 'image-lightbox', type: 'registry:ui', category: 'overlays', files: ['registry/ui/image-lightbox.tsx'] },
   { name: 'comparison-slider', type: 'registry:ui', category: 'data-display', files: ['registry/ui/comparison-slider.tsx'] },
+  { name: 'marquee', type: 'registry:ui', category: 'layout', files: ['registry/ui/marquee.tsx'] },
 ];
