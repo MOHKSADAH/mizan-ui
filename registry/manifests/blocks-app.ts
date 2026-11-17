@@ -41,4 +41,12 @@ export const appBlocks: ManifestItem[] = [
     description: 'Customers table where a row opens a profile Sheet from the end side.',
     files: ['registry/blocks/data-table/data-table-03.tsx'],
   },
+  {
+    name: 'settings-01',
+    type: 'registry:block',
+    family: 'settings',
+    title: 'Settings 01',
+    description: 'Settings page with vertical tabs on desktop, a select on mobile and forms built with Field.',
+    files: ['registry/blocks/settings/settings-01.tsx'],
+  },
 ];

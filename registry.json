@@ -1584,6 +1584,31 @@
       ]
     },
     {
+      "name": "settings-01",
+      "type": "registry:block",
+      "title": "Settings 01",
+      "description": "Settings page with vertical tabs on desktop, a select on mobile and forms built with Field.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/field",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/select",
+        "MOHKSADAH/mizan-ui/switch",
+        "MOHKSADAH/mizan-ui/tabs",
+        "MOHKSADAH/mizan-ui/textarea",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/settings/settings-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
