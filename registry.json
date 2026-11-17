@@ -1388,6 +1388,26 @@
       ]
     },
     {
+      "name": "qr-code",
+      "type": "registry:ui",
+      "title": "Qr Code",
+      "dependencies": [
+        "uqr@^0.1.3"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/qr-code.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
