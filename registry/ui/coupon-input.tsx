@@ -104,7 +104,7 @@ function CouponInput({
             className="flex-1 text-start"
           />
           <Button type="submit" variant="outline" disabled={pending || !code.trim()}>
-            {pending && <Spinner aria-hidden="true" role="none" className="motion-reduce:animate-none" />}
+            {pending && <Spinner aria-hidden="true" role={undefined} className="motion-reduce:animate-none" />}
             {t.apply}
           </Button>
         </div>
