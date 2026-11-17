@@ -2,6 +2,7 @@ import { expect, test } from 'bun:test';
 import { renderToString } from 'react-dom/server';
 import Hero01, { demo as demo01 } from './hero-01';
 import Hero02, { demo as demo02 } from './hero-02';
+import Hero08, { demo as demo08 } from './hero-08';
 
 test('hero-01 renders in English', () => {
   const html = renderToString(<Hero01 {...demo01.en} id="hero" />);
@@ -35,4 +36,18 @@ test('hero-02 renders a Media object as an image', () => {
   );
   expect(html).toContain('alt="Dashboard"');
   expect(html).toContain('width="800"');
+});
+
+test('hero-08 renders labelled slides in English', () => {
+  const html = renderToString(<Hero08 {...demo08.en} id="banner" />);
+  expect(html).toContain('aria-roledescription="carousel"');
+  expect(html).toContain('aria-label="1 / 3"');
+  expect(html).toContain('New season collection');
+  expect(html).toContain('>Previous slide<');
+});
+
+test('hero-08 renders in Arabic', () => {
+  const html = renderToString(<Hero08 {...demo08.ar} />);
+  expect(html).toContain('تشكيلة الموسم الجديد');
+  expect(html).toContain('>الشريحة التالية<');
 });

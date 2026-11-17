@@ -33,4 +33,12 @@ export const marketingBlocks: ManifestItem[] = [
     description: 'Split hero with text at the start and a fixed-ratio image or slot at the end.',
     files: ['registry/blocks/hero/hero-02.tsx'],
   },
+  {
+    name: 'hero-08',
+    type: 'registry:block',
+    family: 'hero',
+    title: 'Hero 08',
+    description: 'Store banner carousel with a flat text panel, dot indicators and labelled slides.',
+    files: ['registry/blocks/hero/hero-08.tsx'],
+  },
 ];
