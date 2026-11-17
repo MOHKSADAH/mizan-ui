@@ -105,4 +105,12 @@ export const marketingBlocks: ManifestItem[] = [
     description: 'WhatsApp call to action with response-time note, phone number and opening hours.',
     files: ['registry/blocks/cta/cta-04.tsx'],
   },
+  {
+    name: 'contact-01',
+    type: 'registry:block',
+    family: 'contact',
+    title: 'Contact 01',
+    description: 'Contact info cards beside a validated message form with topic select and status message.',
+    files: ['registry/blocks/contact/contact-01.tsx'],
+  },
 ];

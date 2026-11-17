@@ -1728,6 +1728,33 @@
       ]
     },
     {
+      "name": "contact-01",
+      "type": "registry:block",
+      "title": "Contact 01",
+      "description": "Contact info cards beside a validated message form with topic select and status message.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/field",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/select",
+        "MOHKSADAH/mizan-ui/textarea",
+        "MOHKSADAH/mizan-ui/whatsapp"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/contact/contact-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
