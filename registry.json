@@ -1555,6 +1555,35 @@
       ]
     },
     {
+      "name": "data-table-03",
+      "type": "registry:block",
+      "title": "Data table 03",
+      "description": "Customers table where a row opens a profile Sheet from the end side.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10",
+        "@tanstack/react-table@^9.3.1"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/input-group",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/separator",
+        "MOHKSADAH/mizan-ui/sheet",
+        "MOHKSADAH/mizan-ui/table",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/data-table/data-table-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

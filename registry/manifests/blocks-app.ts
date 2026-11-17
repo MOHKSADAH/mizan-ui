@@ -33,4 +33,12 @@ export const appBlocks: ManifestItem[] = [
     description: 'Orders table with sorting, column visibility, search, row selection with a bulk action bar and pagination.',
     files: ['registry/blocks/data-table/data-table-01.tsx'],
   },
+  {
+    name: 'data-table-03',
+    type: 'registry:block',
+    family: 'data-table',
+    title: 'Data table 03',
+    description: 'Customers table where a row opens a profile Sheet from the end side.',
+    files: ['registry/blocks/data-table/data-table-03.tsx'],
+  },
 ];
