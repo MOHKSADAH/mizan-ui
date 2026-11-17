@@ -22,4 +22,19 @@ export const foundationItems: ManifestItem[] = [
     description: 'Page section with vertical rhythm, and SectionHeader with eyebrow, heading, description and actions.',
     files: ['registry/ui/section.tsx'],
   },
+  {
+    name: 'whatsapp',
+    type: 'registry:lib',
+    title: 'WhatsApp URL',
+    description: 'whatsappUrl(): builds a wa.me link from a phone number and a prefilled message.',
+    files: ['registry/lib/whatsapp.ts'],
+  },
+  {
+    name: 'whatsapp-button',
+    type: 'registry:ui',
+    category: 'commerce',
+    title: 'WhatsApp Button',
+    description: 'Link button that opens WhatsApp with a prefilled message, with a floating variant.',
+    files: ['registry/ui/whatsapp-button.tsx'],
+  },
 ];
