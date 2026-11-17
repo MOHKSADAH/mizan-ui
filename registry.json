@@ -1549,6 +1549,27 @@
       ]
     },
     {
+      "name": "product-gallery",
+      "type": "registry:ui",
+      "title": "Product Gallery",
+      "description": "Product image gallery with Embla swipe, thumbnails, RTL direction and optional zoom dialog.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/carousel",
+        "MOHKSADAH/mizan-ui/dialog",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/product-gallery.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
