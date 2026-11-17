@@ -1683,6 +1683,30 @@
       ]
     },
     {
+      "name": "zatca-invoice",
+      "type": "registry:ui",
+      "title": "Zatca Invoice",
+      "description": "A bilingual simplified tax invoice layout with VAT lines, totals and a ZATCA Phase 1 QR code, print friendly.",
+      "dependencies": [
+        "uqr@^0.1.3"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/zatca-qr"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/zatca-invoice.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
