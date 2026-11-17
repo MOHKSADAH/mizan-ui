@@ -8,7 +8,7 @@ export const doc: ExampleDoc = {
     en: "A progress bar drawn with text characters, with a percentage. The fill character, the empty character, the width and the maximum are props.",
     ar: "شريط تقدم مرسوم بحروف نصية مع نسبة مئوية. حرف الجزء المكتمل وحرف الجزء الفارغ والعرض والحد الأقصى كلها خصائص.",
   },
-  usage: `import { AsciiProgress } from "@/components/ui/ascii/ascii-progress"\n\n<AsciiProgress value={57} width={14} />`,
+  usage: `import { AsciiProgress } from "@/components/ui/ascii/ascii-progress"\n\n<AsciiProgress value={57} width={14} label="Upload progress" />`,
   accessibility: [
     {
       en: "The element has role progressbar with aria-valuemin, aria-valuemax, aria-valuenow and aria-valuetext in percent.",
@@ -34,7 +34,7 @@ export function Default({ lang }: ExampleProps) {
   return (
     <div className="flex flex-col gap-1 text-muted-foreground">
       <span className="text-sm">{lang === "ar" ? "رفع الملف" : "Uploading file"}</span>
-      <AsciiProgress value={57} width={14} />
+      <AsciiProgress value={57} width={14} label={lang === 'ar' ? 'تقدم التحميل' : 'Upload progress'} />
     </div>
   )
 }
@@ -52,11 +52,11 @@ export function Characters({ lang }: ExampleProps) {
             "Step 3 of 8"
           )}
         </span>
-        <AsciiProgress value={3} max={8} fill="=" empty="." width={24} />
+        <AsciiProgress value={3} max={8} fill="=" empty="." width={24} label={lang === 'ar' ? 'خطوات الإعداد' : 'Setup steps'} />
       </div>
       <div className="flex flex-col gap-1">
         <span className="text-sm">{lang === "ar" ? "اكتمل" : "Done"}</span>
-        <AsciiProgress value={100} showPercent={false} />
+        <AsciiProgress value={100} showPercent={false} label={lang === 'ar' ? 'اكتمل' : 'Complete'} />
       </div>
     </div>
   )

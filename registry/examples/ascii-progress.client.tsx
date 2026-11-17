@@ -14,7 +14,7 @@ export function ProgressStepper({ label, advance, reset }: ProgressStepperProps)
     <div className="flex flex-col items-start gap-3">
       <div className="flex flex-col gap-1 text-muted-foreground">
         <span className="text-sm">{label}</span>
-        <AsciiProgress value={value} width={20} />
+        <AsciiProgress value={value} width={20} label={label} />
       </div>
       <div className="flex gap-2">
         <Button

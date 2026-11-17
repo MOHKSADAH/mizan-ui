@@ -3,6 +3,7 @@ import { cn } from "@/registry/lib/utils"
 
 type AsciiProgressProps = {
   value: number
+  label: string
   max?: number
   width?: number
   fill?: string
@@ -13,6 +14,7 @@ type AsciiProgressProps = {
 
 export function AsciiProgress({
   value,
+  label,
   max = 100,
   width = 20,
   fill = "#",
@@ -25,6 +27,7 @@ export function AsciiProgress({
   return (
     <div
       role="progressbar"
+      aria-label={label}
       aria-valuemin={0}
       aria-valuemax={max}
       aria-valuenow={Math.min(Math.max(value, 0), max) || 0}

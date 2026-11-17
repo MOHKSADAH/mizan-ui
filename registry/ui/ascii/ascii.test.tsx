@@ -42,8 +42,9 @@ describe("AsciiSpinner", () => {
 
 describe("AsciiProgress", () => {
   test("renders the bar, percent and aria-value attributes", () => {
-    const html = renderToString(<AsciiProgress value={57} width={14} />)
+    const html = renderToString(<AsciiProgress value={57} width={14} label="Upload" />)
     expect(html).toContain('role="progressbar"')
+    expect(html).toContain('aria-label="Upload"')
     expect(html).toContain('aria-valuemin="0"')
     expect(html).toContain('aria-valuemax="100"')
     expect(html).toContain('aria-valuenow="57"')
@@ -52,7 +53,7 @@ describe("AsciiProgress", () => {
   })
 
   test("clamps aria-valuenow and can hide the percent", () => {
-    const html = renderToString(<AsciiProgress value={-3} max={10} showPercent={false} fill="=" empty="." width={4} />)
+    const html = renderToString(<AsciiProgress value={-3} max={10} showPercent={false} fill="=" empty="." width={4} label="Upload" />)
     expect(html).toContain('aria-valuenow="0"')
     expect(html).toContain("[....]")
     expect(html).not.toContain("%</bdi>")
