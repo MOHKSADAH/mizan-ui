@@ -13,4 +13,5 @@ export const inputsItems: ManifestItem[] = [
   { name: 'color', type: 'registry:lib', files: ['registry/lib/color.ts'] },
   { name: 'color-picker', type: 'registry:ui', category: 'forms', files: ['registry/ui/color-picker.tsx'] },
   { name: 'signature-pad', type: 'registry:ui', category: 'forms', files: ['registry/ui/signature-pad.tsx'] },
+  { name: 'inline-edit', type: 'registry:ui', category: 'forms', files: ['registry/ui/inline-edit.tsx'] },
 ];
