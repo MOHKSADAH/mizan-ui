@@ -1525,6 +1525,30 @@
       ]
     },
     {
+      "name": "coupon-input",
+      "type": "registry:ui",
+      "title": "Coupon Input",
+      "description": "Coupon code field with apply and remove, pending, success and error states and an applied-code chip.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/spinner",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/coupon-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
