@@ -60,7 +60,6 @@ function subscribe(onChange: () => void) {
   }
 }
 
-const nowSeconds = () => Math.floor(Date.now() / 1000)
 const serverNow = () => null
 
 type CountdownProps = Omit<React.ComponentProps<"div">, "children"> & {
@@ -75,8 +74,10 @@ function Countdown({ to, onComplete, lang = "en", digits = "latn", labels, class
   const l = { ...defaultLabels, ...labels }
   const locale = { lang, digits }
   const target = new Date(to)
-  const now = React.useSyncExternalStore(subscribe, nowSeconds, serverNow)
-  const left = now === null ? null : Math.max(0, Math.floor(target.getTime() / 1000) - now)
+  const end = Math.floor(target.getTime() / 1000)
+  // Capped at the end, so an ended countdown stops re-rendering on every tick.
+  const now = React.useSyncExternalStore(subscribe, () => Math.min(end, Math.floor(Date.now() / 1000)), serverNow)
+  const left = now === null ? null : end - now
 
   const complete = React.useRef(onComplete)
   React.useEffect(() => {
