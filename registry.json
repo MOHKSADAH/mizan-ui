@@ -1603,6 +1603,35 @@
       ]
     },
     {
+      "name": "use-scrollspy",
+      "type": "registry:hook",
+      "title": "Use Scrollspy",
+      "files": [
+        {
+          "path": "registry/hooks/use-scrollspy.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "toc",
+      "type": "registry:ui",
+      "title": "Toc",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/use-scrollspy",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/toc.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
