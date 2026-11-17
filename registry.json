@@ -1570,6 +1570,28 @@
       ]
     },
     {
+      "name": "stock-indicator",
+      "type": "registry:ui",
+      "title": "Stock Indicator",
+      "description": "Stock status line: in stock, low stock with a plural count, and out of stock, with an icon and text.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/stock-indicator.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
