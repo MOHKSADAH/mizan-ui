@@ -1398,6 +1398,27 @@
       ]
     },
     {
+      "name": "swatch-select",
+      "type": "registry:ui",
+      "title": "Swatch Select",
+      "description": "Color, size and image swatches as a radio group with a selected name and out-of-stock state.",
+      "dependencies": [
+        "@base-ui/react@^1.9.0"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/swatch-select.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
