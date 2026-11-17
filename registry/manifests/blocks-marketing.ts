@@ -137,4 +137,12 @@ export const marketingBlocks: ManifestItem[] = [
     description: 'Full-width announcement bar with a centered message, link and dismiss button.',
     files: ['registry/blocks/banner/banner-01.tsx'],
   },
+  {
+    name: 'utility-01',
+    type: 'registry:block',
+    family: 'utility',
+    title: 'Utility 01',
+    description: 'Centered 404 page with error code, search field and home button.',
+    files: ['registry/blocks/utility/utility-01.tsx'],
+  },
 ];
