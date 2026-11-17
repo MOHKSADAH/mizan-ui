@@ -98,7 +98,8 @@ function Countdown({ to, onComplete, lang = "en", digits = "latn", labels, class
   }
 
   const parts = countdownParts(left)
-  const minuteParts = countdownParts(Math.floor(left / 60) * 60)
+  // Rounded up, so the last minute is read as "1 minute", not "0 minutes".
+  const minuteParts = countdownParts(Math.ceil(left / 60) * 60)
   const time = new Intl.ListFormat(lang, { type: "conjunction" }).format(
     (["days", "hours", "minutes"] as const)
       .filter((unit) => minuteParts[unit] > 0 || (unit === "minutes" && !minuteParts.days && !minuteParts.hours))
