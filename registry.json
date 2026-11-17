@@ -1353,6 +1353,66 @@
       ]
     },
     {
+      "name": "gulf-validators",
+      "type": "registry:lib",
+      "title": "Gulf Validators",
+      "description": "Format checks for Saudi national ID, VAT number, IBAN, mobile number and CR number.",
+      "files": [
+        {
+          "path": "registry/lib/gulf/validators.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "arabic-normalize",
+      "type": "registry:lib",
+      "title": "Arabic Normalize",
+      "description": "Arabic text normalization and accent-insensitive matching for search.",
+      "files": [
+        {
+          "path": "registry/lib/gulf/arabic-normalize.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "zatca-qr",
+      "type": "registry:lib",
+      "title": "Zatca Qr",
+      "description": "ZATCA Phase 1 invoice QR payload (TLV, base64) encoder and decoder.",
+      "files": [
+        {
+          "path": "registry/lib/gulf/zatca-qr.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "saudi-regions",
+      "type": "registry:lib",
+      "title": "Saudi Regions",
+      "description": "Saudi administrative regions with main cities, in Arabic and English.",
+      "files": [
+        {
+          "path": "registry/lib/gulf/saudi-regions.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "hijri",
+      "type": "registry:lib",
+      "title": "Hijri",
+      "description": "Umm al-Qura Hijri date formatting and parts through Intl.",
+      "files": [
+        {
+          "path": "registry/lib/gulf/hijri.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
