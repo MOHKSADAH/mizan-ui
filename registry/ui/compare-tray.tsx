@@ -1,5 +1,7 @@
+"use client"
+
 import * as React from "react"
-import { XIcon } from "@phosphor-icons/react/ssr"
+import { XIcon } from "@phosphor-icons/react"
 
 import { cn } from "@/registry/lib/utils"
 import { formatNumber, type Digits, type Lang } from "@/registry/lib/format"
@@ -67,12 +69,15 @@ function CompareTray({
   const t = { ...defaultLabels, ...labels }
   const locale = { lang, digits }
   const ready = items.length >= min
+  const root = React.useRef<HTMLElement>(null)
 
   return (
     <section
+      ref={root}
       data-slot="compare-tray"
       aria-label={t.region}
-      className={cn("flex flex-wrap items-center gap-3 border border-border bg-card p-3 text-card-foreground", className)}
+      tabIndex={-1}
+      className={cn("flex flex-wrap items-center gap-3 border border-border bg-card p-3 text-card-foreground outline-none", className)}
       {...props}
     >
       <div className="flex min-w-0 flex-col text-sm">
@@ -95,7 +100,14 @@ function CompareTray({
             <button
               type="button"
               aria-label={t.remove(item.name)}
-              onClick={() => onRemove(item.id)}
+              onClick={(event) => {
+                // The button unmounts, so focus moves to the next item, else the previous one, else the tray.
+                const li = event.currentTarget.closest("li")
+                const next =
+                  li?.nextElementSibling?.querySelector("button") ?? li?.previousElementSibling?.querySelector("button")
+                ;(next ?? root.current)?.focus()
+                onRemove(item.id)
+              }}
               className="inline-flex size-6 items-center justify-center rounded-full outline-none hover:bg-muted focus-visible:ring-3 focus-visible:ring-ring/50"
             >
               <XIcon aria-hidden="true" weight="bold" className="size-3" />
@@ -108,7 +120,13 @@ function CompareTray({
       </ul>
       <div className="flex items-center gap-2">
         {items.length > 0 && (
-          <Button variant="ghost" onClick={onClear}>
+          <Button
+            variant="ghost"
+            onClick={() => {
+              root.current?.focus()
+              onClear()
+            }}
+          >
             {t.clear}
           </Button>
         )}

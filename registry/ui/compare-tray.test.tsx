@@ -18,6 +18,11 @@ test("renders items, count and an enabled compare button in en", () => {
   expect(html).not.toMatch(/ disabled[ =>]/)
 })
 
+test("the tray can take focus when an item or clear all unmounts", () => {
+  const html = renderToString(<CompareTray items={items} onRemove={noop} onClear={noop} onCompare={noop} />)
+  expect(html).toMatch(/<section[^>]*tabindex="-1"/)
+})
+
 test("disables compare below the minimum and says why", () => {
   const html = renderToString(<CompareTray items={items.slice(0, 1)} onRemove={noop} onClear={noop} onCompare={noop} />)
   expect(html).toContain("Add at least 2 products to compare")
