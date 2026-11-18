@@ -265,7 +265,7 @@ function WeekEditor({ week, onChange, format, labels, weekStartsOn }: {
   const timeSelect = (day: number, intervals: Interval[], n: number, key: keyof Interval) => {
     const options =
       key === "open"
-        ? steps.filter((t) => t < "24:00" && (n === 0 || t >= intervals[n - 1].close))
+        ? steps.filter((t) => t < intervals[n].close && (n === 0 || t >= intervals[n - 1].close))
         : steps.filter((t) => t > intervals[n].open && (n === intervals.length - 1 || t <= intervals[n + 1].open))
     return (
       <Select
