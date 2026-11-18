@@ -105,4 +105,12 @@ export const appBlocks: ManifestItem[] = [
     description: 'No-results empty state with the search query, tips and a clear filters action.',
     files: ['registry/blocks/empty-state/empty-state-02.tsx'],
   },
+  {
+    name: 'notifications-01',
+    type: 'registry:block',
+    family: 'notifications',
+    title: 'Notifications 01',
+    description: 'Bell button with an unread count that opens a popover list with mark all as read.',
+    files: ['registry/blocks/notifications/notifications-01.tsx'],
+  },
 ];
