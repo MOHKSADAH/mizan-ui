@@ -125,7 +125,7 @@ function Pricing01({
             const money = isMoney(plan.price) ? plan.price : plan.price?.[current]
             const recurring = plan.price !== null && !isMoney(plan.price)
             return (
-              <li key={plan.id} className={cn(plan.highlighted && "max-md:order-first")}>
+              <li key={plan.id}>
                 <Card className={cn("h-full md:[--card-spacing:--spacing(6)]", plan.highlighted && "ring-2 ring-primary")}>
                   <CardContent className="flex h-full flex-col gap-6">
                     <div className="flex flex-col gap-2">
