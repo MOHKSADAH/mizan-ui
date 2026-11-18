@@ -1963,6 +1963,31 @@
       ]
     },
     {
+      "name": "pricing-05",
+      "type": "registry:block",
+      "title": "Pricing 05",
+      "description": "Service packages with a starting-from price, duration, bullets and a WhatsApp quote button.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/whatsapp-button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/pricing/pricing-05.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

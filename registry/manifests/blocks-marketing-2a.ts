@@ -193,4 +193,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'Plan cards with a period toggle and a VAT switch that announces the price mode.',
     files: ['registry/blocks/pricing/pricing-04.tsx'],
   },
+  {
+    name: 'pricing-05',
+    type: 'registry:block',
+    family: 'pricing',
+    title: 'Pricing 05',
+    description: 'Service packages with a starting-from price, duration, bullets and a WhatsApp quote button.',
+    files: ['registry/blocks/pricing/pricing-05.tsx'],
+  },
 ];
