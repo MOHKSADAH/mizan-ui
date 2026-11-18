@@ -137,7 +137,7 @@ function Pricing02({
             {rows.map((group) => (
               <TableBody key={group.group}>
                 <TableRow className="bg-muted/50 hover:bg-muted/50">
-                  <TableHead scope="colgroup" colSpan={plans.length + 1} className="sticky start-0 font-semibold">
+                  <TableHead scope="rowgroup" colSpan={plans.length + 1} className="sticky start-0 font-semibold">
                     {group.group}
                   </TableHead>
                 </TableRow>
