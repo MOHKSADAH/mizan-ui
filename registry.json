@@ -1705,6 +1705,133 @@
       ]
     },
     {
+      "name": "ascii",
+      "type": "registry:lib",
+      "title": "ASCII helpers",
+      "description": "Pure helpers for the ASCII pack: spinner frames, text bars, sparklines and terminal typing.",
+      "files": [
+        {
+          "path": "registry/lib/ascii.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "ascii-text",
+      "type": "registry:ui",
+      "title": "ASCII Text",
+      "description": "Large figlet banner text with a screen reader label.",
+      "dependencies": [
+        "figlet@^1.12.0"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/ascii/ascii-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "ascii"
+      ]
+    },
+    {
+      "name": "ascii-spinner",
+      "type": "registry:ui",
+      "title": "ASCII Spinner",
+      "description": "Character-frame loading spinner that respects reduced motion.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/ascii",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/ascii/ascii-spinner.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "ascii"
+      ]
+    },
+    {
+      "name": "ascii-progress",
+      "type": "registry:ui",
+      "title": "ASCII Progress",
+      "description": "Text progress bar with a progressbar role and percentage.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/ascii",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/ascii/ascii-progress.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "ascii"
+      ]
+    },
+    {
+      "name": "ascii-box",
+      "type": "registry:ui",
+      "title": "ASCII Box",
+      "description": "Box-drawing frame and divider (AsciiBox and AsciiDivider).",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/ascii/ascii-box.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "ascii"
+      ]
+    },
+    {
+      "name": "ascii-chart",
+      "type": "registry:ui",
+      "title": "ASCII Chart",
+      "description": "Block-character bar chart and sparkline with a text alternative.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/ascii",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/ascii/ascii-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "ascii"
+      ]
+    },
+    {
+      "name": "terminal",
+      "type": "registry:ui",
+      "title": "Terminal",
+      "description": "Terminal window with optional typing effect and a copy-commands button.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/ascii",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/ascii/terminal.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "ascii"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

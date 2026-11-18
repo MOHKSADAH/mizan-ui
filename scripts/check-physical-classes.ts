@@ -9,12 +9,8 @@ const PHYSICAL = new RegExp(
 );
 // Inline style objects: marginLeft, paddingRight, left: 0 and the like.
 const STYLE = /\b(?:margin|padding)(?:Left|Right)\s*:|[{,]\s*(?:left|right)\s*:/;
-// These need an RTL counterpart on the same line.
-const PAIRED: [RegExp, RegExp][] = [
-  [new RegExp(B + String.raw`space-x-`), /rtl:space-x-reverse/],
-  [new RegExp(B + String.raw`divide-x(?![\w-]*-reverse)`), /rtl:divide-x-reverse/],
-  [/(?:^|[\s"'`{(,])-translate-x-/, /rtl:-?translate-x-/],
-];
+// These need an RTL counterpart on the same line. (Tailwind v4 space-x and divide-x are already logical.)
+const PAIRED: [RegExp, RegExp][] = [[/(?:^|[\s"'`{(,])-translate-x-/, /rtl:-?translate-x-/]];
 
 // Classes gated on a physical side variant (data-[side=left]:left-0) are physical on purpose.
 const SIDE_GATED = /\S*\[side=(?:left|right)\]\S*/g;
