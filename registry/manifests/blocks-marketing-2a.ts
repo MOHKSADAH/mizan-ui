@@ -121,4 +121,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'Heading with text at the start and a bordered logo grid at the end.',
     files: ['registry/blocks/logo-cloud/logo-cloud-04.tsx'],
   },
+  {
+    name: 'stats-02',
+    type: 'registry:block',
+    family: 'stats',
+    title: 'Stats 02',
+    description: 'Heading and text at the start with a two-by-two stats grid at the end.',
+    files: ['registry/blocks/stats/stats-02.tsx'],
+  },
 ];

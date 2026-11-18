@@ -1762,6 +1762,24 @@
       ]
     },
     {
+      "name": "stats-02",
+      "type": "registry:block",
+      "title": "Stats 02",
+      "description": "Heading and text at the start with a two-by-two stats grid at the end.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/stats/stats-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
