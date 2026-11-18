@@ -1,7 +1,5 @@
-"use client"
-
 import * as React from "react"
-import { ArrowDownIcon, ArrowUpIcon, MinusIcon } from "@phosphor-icons/react"
+import { ArrowDownIcon, ArrowUpIcon, MinusIcon } from "@phosphor-icons/react/ssr"
 import { cn } from "@/registry/lib/utils"
 import { formatCompact, formatNumber, formatSigned, type Digits, type Lang } from "@/registry/lib/format"
 import { sparklinePoints } from "@/registry/lib/sparkline"
@@ -39,33 +37,29 @@ const toneClass: Record<Tone, string> = {
 
 const toneIcon = { positive: ArrowUpIcon, negative: ArrowDownIcon, neutral: MinusIcon }
 
+const SPARK_WIDTH = 100
 const SPARK_HEIGHT = 32
 
+// Stretched to the card width by the viewBox, so it renders on the server with no measuring.
 function Sparkline({ values, className }: { values: number[]; className?: string }) {
-  const ref = React.useRef<HTMLDivElement>(null)
-  const [width, setWidth] = React.useState(0)
-  React.useLayoutEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const observer = new ResizeObserver(([entry]) => setWidth(Math.round(entry.contentRect.width)))
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
   return (
-    <div ref={ref} data-slot="stat-card-spark" className={cn("h-8 w-full", className)} aria-hidden="true">
-      {width > 0 && (
-        <svg width={width} height={SPARK_HEIGHT} className="overflow-visible rtl:-scale-x-100">
-          <polyline
-            points={sparklinePoints(values, width, SPARK_HEIGHT)}
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      )}
-    </div>
+    <svg
+      data-slot="stat-card-spark"
+      aria-hidden="true"
+      viewBox={`0 0 ${SPARK_WIDTH} ${SPARK_HEIGHT}`}
+      preserveAspectRatio="none"
+      className={cn("h-8 w-full overflow-visible rtl:-scale-x-100", className)}
+    >
+      <polyline
+        points={sparklinePoints(values, SPARK_WIDTH, SPARK_HEIGHT)}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        vectorEffect="non-scaling-stroke"
+      />
+    </svg>
   )
 }
 

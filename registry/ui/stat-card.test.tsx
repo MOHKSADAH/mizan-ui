@@ -28,3 +28,10 @@ test('loading renders a busy skeleton', () => {
   expect(html).toContain('aria-busy="true"');
   expect(html).not.toContain('Orders');
 });
+
+test('the sparkline renders on the server, mirrored in RTL', () => {
+  const html = renderToString(<StatCard label="Revenue" value={1} delta={2} spark={spark} />);
+  expect(html).toContain('data-slot="stat-card-spark"');
+  expect(html).toContain('<polyline points="2.0,');
+  expect(html).toContain('rtl:-scale-x-100');
+});
