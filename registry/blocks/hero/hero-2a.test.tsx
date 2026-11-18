@@ -4,6 +4,7 @@ import { DirectionProvider } from '@/registry/ui/direction';
 import Hero04, { demo as Hero04Demo } from './hero-04';
 import Hero05, { demo as Hero05Demo } from './hero-05';
 import Hero06, { demo as Hero06Demo } from './hero-06';
+import Hero07, { demo as Hero07Demo } from './hero-07';
 
 test('hero-04 renders in English', () => {
   const html = renderToString(<Hero04 {...Hero04Demo.en} />);
@@ -55,4 +56,22 @@ test('hero-06 renders in Arabic', () => {
   expect(html).toContain("اعثر على العقار المناسب");
   expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(1);
   expect(html).toContain("role=\"search\"");
+});
+
+test('hero-07 renders in English', () => {
+  const html = renderToString(<Hero07 {...Hero07Demo.en} />);
+  expect(html).toContain("See Rafid at work");
+  expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(1);
+  expect(html).toContain("aria-label=\"Play video: Rafid product tour\"");
+});
+
+test('hero-07 renders in Arabic', () => {
+  const html = renderToString(
+    <DirectionProvider direction="rtl">
+      <Hero07 {...Hero07Demo.ar} />
+    </DirectionProvider>,
+  );
+  expect(html).toContain("شاهد رافد في العمل");
+  expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(1);
+  expect(html).toContain("aria-label=\"تشغيل الفيديو: جولة في منتج رافد\"");
 });
