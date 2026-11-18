@@ -131,7 +131,11 @@ function Contact01({
     for (const key of ["name", "phone", "message"] as const) if (!values[key]) next[key] = t.required
     if (values.email && !/^\S+@\S+\.\S+$/.test(values.email)) next.email = t.invalidEmail
     setErrors(next)
-    if (Object.keys(next).length) return
+    const first = (["name", "phone", "email", "message"] as const).find((key) => next[key])
+    if (first) {
+      form.querySelector<HTMLElement>(`[name="${first}"]`)?.focus()
+      return
+    }
     setStatus("sending")
     try {
       await onSubmit?.({ ...values, email: values.email || undefined, topic: topic ?? undefined })
