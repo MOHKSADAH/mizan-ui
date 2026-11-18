@@ -45,3 +45,10 @@ test("renders in ar", () => {
   expect(html).toContain("يصل")
   expect(html).toContain("للحصول على شحن مجاني")
 })
+
+test("the progress value text follows lang and digits, not the runtime locale", () => {
+  const free = { threshold: 200, subtotal: 90 }
+  const day = new Date("2026-11-20T00:00:00Z")
+  expect(renderToString(<DeliveryEstimate date={day} freeShipping={free} />)).toContain('aria-valuetext="45%"')
+  expect(renderToString(<DeliveryEstimate date={day} freeShipping={free} lang="ar" digits="arab" />)).toContain('aria-valuetext="٤٥٪')
+})

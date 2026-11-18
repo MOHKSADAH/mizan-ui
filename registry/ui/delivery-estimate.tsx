@@ -2,7 +2,7 @@ import * as React from "react"
 import { CheckCircleIcon, TruckIcon } from "@phosphor-icons/react/ssr"
 
 import { cn } from "@/registry/lib/utils"
-import { formatDate, type Digits, type Lang } from "@/registry/lib/format"
+import { formatDate, localeTag, type Digits, type Lang } from "@/registry/lib/format"
 import { Price } from "@/registry/ui/price"
 import { Progress, ProgressLabel } from "@/registry/ui/progress"
 
@@ -82,7 +82,10 @@ function DeliveryEstimate({
             {t.freeReached}
           </p>
         ) : (
-          <Progress value={Math.round((freeShipping.subtotal / freeShipping.threshold) * 100)}>
+          <Progress
+            value={Math.round((freeShipping.subtotal / freeShipping.threshold) * 100)}
+            locale={localeTag({ lang, digits })}
+          >
             <ProgressLabel className="font-normal">
               {t.away(<Price amount={missing} currency={currency} lang={lang} digits={digits} decimals />)}
             </ProgressLabel>
