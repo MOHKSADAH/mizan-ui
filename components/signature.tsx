@@ -21,6 +21,15 @@ const progress = (t: number) =>
           ? 1 - (0.5 * VMAX * (1 - t) * (1 - t)) / decel
           : VMAX * (t - accel / 2);
 
+// The last stroke (the underline swash) draws TAIL_SPEED times faster, so the signature ends with a flick.
+const TAIL_SPEED = 2.5;
+const TAIL_START = SIG.maskPaths[SIG.maskPaths.length - 1].start;
+const TAIL_TIME = TAIL_START + (1 - TAIL_START) / TAIL_SPEED;
+const tail = (q: number) => {
+  const x = q * TAIL_TIME;
+  return x < TAIL_START ? x : Math.min(1, TAIL_START + (x - TAIL_START) * TAIL_SPEED);
+};
+
 // Canvas technique: the glyph is rendered once to a sprite; each frame adds only the new piece
 // of the mask strokes, then composites glyph-through-mask. Plays once at 60% visibility.
 export function Signature({ label, className }: { label: string; className?: string }) {
@@ -101,7 +110,7 @@ export function Signature({ label, className }: { label: string; className?: str
           done = true;
           return paintFull();
         }
-        paint(progress(t));
+        paint(tail(progress(t)));
         raf = requestAnimationFrame(frame);
       };
       ctx.clearRect(0, 0, cw, ch);
