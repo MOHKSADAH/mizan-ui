@@ -84,6 +84,7 @@ function BottomNav({
                         <>
                           <span
                             aria-hidden="true"
+                            dir="ltr"
                             className="absolute -top-1.5 -end-2.5 flex min-w-4 items-center justify-center rounded-full bg-destructive px-1 text-[0.625rem] leading-4 font-medium text-destructive-foreground tabular-nums"
                           >
                             {item.badge > 99 ? `${formatNumber(99, locale)}+` : formatNumber(item.badge, locale)}

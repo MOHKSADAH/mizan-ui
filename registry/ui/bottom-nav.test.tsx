@@ -23,6 +23,8 @@ test('renders in ar with Arabic labels and Arabic digits', () => {
   );
   expect(html).toContain('aria-label="الرئيسية"');
   expect(html).toContain('٣ عناصر جديدة');
+  // LTR keeps the capped badge as 99+ instead of +99 inside RTL text.
+  expect(html).toMatch(/dir="ltr"[^>]*>٩٩\+</);
 });
 
 test('renderLink swaps the anchor', () => {
