@@ -89,4 +89,12 @@ export const appBlocks: ManifestItem[] = [
     description: 'Password reset request by email with a generic confirmation screen that does not reveal whether the account exists.',
     files: ['registry/blocks/forgot/forgot-01.tsx'],
   },
+  {
+    name: 'empty-state-01',
+    type: 'registry:block',
+    family: 'empty-state',
+    title: 'Empty state 01',
+    description: 'Centered empty state card with an icon, a heading, a description and a primary action.',
+    files: ['registry/blocks/empty-state/empty-state-01.tsx'],
+  },
 ];
