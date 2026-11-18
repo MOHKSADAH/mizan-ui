@@ -1701,6 +1701,26 @@
       ]
     },
     {
+      "name": "logo-cloud-02",
+      "type": "registry:block",
+      "title": "Logo Cloud 02",
+      "description": "Bordered logo grid with six columns on large screens.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/logo-cloud/logo-cloud-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

@@ -97,4 +97,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'Numbered process steps in an ordered list, linked by a rule on large screens.',
     files: ['registry/blocks/features/features-06.tsx'],
   },
+  {
+    name: 'logo-cloud-02',
+    type: 'registry:block',
+    family: 'logo-cloud',
+    title: 'Logo Cloud 02',
+    description: 'Bordered logo grid with six columns on large screens.',
+    files: ['registry/blocks/logo-cloud/logo-cloud-02.tsx'],
+  },
 ];
