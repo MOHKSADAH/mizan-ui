@@ -1439,6 +1439,1544 @@
       ]
     },
     {
+      "name": "gulf-validators",
+      "type": "registry:lib",
+      "title": "Gulf Validators",
+      "description": "Format checks for Saudi national ID, VAT number, IBAN, mobile number and CR number.",
+      "files": [
+        {
+          "path": "registry/lib/gulf/validators.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "arabic-normalize",
+      "type": "registry:lib",
+      "title": "Arabic Normalize",
+      "description": "Arabic text normalization and accent-insensitive matching for search.",
+      "files": [
+        {
+          "path": "registry/lib/gulf/arabic-normalize.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "zatca-qr",
+      "type": "registry:lib",
+      "title": "Zatca Qr",
+      "description": "ZATCA Phase 1 invoice QR payload (TLV, base64) encoder and decoder.",
+      "files": [
+        {
+          "path": "registry/lib/gulf/zatca-qr.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "saudi-regions",
+      "type": "registry:lib",
+      "title": "Saudi Regions",
+      "description": "Saudi administrative regions with main cities, in Arabic and English.",
+      "files": [
+        {
+          "path": "registry/lib/gulf/saudi-regions.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "hijri",
+      "type": "registry:lib",
+      "title": "Hijri",
+      "description": "Umm al-Qura Hijri date formatting and parts through Intl.",
+      "files": [
+        {
+          "path": "registry/lib/gulf/hijri.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "caret",
+      "type": "registry:lib",
+      "title": "Caret",
+      "description": "Caret position after an input value is reformatted, for grouped and as-you-type fields.",
+      "files": [
+        {
+          "path": "registry/lib/gulf/caret.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "saudi-id-input",
+      "type": "registry:ui",
+      "title": "Saudi Id Input",
+      "description": "A 10-digit national ID or Iqama field with Arabic-Indic digit input and a Luhn format check on blur.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
+        "MOHKSADAH/mizan-ui/gulf-validators",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/saudi-id-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "phone-input",
+      "type": "registry:ui",
+      "title": "Phone Input",
+      "description": "A country combobox (GCC first, default +966) and a national number field with as-you-type formatting and E.164 output.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10",
+        "libphonenumber-js@^1.13.16"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/caret",
+        "MOHKSADAH/mizan-ui/combobox",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/label",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/phone-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "iban-input",
+      "type": "registry:ui",
+      "title": "Iban Input",
+      "description": "A Saudi IBAN field shown in groups of 4, always LTR, with a mod-97 format check and a copy button.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
+        "MOHKSADAH/mizan-ui/caret",
+        "MOHKSADAH/mizan-ui/gulf-validators",
+        "MOHKSADAH/mizan-ui/input-group",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/iban-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "vat-input",
+      "type": "registry:ui",
+      "title": "Vat Input",
+      "description": "A Saudi VAT number field shown in groups of 4, always LTR, with a format check and a copy button.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
+        "MOHKSADAH/mizan-ui/gulf-validators",
+        "MOHKSADAH/mizan-ui/iban-input"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/vat-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "region-city-select",
+      "type": "registry:ui",
+      "title": "Region City Select",
+      "description": "Two linked comboboxes for Saudi region and city, in Arabic or English, with Arabic-aware search.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
+        "MOHKSADAH/mizan-ui/combobox",
+        "MOHKSADAH/mizan-ui/field",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/saudi-regions",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/region-city-select.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "saudi-address-form",
+      "type": "registry:ui",
+      "title": "Saudi Address Form",
+      "description": "A composed Saudi address form: region and city, district, street, building, postal and additional numbers, and the national short address.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
+        "MOHKSADAH/mizan-ui/field",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/region-city-select",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/saudi-address-form.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "hijri-calendar",
+      "type": "registry:ui",
+      "title": "Hijri Calendar",
+      "description": "A Hijri (Umm al-Qura) and Gregorian month grid with a calendar toggle, APG keyboard support and optional Fri and Sat weekend styling.",
+      "dependencies": [
+        "@internationalized/date@^3.12.4",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/toggle-group",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/hijri-calendar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "hijri-date-picker",
+      "type": "registry:ui",
+      "title": "Hijri Date Picker",
+      "description": "A date picker that shows the Hijri and Gregorian dates together in its trigger.",
+      "dependencies": [
+        "@internationalized/date@^3.12.4",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/hijri-calendar",
+        "MOHKSADAH/mizan-ui/popover",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/hijri-date-picker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "date-range-picker",
+      "type": "registry:ui",
+      "title": "Date Range Picker",
+      "description": "A range picker on the Calendar with presets, a nights count for bookings and an optional Hijri display.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10",
+        "react-day-picker@^10.0.2"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/calendar",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/popover",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/date-range-picker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "slot-picker",
+      "type": "registry:ui",
+      "title": "Slot Picker",
+      "description": "A day strip and morning, afternoon and evening time chips for bookings, with radiogroup semantics and Arabic AM and PM.",
+      "dependencies": [
+        "@base-ui/react@^1.9.0"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/slot-picker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "opening-hours",
+      "type": "registry:ui",
+      "title": "Opening Hours",
+      "description": "Weekly opening hours with an open-now status, split shifts, a Ramadan override and an editor.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/date-range-picker",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/select",
+        "MOHKSADAH/mizan-ui/switch",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/opening-hours.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "zatca-invoice",
+      "type": "registry:ui",
+      "title": "Zatca Invoice",
+      "description": "A bilingual simplified tax invoice layout with VAT lines, totals and a ZATCA Phase 1 QR code, print friendly.",
+      "dependencies": [
+        "uqr@^0.1.3"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/zatca-qr"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/zatca-invoice.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "sparkline",
+      "type": "registry:lib",
+      "title": "Sparkline",
+      "files": [
+        {
+          "path": "registry/lib/sparkline.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "stat-card",
+      "type": "registry:ui",
+      "title": "Stat Card",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/skeleton",
+        "MOHKSADAH/mizan-ui/sparkline",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/stat-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "qr-code",
+      "type": "registry:ui",
+      "title": "Qr Code",
+      "dependencies": [
+        "uqr@^0.1.3"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/qr-code.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "copy-button",
+      "type": "registry:ui",
+      "title": "Copy Button",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/copy-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "share-button",
+      "type": "registry:ui",
+      "title": "Share Button",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/copy-button",
+        "MOHKSADAH/mizan-ui/popover"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/share-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "announcement-bar",
+      "type": "registry:ui",
+      "title": "Announcement Bar",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/announcement-bar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "feedback"
+      ]
+    },
+    {
+      "name": "countdown-parts",
+      "type": "registry:lib",
+      "title": "Countdown Parts",
+      "files": [
+        {
+          "path": "registry/lib/countdown-parts.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "countdown",
+      "type": "registry:ui",
+      "title": "Countdown",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/countdown-parts",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/countdown.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "sticky-action-bar",
+      "type": "registry:ui",
+      "title": "Sticky Action Bar",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/sticky-action-bar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "bottom-nav",
+      "type": "registry:ui",
+      "title": "Bottom Nav",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/bottom-nav.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
+      "name": "image-lightbox",
+      "type": "registry:ui",
+      "title": "Image Lightbox",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/dialog",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/image-lightbox.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "overlays"
+      ]
+    },
+    {
+      "name": "comparison-slider",
+      "type": "registry:ui",
+      "title": "Comparison Slider",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/comparison-slider.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "marquee",
+      "type": "registry:ui",
+      "title": "Marquee",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/marquee.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "layout"
+      ]
+    },
+    {
+      "name": "use-scrollspy",
+      "type": "registry:hook",
+      "title": "Use Scrollspy",
+      "files": [
+        {
+          "path": "registry/hooks/use-scrollspy.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "toc",
+      "type": "registry:ui",
+      "title": "Toc",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/use-scrollspy",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/toc.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
+      "name": "cookie-consent",
+      "type": "registry:ui",
+      "title": "Cookie Consent",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/dialog",
+        "MOHKSADAH/mizan-ui/switch",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/cookie-consent.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "feedback"
+      ]
+    },
+    {
+      "name": "mega-menu",
+      "type": "registry:ui",
+      "title": "Mega Menu",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/accordion",
+        "MOHKSADAH/mizan-ui/navigation-menu",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/mega-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
+      "name": "avatar-group",
+      "type": "registry:ui",
+      "title": "Avatar Group",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/format"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/avatar-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "timeline",
+      "type": "registry:ui",
+      "title": "Timeline",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/timeline.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "back-to-top",
+      "type": "registry:ui",
+      "title": "Back To Top",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/back-to-top.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
+      "name": "tree",
+      "type": "registry:lib",
+      "title": "Tree",
+      "files": [
+        {
+          "path": "registry/lib/tree.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "tree-view",
+      "type": "registry:ui",
+      "title": "Tree View",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/tree",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/tree-view.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "quantity-stepper",
+      "type": "registry:ui",
+      "title": "Quantity Stepper",
+      "description": "Minus, number and plus quantity control with min, max, remove at the minimum and live announcements.",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/quantity-stepper.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "rating",
+      "type": "registry:ui",
+      "title": "Rating",
+      "description": "Read-only star rating with partial fills that mirror in RTL, a spoken value and a review count.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/rating.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "swatch-select",
+      "type": "registry:ui",
+      "title": "Swatch Select",
+      "description": "Color, size and image swatches as a radio group with a selected name and out-of-stock state.",
+      "dependencies": [
+        "@base-ui/react@^1.9.0"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/swatch-select.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "filter-chips",
+      "type": "registry:ui",
+      "title": "Filter Chips",
+      "description": "Removable active-filter chips with clear all, a live result count and a scrolling row.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/filter-chips.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "status-badge",
+      "type": "registry:ui",
+      "title": "Status Badge",
+      "description": "Order status badge (pending to refunded) with an icon, text and a status token color.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/status-badge.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "payment-method-select",
+      "type": "registry:ui",
+      "title": "Payment Method Select",
+      "description": "Radio group of payment methods with icon slots, fee, disabled reason and a details panel.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/radio-group",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/payment-method-select.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "installments",
+      "type": "registry:ui",
+      "title": "Installments",
+      "description": "A \"4 payments of X\" widget with a dated schedule, eligibility range and a provider slot.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/installments.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "vat-summary",
+      "type": "registry:ui",
+      "title": "Vat Summary",
+      "description": "Order totals with subtotal, discount, shipping, VAT (rate, inclusive or exclusive) and total.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/vat-summary.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "coupon-input",
+      "type": "registry:ui",
+      "title": "Coupon Input",
+      "description": "Coupon code field with apply and remove, pending, success and error states and an applied-code chip.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/spinner",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/coupon-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "product-gallery",
+      "type": "registry:ui",
+      "title": "Product Gallery",
+      "description": "Product image gallery with Embla swipe, thumbnails, RTL direction and optional zoom dialog.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/carousel",
+        "MOHKSADAH/mizan-ui/dialog",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/product-gallery.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "stock-indicator",
+      "type": "registry:ui",
+      "title": "Stock Indicator",
+      "description": "Stock status line: in stock, low stock with a plural count, and out of stock, with an icon and text.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/stock-indicator.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "delivery-estimate",
+      "type": "registry:ui",
+      "title": "Delivery Estimate",
+      "description": "Arrival date in a given time zone, a city slot and a free shipping progress bar.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/progress",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/delivery-estimate.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "order-stepper",
+      "type": "registry:ui",
+      "title": "Order Stepper",
+      "description": "Checkout steps in an ordered list with aria-current, completed checks and a compact mode.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/order-stepper.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "floating-contact",
+      "type": "registry:ui",
+      "title": "Floating Contact",
+      "description": "Floating WhatsApp, call and chat launcher that lifts above a sticky bar and respects safe areas.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/floating-contact.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "wishlist-button",
+      "type": "registry:ui",
+      "title": "Wishlist Button",
+      "description": "Heart toggle with aria-pressed and a live announcement for saving to a wishlist.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/toggle",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/wishlist-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "compare-tray",
+      "type": "registry:ui",
+      "title": "Compare Tray",
+      "description": "Tray of products chosen for comparison with a live count, remove, clear all and compare.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/compare-tray.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "ascii",
+      "type": "registry:lib",
+      "title": "ASCII helpers",
+      "description": "Pure helpers for the ASCII pack: spinner frames, text bars, sparklines and terminal typing.",
+      "files": [
+        {
+          "path": "registry/lib/ascii.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "ascii-text",
+      "type": "registry:ui",
+      "title": "ASCII Text",
+      "description": "Large figlet banner text with a screen reader label.",
+      "dependencies": [
+        "figlet@^1.12.0"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/ascii/ascii-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "ascii"
+      ]
+    },
+    {
+      "name": "ascii-spinner",
+      "type": "registry:ui",
+      "title": "ASCII Spinner",
+      "description": "Character-frame loading spinner that respects reduced motion.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/ascii",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/ascii/ascii-spinner.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "ascii"
+      ]
+    },
+    {
+      "name": "ascii-progress",
+      "type": "registry:ui",
+      "title": "ASCII Progress",
+      "description": "Text progress bar with a progressbar role and percentage.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/ascii",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/ascii/ascii-progress.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "ascii"
+      ]
+    },
+    {
+      "name": "ascii-box",
+      "type": "registry:ui",
+      "title": "ASCII Box",
+      "description": "Box-drawing frame and divider (AsciiBox and AsciiDivider).",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/ascii/ascii-box.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "ascii"
+      ]
+    },
+    {
+      "name": "ascii-chart",
+      "type": "registry:ui",
+      "title": "ASCII Chart",
+      "description": "Block-character bar chart and sparkline with a text alternative.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/ascii",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/ascii/ascii-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "ascii"
+      ]
+    },
+    {
+      "name": "terminal",
+      "type": "registry:ui",
+      "title": "Terminal",
+      "description": "Terminal window with optional typing effect and a copy-commands button.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/ascii",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/ascii/terminal.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "ascii"
+      ]
+    },
+    {
+      "name": "file-upload",
+      "type": "registry:ui",
+      "title": "File Upload",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/progress",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/file-upload.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "tags-input",
+      "type": "registry:ui",
+      "title": "Tags Input",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/tags-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "multi-select",
+      "type": "registry:ui",
+      "title": "Multi Select",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
+        "MOHKSADAH/mizan-ui/combobox",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/multi-select.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "number-field",
+      "type": "registry:ui",
+      "title": "Number Field",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/number-field.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "time-picker",
+      "type": "registry:ui",
+      "title": "Time Picker",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/popover",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/time-picker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "password-input",
+      "type": "registry:ui",
+      "title": "Password Input",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/input-group",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/password-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "mask",
+      "type": "registry:lib",
+      "title": "Mask",
+      "files": [
+        {
+          "path": "registry/lib/mask.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "input-mask",
+      "type": "registry:ui",
+      "title": "Input Mask",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/mask",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/input-mask.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "color",
+      "type": "registry:lib",
+      "title": "Color",
+      "files": [
+        {
+          "path": "registry/lib/color.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "color-picker",
+      "type": "registry:ui",
+      "title": "Color Picker",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/color",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/color-picker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "signature-pad",
+      "type": "registry:ui",
+      "title": "Signature Pad",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/signature-pad.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "inline-edit",
+      "type": "registry:ui",
+      "title": "Inline Edit",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/inline-edit.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "rating-input",
+      "type": "registry:ui",
+      "title": "Rating Input",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/rating-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "segmented-control",
+      "type": "registry:ui",
+      "title": "Segmented Control",
+      "dependencies": [
+        "@base-ui/react@^1.9.0"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/segmented-control.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

@@ -1,5 +1,5 @@
 import { cn } from "@/registry/lib/utils"
-import { SpinnerIcon } from "@phosphor-icons/react"
+import { SpinnerIcon } from "@phosphor-icons/react/ssr"
 
 type SpinnerLabels = { loading: string }
 

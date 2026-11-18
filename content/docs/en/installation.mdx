@@ -1,0 +1,32 @@
+---
+title: Installation
+description: Add Mizan UI items to a project with the shadcn CLI.
+---
+
+## Requirements
+
+A React project with Tailwind CSS v4 and a `components.json` file. Run `npx shadcn@latest init` first if the project has none.
+
+## Add an item
+
+```bash
+npx shadcn@latest add MOHKSADAH/mizan-ui/button
+```
+
+Pin a release in real projects:
+
+```bash
+npx shadcn@latest add MOHKSADAH/mizan-ui/button#v0.1.0
+```
+
+The short `@mizan/<name>` form works after you add the `@mizan` registry to `registries` in `components.json`.
+
+## Add a theme
+
+```bash
+npx shadcn@latest add @mizan/theme-mizan-base
+```
+
+## Right-to-left
+
+Set `dir="rtl"` and `lang="ar"` on `<html>`, and wrap the app in `DirectionProvider` from `@/components/ui/direction`. Every item uses logical classes, so the layout mirrors without extra code.
