@@ -145,4 +145,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'One muted band of stats, stacked on mobile and divided on tablet and up.',
     files: ['registry/blocks/stats/stats-04.tsx'],
   },
+  {
+    name: 'testimonials-01',
+    type: 'registry:block',
+    family: 'testimonials',
+    title: 'Testimonials 01',
+    description: 'One large centered quote with the customer avatar, name and role.',
+    files: ['registry/blocks/testimonials/testimonials-01.tsx'],
+  },
 ];
