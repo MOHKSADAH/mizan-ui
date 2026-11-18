@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'bun:test';
 import { renderToString } from 'react-dom/server';
-import { TagsInput, addTags, splitTags } from './tags-input';
+import { TagsInput, addTags, splitTags, tagsInputLabelsAr } from './tags-input';
 
 describe('tags-input', () => {
   test('splitTags splits on commas, Arabic punctuation and newlines', () => {
@@ -19,9 +19,18 @@ describe('tags-input', () => {
     expect(r.rejected).toEqual([{ tag: 'c', reason: 'max' }]);
   });
 
+  test('Arabic max label uses the plural forms', () => {
+    expect([1, 2, 3, 11].map(tagsInputLabelsAr.max)).toEqual([
+      'يمكنك إضافة وسم واحد كحد أقصى',
+      'يمكنك إضافة وسمين كحد أقصى',
+      'يمكنك إضافة 3 وسوم كحد أقصى',
+      'يمكنك إضافة 11 وسمًا كحد أقصى',
+    ]);
+  });
+
   test('renders in en and ar', () => {
     for (const lang of ['en', 'ar'] as const) {
-      const html = renderToString(<TagsInput lang={lang} defaultValue={['الرياض', 'Jeddah']} placeholder="…" aria-label="Tags" />);
+      const html = renderToString(<TagsInput labels={lang === 'ar' ? tagsInputLabelsAr : undefined} defaultValue={['الرياض', 'Jeddah']} placeholder="…" aria-label="Tags" />);
       expect(html).toContain('data-slot="tags-input"');
       expect(html).toContain('الرياض');
     }

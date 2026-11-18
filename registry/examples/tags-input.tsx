@@ -1,4 +1,4 @@
-import { TagsInput } from '@/registry/ui/tags-input';
+import { TagsInputDemo } from '@/registry/examples/tags-input.client';
 import type { ExampleDoc, ExampleProps } from '@/registry/examples/types';
 
 export const doc: ExampleDoc = {
@@ -28,12 +28,12 @@ export const doc: ExampleDoc = {
 };
 
 export function Default({ lang }: ExampleProps) {
-  return <TagsInput lang={lang} aria-label={lang === 'ar' ? 'الكلمات المفتاحية' : 'Keywords'} placeholder={lang === 'ar' ? 'اكتب واضغط Enter' : 'Type and press Enter'} />;
+  return <TagsInputDemo lang={lang} aria-label={lang === 'ar' ? 'الكلمات المفتاحية' : 'Keywords'} placeholder={lang === 'ar' ? 'اكتب واضغط Enter' : 'Type and press Enter'} />;
 }
 
 export function Max({ lang }: ExampleProps) {
   return (
-    <TagsInput
+    <TagsInputDemo
       lang={lang}
       max={3}
       defaultValue={lang === 'ar' ? ['الرياض', 'جدة'] : ['Riyadh', 'Jeddah']}

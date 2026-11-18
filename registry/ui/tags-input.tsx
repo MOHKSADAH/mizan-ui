@@ -3,7 +3,7 @@
 import * as React from "react"
 import { XIcon } from "@phosphor-icons/react"
 import { cn } from "@/registry/lib/utils"
-import { formatNumber, type Lang } from "@/registry/lib/format"
+import { plural } from "@/registry/lib/format"
 import { normalizeArabic } from "@/registry/lib/gulf/arabic-normalize"
 import { Button } from "@/registry/ui/button"
 
@@ -12,7 +12,7 @@ type TagsInputLabels = {
   added: string
   removed: string
   duplicate: string
-  max: string
+  max: (n: number) => string
 }
 
 const tagsInputLabels: TagsInputLabels = {
@@ -20,7 +20,7 @@ const tagsInputLabels: TagsInputLabels = {
   added: "{tag} added",
   removed: "{tag} removed",
   duplicate: "{tag} is already added",
-  max: "You can add up to {max} tags",
+  max: (n) => plural(n, { one: "You can add up to {n} tag", other: "You can add up to {n} tags" }, { lang: "en" }),
 }
 
 const tagsInputLabelsAr: TagsInputLabels = {
@@ -28,7 +28,19 @@ const tagsInputLabelsAr: TagsInputLabels = {
   added: "تمت إضافة {tag}",
   removed: "تمت إزالة {tag}",
   duplicate: "{tag} مضافة مسبقًا",
-  max: "يمكنك إضافة {max} وسوم كحد أقصى",
+  max: (n) =>
+    plural(
+      n,
+      {
+        zero: "لا يمكنك إضافة وسوم",
+        one: "يمكنك إضافة وسم واحد كحد أقصى",
+        two: "يمكنك إضافة وسمين كحد أقصى",
+        few: "يمكنك إضافة {n} وسوم كحد أقصى",
+        many: "يمكنك إضافة {n} وسمًا كحد أقصى",
+        other: "يمكنك إضافة {n} وسم كحد أقصى",
+      },
+      { lang: "ar" }
+    ),
 }
 
 const DELIMITERS = [",", "،", ";", "؛"]
@@ -70,7 +82,6 @@ type TagsInputProps = Omit<React.ComponentProps<"div">, "defaultValue" | "onChan
   delimiters?: string[]
   placeholder?: string
   disabled?: boolean
-  lang?: Lang
   labels?: Partial<TagsInputLabels>
 }
 
@@ -82,12 +93,11 @@ function TagsInput({
   delimiters = DELIMITERS,
   placeholder,
   disabled,
-  lang = "en",
   labels,
   className,
   ...props
 }: TagsInputProps) {
-  const l = { ...(lang === "ar" ? tagsInputLabelsAr : tagsInputLabels), ...labels }
+  const l = { ...tagsInputLabels, ...labels }
   const inputRef = React.useRef<HTMLInputElement>(null)
   const [inner, setInner] = React.useState<string[]>(defaultValue ?? [])
   const [draft, setDraft] = React.useState("")
@@ -106,10 +116,9 @@ function TagsInput({
     const problem = rejected[0]
     setMessage(
       problem
-        ? fill(problem.reason === "max" ? l.max : l.duplicate, {
-            tag: problem.tag,
-            max: formatNumber(max ?? 0, { lang }),
-          })
+        ? problem.reason === "max"
+          ? l.max(max ?? 0)
+          : fill(l.duplicate, { tag: problem.tag })
         : addedTags.length
           ? fill(l.added, { tag: addedTags.join(", ") })
           : ""
