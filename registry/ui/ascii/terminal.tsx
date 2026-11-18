@@ -86,7 +86,10 @@ export function Terminal({ title, lines, typing = false, copyLabel, copiedLabel,
           {copied ? <CheckIcon /> : <CopyIcon />}
         </button>
       </div>
-      <pre className="overflow-x-auto p-4 leading-relaxed">
+      {typing && (
+        <pre className="sr-only">{lines.map((line) => PREFIXES[line.type] + line.text).join("\n")}</pre>
+      )}
+      <pre aria-hidden={typing || undefined} className="overflow-x-auto p-4 leading-relaxed">
         {lines.map((line, i) => {
           const lineStep = typing ? step - lines.slice(0, i).reduce((sum, l) => sum + typingCost(l), 0) : total
           const typed = typedText(line, lineStep)

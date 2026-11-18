@@ -155,4 +155,16 @@ describe("Terminal", () => {
     expect(html).not.toContain("<span>bun add x</span>")
     expect(html).toContain('<span class="invisible">bun add x</span>')
   })
+
+  test("typing mode gives screen readers the full text and hides the animation", () => {
+    const html = renderToString(<Terminal lines={[...lines]} typing copyLabel="Copy" copiedLabel="Copied" copyFailedLabel="Copy failed" />)
+    expect(html).toContain('<pre class="sr-only"># install\n$ bun add x\ndone</pre>')
+    expect(html).toContain('<pre aria-hidden="true"')
+  })
+
+  test("without typing there is one visible pre and no hidden copy", () => {
+    const html = renderToString(<Terminal lines={[...lines]} copyLabel="Copy" copiedLabel="Copied" copyFailedLabel="Copy failed" />)
+    expect(html.match(/<pre/g)).toHaveLength(1)
+    expect(html).not.toContain("aria-hidden=\"true\" class=\"overflow-x-auto")
+  })
 })
