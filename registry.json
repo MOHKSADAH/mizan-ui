@@ -1593,7 +1593,6 @@
         "@phosphor-icons/react@^2.1.10"
       ],
       "registryDependencies": [
-        "MOHKSADAH/mizan-ui/format",
         "MOHKSADAH/mizan-ui/input",
         "MOHKSADAH/mizan-ui/utils"
       ],

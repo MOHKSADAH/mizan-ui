@@ -3,7 +3,6 @@
 import * as React from "react"
 import { PencilSimpleIcon } from "@phosphor-icons/react"
 import { cn } from "@/registry/lib/utils"
-import type { Lang } from "@/registry/lib/format"
 import { Input } from "@/registry/ui/input"
 
 type InlineEditLabels = { edit: string; empty: string; saved: string; cancelled: string }
@@ -28,7 +27,6 @@ type InlineEditProps = Omit<React.ComponentProps<"div">, "defaultValue" | "onCha
   onValueChange?: (value: string) => void
   placeholder?: string
   disabled?: boolean
-  lang?: Lang
   labels?: Partial<InlineEditLabels>
   "aria-label"?: string
 }
@@ -40,13 +38,12 @@ function InlineEdit({
   onValueChange,
   placeholder,
   disabled,
-  lang = "en",
   labels,
   className,
   "aria-label": ariaLabel,
   ...props
 }: InlineEditProps) {
-  const l = { ...(lang === "ar" ? inlineEditLabelsAr : inlineEditLabels), ...labels }
+  const l = { ...inlineEditLabels, ...labels }
   const [inner, setInner] = React.useState(defaultValue)
   const [editing, setEditing] = React.useState(false)
   const [draft, setDraft] = React.useState("")

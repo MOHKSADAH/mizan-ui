@@ -1,4 +1,4 @@
-import { InlineEdit } from '@/registry/ui/inline-edit';
+import { InlineEdit, inlineEditLabelsAr } from '@/registry/ui/inline-edit';
 import type { ExampleDoc, ExampleProps } from '@/registry/examples/types';
 
 export const doc: ExampleDoc = {
@@ -24,9 +24,9 @@ export const doc: ExampleDoc = {
 };
 
 export function Default({ lang }: ExampleProps) {
-  return <InlineEdit lang={lang} defaultValue={lang === 'ar' ? 'مطعم النخيل' : 'Palm Restaurant'} aria-label={lang === 'ar' ? 'الاسم' : 'Name'} />;
+  return <InlineEdit labels={lang === 'ar' ? inlineEditLabelsAr : undefined} defaultValue={lang === 'ar' ? 'مطعم النخيل' : 'Palm Restaurant'} aria-label={lang === 'ar' ? 'الاسم' : 'Name'} />;
 }
 
 export function Empty({ lang }: ExampleProps) {
-  return <InlineEdit lang={lang} placeholder={lang === 'ar' ? 'أضف عنوانًا' : 'Add a title'} aria-label={lang === 'ar' ? 'العنوان' : 'Title'} />;
+  return <InlineEdit labels={lang === 'ar' ? inlineEditLabelsAr : undefined} placeholder={lang === 'ar' ? 'أضف عنوانًا' : 'Add a title'} aria-label={lang === 'ar' ? 'العنوان' : 'Title'} />;
 }
