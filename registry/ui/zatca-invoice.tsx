@@ -117,13 +117,14 @@ function QrCode({ value, label, className }: { value: string; label: string; cla
       return d
     })
     .join("")
+  // Scanners need dark modules on a light background, so the chip stays light in every theme.
   return (
     <svg
       role="img"
       aria-label={label}
       viewBox={`-4 -4 ${size + 8} ${size + 8}`}
       shapeRendering="crispEdges"
-      className={cn("bg-background fill-foreground dark:invert", className)}
+      className={cn("bg-white fill-current text-black", className)}
     >
       <path d={path} />
     </svg>

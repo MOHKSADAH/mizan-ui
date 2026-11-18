@@ -1,5 +1,7 @@
 import { describe, expect, test } from "bun:test"
 import { renderToString } from "react-dom/server"
+import { encode } from "uqr"
+import { decodeZatcaTlv, encodeZatcaTlv } from "@/registry/lib/gulf/zatca-qr"
 import * as example from "@/registry/examples/zatca-invoice"
 import { renderExamples } from "@/scripts/render-examples"
 import { ZatcaInvoice, invoiceTotals, zatcaInvoiceLabelsAr } from "./zatca-invoice"
@@ -45,6 +47,25 @@ describe("ZatcaInvoice", () => {
     const html = renderToString(<ZatcaInvoice lang="ar" seller={seller} invoiceNumber="INV-1" issuedAt={issuedAt} lines={lines} />)
     expect(html).toContain('dir="rtl"')
     expect(html.indexOf(zatcaInvoiceLabelsAr.title)).toBeLessThan(html.indexOf("Simplified Tax Invoice"))
+  })
+
+  test("the rendered QR carries a TLV payload that decodes to the invoice totals", () => {
+    const html = renderToString(<ZatcaInvoice seller={seller} invoiceNumber="INV-1" issuedAt={issuedAt} lines={lines} />)
+    const d = html.match(/role="img"[^>]*><path d="([^"]+)"/)![1]
+    const fields = { sellerName: "النور", vatNumber: "300000000000003", timestamp: "2026-03-04T10:30:00Z", total: "215.63", vatTotal: "28.13" }
+    const payload = encodeZatcaTlv(fields)
+    const { size, data } = encode(payload, { ecc: "M", border: 0 })
+    const modules = Array.from({ length: size }, () => Array<boolean>(size).fill(false))
+    for (const [, x, y, w] of d.matchAll(/M(\d+) (\d+)h(\d+)/g))
+      for (let i = 0; i < Number(w); i++) modules[Number(y)][Number(x) + i] = true
+    expect(modules).toEqual(data)
+    expect(decodeZatcaTlv(payload)).toEqual(fields)
+  })
+
+  test("draws the QR on a light chip in every theme", () => {
+    const html = renderToString(<ZatcaInvoice seller={seller} invoiceNumber="INV-1" issuedAt={issuedAt} lines={lines} />)
+    expect(html).toContain("bg-white")
+    expect(html).not.toContain("dark:invert")
   })
 
   test("renders every docs example in en and ar", () => {
