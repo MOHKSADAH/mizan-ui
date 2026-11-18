@@ -1,4 +1,6 @@
-import { NumberField } from '@/registry/ui/number-field';
+import { NumberField, numberFieldLabelsAr } from '@/registry/ui/number-field';
+
+const labels = (lang: 'en' | 'ar') => (lang === 'ar' ? numberFieldLabelsAr : undefined);
 import type { ExampleDoc, ExampleProps } from '@/registry/examples/types';
 
 export const doc: ExampleDoc = {
@@ -25,13 +27,14 @@ export const doc: ExampleDoc = {
 };
 
 export function Default({ lang }: ExampleProps) {
-  return <NumberField lang={lang} min={0} max={10} step={1} defaultValue={1} aria-label={lang === 'ar' ? 'الكمية' : 'Quantity'} />;
+  return <NumberField lang={lang} labels={labels(lang)} min={0} max={10} step={1} defaultValue={1} aria-label={lang === 'ar' ? 'الكمية' : 'Quantity'} />;
 }
 
 export function Currency({ lang }: ExampleProps) {
   return (
     <NumberField
       lang={lang}
+      labels={labels(lang)}
       min={0}
       step={50}
       defaultValue={1250}
@@ -45,6 +48,7 @@ export function Unit({ lang }: ExampleProps) {
   return (
     <NumberField
       lang={lang}
+      labels={labels(lang)}
       min={0}
       step={0.5}
       defaultValue={2.5}

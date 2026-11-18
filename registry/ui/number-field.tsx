@@ -33,7 +33,7 @@ function NumberField({
   className,
   ...props
 }: NumberFieldProps) {
-  const l = { ...(lang === "ar" ? numberFieldLabelsAr : numberFieldLabels), ...labels }
+  const l = { ...numberFieldLabels, ...labels }
   return (
     <NumberFieldPrimitive.Root
       data-slot="number-field"
