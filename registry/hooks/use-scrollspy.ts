@@ -27,10 +27,14 @@ export function useScrollspy(ids: string[], line = 0.3) {
         )
       )
     }
-    // Crossing the edge of the band is the only moment the answer can change.
-    const observer = new IntersectionObserver(update, { rootMargin: `0px 0px -${(1 - line) * 100}% 0px` })
-    elements.forEach((el) => el && observer.observe(el))
-    return () => observer.disconnect()
+    // Every scroll, not band crossings: a jump (End, a link) can skip from between headings to between headings.
+    update()
+    document.addEventListener("scroll", update, { passive: true, capture: true })
+    window.addEventListener("resize", update)
+    return () => {
+      document.removeEventListener("scroll", update, { capture: true })
+      window.removeEventListener("resize", update)
+    }
   }, [key, line])
   return active
 }
