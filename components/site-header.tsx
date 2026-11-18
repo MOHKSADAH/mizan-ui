@@ -64,7 +64,7 @@ function TopNav({ lang }: { lang: Lang }) {
             href={localePath(lang, n.href)}
             aria-current={active === n.key ? 'page' : undefined}
             className={cn(
-              'relative z-10 inline-flex h-8 items-center gap-1.5 rounded-md px-2.5 text-sm font-medium text-muted-foreground outline-offset-[-2px] transition-colors duration-150 ease-out hover:text-foreground aria-[current=page]:text-foreground',
+              'relative z-10 inline-flex h-8 items-center gap-1.5 rounded-md px-2.5 text-sm whitespace-nowrap font-medium text-muted-foreground outline-offset-[-2px] transition-colors duration-150 ease-out hover:text-foreground aria-[current=page]:text-foreground',
             )}
           >
             {t.nav[n.key]}
