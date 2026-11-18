@@ -167,7 +167,7 @@ function ZatcaInvoice({
     <>
       <span>{main[key]}</span>
       <span lang={otherLang} className="block text-xs font-normal text-muted-foreground">
-        {other[key]}
+        <bdi>{other[key]}</bdi>
       </span>
     </>
   )
@@ -177,15 +177,25 @@ function ZatcaInvoice({
     return (
       <section aria-label={main[key]} className="flex flex-col gap-0.5">
         <h3 className="text-xs font-medium text-muted-foreground">
-          {main[key]} · <span lang={otherLang}>{other[key]}</span>
+          {main[key]} · <bdi lang={otherLang}>{other[key]}</bdi>
         </h3>
-        <p className="font-medium">{first}</p>
-        {second && <p lang={otherLang} className="text-muted-foreground">{second}</p>}
-        {p.address && <p className="text-muted-foreground">{p.address}</p>}
+        <p className="font-medium">
+          <bdi>{first}</bdi>
+        </p>
+        {second && (
+          <p lang={otherLang} className="text-muted-foreground">
+            <bdi>{second}</bdi>
+          </p>
+        )}
+        {p.address && (
+          <p className="text-muted-foreground">
+            <bdi>{p.address}</bdi>
+          </p>
+        )}
         {p.vatNumber && (
           <p>
             <span className="text-muted-foreground">
-              {main.vatNumber} · <span lang={otherLang}>{other.vatNumber}</span>:{" "}
+              {main.vatNumber} · <bdi lang={otherLang}>{other.vatNumber}</bdi>:{" "}
             </span>
             <bdi dir="ltr" className="tabular-nums">
               {p.vatNumber}
@@ -242,10 +252,10 @@ function ZatcaInvoice({
           {lines.map((line, i) => (
             <tr key={i} className="border-b border-border print:break-inside-avoid">
               <td className="py-2 pe-2">
-                {lang === "ar" ? (line.descriptionAr ?? line.description) : line.description}
+                <bdi>{lang === "ar" ? (line.descriptionAr ?? line.description) : line.description}</bdi>
                 {(lang === "ar" ? line.descriptionAr && line.description : line.descriptionAr) && (
                   <span lang={otherLang} className="block text-xs text-muted-foreground">
-                    {lang === "ar" ? line.description : line.descriptionAr}
+                    <bdi>{lang === "ar" ? line.description : line.descriptionAr}</bdi>
                   </span>
                 )}
               </td>
@@ -273,7 +283,9 @@ function ZatcaInvoice({
       </div>
       <footer className="flex flex-col gap-1 border-t border-border pt-3 text-xs text-muted-foreground">
         <p>{main.disclaimer}</p>
-        <p lang={otherLang}>{other.disclaimer}</p>
+        <p lang={otherLang}>
+          <bdi>{other.disclaimer}</bdi>
+        </p>
       </footer>
     </article>
   )

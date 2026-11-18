@@ -4,7 +4,7 @@ import { encode } from "uqr"
 import { decodeZatcaTlv, encodeZatcaTlv } from "@/registry/lib/gulf/zatca-qr"
 import * as example from "@/registry/examples/zatca-invoice"
 import { renderExamples } from "@/scripts/render-examples"
-import { ZatcaInvoice, invoiceTotals, zatcaInvoiceLabelsAr } from "./zatca-invoice"
+import { ZatcaInvoice, invoiceTotals, zatcaInvoiceLabels, zatcaInvoiceLabelsAr } from "./zatca-invoice"
 
 const seller = { name: "Al Noor", nameAr: "النور", vatNumber: "300000000000003" }
 const lines = [
@@ -60,6 +60,15 @@ describe("ZatcaInvoice", () => {
       for (let i = 0; i < Number(w); i++) modules[Number(y)][Number(x) + i] = true
     expect(modules).toEqual(data)
     expect(decodeZatcaTlv(payload)).toEqual(fields)
+  })
+
+  test("isolates text in the other language so its punctuation stays in place", () => {
+    const html = renderToString(
+      <ZatcaInvoice lang="ar" seller={{ ...seller, name: "Al Noor Co." }} invoiceNumber="INV-1" issuedAt={issuedAt} lines={lines} />,
+    )
+    expect(html).toContain("<bdi>Al Noor Co.</bdi>")
+    expect(html).toContain("<bdi>Unit price (excl. VAT)</bdi>")
+    expect(html).toContain(`<bdi>${zatcaInvoiceLabels.disclaimer}</bdi>`)
   })
 
   test("draws the QR on a light chip in every theme", () => {
