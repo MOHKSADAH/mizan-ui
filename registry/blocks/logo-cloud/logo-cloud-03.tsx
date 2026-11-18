@@ -16,7 +16,6 @@ import type { BlockBase } from "@/registry/lib/block-types"
 import { cn } from "@/registry/lib/utils"
 import { Button } from "@/registry/ui/button"
 import { Container } from "@/registry/ui/container"
-import { useDirection } from "@/registry/ui/direction"
 import { Section } from "@/registry/ui/section"
 
 type Logo = { name: string; src?: string; logo?: React.ReactNode; href?: string; width?: number }
@@ -50,7 +49,6 @@ function LogoCloud03({ title, logos, duration = 40, labels, headingLevel = 2, id
   const [paused, setPaused] = React.useState(false)
   const uid = React.useId()
   const sid = id ?? uid
-  const dir = useDirection()
   const Heading = `h${headingLevel}` as "h2" | "h3"
   return (
     <Section id={sid} className={className}>
@@ -62,12 +60,12 @@ function LogoCloud03({ title, logos, duration = 40, labels, headingLevel = 2, id
         <div className="mt-8 overflow-hidden">
           <div
             className={cn(
-              "flex w-max items-center gap-x-10 hover:[animation-play-state:paused] focus-within:[animation-play-state:paused] motion-safe:animate-[mizan-marquee_var(--mizan-duration)_linear_infinite] motion-reduce:w-auto motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-y-6",
+              "flex w-max items-center [--mizan-dir:1] rtl:[--mizan-dir:-1] hover:[animation-play-state:paused] focus-within:[animation-play-state:paused] motion-safe:animate-[mizan-marquee_var(--mizan-duration)_linear_infinite] motion-reduce:w-auto motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-y-6",
               paused && "[animation-play-state:paused]"
             )}
-            style={{ "--mizan-dir": dir === "rtl" ? -1 : 1, "--mizan-duration": `${duration}s` } as React.CSSProperties}
+            style={{ "--mizan-duration": `${duration}s` } as React.CSSProperties}
           >
-            <ul className="flex shrink-0 items-center gap-x-10 motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-y-6">
+            <ul className="flex shrink-0 items-center gap-x-10 pe-10 motion-reduce:pe-0 motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-y-6">
               {logos.map((logo) => (
                 <li key={logo.name} className="flex h-8 items-center text-foreground opacity-70 hover:opacity-100">
                   {logo.href ? (
@@ -80,7 +78,7 @@ function LogoCloud03({ title, logos, duration = 40, labels, headingLevel = 2, id
                 </li>
               ))}
             </ul>
-            <ul aria-hidden="true" className="flex shrink-0 items-center gap-x-10 motion-reduce:hidden">
+            <ul aria-hidden="true" className="flex shrink-0 items-center gap-x-10 pe-10 motion-reduce:hidden">
               {logos.map((logo) => (
                 <li key={logo.name} className="flex h-8 items-center text-foreground opacity-70">
                   <Mark logo={logo} />

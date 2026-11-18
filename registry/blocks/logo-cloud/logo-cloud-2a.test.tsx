@@ -44,6 +44,13 @@ test('logo-cloud-03 has a pause button for the moving row', () => {
   expect(ar).toContain('إيقاف الشعارات');
 });
 
+test('logo-cloud-03 sets direction in css and pads each list so the loop has no jump', () => {
+  const html = renderToString(<LogoCloud03 {...LogoCloud03Demo.en} />);
+  expect(html).toContain('rtl:[--mizan-dir:-1]');
+  expect(html).not.toContain('--mizan-dir:1;');
+  expect(html.match(/<ul[^>]*\bpe-10\b/g)).toHaveLength(2);
+});
+
 test('logo-cloud-03 renders in Arabic', () => {
   const html = renderToString(
     <DirectionProvider direction="rtl">
