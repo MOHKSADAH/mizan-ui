@@ -31,20 +31,12 @@ function InputMask({
   ...props
 }: InputMaskProps) {
   const pattern = mask ?? MASK_PRESETS[preset ?? "phone"]
-  const ref = React.useRef<HTMLInputElement>(null)
-  const caret = React.useRef<number | null>(null)
   const [inner, setInner] = React.useState(() => applyMask(defaultValue ?? "", pattern).formatted)
   const text = value === undefined ? inner : applyMask(value, pattern).formatted
-
-  React.useLayoutEffect(() => {
-    if (caret.current !== null && document.activeElement === ref.current) ref.current?.setSelectionRange(caret.current, caret.current)
-    caret.current = null
-  })
 
   return (
     <Input
       {...props}
-      ref={ref}
       type="text"
       dir="ltr"
       inputMode={/[AaX*]/.test(pattern) ? "text" : "numeric"}
@@ -57,7 +49,10 @@ function InputMask({
         const deleting = (e.nativeEvent as InputEvent).inputType === "deleteContentBackward"
         const back = deleting ? backspaceOverLiteral(el.value, at, pattern, text) : null
         const next = back ?? applyMask(el.value, pattern)
-        caret.current = back ? back.caret : caretAfter(pattern, next.formatted, slotsBefore(el.value, at, pattern))
+        const caret = back ? back.caret : caretAfter(pattern, next.formatted, slotsBefore(el.value, at, pattern))
+        // Writing the value here keeps React from resetting it, which would move the caret to the end when nothing changed.
+        el.value = next.formatted
+        el.setSelectionRange(caret, caret)
         if (value === undefined) setInner(next.formatted)
         onValueChange?.(next.raw, next.formatted)
       }}
