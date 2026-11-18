@@ -65,4 +65,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'Alternating media and text rows that swap sides on large screens.',
     files: ['registry/blocks/features/features-02.tsx'],
   },
+  {
+    name: 'features-03',
+    type: 'registry:block',
+    family: 'features',
+    title: 'Features 03',
+    description: 'Flat bento grid of bordered cards with 4, 6 and 8 column spans.',
+    files: ['registry/blocks/features/features-03.tsx'],
+  },
 ];
