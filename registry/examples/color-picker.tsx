@@ -1,4 +1,4 @@
-import { ColorPicker } from '@/registry/ui/color-picker';
+import { ColorPicker, colorPickerLabelsAr } from '@/registry/ui/color-picker';
 import type { ExampleDoc, ExampleProps } from '@/registry/examples/types';
 
 export const doc: ExampleDoc = {
@@ -30,9 +30,9 @@ export const doc: ExampleDoc = {
 const swatches = ['#1d4ed8', '#047857', '#b45309', '#b91c1c', '#7e22ce', '#0f172a'];
 
 export function Default({ lang }: ExampleProps) {
-  return <ColorPicker lang={lang} defaultValue="#1d4ed8" swatches={swatches} />;
+  return <ColorPicker labels={lang === 'ar' ? colorPickerLabelsAr : undefined} defaultValue="#1d4ed8" swatches={swatches} />;
 }
 
 export function Oklch({ lang }: ExampleProps) {
-  return <ColorPicker lang={lang} defaultValue="#047857" format="oklch" />;
+  return <ColorPicker labels={lang === 'ar' ? colorPickerLabelsAr : undefined} defaultValue="#047857" format="oklch" />;
 }

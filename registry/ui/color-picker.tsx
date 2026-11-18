@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { cn } from "@/registry/lib/utils"
-import { formatNumber, type Lang } from "@/registry/lib/format"
+import { formatNumber } from "@/registry/lib/format"
 import { hexToHsv, hsvToHex, hsvToRgb, parseColor, toOklchString, type Hsv } from "@/registry/lib/color"
 import { Input } from "@/registry/ui/input"
 
@@ -116,7 +116,6 @@ type ColorPickerProps = {
   onValueChange?: (hex: string) => void
   swatches?: string[]
   format?: "hex" | "oklch"
-  lang?: Lang
   labels?: Partial<ColorPickerLabels>
   className?: string
 }
@@ -127,17 +126,16 @@ function ColorPicker({
   onValueChange,
   swatches = [],
   format = "hex",
-  lang = "en",
   labels,
   className,
 }: ColorPickerProps) {
-  const l = { ...(lang === "ar" ? colorPickerLabelsAr : colorPickerLabels), ...labels }
+  const l = { ...colorPickerLabels, ...labels }
   const id = React.useId()
   const [inner, setInner] = React.useState<Hsv>(() => hexToHsv(parseColor(defaultValue) ?? "#000000"))
   const [draft, setDraft] = React.useState<string | null>(null)
   const hsv = value !== undefined && parseColor(value) !== hsvToHex(inner) ? hexToHsv(parseColor(value) ?? "#000000") : inner
   const hex = hsvToHex(hsv)
-  const n = (x: number) => formatNumber(Math.round(x), { lang })
+  const n = (x: number) => formatNumber(Math.round(x), { lang: "en" })
   const shown = format === "oklch" ? toOklchString(hex) : hex
   const invalid = draft !== null && parseColor(draft) === null
 
