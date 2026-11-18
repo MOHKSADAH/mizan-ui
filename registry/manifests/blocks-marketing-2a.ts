@@ -201,4 +201,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'Service packages with a starting-from price, duration, bullets and a WhatsApp quote button.',
     files: ['registry/blocks/pricing/pricing-05.tsx'],
   },
+  {
+    name: 'blog-list-01',
+    type: 'registry:block',
+    family: 'blog-list',
+    title: 'Blog List 01',
+    description: 'Three-column grid of post cards with category, excerpt, date, reading time and pagination.',
+    files: ['registry/blocks/blog-list/blog-list-01.tsx'],
+  },
 ];
