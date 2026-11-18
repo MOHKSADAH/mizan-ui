@@ -129,4 +129,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'Heading and text at the start with a two-by-two stats grid at the end.',
     files: ['registry/blocks/stats/stats-02.tsx'],
   },
+  {
+    name: 'stats-03',
+    type: 'registry:block',
+    family: 'stats',
+    title: 'Stats 03',
+    description: 'Stat cards with a label, a value and a trend badge with icon and text.',
+    files: ['registry/blocks/stats/stats-03.tsx'],
+  },
 ];
