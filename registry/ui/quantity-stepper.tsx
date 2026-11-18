@@ -5,14 +5,14 @@ import { NumberField } from "@base-ui/react/number-field"
 import { MinusIcon, PlusIcon, TrashIcon } from "@phosphor-icons/react"
 
 import { cn } from "@/registry/lib/utils"
-import { localeTag, type Digits, type Lang } from "@/registry/lib/format"
+import { formatNumber, localeTag, type Digits, type Lang } from "@/registry/lib/format"
 
 type QuantityStepperLabels = {
   decrease: string
   increase: string
   remove: string
   quantity: string
-  announce: (n: number) => string
+  announce: (n: string) => string
 }
 
 const defaultLabels: QuantityStepperLabels = {
@@ -78,7 +78,7 @@ function QuantityStepper({
         if (next === null) return
         if (onRemove && next < min) return onRemove()
         setCurrent(next)
-        setAnnouncement(t.announce(next))
+        setAnnouncement(t.announce(formatNumber(next, { lang, digits })))
         onValueChange?.(next)
       }}
       className={cn("inline-flex", className)}
