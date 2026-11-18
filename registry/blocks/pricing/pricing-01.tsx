@@ -224,7 +224,7 @@ const demo: { en: Pricing01Props; ar: Pricing01Props } = {
     lang: "ar",
     eyebrow: "الأسعار",
     title: "باقات بسيطة تنمو مع أعمالك",
-    description: "ابدأ بباقة صغيرة وانتقل إلى الأعلى عندما تحتاج إلى المزيد.",
+    description: "ابدأ بباقة صغيرة، ورقِّ اشتراكك متى احتاجت أعمالك إلى المزيد.",
     periods: [
       { id: "month", label: "شهري" },
       { id: "year", label: "سنوي", discountLabel: "وفّر 17%" },
@@ -233,7 +233,7 @@ const demo: { en: Pricing01Props; ar: Pricing01Props } = {
       {
         id: "starter",
         name: "الأساسية",
-        description: "للمتاجر الصغيرة والعمل الحر",
+        description: "للمتاجر الصغيرة والمستقلين",
         price: { month: { amount: 99, currency: "SAR" }, year: { amount: 990, currency: "SAR" } },
         priceNote: "السعر لا يشمل ضريبة القيمة المضافة",
         features: ["حتى 3 مستخدمين", "100 فاتورة شهريًا", "تقارير أساسية", "دعم عبر البريد الإلكتروني"],
@@ -256,7 +256,7 @@ const demo: { en: Pricing01Props; ar: Pricing01Props } = {
         description: "للشركات متعددة الفروع",
         price: null,
         priceNote: "سعر مخصص",
-        features: ["مستخدمون غير محدودين", "الربط مع أنظمتك عبر واجهة برمجية", "مدير حساب مخصص", "اتفاقية مستوى الخدمة"],
+        features: ["عدد غير محدود من المستخدمين", "الربط مع أنظمتك عبر واجهة برمجة التطبيقات", "مدير حساب مخصص", "اتفاقية مستوى الخدمة"],
         cta: { label: "تواصل مع المبيعات", href: "#enterprise" },
       },
     ],

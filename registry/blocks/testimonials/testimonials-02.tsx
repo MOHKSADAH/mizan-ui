@@ -125,7 +125,7 @@ const demo: { en: Testimonials02Props; ar: Testimonials02Props } = {
       {
         quote: "أخيرًا نظام يفهم السوق السعودي ويتعامل مع ضريبة القيمة المضافة دون تعقيد.",
         name: "ليلى الدوسري",
-        role: "المؤسسة",
+        role: "المؤسِّسة",
         company: "متجر سدير",
         rating: 4,
       },

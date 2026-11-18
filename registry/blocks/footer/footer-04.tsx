@@ -295,7 +295,7 @@ const demo: { en: Footer04Props; ar: Footer04Props } = {
         title: "الشحن والإرجاع",
         links: [
           { label: "سياسة الشحن", href: "#shipping" },
-          { label: "سياسة الاسترجاع", href: "#returns" },
+          { label: "سياسة الإرجاع", href: "#returns" },
           { label: "الاستبدال", href: "#exchanges" },
         ],
       },
