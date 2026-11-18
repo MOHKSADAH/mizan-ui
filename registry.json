@@ -1353,6 +1353,413 @@
       ]
     },
     {
+      "name": "sparkline",
+      "type": "registry:lib",
+      "title": "Sparkline",
+      "files": [
+        {
+          "path": "registry/lib/sparkline.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "stat-card",
+      "type": "registry:ui",
+      "title": "Stat Card",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/skeleton",
+        "MOHKSADAH/mizan-ui/sparkline",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/stat-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "qr-code",
+      "type": "registry:ui",
+      "title": "Qr Code",
+      "dependencies": [
+        "uqr@^0.1.3"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/qr-code.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "copy-button",
+      "type": "registry:ui",
+      "title": "Copy Button",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/copy-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "share-button",
+      "type": "registry:ui",
+      "title": "Share Button",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/copy-button",
+        "MOHKSADAH/mizan-ui/popover"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/share-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "announcement-bar",
+      "type": "registry:ui",
+      "title": "Announcement Bar",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/announcement-bar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "feedback"
+      ]
+    },
+    {
+      "name": "countdown-parts",
+      "type": "registry:lib",
+      "title": "Countdown Parts",
+      "files": [
+        {
+          "path": "registry/lib/countdown-parts.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "countdown",
+      "type": "registry:ui",
+      "title": "Countdown",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/countdown-parts",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/countdown.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "sticky-action-bar",
+      "type": "registry:ui",
+      "title": "Sticky Action Bar",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/sticky-action-bar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "bottom-nav",
+      "type": "registry:ui",
+      "title": "Bottom Nav",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/bottom-nav.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
+      "name": "image-lightbox",
+      "type": "registry:ui",
+      "title": "Image Lightbox",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/dialog",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/image-lightbox.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "overlays"
+      ]
+    },
+    {
+      "name": "comparison-slider",
+      "type": "registry:ui",
+      "title": "Comparison Slider",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/comparison-slider.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "marquee",
+      "type": "registry:ui",
+      "title": "Marquee",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/marquee.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "layout"
+      ]
+    },
+    {
+      "name": "use-scrollspy",
+      "type": "registry:hook",
+      "title": "Use Scrollspy",
+      "files": [
+        {
+          "path": "registry/hooks/use-scrollspy.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "toc",
+      "type": "registry:ui",
+      "title": "Toc",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/use-scrollspy",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/toc.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
+      "name": "cookie-consent",
+      "type": "registry:ui",
+      "title": "Cookie Consent",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/dialog",
+        "MOHKSADAH/mizan-ui/switch",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/cookie-consent.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "feedback"
+      ]
+    },
+    {
+      "name": "mega-menu",
+      "type": "registry:ui",
+      "title": "Mega Menu",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/accordion",
+        "MOHKSADAH/mizan-ui/navigation-menu",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/mega-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
+      "name": "avatar-group",
+      "type": "registry:ui",
+      "title": "Avatar Group",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/format"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/avatar-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "timeline",
+      "type": "registry:ui",
+      "title": "Timeline",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/timeline.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "back-to-top",
+      "type": "registry:ui",
+      "title": "Back To Top",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/back-to-top.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
+      "name": "tree",
+      "type": "registry:lib",
+      "title": "Tree",
+      "files": [
+        {
+          "path": "registry/lib/tree.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "tree-view",
+      "type": "registry:ui",
+      "title": "Tree View",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/tree",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/tree-view.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
       "name": "quantity-stepper",
       "type": "registry:ui",
       "title": "Quantity Stepper",
