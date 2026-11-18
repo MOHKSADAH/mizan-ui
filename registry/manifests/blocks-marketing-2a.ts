@@ -153,4 +153,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'One large centered quote with the customer avatar, name and role.',
     files: ['registry/blocks/testimonials/testimonials-01.tsx'],
   },
+  {
+    name: 'testimonials-03',
+    type: 'registry:block',
+    family: 'testimonials',
+    title: 'Testimonials 03',
+    description: 'Masonry-style CSS columns of quote cards of varied length.',
+    files: ['registry/blocks/testimonials/testimonials-03.tsx'],
+  },
 ];
