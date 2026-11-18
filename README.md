@@ -106,7 +106,7 @@ The registry is generated. `registry/manifest.ts` and `scripts/data/themes.json`
 - [shadcn/ui](https://ui.shadcn.com) (MIT) and [Base UI](https://base-ui.com) (MIT)
 - [Phosphor Icons](https://phosphoricons.com) (MIT)
 - Theme presets from [tweakcn](https://tweakcn.com) (Apache-2.0)
-- Signature artwork based on Alex Brush (SIL Open Font License)
+- Signature artwork based on Allura (SIL Open Font License)
 
 Full credits are in [`NOTICE`](NOTICE).
 
