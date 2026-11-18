@@ -13,8 +13,8 @@ export const doc: ExampleDoc = {
   },
   accessibility: [
     {
-      en: 'Alt text is required: it names each thumbnail and titles the dialog. Escape closes and focus returns to the thumbnail you were on.',
-      ar: 'النص البديل مطلوب: يسمي كل صورة مصغرة ويكون عنوان الحوار. يغلق Escape ويعود التركيز إلى الصورة المصغرة التي كنت عليها.',
+      en: 'Alt text is required: it names each thumbnail and titles the dialog. Escape closes and focus returns to the thumbnail you were on. Each new image is announced with its alt text and position.',
+      ar: 'النص البديل مطلوب: يسمي كل صورة مصغرة ويكون عنوان الحوار. يغلق Escape ويعود التركيز إلى الصورة المصغرة التي كنت عليها. تُعلن كل صورة جديدة بنصها البديل وموضعها.',
     },
     {
       en: 'The arrow keys follow the reading direction: in RTL, Right goes to the previous image. Zoom works with the wheel, a pinch, the + and - keys, and two buttons.',

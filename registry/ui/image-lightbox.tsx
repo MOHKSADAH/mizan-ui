@@ -175,7 +175,8 @@ function ImageLightbox({ images, zoom, lang = "en", digits = "latn", labels, cla
             )}
           </div>
           <div className="flex items-center justify-between gap-2 text-sm text-muted-foreground">
-            <span className="tabular-nums">
+            <span aria-live="polite" aria-atomic="true" className="tabular-nums">
+              <span className="sr-only">{image?.alt} </span>
               {l.counter
                 .replace("{current}", formatNumber(index + 1, locale))
                 .replace("{total}", formatNumber(total, locale))}
