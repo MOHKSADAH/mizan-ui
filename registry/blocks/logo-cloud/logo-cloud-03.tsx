@@ -5,27 +5,34 @@ import {
   BuildingsIcon,
   ForkKnifeIcon,
   GraduationCapIcon,
+  PauseIcon,
+  PlayIcon,
   StethoscopeIcon,
   StorefrontIcon,
   TruckIcon,
 } from "@phosphor-icons/react"
 
 import type { BlockBase } from "@/registry/lib/block-types"
+import { cn } from "@/registry/lib/utils"
+import { Button } from "@/registry/ui/button"
 import { Container } from "@/registry/ui/container"
 import { useDirection } from "@/registry/ui/direction"
 import { Section } from "@/registry/ui/section"
 
 type Logo = { name: string; src?: string; logo?: React.ReactNode; href?: string; width?: number }
 
+type LogoCloud03Labels = { pause: string; play: string }
+
 type LogoCloud03Props = BlockBase & {
   title: string
   logos: Logo[]
   // Seconds for one full loop.
   duration?: number
+  labels?: Partial<LogoCloud03Labels>
 }
 
-const labelsEn = {}
-const labelsAr = {}
+const labelsEn: LogoCloud03Labels = { pause: "Pause logos", play: "Play logos" }
+const labelsAr: LogoCloud03Labels = { pause: "إيقاف الشعارات", play: "تشغيل الشعارات" }
 
 // The keyframes live here so the block installs alone. Reduced motion shows a static wrapped row.
 const KEYFRAMES = "@keyframes mizan-marquee{to{transform:translateX(calc(-50% * var(--mizan-dir)))}}"
@@ -38,7 +45,9 @@ function Mark({ logo }: { logo: Logo }) {
   )
 }
 
-function LogoCloud03({ title, logos, duration = 40, headingLevel = 2, id, className }: LogoCloud03Props) {
+function LogoCloud03({ title, logos, duration = 40, labels, headingLevel = 2, id, className }: LogoCloud03Props) {
+  const t = { ...labelsEn, ...labels }
+  const [paused, setPaused] = React.useState(false)
   const uid = React.useId()
   const sid = id ?? uid
   const dir = useDirection()
@@ -52,7 +61,10 @@ function LogoCloud03({ title, logos, duration = 40, headingLevel = 2, id, classN
         </Heading>
         <div className="mt-8 overflow-hidden">
           <div
-            className="flex w-max items-center gap-x-10 hover:[animation-play-state:paused] focus-within:[animation-play-state:paused] motion-safe:animate-[mizan-marquee_var(--mizan-duration)_linear_infinite] motion-reduce:w-auto motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-y-6"
+            className={cn(
+              "flex w-max items-center gap-x-10 hover:[animation-play-state:paused] focus-within:[animation-play-state:paused] motion-safe:animate-[mizan-marquee_var(--mizan-duration)_linear_infinite] motion-reduce:w-auto motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-y-6",
+              paused && "[animation-play-state:paused]"
+            )}
             style={{ "--mizan-dir": dir === "rtl" ? -1 : 1, "--mizan-duration": `${duration}s` } as React.CSSProperties}
           >
             <ul className="flex shrink-0 items-center gap-x-10 motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-y-6">
@@ -76,6 +88,12 @@ function LogoCloud03({ title, logos, duration = 40, headingLevel = 2, id, classN
               ))}
             </ul>
           </div>
+        </div>
+        <div className="mt-6 flex justify-center motion-reduce:hidden">
+          <Button type="button" variant="ghost" size="sm" onClick={() => setPaused((p) => !p)}>
+            {paused ? <PlayIcon aria-hidden="true" /> : <PauseIcon aria-hidden="true" />}
+            {paused ? t.play : t.pause}
+          </Button>
         </div>
       </Container>
     </Section>

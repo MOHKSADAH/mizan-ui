@@ -2,7 +2,7 @@ import { expect, test } from 'bun:test';
 import { renderToString } from 'react-dom/server';
 import { DirectionProvider } from '@/registry/ui/direction';
 import LogoCloud02, { demo as LogoCloud02Demo } from './logo-cloud-02';
-import LogoCloud03, { demo as LogoCloud03Demo } from './logo-cloud-03';
+import LogoCloud03, { demo as LogoCloud03Demo, labelsAr } from './logo-cloud-03';
 import LogoCloud04, { demo as LogoCloud04Demo } from './logo-cloud-04';
 
 test('logo-cloud-02 renders in English', () => {
@@ -35,6 +35,13 @@ test('logo-cloud-03 repeats image logos as images in the loop copy', () => {
   const logos = [{ name: 'Najd Trading', src: '/examples/najd.svg' }];
   const html = renderToString(<LogoCloud03 title="Trusted" logos={logos} />);
   expect(html.match(/<img /g)).toHaveLength(2);
+});
+
+test('logo-cloud-03 has a pause button for the moving row', () => {
+  const html = renderToString(<LogoCloud03 {...LogoCloud03Demo.en} />);
+  expect(html).toMatch(/<button[^>]*type="button"[^>]*>.*Pause logos<\/button>/);
+  const ar = renderToString(<LogoCloud03 {...LogoCloud03Demo.ar} labels={labelsAr} />);
+  expect(ar).toContain('إيقاف الشعارات');
 });
 
 test('logo-cloud-03 renders in Arabic', () => {
