@@ -58,8 +58,10 @@ function SwatchSelect({
 
   return (
     <div data-slot="swatch-select" className={cn("flex flex-col gap-2", className)}>
-      <div id={labelId} className="flex gap-1.5 text-sm">
-        <span className="font-medium">{label}</span>
+      <div className="flex gap-1.5 text-sm">
+        <span id={labelId} className="font-medium">
+          {label}
+        </span>
         {selected && <span className="text-muted-foreground">{selected.label}</span>}
       </div>
       <RadioGroup

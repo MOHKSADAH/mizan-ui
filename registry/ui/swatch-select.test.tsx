@@ -35,3 +35,9 @@ test("the selected mark never replaces the focus ring", () => {
   expect(html).not.toMatch(/data-checked:ring-/)
   expect(html).toContain("data-checked:outline-solid")
 })
+
+test("the group is named by the label only, not the selected value", () => {
+  const html = renderToString(<SwatchSelect label="Color" options={colors} defaultValue="red" />)
+  const id = html.match(/aria-labelledby="([^"]+)"/)?.[1]
+  expect(html).toContain(`<span id="${id}" class="font-medium">Color</span>`)
+})
