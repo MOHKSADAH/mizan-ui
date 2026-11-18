@@ -20,3 +20,8 @@ test('renders in ar with Arabic digits and anchors on the inline start', () => {
   expect(html).toContain('٥٠% من صورة قبل');
   expect(html).toContain('inset-inline-start:50%');
 });
+
+test('a controlled value wins over defaultValue and is clamped', () => {
+  expect(renderToString(<ComparisonSlider before={before} after={after} value={70} defaultValue={20} />)).toContain('aria-valuenow="70"');
+  expect(renderToString(<ComparisonSlider before={before} after={after} value={140} />)).toContain('aria-valuenow="100"');
+});

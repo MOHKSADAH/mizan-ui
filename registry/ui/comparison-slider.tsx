@@ -29,6 +29,7 @@ type ComparisonSliderProps = Omit<React.ComponentProps<"div">, "children" | "def
   before: ComparisonImage
   after: ComparisonImage
   // Percent of the before image shown, from the inline start edge.
+  value?: number
   defaultValue?: number
   onValueChange?: (value: number) => void
   lang?: Lang
@@ -39,6 +40,7 @@ type ComparisonSliderProps = Omit<React.ComponentProps<"div">, "children" | "def
 function ComparisonSlider({
   before,
   after,
+  value: valueProp,
   defaultValue = 50,
   onValueChange,
   lang = "en",
@@ -48,13 +50,14 @@ function ComparisonSlider({
   ...props
 }: ComparisonSliderProps) {
   const l = { ...defaultLabels, ...labels }
-  const [value, setValueState] = React.useState(clamp(defaultValue))
+  const [inner, setInner] = React.useState(clamp(defaultValue))
+  const value = valueProp === undefined ? inner : clamp(valueProp)
   const root = React.useRef<HTMLDivElement>(null)
   const dragging = React.useRef(false)
 
   const setValue = (next: number) => {
     const v = clamp(next)
-    setValueState(v)
+    setInner(v)
     onValueChange?.(v)
   }
 
