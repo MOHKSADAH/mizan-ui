@@ -3,7 +3,7 @@
 import * as React from "react"
 import { CaretDownIcon, CaretRightIcon } from "@phosphor-icons/react"
 import { cn } from "@/registry/lib/utils"
-import { flattenTree } from "@/registry/lib/tree"
+import { findByFirstChar, flattenTree } from "@/registry/lib/tree"
 
 type TreeNode = {
   id: string
@@ -20,7 +20,7 @@ type TreeViewProps = Omit<React.ComponentProps<"ul">, "children" | "role" | "onS
   onSelect?: (id: string) => void
 }
 
-// APG tree pattern: one tab stop, arrow keys move, Right and Left open and close (swapped in RTL).
+// APG tree pattern: one tab stop, arrow keys move, Right and Left open and close (swapped in RTL), a letter jumps to the next match.
 function TreeView({ nodes, label, defaultExpanded = [], defaultSelected, onSelect, className, ...props }: TreeViewProps) {
   const [expanded, setExpanded] = React.useState(() => new Set(defaultExpanded))
   const [selected, setSelected] = React.useState(defaultSelected)
@@ -64,6 +64,9 @@ function TreeView({ nodes, label, defaultExpanded = [], defaultSelected, onSelec
     } else if (key === "Enter" || key === " ") {
       select(row.node.id)
       if (row.expanded !== undefined) toggle(row.node.id, !row.expanded)
+    } else if (key.length === 1 && !event.ctrlKey && !event.metaKey && !event.altKey) {
+      const texts = rows.map((r) => items.current.get(r.node.id)?.textContent ?? "")
+      focusRow(rows[findByFirstChar(texts, index, key)]?.node.id)
     } else return
     event.preventDefault()
   }
