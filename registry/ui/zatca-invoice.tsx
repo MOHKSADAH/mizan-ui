@@ -236,37 +236,39 @@ function ZatcaInvoice({
         {party(seller, "seller")}
         {buyer && party(buyer, "buyer")}
       </div>
-      <table className="w-full border-collapse">
-        <thead>
-          <tr className="border-b border-border text-start">
-            <th scope="col" className="py-2 pe-2 text-start font-medium">{both("description")}</th>
-            <th scope="col" className="px-2 py-2 text-end font-medium">{both("quantity")}</th>
-            <th scope="col" className="px-2 py-2 text-end font-medium">{both("unitPrice")}</th>
-            <th scope="col" className="px-2 py-2 text-end font-medium">
-              {both("vat")} <bdi>{formatPercent(vatRate, locale)}</bdi>
-            </th>
-            <th scope="col" className="py-2 ps-2 text-end font-medium">{both("lineTotal")}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {lines.map((line, i) => (
-            <tr key={i} className="border-b border-border print:break-inside-avoid">
-              <td className="py-2 pe-2">
-                <bdi>{lang === "ar" ? (line.descriptionAr ?? line.description) : line.description}</bdi>
-                {(lang === "ar" ? line.descriptionAr && line.description : line.descriptionAr) && (
-                  <span lang={otherLang} className="block text-xs text-muted-foreground">
-                    <bdi>{lang === "ar" ? line.description : line.descriptionAr}</bdi>
-                  </span>
-                )}
-              </td>
-              <td className="px-2 py-2 text-end tabular-nums">{formatNumber(line.quantity, locale)}</td>
-              <td className="px-2 py-2 text-end">{money(Math.round(line.unitPrice * 100))}</td>
-              <td className="px-2 py-2 text-end">{money(rows[i].vat)}</td>
-              <td className="py-2 ps-2 text-end">{money(rows[i].total)}</td>
+      <div className="overflow-x-auto print:overflow-visible">
+        <table className="w-full border-collapse">
+          <thead>
+            <tr className="border-b border-border text-start">
+              <th scope="col" className="py-2 pe-2 text-start font-medium">{both("description")}</th>
+              <th scope="col" className="px-2 py-2 text-end font-medium">{both("quantity")}</th>
+              <th scope="col" className="px-2 py-2 text-end font-medium">{both("unitPrice")}</th>
+              <th scope="col" className="px-2 py-2 text-end font-medium">
+                {both("vat")} <bdi>{formatPercent(vatRate, locale)}</bdi>
+              </th>
+              <th scope="col" className="py-2 ps-2 text-end font-medium">{both("lineTotal")}</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {lines.map((line, i) => (
+              <tr key={i} className="border-b border-border print:break-inside-avoid">
+                <td className="py-2 pe-2">
+                  <bdi>{lang === "ar" ? (line.descriptionAr ?? line.description) : line.description}</bdi>
+                  {(lang === "ar" ? line.descriptionAr && line.description : line.descriptionAr) && (
+                    <span lang={otherLang} className="block text-xs text-muted-foreground">
+                      <bdi>{lang === "ar" ? line.description : line.descriptionAr}</bdi>
+                    </span>
+                  )}
+                </td>
+                <td className="px-2 py-2 text-end tabular-nums">{formatNumber(line.quantity, locale)}</td>
+                <td className="px-2 py-2 text-end">{money(Math.round(line.unitPrice * 100))}</td>
+                <td className="px-2 py-2 text-end">{money(rows[i].vat)}</td>
+                <td className="py-2 ps-2 text-end">{money(rows[i].total)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <div className="flex flex-wrap items-end justify-between gap-6 print:break-inside-avoid">
         <figure className="flex flex-col gap-1">
           <QrCode value={qr} label={main.qr} className="size-32" />
