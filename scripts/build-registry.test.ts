@@ -36,6 +36,7 @@ test('REGISTRY_BASE_URL turns registry dependencies into full item URLs', async 
 });
 
 test('a nested lib file resolves to its item name', () => {
+  expect(itemOf('@/registry/lib/gulf/arabic-normalize')).toBe('arabic-normalize');
   expect(itemOf('@/registry/lib/gulf/validators')).toBe('gulf-validators');
   expect(itemOf('@/registry/ui/button')).toBe('button');
 });

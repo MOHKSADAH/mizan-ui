@@ -3,6 +3,7 @@ import { blockItems } from './manifests/blocks';
 import { commerceItems } from './manifests/commerce';
 import { displayItems } from './manifests/display';
 import { gulfItems } from './manifests/gulf';
+import { inputsItems } from './manifests/inputs';
 
 export type Category = 'forms' | 'data-display' | 'overlays' | 'navigation' | 'feedback' | 'layout' | 'commerce' | 'ascii';
 
@@ -50,6 +51,7 @@ export const uiItems: ManifestItem[] = [
   ...displayItems,
   ...commerceItems,
   ...asciiItems,
+  ...inputsItems,
 ];
 
 export const manifest: ManifestItem[] = [

@@ -1,6 +1,7 @@
 import { WarningCircleIcon } from '@phosphor-icons/react/ssr';
 import { Field, FieldDescription, FieldError, FieldLabel } from '@/registry/ui/field';
 import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from '@/registry/ui/input-otp';
+import { SmsCodeDemo } from '@/registry/examples/input-otp.client';
 import type { ExampleDoc, ExampleProps } from '@/registry/examples/types';
 
 export const doc: ExampleDoc = {
@@ -23,11 +24,16 @@ export const doc: ExampleDoc = {
     FourDigits: { en: 'Four digits', ar: 'أربعة أرقام' },
     Invalid: { en: 'Invalid', ar: 'غير صالح' },
     Disabled: { en: 'Disabled', ar: 'معطّل' },
+    SmsCode: { en: 'SMS code with resend countdown', ar: 'رمز الرسالة النصية مع عدّ تنازلي لإعادة الإرسال' },
   },
   accessibility: [
     { en: 'One real input sits behind the slots, so screen readers and autofill see a single field. Name it with aria-label.', ar: 'يوجد حقل حقيقي واحد خلف الخانات، فيرى قارئ الشاشة والتعبئة التلقائية حقلًا واحدًا. سمِّه بـ aria-label.' },
     { en: 'Wrap the code in dir="ltr": digits always read left to right, also in Arabic.', ar: 'ضع الرمز داخل dir="ltr": تُقرأ الأرقام دائمًا من اليسار إلى اليمين، حتى في العربية.' },
     { en: 'Set autoComplete="one-time-code" and inputMode="numeric" for SMS autofill and the number pad.', ar: 'اضبط autoComplete="one-time-code" وinputMode="numeric" لتعبئة الرسائل ولوحة الأرقام.' },
+    {
+      en: 'Errors and the sent confirmation go to a polite live region, and a wrong code also sets aria-invalid. The countdown is plain text, not a live region, so it does not interrupt screen readers every second.',
+      ar: 'تذهب الأخطاء وتأكيد الإرسال إلى منطقة حية مهذبة، ويضبط الرمز الخاطئ aria-invalid أيضًا. العدّ التنازلي نص عادي وليس منطقة حية فلا يقاطع قارئات الشاشة كل ثانية.',
+    },
   ],
 };
 
@@ -106,4 +112,8 @@ export function Disabled({ lang }: ExampleProps) {
       </InputOTP>
     </div>
   );
+}
+
+export function SmsCode({ lang }: ExampleProps) {
+  return <SmsCodeDemo lang={lang} />;
 }
