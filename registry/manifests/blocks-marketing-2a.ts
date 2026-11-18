@@ -73,4 +73,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'Flat bento grid of bordered cards with 4, 6 and 8 column spans.',
     files: ['registry/blocks/features/features-03.tsx'],
   },
+  {
+    name: 'features-04',
+    type: 'registry:block',
+    family: 'features',
+    title: 'Features 04',
+    description: 'Sticky heading column with a two-column list of icon features.',
+    files: ['registry/blocks/features/features-04.tsx'],
+  },
 ];

@@ -3,6 +3,7 @@ import { renderToString } from 'react-dom/server';
 import { DirectionProvider } from '@/registry/ui/direction';
 import Features02, { demo as Features02Demo } from './features-02';
 import Features03, { demo as Features03Demo } from './features-03';
+import Features04, { demo as Features04Demo } from './features-04';
 
 test('features-02 renders in English', () => {
   const html = renderToString(<Features02 {...Features02Demo.en} />);
@@ -38,4 +39,22 @@ test('features-03 renders in Arabic', () => {
   expect(html).toContain("منصة واحدة لكل مهام الإدارة الخلفية");
   expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(0);
   expect(html).toContain("lg:col-span-8");
+});
+
+test('features-04 renders in English', () => {
+  const html = renderToString(<Features04 {...Features04Demo.en} />);
+  expect(html).toContain("Everything a growing company needs");
+  expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(0);
+  expect(html).toContain("lg:sticky");
+});
+
+test('features-04 renders in Arabic', () => {
+  const html = renderToString(
+    <DirectionProvider direction="rtl">
+      <Features04 {...Features04Demo.ar} />
+    </DirectionProvider>,
+  );
+  expect(html).toContain("كل ما تحتاجه شركة متنامية");
+  expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(0);
+  expect(html).toContain("lg:sticky");
 });
