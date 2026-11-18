@@ -1,4 +1,5 @@
 import { carouselLabelsAr } from '@/registry/ui/carousel';
+import { dialogLabelsAr } from '@/registry/ui/dialog';
 import { ProductGallery, productGalleryLabelsAr, type GalleryImage } from '@/registry/ui/product-gallery';
 import type { ExampleDoc, ExampleProps } from '@/registry/examples/types';
 
@@ -48,6 +49,7 @@ export function Default({ lang }: ExampleProps) {
         lang={lang}
         labels={ar ? productGalleryLabelsAr : undefined}
         carouselLabels={ar ? carouselLabelsAr : undefined}
+        dialogLabels={ar ? dialogLabelsAr : undefined}
       />
     </div>
   );

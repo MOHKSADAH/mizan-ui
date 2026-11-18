@@ -13,7 +13,7 @@ import {
   type CarouselApi,
   type CarouselLabels,
 } from "@/registry/ui/carousel"
-import { Dialog, DialogContent, DialogTitle } from "@/registry/ui/dialog"
+import { Dialog, DialogContent, DialogTitle, type DialogLabels } from "@/registry/ui/dialog"
 
 type GalleryImage = {
   src: string
@@ -52,6 +52,7 @@ type ProductGalleryProps = Omit<React.ComponentProps<"div">, "children"> & {
   digits?: Digits
   labels?: Partial<ProductGalleryLabels>
   carouselLabels?: Partial<CarouselLabels>
+  dialogLabels?: Partial<DialogLabels>
 }
 
 function ProductGallery({
@@ -61,6 +62,7 @@ function ProductGallery({
   digits,
   labels,
   carouselLabels,
+  dialogLabels,
   className,
   ...props
 }: ProductGalleryProps) {
@@ -152,7 +154,7 @@ function ProductGallery({
       )}
       {zoom && (
         <Dialog open={zoomed !== undefined} onOpenChange={(open) => !open && setZoomed(undefined)}>
-          <DialogContent className="p-2 sm:max-w-3xl">
+          <DialogContent labels={dialogLabels} className="p-2 sm:max-w-3xl">
             {zoomed !== undefined && images[zoomed] && (
               <>
                 <DialogTitle className="sr-only">{images[zoomed].alt}</DialogTitle>
