@@ -2,6 +2,7 @@ import { expect, test } from 'bun:test';
 import { renderToString } from 'react-dom/server';
 import { DirectionProvider } from '@/registry/ui/direction';
 import LogoCloud02, { demo as LogoCloud02Demo } from './logo-cloud-02';
+import LogoCloud03, { demo as LogoCloud03Demo } from './logo-cloud-03';
 
 test('logo-cloud-02 renders in English', () => {
   const html = renderToString(<LogoCloud02 {...LogoCloud02Demo.en} />);
@@ -19,4 +20,23 @@ test('logo-cloud-02 renders in Arabic', () => {
   expect(html).toContain("شركات متنامية تثق بنا");
   expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(0);
   expect(html).toContain("هيا العقارية");
+});
+
+test('logo-cloud-03 renders in English', () => {
+  const html = renderToString(<LogoCloud03 {...LogoCloud03Demo.en} />);
+  expect(html).toContain("Trusted by growing companies");
+  expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(0);
+  expect(html).toContain("mizan-marquee");
+  expect(html).toContain("aria-hidden=\"true\"");
+});
+
+test('logo-cloud-03 renders in Arabic', () => {
+  const html = renderToString(
+    <DirectionProvider direction="rtl">
+      <LogoCloud03 {...LogoCloud03Demo.ar} />
+    </DirectionProvider>,
+  );
+  expect(html).toContain("شركات متنامية تثق بنا");
+  expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(0);
+  expect(html).toContain("mizan-marquee");
 });

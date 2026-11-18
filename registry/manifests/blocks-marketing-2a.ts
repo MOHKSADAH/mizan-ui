@@ -105,4 +105,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'Bordered logo grid with six columns on large screens.',
     files: ['registry/blocks/logo-cloud/logo-cloud-02.tsx'],
   },
+  {
+    name: 'logo-cloud-03',
+    type: 'registry:block',
+    family: 'logo-cloud',
+    title: 'Logo Cloud 03',
+    description: 'Logo marquee with a hard clip, pause on hover and focus, and a static row for reduced motion.',
+    files: ['registry/blocks/logo-cloud/logo-cloud-03.tsx'],
+  },
 ];
