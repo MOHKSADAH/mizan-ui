@@ -81,7 +81,7 @@ export function DocsSidebar({ lang }: { lang: Lang }) {
     return () => el.removeEventListener('scroll', save);
   }, []);
   return (
-    <aside className="sticky top-14 hidden h-[calc(100svh-3.5rem)] w-60 shrink-0 border-e min-[900px]:block">
+    <aside className="sticky top-14 hidden h-[calc(100svh-3.5rem)] w-60 shrink-0 border-e min-[60rem]:block">
       <div ref={ref} className={cn('h-full overflow-y-auto overscroll-contain px-3 py-6 [scrollbar-width:thin]')}>
         <SidebarNav lang={lang} />
       </div>

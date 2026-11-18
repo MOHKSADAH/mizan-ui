@@ -77,8 +77,8 @@ export function ThemeCombobox({ lang, className }: { lang: Lang; className?: str
           }
         >
           <Swatches theme={current} />
-          <span className="hidden truncate sm:inline">{current.name}</span>
-          <CaretDownIcon className="hidden size-3.5 text-muted-foreground sm:block" />
+          <span data-slot="theme-label" className="hidden truncate sm:inline">{current.name}</span>
+          <CaretDownIcon data-slot="theme-label" className="hidden size-3.5 text-muted-foreground sm:block" />
         </TooltipTrigger>
         <TooltipContent>{c.theme}</TooltipContent>
       </Tooltip>
