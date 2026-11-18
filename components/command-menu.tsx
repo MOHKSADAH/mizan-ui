@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { MagnifyingGlassIcon } from '@phosphor-icons/react';
 import { Button } from '@/registry/ui/button';
 import {
+  Command,
   CommandDialog,
   CommandEmpty,
   CommandGroup,
@@ -64,19 +65,21 @@ export function CommandMenu({ lang }: { lang: Lang }) {
         </KbdGroup>
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen} title={t.search} description={t.searchPh}>
-        <CommandInput placeholder={t.searchPh} />
-        <CommandList className="[scrollbar-width:thin]">
-          <CommandEmpty>{CH[lang].noResults}</CommandEmpty>
-          {groups.map((g) => (
-            <CommandGroup key={g.title} heading={g.title}>
-              {g.items.map((item) => (
-                <CommandItem key={g.title + item.href} value={`${g.title} ${item.title}`} onSelect={() => go(item.href)}>
-                  {item.title}
-                </CommandItem>
-              ))}
-            </CommandGroup>
-          ))}
-        </CommandList>
+        <Command>
+          <CommandInput placeholder={t.searchPh} />
+          <CommandList className="[scrollbar-width:thin]">
+            <CommandEmpty>{CH[lang].noResults}</CommandEmpty>
+            {groups.map((g) => (
+              <CommandGroup key={g.title} heading={g.title}>
+                {g.items.map((item) => (
+                  <CommandItem key={g.title + item.href} value={`${g.title} ${item.title}`} onSelect={() => go(item.href)}>
+                    {item.title}
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            ))}
+          </CommandList>
+        </Command>
       </CommandDialog>
     </>
   );
