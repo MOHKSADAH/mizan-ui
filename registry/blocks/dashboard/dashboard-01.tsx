@@ -341,7 +341,7 @@ export function Dashboard01({
                   />
                   <YAxis
                     orientation={rtl ? "right" : "left"}
-                    width={44}
+                    width={rtl ? 60 : 44}
                     tickCount={4}
                     tickLine={false}
                     axisLine={false}
@@ -471,7 +471,7 @@ export function Dashboard01({
                       </bdi>
                     </TableCell>
                     <TableCell className="hidden text-muted-foreground sm:table-cell">
-                      {formatDate(new Date(order.date), { lang }, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}
+                      {formatDate(new Date(order.date), { lang, timeZone: "Asia/Riyadh" }, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}
                     </TableCell>
                     <TableCell>
                       <Badge variant={status.variant}>
