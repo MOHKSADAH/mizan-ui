@@ -185,4 +185,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'Single-plan card with the price and call to action at the start and a feature checklist at the end.',
     files: ['registry/blocks/pricing/pricing-03.tsx'],
   },
+  {
+    name: 'pricing-04',
+    type: 'registry:block',
+    family: 'pricing',
+    title: 'Pricing 04',
+    description: 'Plan cards with a period toggle and a VAT switch that announces the price mode.',
+    files: ['registry/blocks/pricing/pricing-04.tsx'],
+  },
 ];

@@ -3,6 +3,7 @@ import { renderToString } from 'react-dom/server';
 import { DirectionProvider } from '@/registry/ui/direction';
 import Pricing02, { demo as Pricing02Demo } from './pricing-02';
 import Pricing03, { demo as Pricing03Demo } from './pricing-03';
+import Pricing04, { demo as Pricing04Demo } from './pricing-04';
 
 test('pricing-02 renders in English', () => {
   const html = renderToString(<Pricing02 {...Pricing02Demo.en} />);
@@ -39,4 +40,22 @@ test('pricing-03 renders in Arabic', () => {
   expect(html).toContain("باقة واحدة لعيادتك");
   expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(0);
   expect(html).toContain("باقة العيادة");
+});
+
+test('pricing-04 renders in English', () => {
+  const html = renderToString(<Pricing04 {...Pricing04Demo.en} />);
+  expect(html).toContain("Plans with clear VAT");
+  expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(0);
+  expect(html).toContain("aria-live=\"polite\"");
+});
+
+test('pricing-04 renders in Arabic', () => {
+  const html = renderToString(
+    <DirectionProvider direction="rtl">
+      <Pricing04 {...Pricing04Demo.ar} />
+    </DirectionProvider>,
+  );
+  expect(html).toContain("باقات بضريبة واضحة");
+  expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(0);
+  expect(html).toContain("aria-live=\"polite\"");
 });
