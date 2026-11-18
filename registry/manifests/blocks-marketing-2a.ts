@@ -177,4 +177,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'Comparison table with a sticky first column, plan headers with price and call to action, and a labelled scroll region.',
     files: ['registry/blocks/pricing/pricing-02.tsx'],
   },
+  {
+    name: 'pricing-03',
+    type: 'registry:block',
+    family: 'pricing',
+    title: 'Pricing 03',
+    description: 'Single-plan card with the price and call to action at the start and a feature checklist at the end.',
+    files: ['registry/blocks/pricing/pricing-03.tsx'],
+  },
 ];
