@@ -18,7 +18,8 @@
   --shadow-y: 1px;
   --tracking-normal: 0em;
 
-  --font-body: var(--font-geist), var(--font-plex-arabic), system-ui, sans-serif;
+  /* Real families first: next/font's metric fallbacks cover every code point and would draw Arabic in Arial. */
+  --font-body: "Geist", "IBM Plex Sans Arabic", var(--font-geist), var(--font-plex-arabic), system-ui, sans-serif;
   --font-display: var(--font-body);
   --font-code: var(--font-geist-mono), ui-monospace, monospace;
 }

@@ -84,7 +84,7 @@ describe('format', () => {
   test('zero has no sign', () => {
     expect(formatMoney(0, en, { currency: 'SAR' })).toBe('0');
     expect(formatMoney(-0, en, { currency: 'SAR' })).toBe('0');
-    expect(formatMoney(-0.4, en, { currency: 'SAR' })).toBe('0');
+    expect(formatMoney(-0.004, en, { currency: 'SAR' })).toBe('0.00');
     expect(formatPercent(0, en)).toBe('⁦0%⁩');
     expect(formatPercent(-0.0001, en)).toBe('⁦0%⁩');
     expect(formatSigned(-0.4, en, { maximumFractionDigits: 0 })).toBe('⁦0⁩');
@@ -128,6 +128,9 @@ describe('format', () => {
   test('money digits follow minor units', () => {
     expect(formatMoney(489, en, { currency: 'SAR' })).toBe('489');
     expect(formatMoney(489, en, { currency: 'SAR', decimals: true })).toBe('489.00');
+    expect(formatMoney(19.99, en, { currency: 'SAR' })).toBe('19.99');
+    expect(formatMoney(19.5, en, { currency: 'SAR' })).toBe('19.50');
+    expect(formatMoneyName(19.99, en, { currency: 'SAR' })).toBe('19.99 Saudi riyals');
     expect(formatMoney(12.5, en, { currency: 'KWD' })).toBe('12.500');
     expect(formatMoney(12400, en, { currency: 'KWD', compact: true })).toBe('12.4K');
     expect(formatMoneyName(489, en, { currency: 'SAR' })).toBe('489 Saudi riyals');

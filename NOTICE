@@ -16,3 +16,6 @@ Third-party assets
   (licenses/OFL-alex-brush.txt).
 - Saudi riyal, UAE dirham and Omani rial signs (registry/ui/price.tsx), the
   official symbols published by SAMA, CBUAE and CBO.
+- @internationalized/date (Adobe, IslamicUmalquraCalendar and date math used by
+  registry/ui/hijri-calendar.tsx), https://github.com/adobe/react-spectrum,
+  Apache License 2.0.

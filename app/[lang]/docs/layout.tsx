@@ -1,13 +1,11 @@
-import { source } from '@/lib/source';
-import { DocsLayout } from 'fumadocs-ui/layouts/docs';
-import { baseOptions } from '@/lib/layout.shared';
+import { SiteShell } from '@/components/docs-shell';
+import type { Lang } from '@/lib/strings';
 
 export default async function Layout({ params, children }: LayoutProps<'/[lang]/docs'>) {
   const { lang } = await params;
-
   return (
-    <DocsLayout tree={source.getPageTree(lang)} {...baseOptions()}>
+    <SiteShell lang={lang as Lang} sidebar>
       {children}
-    </DocsLayout>
+    </SiteShell>
   );
 }
