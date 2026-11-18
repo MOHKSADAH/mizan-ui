@@ -21,6 +21,10 @@ export const doc: ExampleDoc = {
       en: 'Out-of-stock options are crossed out and a text legend explains it, so the state never relies on color.',
       ar: 'تُشطب الخيارات غير المتوفرة ويشرح ذلك نص توضيحي، فلا تعتمد الحالة على اللون.',
     },
+    {
+      en: 'Wrap the page in a DirectionProvider so arrow keys follow RTL.',
+      ar: 'غلّف الصفحة بـ DirectionProvider لتتبع مفاتيح الأسهم اتجاه RTL.',
+    },
   ],
 };
 

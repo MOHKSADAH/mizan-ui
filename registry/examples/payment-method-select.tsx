@@ -19,6 +19,10 @@ export const doc: ExampleDoc = {
       en: 'Logos are hidden from screen readers. The method name is always text.',
       ar: 'الشعارات مخفية عن قارئات الشاشة. اسم الطريقة نص دائمًا.',
     },
+    {
+      en: 'Wrap the page in a DirectionProvider so arrow keys follow RTL.',
+      ar: 'غلّف الصفحة بـ DirectionProvider لتتبع مفاتيح الأسهم اتجاه RTL.',
+    },
   ],
 };
 
