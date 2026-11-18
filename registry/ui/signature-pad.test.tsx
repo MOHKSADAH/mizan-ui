@@ -12,6 +12,8 @@ describe('signature-pad', () => {
       expect(html).toContain(lang === 'ar' ? 'تراجع' : 'Undo');
       expect(html).toContain(lang === 'ar' ? 'كتابة' : 'Type');
       expect(html).toContain('name="signature"');
+      expect(html).toContain('aria-disabled="true"');
+      expect(html).not.toContain(' disabled=""');
     }
   });
 

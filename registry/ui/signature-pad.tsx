@@ -167,6 +167,8 @@ function SignaturePad({
               size="sm"
               variant="ghost"
               disabled={count === 0}
+              focusableWhenDisabled
+              className="aria-disabled:opacity-50"
               onClick={() => {
                 strokes.current.pop()
                 setCount(strokes.current.length)
@@ -184,6 +186,8 @@ function SignaturePad({
             size="sm"
             variant="ghost"
             disabled={empty}
+            focusableWhenDisabled
+            className="aria-disabled:opacity-50"
             onClick={() => {
               strokes.current = []
               setCount(0)
