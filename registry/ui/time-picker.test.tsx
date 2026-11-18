@@ -61,6 +61,12 @@ describe('time-picker', () => {
     expect(stepTime({ h: 10, m: 0 }, 'hour', 1, { min: '23:00', max: '01:00' })).toBeNull();
   });
 
+  test('disabled segments leave the tab order', () => {
+    const html = renderToString(<TimePicker disabled defaultValue="10:00" aria-label="t" />);
+    expect(html.match(/tabindex="-1"/gi)).toHaveLength(2);
+    expect(html).toContain('aria-disabled="true"');
+  });
+
   test('a value outside the range is marked invalid', () => {
     const bad = renderToString(<TimePicker defaultValue="08:00" min="09:00" aria-label="t" />);
     expect(bad).toContain('aria-invalid="true"');

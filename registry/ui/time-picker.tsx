@@ -228,6 +228,7 @@ function TimePicker({
         max={twelve ? 12 : 23}
         empty={l.empty}
         invalid={invalid}
+        disabled={disabled}
         digits={twelve ? 12 : 23}
         onStep={step}
         onType={(n) => set({ h: twelve ? from12(n, pm) : n, m: time?.m ?? 0 })}
@@ -242,6 +243,7 @@ function TimePicker({
         max={59}
         empty={l.empty}
         invalid={invalid}
+        disabled={disabled}
         digits={59}
         onStep={step}
         onType={(n) => set({ h: time?.h ?? 0, m: n })}
@@ -256,6 +258,7 @@ function TimePicker({
           max={1}
           empty={l.empty}
           invalid={invalid}
+          disabled={disabled}
           onStep={step}
           onType={(n) => time && n !== Number(pm) && step("period", 1)}
           letters={{ [l.am.toLowerCase()]: 0, [l.pm.toLowerCase()]: 1, a: 0, p: 1 }}
@@ -275,6 +278,7 @@ type SegmentProps = {
   max: number
   empty: string
   invalid?: boolean
+  disabled?: boolean
   digits?: number
   letters?: Record<string, number>
   onStep: (kind: Kind, delta: number) => void
@@ -282,7 +286,7 @@ type SegmentProps = {
 }
 
 // Typed digits fill the segment and move on once the value cannot take another digit.
-function Segment({ kind, label, text, now, min, max, empty, invalid, digits, letters, onStep, onType }: SegmentProps) {
+function Segment({ kind, label, text, now, min, max, empty, invalid, disabled, digits, letters, onStep, onType }: SegmentProps) {
   const buffer = React.useRef("")
   const focusSibling = (el: HTMLElement, dir: 1 | -1) => {
     const all = Array.from(el.parentElement?.querySelectorAll<HTMLElement>("[role=spinbutton]") ?? [])
@@ -291,7 +295,8 @@ function Segment({ kind, label, text, now, min, max, empty, invalid, digits, let
   return (
     <div
       role="spinbutton"
-      tabIndex={0}
+      tabIndex={disabled ? -1 : 0}
+      aria-disabled={disabled || undefined}
       aria-label={label}
       aria-valuemin={min}
       aria-valuemax={max}
@@ -301,6 +306,7 @@ function Segment({ kind, label, text, now, min, max, empty, invalid, digits, let
       data-slot="time-picker-segment"
       onBlur={() => (buffer.current = "")}
       onKeyDown={(e) => {
+        if (disabled) return
         const el = e.currentTarget
         const key = e.key.length === 1 ? normalizeArabic(e.key) || e.key : e.key
         const handled = () => e.preventDefault()
