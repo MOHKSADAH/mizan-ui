@@ -1635,8 +1635,6 @@
         "@base-ui/react@^1.9.0"
       ],
       "registryDependencies": [
-        "MOHKSADAH/mizan-ui/direction",
-        "MOHKSADAH/mizan-ui/format",
         "MOHKSADAH/mizan-ui/utils"
       ],
       "files": [

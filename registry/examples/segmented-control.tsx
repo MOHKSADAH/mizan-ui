@@ -26,7 +26,6 @@ export function Default({ lang }: ExampleProps) {
   const label = (en: string, ar: string) => (lang === 'ar' ? ar : en);
   return (
     <SegmentedControl
-      lang={lang}
       aria-label={label('Range', 'النطاق')}
       defaultValue="week"
       options={[

@@ -4,8 +4,6 @@ import * as React from "react"
 import { Toggle as TogglePrimitive } from "@base-ui/react/toggle"
 import { ToggleGroup as ToggleGroupPrimitive } from "@base-ui/react/toggle-group"
 import { cn } from "@/registry/lib/utils"
-import type { Lang } from "@/registry/lib/format"
-import { DirectionProvider } from "@/registry/ui/direction"
 
 type SegmentedOption = { value: string; label: React.ReactNode; disabled?: boolean }
 
@@ -15,7 +13,6 @@ type SegmentedControlProps = Omit<React.ComponentProps<"div">, "defaultValue" | 
   defaultValue?: string
   onValueChange?: (value: string) => void
   disabled?: boolean
-  lang?: Lang
 }
 
 // Single choice. The sliding indicator is hidden under prefers-reduced-motion and the pressed item gets its own background instead.
@@ -25,7 +22,6 @@ function SegmentedControl({
   defaultValue,
   onValueChange,
   disabled,
-  lang = "en",
   className,
   ...props
 }: SegmentedControlProps) {
@@ -49,43 +45,41 @@ function SegmentedControl({
     const observer = new ResizeObserver(measure)
     observer.observe(el)
     return () => observer.disconnect()
-  }, [current, options, lang])
+  }, [current, options])
 
   return (
-    <DirectionProvider direction={lang === "ar" ? "rtl" : "ltr"}>
-      <ToggleGroupPrimitive
-        ref={root}
-        data-slot="segmented-control"
-        value={[current ?? ""]}
-        disabled={disabled}
-        onValueChange={(next) => {
-          const v = next[0]
-          if (v === undefined) return
-          if (value === undefined) setInner(v)
-          onValueChange?.(v)
-        }}
-        className={cn("relative inline-flex w-fit rounded-lg bg-muted p-0.5", className)}
-        {...props}
-      >
-        {box && (
-          <span
-            aria-hidden="true"
-            style={{ insetInlineStart: box.start, width: box.width }}
-            className="absolute inset-y-0.5 rounded-md bg-background shadow-xs motion-safe:transition-[inset-inline-start,width] motion-reduce:hidden"
-          />
-        )}
-        {options.map((o) => (
-          <TogglePrimitive
-            key={o.value}
-            value={o.value}
-            disabled={o.disabled}
-            className="relative z-10 inline-flex h-7 min-w-8 items-center justify-center gap-1 rounded-md px-3 text-sm font-medium whitespace-nowrap text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-pressed:text-foreground motion-reduce:aria-pressed:bg-background"
-          >
-            {o.label}
-          </TogglePrimitive>
-        ))}
-      </ToggleGroupPrimitive>
-    </DirectionProvider>
+    <ToggleGroupPrimitive
+      ref={root}
+      data-slot="segmented-control"
+      value={[current ?? ""]}
+      disabled={disabled}
+      onValueChange={(next) => {
+        const v = next[0]
+        if (v === undefined) return
+        if (value === undefined) setInner(v)
+        onValueChange?.(v)
+      }}
+      className={cn("relative inline-flex w-fit rounded-lg bg-muted p-0.5", className)}
+      {...props}
+    >
+      {box && (
+        <span
+          aria-hidden="true"
+          style={{ insetInlineStart: box.start, width: box.width }}
+          className="absolute inset-y-0.5 rounded-md bg-background shadow-xs motion-safe:transition-[inset-inline-start,width] motion-reduce:hidden"
+        />
+      )}
+      {options.map((o) => (
+        <TogglePrimitive
+          key={o.value}
+          value={o.value}
+          disabled={o.disabled}
+          className="relative z-10 inline-flex h-7 min-w-8 items-center justify-center gap-1 rounded-md px-3 text-sm font-medium whitespace-nowrap text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-pressed:text-foreground motion-reduce:aria-pressed:bg-background"
+        >
+          {o.label}
+        </TogglePrimitive>
+      ))}
+    </ToggleGroupPrimitive>
   )
 }
 
