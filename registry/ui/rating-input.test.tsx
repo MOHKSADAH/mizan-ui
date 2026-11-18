@@ -18,6 +18,7 @@ describe('rating-input', () => {
     expect(html.match(/type="radio"/g)).toHaveLength(11);
     expect(html).toContain('aria-label="4.5 من 5"');
     expect(html).toContain('width:50%');
+    expect(html).toContain('size-12');
   });
 
   test('labels prop overrides the text and max is respected', () => {

@@ -102,13 +102,13 @@ function RatingInput({
           />
         </label>
         {Array.from({ length: max }, (_, i) => (
-          <span key={i} className="relative inline-flex size-6 items-center justify-center text-warning">
-            <StarIcon weight="regular" aria-hidden="true" className="size-5 text-muted-foreground" />
+          <span key={i} className={cn("relative inline-flex items-center justify-center text-warning", half ? "size-12" : "size-6")}>
+            <StarIcon weight="regular" aria-hidden="true" className={cn("text-muted-foreground", half ? "size-10" : "size-5")} />
             <span
               className="absolute inset-y-0 start-0 flex items-center overflow-hidden"
               style={{ width: `${Math.min(Math.max(shown - i, 0), 1) * 100}%` }}
             >
-              <StarIcon weight="fill" aria-hidden="true" className="ms-0.5 size-5 max-w-none shrink-0" />
+              <StarIcon weight="fill" aria-hidden="true" className={cn("max-w-none shrink-0", half ? "ms-1 size-10" : "ms-0.5 size-5")} />
             </span>
             {half
               ? [
