@@ -1413,6 +1413,18 @@
       ]
     },
     {
+      "name": "caret",
+      "type": "registry:lib",
+      "title": "Caret",
+      "description": "Caret position after an input value is reformatted, for grouped and as-you-type fields.",
+      "files": [
+        {
+          "path": "registry/lib/gulf/caret.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
       "name": "saudi-id-input",
       "type": "registry:ui",
       "title": "Saudi Id Input",
@@ -1448,6 +1460,7 @@
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/arabic-normalize",
         "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/caret",
         "MOHKSADAH/mizan-ui/combobox",
         "MOHKSADAH/mizan-ui/format",
         "MOHKSADAH/mizan-ui/input",
@@ -1474,6 +1487,7 @@
       ],
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/arabic-normalize",
+        "MOHKSADAH/mizan-ui/caret",
         "MOHKSADAH/mizan-ui/gulf-validators",
         "MOHKSADAH/mizan-ui/input-group",
         "MOHKSADAH/mizan-ui/utils"

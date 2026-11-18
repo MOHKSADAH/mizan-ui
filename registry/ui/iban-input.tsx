@@ -4,6 +4,7 @@ import * as React from "react"
 import { CheckIcon, CopyIcon, WarningCircleIcon } from "@phosphor-icons/react"
 import { cn } from "@/registry/lib/utils"
 import { normalizeArabic } from "@/registry/lib/gulf/arabic-normalize"
+import { caretAfter } from "@/registry/lib/gulf/caret"
 import { isSaudiIbanFormat } from "@/registry/lib/gulf/validators"
 import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from "@/registry/ui/input-group"
 
@@ -25,6 +26,8 @@ type GroupedInputProps = Omit<
   labels: GroupedInputLabels
 }
 
+const group = (raw: string) => raw.replace(/(.{4})(?=.)/g, "$1 ")
+
 // Shared base of IbanInput and VatInput: the value is stored without spaces and shown in groups of 4, always LTR.
 function GroupedInput({
   value: valueProp,
@@ -45,6 +48,12 @@ function GroupedInput({
   const autoId = React.useId()
   const messageId = `${id ?? autoId}-message`
   const invalid = touched && value !== "" && !validate(value)
+  const caret = React.useRef<{ input: HTMLInputElement; at: number } | null>(null)
+
+  React.useLayoutEffect(() => {
+    caret.current?.input.setSelectionRange(caret.current.at, caret.current.at)
+    caret.current = null
+  })
 
   React.useEffect(() => {
     if (!copied) return
@@ -60,12 +69,14 @@ function GroupedInput({
           dir="ltr"
           autoComplete="off"
           spellCheck={false}
-          value={value.replace(/(.{4})(?=.)/g, "$1 ")}
+          value={group(value)}
           aria-invalid={invalid || undefined}
           aria-describedby={invalid ? messageId : undefined}
           className="tabular-nums rtl:text-end"
           onChange={(e) => {
             const next = clean(e.target.value)
+            const input = e.target
+            if (next !== value) caret.current = { input, at: caretAfter(clean, input.value, input.selectionStart ?? 0, group(next)) }
             setInner(next)
             onValueChange?.(next, validate(next))
           }}

@@ -12,6 +12,7 @@ import {
 import { cn } from "@/registry/lib/utils"
 import type { Lang } from "@/registry/lib/format"
 import { arabicIncludes, normalizeArabic } from "@/registry/lib/gulf/arabic-normalize"
+import { caretAfter } from "@/registry/lib/gulf/caret"
 import { Button } from "@/registry/ui/button"
 import {
   Combobox,
@@ -49,6 +50,8 @@ const phoneInputLabelsAr: PhoneInputLabels = {
 const GCC: CountryCode[] = ["SA", "AE", "KW", "QA", "BH", "OM"]
 
 type Country = { code: CountryCode; dial: string; name: string }
+
+const toDigits = (text: string) => normalizeArabic(text).replace(/\D/g, "").slice(0, 15)
 
 function listCountries(lang: Lang): Country[] {
   const names = new Intl.DisplayNames(lang, { type: "region" })
@@ -99,6 +102,12 @@ function PhoneInput({
   const country = countries.find((c) => c.code === code)!
   const phone = parsePhoneNumberFromString(digits, code)
   const invalid = touched && digits !== "" && !phone?.isValid()
+  const caret = React.useRef<{ input: HTMLInputElement; at: number } | null>(null)
+
+  React.useLayoutEffect(() => {
+    caret.current?.input.setSelectionRange(caret.current.at, caret.current.at)
+    caret.current = null
+  })
 
   const emit = (nextCode: CountryCode, nextDigits: string) => {
     const next = parsePhoneNumberFromString(nextDigits, nextCode)
@@ -162,7 +171,10 @@ function PhoneInput({
           aria-describedby={invalid ? messageId : undefined}
           className="flex-1 tabular-nums rtl:text-end"
           onChange={(e) => {
-            const next = normalizeArabic(e.target.value).replace(/\D/g, "").slice(0, 15)
+            const next = toDigits(e.target.value)
+            const input = e.target
+            if (next !== digits)
+              caret.current = { input, at: caretAfter(toDigits, input.value, input.selectionStart ?? 0, new AsYouType(code).input(next)) }
             setDigits(next)
             emit(code, next)
           }}

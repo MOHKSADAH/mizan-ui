@@ -21,6 +21,7 @@ export const gulfItems: ManifestItem[] = [
   lib('zatca-qr', 'zatca-qr', 'ZATCA Phase 1 invoice QR payload (TLV, base64) encoder and decoder.'),
   lib('saudi-regions', 'saudi-regions', 'Saudi administrative regions with main cities, in Arabic and English.'),
   lib('hijri', 'hijri', 'Umm al-Qura Hijri date formatting and parts through Intl.'),
+  lib('caret', 'caret', 'Caret position after an input value is reformatted, for grouped and as-you-type fields.'),
   ui('saudi-id-input', 'forms', 'A 10-digit national ID or Iqama field with Arabic-Indic digit input and a Luhn format check on blur.'),
   ui('phone-input', 'forms', 'A country combobox (GCC first, default +966) and a national number field with as-you-type formatting and E.164 output.'),
   ui('iban-input', 'forms', 'A Saudi IBAN field shown in groups of 4, always LTR, with a mod-97 format check and a copy button.'),
