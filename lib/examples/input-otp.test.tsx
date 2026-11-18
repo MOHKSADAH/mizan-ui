@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'bun:test';
 import { renderToString } from 'react-dom/server';
-import { SmsCodeDemo } from './input-otp.client';
+import { SmsCodeDemo } from '@/registry/examples/input-otp.client';
 
 describe('input-otp sms example', () => {
   test('renders in en and ar with the countdown and a locked resend button', () => {
