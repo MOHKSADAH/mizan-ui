@@ -1,0 +1,72 @@
+/* Mizan tokens that themes do not set: status colors, field borders, shadows, fonts. */
+:root {
+  --destructive-foreground: oklch(0.985 0 0);
+  --success: oklch(0.52 0.13 155);
+  --success-foreground: oklch(0.985 0 0);
+  --warning: oklch(0.6 0.13 70);
+  --warning-foreground: oklch(0.2 0.03 70);
+  --info: oklch(0.52 0.14 250);
+  --info-foreground: oklch(0.985 0 0);
+
+  --field-border: color-mix(in oklch, var(--foreground) 55%, var(--input));
+
+  --shadow-color: oklch(0 0 0);
+  --shadow-opacity: 0.1;
+  --shadow-blur: 3px;
+  --shadow-spread: 0px;
+  --shadow-x: 0px;
+  --shadow-y: 1px;
+  --tracking-normal: 0em;
+
+  /* Real families first: next/font's metric fallbacks cover every code point and would draw Arabic in Arial. */
+  --font-body: "Geist", "IBM Plex Sans Arabic", var(--font-geist), var(--font-plex-arabic), system-ui, sans-serif;
+  --font-display: var(--font-body);
+  --font-code: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+:root.dark {
+  --destructive-foreground: oklch(0.18 0.03 25);
+  --success: oklch(0.7 0.14 155);
+  --success-foreground: oklch(0.18 0.03 155);
+  --warning: oklch(0.8 0.14 80);
+  --warning-foreground: oklch(0.2 0.03 70);
+  --info: oklch(0.72 0.12 250);
+  --info-foreground: oklch(0.18 0.03 250);
+}
+
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-display);
+  --font-mono: var(--font-code);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-series-1: var(--series-1);
+  --color-series-2: var(--series-2);
+  --color-series-3: var(--series-3);
+  --color-series-4: var(--series-4);
+  --color-series-5: var(--series-5);
+  --color-field-border: var(--field-border);
+  --shadow-2xs: var(--shadow-x) var(--shadow-y) var(--shadow-blur) var(--shadow-spread) var(--shadow-tint-half);
+  --shadow-xs: var(--shadow-x) var(--shadow-y) var(--shadow-blur) var(--shadow-spread) var(--shadow-tint-half);
+  --shadow-sm: var(--shadow-x) var(--shadow-y) var(--shadow-blur) var(--shadow-spread) var(--shadow-tint),
+    var(--shadow-x) 1px 2px calc(var(--shadow-spread) - 1px) var(--shadow-tint);
+  --shadow: var(--shadow-sm);
+  --shadow-md: var(--shadow-x) var(--shadow-y) var(--shadow-blur) var(--shadow-spread) var(--shadow-tint),
+    var(--shadow-x) 2px 4px calc(var(--shadow-spread) - 1px) var(--shadow-tint);
+  --shadow-lg: var(--shadow-x) var(--shadow-y) var(--shadow-blur) var(--shadow-spread) var(--shadow-tint),
+    var(--shadow-x) 4px 6px calc(var(--shadow-spread) - 1px) var(--shadow-tint);
+  --shadow-xl: var(--shadow-x) var(--shadow-y) var(--shadow-blur) var(--shadow-spread) var(--shadow-tint),
+    var(--shadow-x) 8px 10px calc(var(--shadow-spread) - 1px) var(--shadow-tint);
+  --shadow-2xl: var(--shadow-x) var(--shadow-y) var(--shadow-blur) var(--shadow-spread) var(--shadow-tint-strong);
+}
+
+:root {
+  --shadow-tint: color-mix(in oklab, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent);
+  --shadow-tint-half: color-mix(in oklab, var(--shadow-color) calc(var(--shadow-opacity) * 50%), transparent);
+  --shadow-tint-strong: color-mix(in oklab, var(--shadow-color) min(100%, calc(var(--shadow-opacity) * 250%)), transparent);
+}
