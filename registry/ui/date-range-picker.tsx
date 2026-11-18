@@ -50,6 +50,9 @@ const dateRangePickerLabelsAr: DateRangePickerLabels = {
     ),
 }
 
+// react-day-picker's range `min` counts nights (calendar days between the ends), so 1 allows a one-night stay.
+const MIN_NIGHTS = 1
+
 const day = (y: number, m: number, d: number) => new Date(y, m, d)
 
 function rangePreset(id: PresetId, now = new Date()): DateRange {
@@ -211,7 +214,7 @@ function DateRangePicker({
           onMonthChange={setMonth}
           selected={value}
           onSelect={change}
-          min={nights ? 2 : undefined}
+          min={nights ? MIN_NIGHTS : undefined}
           disabled={disabledDays}
           className={hijri ? "[--cell-size:--spacing(10)]" : undefined}
           components={hijri ? { DayButton: HijriDayButton } : undefined}
@@ -222,5 +225,5 @@ function DateRangePicker({
   )
 }
 
-export { DateRangePicker, dateRangePickerLabels, dateRangePickerLabelsAr, nightsBetween, rangePreset }
+export { DateRangePicker, MIN_NIGHTS, dateRangePickerLabels, dateRangePickerLabelsAr, nightsBetween, rangePreset }
 export type { DateRangePickerLabels, DateRangePickerProps, PresetId }

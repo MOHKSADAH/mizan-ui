@@ -1,9 +1,11 @@
 import { describe, expect, test } from "bun:test"
 import { renderToString } from "react-dom/server"
+import { addToRange } from "react-day-picker"
 import * as example from "@/registry/examples/date-range-picker"
 import { renderExamples } from "@/scripts/render-examples"
 import {
   DateRangePicker,
+  MIN_NIGHTS,
   dateRangePickerLabels,
   dateRangePickerLabelsAr,
   nightsBetween,
@@ -60,4 +62,10 @@ describe("DateRangePicker", () => {
   test("renders every docs example in en and ar", () => {
     expect(renderExamples(example).every(Boolean)).toBe(true)
   })
+})
+
+test("the nights minimum accepts a one-night stay and rejects a same-day range", () => {
+  const from = new Date(2026, 11, 10)
+  expect(addToRange(new Date(2026, 11, 11), { from, to: undefined }, MIN_NIGHTS)).toEqual({ from, to: new Date(2026, 11, 11) })
+  expect(addToRange(from, { from, to: undefined }, MIN_NIGHTS)).toBeUndefined()
 })
