@@ -33,4 +33,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'Start-aligned hero with a three-column stats row below the buttons.',
     files: ['registry/blocks/hero/hero-04.tsx'],
   },
+  {
+    name: 'hero-05',
+    type: 'registry:block',
+    family: 'hero',
+    title: 'Hero 05',
+    description: 'Centered hero followed by a full-width screenshot slot with a fixed 16:9 ratio.',
+    files: ['registry/blocks/hero/hero-05.tsx'],
+  },
 ];
