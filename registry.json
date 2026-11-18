@@ -1464,6 +1464,32 @@
       ]
     },
     {
+      "name": "navbar-03",
+      "type": "registry:block",
+      "title": "Navbar 03",
+      "description": "Navbar with a mega menu built from navigation-menu on desktop and an accordion list in the mobile sheet.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/accordion",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/direction",
+        "MOHKSADAH/mizan-ui/dropdown-menu",
+        "MOHKSADAH/mizan-ui/navigation-menu",
+        "MOHKSADAH/mizan-ui/sheet",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/navbar/navbar-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
