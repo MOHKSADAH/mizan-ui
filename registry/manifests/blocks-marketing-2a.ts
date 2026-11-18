@@ -113,4 +113,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'Logo marquee with a hard clip, pause on hover and focus, and a static row for reduced motion.',
     files: ['registry/blocks/logo-cloud/logo-cloud-03.tsx'],
   },
+  {
+    name: 'logo-cloud-04',
+    type: 'registry:block',
+    family: 'logo-cloud',
+    title: 'Logo Cloud 04',
+    description: 'Heading with text at the start and a bordered logo grid at the end.',
+    files: ['registry/blocks/logo-cloud/logo-cloud-04.tsx'],
+  },
 ];
