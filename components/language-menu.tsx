@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { createPortal } from 'react-dom';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { CheckIcon, GlobeIcon } from '@phosphor-icons/react';
 import { Button } from '@/registry/ui/button';
 import {
@@ -24,7 +24,6 @@ const SPLASH_MS = 1000;
 
 export function LanguageMenu({ lang }: { lang: Lang }) {
   const c = CH[lang];
-  const router = useRouter();
   const pathname = usePathname();
   const reduced = useReducedMotion();
   const [splash, setSplash] = React.useState(false);
@@ -45,7 +44,9 @@ export function LanguageMenu({ lang }: { lang: Lang }) {
     if (next === lang) return;
     const href = localePath(next, stripLocale(pathname)) + window.location.hash;
     if (!reduced) setSplash(true);
-    router.push(href, { scroll: false });
+    // A full load: the language is a root-layout param, so a client navigation would remount <html>
+    // and React would re-create the pre-paint <script> in the browser, where it never runs.
+    window.location.assign(href);
   };
 
   return (
