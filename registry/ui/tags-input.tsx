@@ -4,7 +4,7 @@ import * as React from "react"
 import { XIcon } from "@phosphor-icons/react"
 import { cn } from "@/registry/lib/utils"
 import { formatNumber, type Lang } from "@/registry/lib/format"
-import { normalizeText } from "@/registry/lib/normalize-text"
+import { normalizeArabic } from "@/registry/lib/gulf/arabic-normalize"
 import { Button } from "@/registry/ui/button"
 
 type TagsInputLabels = {
@@ -40,12 +40,14 @@ function splitTags(text: string, delimiters = DELIMITERS) {
 
 type Rejection = { tag: string; reason: "duplicate" | "max" }
 
+const tagKey = (tag: string) => normalizeArabic(tag, { taMarbuta: true, hamzaOnWaw: true, hamzaOnYa: true })
+
 function addTags(current: string[], incoming: string[], max = Infinity) {
-  const seen = new Set(current.map(normalizeText))
+  const seen = new Set(current.map(tagKey))
   const next = [...current]
   const rejected: Rejection[] = []
   for (const tag of incoming) {
-    const key = normalizeText(tag)
+    const key = tagKey(tag)
     if (!key) continue
     if (seen.has(key)) rejected.push({ tag, reason: "duplicate" })
     else if (next.length >= max) rejected.push({ tag, reason: "max" })

@@ -4,7 +4,7 @@ import * as React from "react"
 import { ClockIcon } from "@phosphor-icons/react"
 import { cn } from "@/registry/lib/utils"
 import { formatNumber, type Digits, type Lang } from "@/registry/lib/format"
-import { normalizeText } from "@/registry/lib/normalize-text"
+import { normalizeArabic } from "@/registry/lib/gulf/arabic-normalize"
 import { Button } from "@/registry/ui/button"
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/ui/popover"
 
@@ -249,7 +249,7 @@ function Segment({ kind, label, text, now, min, max, empty, digits, letters, onS
       onBlur={() => (buffer.current = "")}
       onKeyDown={(e) => {
         const el = e.currentTarget
-        const key = e.key.length === 1 ? normalizeText(e.key) || e.key : e.key
+        const key = e.key.length === 1 ? normalizeArabic(e.key) || e.key : e.key
         const handled = () => e.preventDefault()
         if (key === "ArrowUp" || key === "ArrowDown") {
           handled()

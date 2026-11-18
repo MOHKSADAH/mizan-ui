@@ -4,7 +4,7 @@ import * as React from "react"
 import { Combobox as ComboboxPrimitive } from "@base-ui/react"
 import { XIcon } from "@phosphor-icons/react"
 import { cn } from "@/registry/lib/utils"
-import { includesText } from "@/registry/lib/normalize-text"
+import { arabicIncludes } from "@/registry/lib/gulf/arabic-normalize"
 import type { Lang } from "@/registry/lib/format"
 import {
   Combobox,
@@ -76,7 +76,7 @@ function MultiSelect({
       multiple
       autoHighlight
       items={items}
-      filter={(item: MultiSelectOption, query: string) => includesText(item.label, query)}
+      filter={(item: MultiSelectOption, query: string) => arabicIncludes(item.label, query, { taMarbuta: true, hamzaOnWaw: true, hamzaOnYa: true })}
       isItemEqualToValue={(a: MultiSelectOption, b: MultiSelectOption) => a.value === b.value}
       value={byValue(value)}
       defaultValue={byValue(defaultValue)}

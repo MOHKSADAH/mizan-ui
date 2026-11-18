@@ -1376,12 +1376,12 @@
       ]
     },
     {
-      "name": "normalize-text",
+      "name": "arabic-normalize",
       "type": "registry:lib",
-      "title": "Normalize Text",
+      "title": "Arabic Normalize",
       "files": [
         {
-          "path": "registry/lib/normalize-text.ts",
+          "path": "registry/lib/gulf/arabic-normalize.ts",
           "type": "registry:lib"
         }
       ]
@@ -1394,9 +1394,9 @@
         "@phosphor-icons/react@^2.1.10"
       ],
       "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
         "MOHKSADAH/mizan-ui/button",
         "MOHKSADAH/mizan-ui/format",
-        "MOHKSADAH/mizan-ui/normalize-text",
         "MOHKSADAH/mizan-ui/utils"
       ],
       "files": [
@@ -1418,9 +1418,9 @@
         "@phosphor-icons/react@^2.1.10"
       ],
       "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
         "MOHKSADAH/mizan-ui/combobox",
         "MOHKSADAH/mizan-ui/format",
-        "MOHKSADAH/mizan-ui/normalize-text",
         "MOHKSADAH/mizan-ui/utils"
       ],
       "files": [
@@ -1464,9 +1464,9 @@
         "@phosphor-icons/react@^2.1.10"
       ],
       "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
         "MOHKSADAH/mizan-ui/button",
         "MOHKSADAH/mizan-ui/format",
-        "MOHKSADAH/mizan-ui/normalize-text",
         "MOHKSADAH/mizan-ui/popover",
         "MOHKSADAH/mizan-ui/utils"
       ],
