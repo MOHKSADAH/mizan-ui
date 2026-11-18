@@ -1,6 +1,7 @@
 import { expect, test } from "bun:test"
 import { renderToString } from "react-dom/server"
 
+import { Price } from "@/registry/ui/price"
 import {
   PaymentMethodSelect,
   paymentMethodSelectLabelsAr,
@@ -38,4 +39,15 @@ test("only the selected method shows details, and renders in ar", () => {
   )
   expect(html).not.toContain("Card form here")
   expect(html).toContain("رسوم")
+})
+
+test("a disabled reason can hold a Price", () => {
+  const html = renderToString(
+    <PaymentMethodSelect
+      label="Payment"
+      methods={[{ id: "tabby", label: "Tabby", disabledReason: <>From <Price amount={100} /></> }]}
+    />
+  )
+  expect(html).toContain('data-slot="price"')
+  expect(html).toContain("100 Saudi riyals")
 })

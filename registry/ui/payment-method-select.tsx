@@ -17,8 +17,8 @@ type PaymentMethod = {
   description?: string
   // Extra amount charged for this method, for example a cash on delivery fee.
   fee?: number
-  // When set the method is disabled and the reason is shown, for example a minimum order amount.
-  disabledReason?: string
+  // When set the method is disabled and the reason is shown, for example a minimum order amount with a Price.
+  disabledReason?: React.ReactNode
   // Shown under the method while it is selected, for example a card form or installment terms.
   details?: React.ReactNode
   // Set false to hide a method, for example Apple Pay on a device without it.

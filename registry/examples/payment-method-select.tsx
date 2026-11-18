@@ -1,5 +1,6 @@
 import { BankIcon, CreditCardIcon, MoneyIcon, WalletIcon } from '@phosphor-icons/react/ssr';
 import { PaymentMethodSelect, paymentMethodSelectLabelsAr, type PaymentMethod } from '@/registry/ui/payment-method-select';
+import { Price } from '@/registry/ui/price';
 import type { ExampleDoc, ExampleProps } from '@/registry/examples/types';
 
 export const doc: ExampleDoc = {
@@ -40,7 +41,11 @@ export function Default({ lang }: ExampleProps) {
       id: 'tabby',
       label: ar ? 'تابي' : 'Tabby',
       icon: <WalletIcon weight="regular" className="size-6" />,
-      disabledReason: ar ? 'متاح للطلبات من 100 ر.س' : 'Available for orders from SAR 100',
+      disabledReason: (
+        <>
+          {ar ? 'متاح للطلبات من' : 'Available for orders from'} <Price amount={100} lang={lang} />
+        </>
+      ),
     },
     {
       id: 'cod',
