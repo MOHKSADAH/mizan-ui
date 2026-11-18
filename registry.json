@@ -1353,6 +1353,374 @@
       ]
     },
     {
+      "name": "gulf-validators",
+      "type": "registry:lib",
+      "title": "Gulf Validators",
+      "description": "Format checks for Saudi national ID, VAT number, IBAN, mobile number and CR number.",
+      "files": [
+        {
+          "path": "registry/lib/gulf/validators.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "arabic-normalize",
+      "type": "registry:lib",
+      "title": "Arabic Normalize",
+      "description": "Arabic text normalization and accent-insensitive matching for search.",
+      "files": [
+        {
+          "path": "registry/lib/gulf/arabic-normalize.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "zatca-qr",
+      "type": "registry:lib",
+      "title": "Zatca Qr",
+      "description": "ZATCA Phase 1 invoice QR payload (TLV, base64) encoder and decoder.",
+      "files": [
+        {
+          "path": "registry/lib/gulf/zatca-qr.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "saudi-regions",
+      "type": "registry:lib",
+      "title": "Saudi Regions",
+      "description": "Saudi administrative regions with main cities, in Arabic and English.",
+      "files": [
+        {
+          "path": "registry/lib/gulf/saudi-regions.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "hijri",
+      "type": "registry:lib",
+      "title": "Hijri",
+      "description": "Umm al-Qura Hijri date formatting and parts through Intl.",
+      "files": [
+        {
+          "path": "registry/lib/gulf/hijri.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "caret",
+      "type": "registry:lib",
+      "title": "Caret",
+      "description": "Caret position after an input value is reformatted, for grouped and as-you-type fields.",
+      "files": [
+        {
+          "path": "registry/lib/gulf/caret.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "saudi-id-input",
+      "type": "registry:ui",
+      "title": "Saudi Id Input",
+      "description": "A 10-digit national ID or Iqama field with Arabic-Indic digit input and a Luhn format check on blur.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
+        "MOHKSADAH/mizan-ui/gulf-validators",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/saudi-id-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "phone-input",
+      "type": "registry:ui",
+      "title": "Phone Input",
+      "description": "A country combobox (GCC first, default +966) and a national number field with as-you-type formatting and E.164 output.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10",
+        "libphonenumber-js@^1.13.16"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/caret",
+        "MOHKSADAH/mizan-ui/combobox",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/label",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/phone-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "iban-input",
+      "type": "registry:ui",
+      "title": "Iban Input",
+      "description": "A Saudi IBAN field shown in groups of 4, always LTR, with a mod-97 format check and a copy button.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
+        "MOHKSADAH/mizan-ui/caret",
+        "MOHKSADAH/mizan-ui/gulf-validators",
+        "MOHKSADAH/mizan-ui/input-group",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/iban-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "vat-input",
+      "type": "registry:ui",
+      "title": "Vat Input",
+      "description": "A Saudi VAT number field shown in groups of 4, always LTR, with a format check and a copy button.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
+        "MOHKSADAH/mizan-ui/gulf-validators",
+        "MOHKSADAH/mizan-ui/iban-input"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/vat-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "region-city-select",
+      "type": "registry:ui",
+      "title": "Region City Select",
+      "description": "Two linked comboboxes for Saudi region and city, in Arabic or English, with Arabic-aware search.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
+        "MOHKSADAH/mizan-ui/combobox",
+        "MOHKSADAH/mizan-ui/field",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/saudi-regions",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/region-city-select.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "saudi-address-form",
+      "type": "registry:ui",
+      "title": "Saudi Address Form",
+      "description": "A composed Saudi address form: region and city, district, street, building, postal and additional numbers, and the national short address.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/arabic-normalize",
+        "MOHKSADAH/mizan-ui/field",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/region-city-select",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/saudi-address-form.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "hijri-calendar",
+      "type": "registry:ui",
+      "title": "Hijri Calendar",
+      "description": "A Hijri (Umm al-Qura) and Gregorian month grid with a calendar toggle, APG keyboard support and optional Fri and Sat weekend styling.",
+      "dependencies": [
+        "@internationalized/date@^3.12.4",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/toggle-group",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/hijri-calendar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "hijri-date-picker",
+      "type": "registry:ui",
+      "title": "Hijri Date Picker",
+      "description": "A date picker that shows the Hijri and Gregorian dates together in its trigger.",
+      "dependencies": [
+        "@internationalized/date@^3.12.4",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/hijri-calendar",
+        "MOHKSADAH/mizan-ui/popover",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/hijri-date-picker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "date-range-picker",
+      "type": "registry:ui",
+      "title": "Date Range Picker",
+      "description": "A range picker on the Calendar with presets, a nights count for bookings and an optional Hijri display.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10",
+        "react-day-picker@^10.0.2"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/calendar",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/popover",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/date-range-picker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "slot-picker",
+      "type": "registry:ui",
+      "title": "Slot Picker",
+      "description": "A day strip and morning, afternoon and evening time chips for bookings, with radiogroup semantics and Arabic AM and PM.",
+      "dependencies": [
+        "@base-ui/react@^1.9.0"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/slot-picker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "opening-hours",
+      "type": "registry:ui",
+      "title": "Opening Hours",
+      "description": "Weekly opening hours with an open-now status, split shifts, a Ramadan override and an editor.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/date-range-picker",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/select",
+        "MOHKSADAH/mizan-ui/switch",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/opening-hours.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "zatca-invoice",
+      "type": "registry:ui",
+      "title": "Zatca Invoice",
+      "description": "A bilingual simplified tax invoice layout with VAT lines, totals and a ZATCA Phase 1 QR code, print friendly.",
+      "dependencies": [
+        "uqr@^0.1.3"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/zatca-qr"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/zatca-invoice.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
       "name": "sparkline",
       "type": "registry:lib",
       "title": "Sparkline",

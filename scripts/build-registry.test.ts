@@ -1,6 +1,6 @@
 import { expect, test } from 'bun:test';
 import type { ManifestItem } from '../registry/manifest';
-import { address, readImports, toItem } from './build-registry';
+import { address, itemOf, readImports, toItem } from './build-registry';
 
 test('reads static, re-export and dynamic imports', () => {
   const src = `import * as React from "react"\nimport { cn } from "@/registry/lib/utils"\nexport { x } from '@/registry/ui/button'\nconst l = () => import("shiki/langs/css.mjs")`;
@@ -33,4 +33,9 @@ test('REGISTRY_BASE_URL turns registry dependencies into full item URLs', async 
     if (saved === undefined) delete process.env.REGISTRY_BASE_URL;
     else process.env.REGISTRY_BASE_URL = saved;
   }
+});
+
+test('a nested lib file resolves to its item name', () => {
+  expect(itemOf('@/registry/lib/gulf/validators')).toBe('gulf-validators');
+  expect(itemOf('@/registry/ui/button')).toBe('button');
 });
