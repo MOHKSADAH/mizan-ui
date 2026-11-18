@@ -78,16 +78,17 @@ export function minorUnits(currency: string) {
 
 export type MoneyOptions = { currency: string; compact?: boolean; decimals?: boolean };
 
-// Compact money: 0 to 1 fraction digits. Full money: minor units when asked or when the currency has 3, else none.
-export function moneyDigits({ currency, compact, decimals }: MoneyOptions): Intl.NumberFormatOptions {
+// Compact money: 0 to 1 fraction digits. Full money: minor units when asked, when the currency has 3,
+// or when the amount has a fraction, so 19.99 never shows as 20. Whole amounts in 2-unit currencies show none.
+export function moneyDigits({ currency, compact, decimals }: MoneyOptions, amount = 0): Intl.NumberFormatOptions {
   if (compact) return { notation: 'compact', minimumFractionDigits: 0, maximumFractionDigits: 1 };
   const units = minorUnits(currency);
-  const digits = decimals || units === 3 ? units : 0;
+  const digits = decimals || units === 3 || !Number.isInteger(amount) ? units : 0;
   return { minimumFractionDigits: digits, maximumFractionDigits: digits };
 }
 
 export function formatMoney(amount: number, locale: Locale, money: MoneyOptions) {
-  return formatNumber(amount, locale, moneyDigits(money));
+  return formatNumber(amount, locale, moneyDigits(money, amount));
 }
 
 // Spoken form for screen readers: "489 Saudi riyals".
@@ -96,7 +97,7 @@ export function formatMoneyName(amount: number, locale: Locale, money: MoneyOpti
     style: 'currency',
     currency: money.currency,
     currencyDisplay: 'name',
-    ...moneyDigits(money),
+    ...moneyDigits(money, amount),
   });
 }
 
@@ -105,7 +106,7 @@ export function formatMoneySymbol(amount: number, locale: Locale, money: MoneyOp
     style: 'currency',
     currency: money.currency,
     currencyDisplay: 'symbol',
-    ...moneyDigits(money),
+    ...moneyDigits(money, amount),
   })
     .replace('US$', '$')
     .replace('UK£', '£');

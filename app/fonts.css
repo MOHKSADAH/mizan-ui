@@ -1,6 +1,6 @@
 /* Font presets. The selected preset sets data-font on <html>. */
 :root[data-font='plex'] {
-  --font-body: var(--font-plex), var(--font-plex-arabic), system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "IBM Plex Sans Arabic", var(--font-plex), var(--font-plex-arabic), system-ui, sans-serif;
   --font-code: var(--font-plex-mono), ui-monospace, monospace;
 }
 :root[data-font='markazi'] {
@@ -8,7 +8,7 @@
 }
 :root[data-font='kufi'] {
   --font-body: var(--font-vazirmatn), system-ui, sans-serif;
-  --font-display: var(--font-kufi), var(--font-vazirmatn), sans-serif;
+  --font-display: "Noto Kufi Arabic", var(--font-vazirmatn), var(--font-kufi), sans-serif;
 }
 :root[data-font='readex'] {
   --font-body: var(--font-readex), system-ui, sans-serif;

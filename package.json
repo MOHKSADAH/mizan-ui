@@ -11,11 +11,12 @@
     "typecheck": "next typegen && tsc --noEmit",
     "test": "bun test",
     "check:physical": "bun scripts/check-physical-classes.ts",
-    "registry:generate": "bun scripts/build-themes.ts && bun scripts/build-aa.ts && bun scripts/build-registry.ts",
+    "registry:generate": "bun scripts/build-themes.ts && bun scripts/build-aa.ts && bun scripts/build-registry.ts && bun scripts/build-blocks-map.ts",
     "build:aa": "bun scripts/build-aa.ts"
   },
   "dependencies": {
     "@base-ui/react": "1.9.0",
+    "@internationalized/date": "3.12.4",
     "@phosphor-icons/react": "2.1.10",
     "@shadcn/react": "0.3.1",
     "@tanstack/react-table": "9.3.1",
