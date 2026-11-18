@@ -69,9 +69,12 @@ export function Forgot01({ lang = "en", labels, className, brand, loginHref = "#
     event.preventDefault()
     const email = String(new FormData(event.currentTarget).get("email"))
     setPending(true)
-    await onSubmit?.(email)
-    setPending(false)
-    setSent(true)
+    try {
+      await onSubmit?.(email)
+      setSent(true)
+    } finally {
+      setPending(false)
+    }
   }
 
   React.useEffect(() => {

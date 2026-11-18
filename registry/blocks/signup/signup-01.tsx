@@ -111,13 +111,18 @@ export function Signup01({
     const form = new FormData(event.currentTarget)
     setPending(true)
     setError(null)
-    const result = await onSubmit?.({
-      name: String(form.get("name")),
-      email: String(form.get("email")),
-      password: String(form.get("password")),
-    })
-    setPending(false)
-    if (result && !result.ok) setError(result.message ?? t.failed)
+    try {
+      const result = await onSubmit?.({
+        name: String(form.get("name")),
+        email: String(form.get("email")),
+        password: String(form.get("password")),
+      })
+      if (result && !result.ok) setError(result.message ?? t.failed)
+    } catch {
+      setError(t.failed)
+    } finally {
+      setPending(false)
+    }
   }
 
   const link = "font-medium text-foreground underline-offset-4 hover:underline"

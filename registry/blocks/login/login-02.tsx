@@ -107,8 +107,11 @@ export function Login02({
       return
     }
     setPending(true)
-    await onRequestOtp?.(`+966${national}`, channel)
-    setPending(false)
+    try {
+      await onRequestOtp?.(`+966${national}`, channel)
+    } finally {
+      setPending(false)
+    }
   }
 
   const link = "font-medium text-foreground underline-offset-4 hover:underline"

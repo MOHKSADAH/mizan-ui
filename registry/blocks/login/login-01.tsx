@@ -94,11 +94,16 @@ export function Login01({
     const form = new FormData(event.currentTarget)
     setPending(true)
     setError(null)
-    const result = await onSubmit?.({ email: String(form.get("email")), password: String(form.get("password")) })
-    setPending(false)
-    if (result && !result.ok) {
-      setError(result.message ?? t.invalid)
-      emailRef.current?.focus()
+    try {
+      const result = await onSubmit?.({ email: String(form.get("email")), password: String(form.get("password")) })
+      if (result && !result.ok) {
+        setError(result.message ?? t.invalid)
+        emailRef.current?.focus()
+      }
+    } catch {
+      setError(t.invalid)
+    } finally {
+      setPending(false)
     }
   }
 

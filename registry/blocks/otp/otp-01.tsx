@@ -105,9 +105,12 @@ export function Otp01({
     if (code.length < length) return
     setPending(true)
     setInvalid(false)
-    const result = await onVerify?.(code)
-    setPending(false)
-    if (result && !result.ok) setInvalid(true)
+    try {
+      const result = await onVerify?.(code)
+      if (result && !result.ok) setInvalid(true)
+    } finally {
+      setPending(false)
+    }
   }
 
   const resend = () => {
