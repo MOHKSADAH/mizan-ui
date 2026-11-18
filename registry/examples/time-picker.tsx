@@ -1,4 +1,4 @@
-import { TimePicker } from '@/registry/ui/time-picker';
+import { TimePicker, timePickerLabelsAr } from '@/registry/ui/time-picker';
 import type { ExampleDoc, ExampleProps } from '@/registry/examples/types';
 
 export const doc: ExampleDoc = {
@@ -29,13 +29,13 @@ export const doc: ExampleDoc = {
 };
 
 export function Default({ lang }: ExampleProps) {
-  return <TimePicker lang={lang} defaultValue="14:30" aria-label={lang === 'ar' ? 'وقت الفتح' : 'Opening time'} />;
+  return <TimePicker labels={lang === 'ar' ? timePickerLabelsAr : undefined} defaultValue="14:30" aria-label={lang === 'ar' ? 'وقت الفتح' : 'Opening time'} />;
 }
 
 export function TwelveHour({ lang }: ExampleProps) {
-  return <TimePicker lang={lang} hourCycle={12} defaultValue="09:15" aria-label={lang === 'ar' ? 'وقت الفتح' : 'Opening time'} />;
+  return <TimePicker labels={lang === 'ar' ? timePickerLabelsAr : undefined} hourCycle={12} defaultValue="09:15" aria-label={lang === 'ar' ? 'وقت الفتح' : 'Opening time'} />;
 }
 
 export function List({ lang }: ExampleProps) {
-  return <TimePicker lang={lang} variant="list" hourCycle={12} minuteStep={5} aria-label={lang === 'ar' ? 'وقت الموعد' : 'Appointment time'} />;
+  return <TimePicker labels={lang === 'ar' ? timePickerLabelsAr : undefined} variant="list" hourCycle={12} minuteStep={5} aria-label={lang === 'ar' ? 'وقت الموعد' : 'Appointment time'} />;
 }

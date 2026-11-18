@@ -3,7 +3,7 @@
 import * as React from "react"
 import { ClockIcon } from "@phosphor-icons/react"
 import { cn } from "@/registry/lib/utils"
-import { formatNumber, type Digits, type Lang } from "@/registry/lib/format"
+import { formatNumber, type Digits } from "@/registry/lib/format"
 import { normalizeArabic } from "@/registry/lib/gulf/arabic-normalize"
 import { Button } from "@/registry/ui/button"
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/ui/popover"
@@ -65,7 +65,6 @@ type TimePickerProps = {
   variant?: "segments" | "list"
   name?: string
   disabled?: boolean
-  lang?: Lang
   digits?: Digits
   labels?: Partial<TimePickerLabels>
   className?: string
@@ -81,18 +80,17 @@ function TimePicker({
   variant = "segments",
   name,
   disabled,
-  lang = "en",
   digits = "latn",
   labels,
   className,
   "aria-label": ariaLabel,
 }: TimePickerProps) {
-  const l = { ...(lang === "ar" ? timePickerLabelsAr : timePickerLabels), ...labels }
+  const l = { ...timePickerLabels, ...labels }
   const [inner, setInner] = React.useState(defaultValue ?? "")
   const time = parseTime(value ?? inner)
   const twelve = hourCycle === 12
   const pm = !!time && time.h >= 12
-  const num = (n: number) => formatNumber(n, { lang, digits }, { minimumIntegerDigits: 2, useGrouping: false })
+  const num = (n: number) => formatNumber(n, { lang: "en", digits }, { minimumIntegerDigits: 2, useGrouping: false })
   const hourText = time ? num(twelve ? to12(time.h) : time.h) : "--"
   const minuteText = time ? num(time.m) : "--"
   const periodText = pm ? l.pm : l.am

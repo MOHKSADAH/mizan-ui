@@ -1,6 +1,8 @@
 import { describe, expect, test } from 'bun:test';
 import { renderToString } from 'react-dom/server';
-import { TimePicker, formatTime, from12, parseTime, to12 } from './time-picker';
+import { TimePicker, formatTime, from12, parseTime, timePickerLabelsAr, to12 } from './time-picker';
+
+const ar = (lang: 'en' | 'ar') => (lang === 'ar' ? timePickerLabelsAr : undefined);
 
 describe('time-picker', () => {
   test('parseTime accepts HH:mm and rejects the rest', () => {
@@ -22,10 +24,10 @@ describe('time-picker', () => {
 
   test('segments render in en and ar, 24h and 12h', () => {
     for (const lang of ['en', 'ar'] as const) {
-      const h24 = renderToString(<TimePicker lang={lang} defaultValue="14:30" aria-label="Time" />);
+      const h24 = renderToString(<TimePicker labels={ar(lang)} defaultValue="14:30" aria-label="Time" />);
       expect(h24).toContain('role="spinbutton"');
       expect(h24).toContain('14');
-      const h12 = renderToString(<TimePicker lang={lang} hourCycle={12} defaultValue="14:30" aria-label="Time" />);
+      const h12 = renderToString(<TimePicker labels={ar(lang)} hourCycle={12} defaultValue="14:30" aria-label="Time" />);
       expect(h12).toContain(lang === 'ar' ? 'م<' : 'PM<');
       expect(h12).toContain('>02<');
     }
@@ -33,13 +35,13 @@ describe('time-picker', () => {
 
   test('empty value shows placeholders and Arabic-Indic digits are optional', () => {
     expect(renderToString(<TimePicker aria-label="Time" />)).toContain('--');
-    expect(renderToString(<TimePicker lang="ar" digits="arab" defaultValue="09:45" aria-label="t" />)).toContain('٠٩');
-    expect(renderToString(<TimePicker lang="ar" hourCycle={12} defaultValue="06:00" aria-label="t" />)).toContain('ص<');
+    expect(renderToString(<TimePicker digits="arab" defaultValue="09:45" aria-label="t" />)).toContain('٠٩');
+    expect(renderToString(<TimePicker labels={timePickerLabelsAr} hourCycle={12} defaultValue="06:00" aria-label="t" />)).toContain('ص<');
   });
 
   test('list variant renders the trigger with the value and a hidden input', () => {
     for (const lang of ['en', 'ar'] as const) {
-      const html = renderToString(<TimePicker variant="list" lang={lang} hourCycle={12} defaultValue="09:15" name="t" />);
+      const html = renderToString(<TimePicker variant="list" labels={ar(lang)} hourCycle={12} defaultValue="09:15" name="t" />);
       expect(html).toContain('data-slot="time-picker"');
       expect(html).toContain('name="t"');
       expect(html).toContain('09:15');
