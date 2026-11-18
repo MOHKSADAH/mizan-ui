@@ -8,7 +8,10 @@ const LOCAL = /^@\/registry\/(?:ui|lib|hooks)\/([\w-]+)$/;
 // REGISTRY_BASE_URL (for example https://mizan.dev) turns dependencies into full URLs of the built items.
 export const address = (name: string, base = process.env.REGISTRY_BASE_URL) =>
   base ? `${base.replace(/\/$/, '')}/r/${name}.json` : `${gitConfig.user}/${gitConfig.repo}/${name}`;
-const pkgName = (spec: string) => spec.split('/').slice(0, spec.startsWith('@') ? 2 : 1).join('/');
+// A manifest file maps to its item name, so a nested lib file (registry/lib/gulf/hijri.ts) resolves to `hijri`.
+export const itemOf = (spec: string) =>
+  manifest.find((i) => i.files.some((f) => f === `registry/${spec.slice(11)}.ts` || f === `registry/${spec.slice(11)}.tsx`))?.name;
+const pkgName =(spec: string) => spec.split('/').slice(0, spec.startsWith('@') ? 2 : 1).join('/');
 
 export function readImports(source: string): string[] {
   return [...source.matchAll(/(?:import|export)[^'"]*?from\s+['"]([^'"]+)['"]|import\(\s*['"]([^'"]+)['"]\s*\)/g)].map(
@@ -23,8 +26,8 @@ export async function toItem(item: ManifestItem, versions: Record<string, string
   const registryDeps = new Set<string>();
   for (const file of item.files) {
     for (const spec of readImports(await Bun.file(file).text())) {
-      const local = spec.match(LOCAL);
-      if (local) registryDeps.add(address(local[1]));
+      const local = spec.startsWith('@/registry/') ? (itemOf(spec) ?? spec.match(LOCAL)?.[1]) : undefined;
+      if (local) registryDeps.add(address(local));
       else if (!spec.startsWith('.') && !spec.startsWith('@/') && !PEERS.has(pkgName(spec))) deps.add(pkgName(spec));
     }
   }

@@ -1,6 +1,10 @@
 import { asciiItems } from './manifests/ascii';
 import { blockItems } from './manifests/blocks';
+import { commerceItems } from './manifests/commerce';
+import { displayItems } from './manifests/display';
+import { foundationItems } from './manifests/foundation';
 import { gulfItems } from './manifests/gulf';
+import { inputsItems } from './manifests/inputs';
 
 export type Category = 'forms' | 'data-display' | 'overlays' | 'navigation' | 'feedback' | 'layout' | 'commerce' | 'ascii';
 
@@ -44,8 +48,12 @@ export const uiItems: ManifestItem[] = [
   ...categories.flatMap((category) =>
     ui[category].map((name) => ({ name, type: 'registry:ui' as const, category, files: [`registry/ui/${name}.tsx`] })),
   ),
+  ...foundationItems,
   ...gulfItems,
+  ...displayItems,
+  ...commerceItems,
   ...asciiItems,
+  ...inputsItems,
 ];
 
 export const manifest: ManifestItem[] = [
