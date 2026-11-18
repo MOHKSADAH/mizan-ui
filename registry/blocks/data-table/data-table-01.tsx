@@ -50,7 +50,7 @@ import {
 } from "@/registry/ui/dropdown-menu"
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@/registry/ui/input-group"
 import { Price } from "@/registry/ui/price"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/registry/ui/table"
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/registry/ui/table"
 
 export type DataTable01Labels = {
   title: string
@@ -424,6 +424,7 @@ export function DataTable01({
 
       <div className="rounded-xl border bg-card">
         <Table>
+          <TableCaption className="sr-only">{t.title}</TableCaption>
           <TableHeader>
             {table.getHeaderGroups().map((group) => (
               <TableRow key={group.id} className="hover:bg-transparent">

@@ -36,7 +36,7 @@ import { InputGroup, InputGroupAddon, InputGroupInput } from "@/registry/ui/inpu
 import { Price } from "@/registry/ui/price"
 import { Separator } from "@/registry/ui/separator"
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/registry/ui/sheet"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/registry/ui/table"
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/registry/ui/table"
 
 export type DataTable03Labels = {
   title: string
@@ -328,6 +328,7 @@ export function DataTable03({
 
       <div className="rounded-xl border bg-card">
         <Table>
+          <TableCaption className="sr-only">{t.title}</TableCaption>
           <TableHeader>
             {table.getHeaderGroups().map((group) => (
               <TableRow key={group.id} className="hover:bg-transparent">
