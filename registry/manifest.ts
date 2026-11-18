@@ -1,5 +1,6 @@
 import { asciiItems } from './manifests/ascii';
 import { blockItems } from './manifests/blocks';
+import { commerceItems } from './manifests/commerce';
 import { displayItems } from './manifests/display';
 import { gulfItems } from './manifests/gulf';
 
@@ -47,6 +48,7 @@ export const uiItems: ManifestItem[] = [
   ),
   ...gulfItems,
   ...displayItems,
+  ...commerceItems,
   ...asciiItems,
 ];
 

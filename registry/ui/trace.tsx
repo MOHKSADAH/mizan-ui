@@ -6,7 +6,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/registry/ui/collapsible"
-import { CaretRightIcon } from "@phosphor-icons/react"
+import { CaretRightIcon } from "@phosphor-icons/react/ssr"
 
 function Trace({ className, ...props }: React.ComponentProps<"div">) {
   return (
@@ -118,8 +118,8 @@ function TraceCollapsibleTrigger({
       {...props}
     >
       {children}
-      <TraceIcon className="transition-transform group-aria-expanded/trace-collapsible-trigger:rotate-90">
-        <CaretRightIcon
+      <TraceIcon className="transition-transform group-aria-expanded/trace-collapsible-trigger:rotate-90 rtl:group-aria-expanded/trace-collapsible-trigger:-rotate-90">
+        <CaretRightIcon className="rtl:rotate-180"
         />
       </TraceIcon>
     </CollapsibleTrigger>
