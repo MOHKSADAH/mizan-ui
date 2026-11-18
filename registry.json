@@ -1662,6 +1662,27 @@
       ]
     },
     {
+      "name": "features-05",
+      "type": "registry:block",
+      "title": "Features 05",
+      "description": "Tabbed feature panels with text and bullets beside a media slot.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/features/features-05.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

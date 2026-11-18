@@ -81,4 +81,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'Sticky heading column with a two-column list of icon features.',
     files: ['registry/blocks/features/features-04.tsx'],
   },
+  {
+    name: 'features-05',
+    type: 'registry:block',
+    family: 'features',
+    title: 'Features 05',
+    description: 'Tabbed feature panels with text and bullets beside a media slot.',
+    files: ['registry/blocks/features/features-05.tsx'],
+  },
 ];

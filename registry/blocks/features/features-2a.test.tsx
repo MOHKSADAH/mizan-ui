@@ -4,6 +4,7 @@ import { DirectionProvider } from '@/registry/ui/direction';
 import Features02, { demo as Features02Demo } from './features-02';
 import Features03, { demo as Features03Demo } from './features-03';
 import Features04, { demo as Features04Demo } from './features-04';
+import Features05, { demo as Features05Demo } from './features-05';
 
 test('features-02 renders in English', () => {
   const html = renderToString(<Features02 {...Features02Demo.en} />);
@@ -57,4 +58,22 @@ test('features-04 renders in Arabic', () => {
   expect(html).toContain("كل ما تحتاجه شركة متنامية");
   expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(0);
   expect(html).toContain("lg:sticky");
+});
+
+test('features-05 renders in English', () => {
+  const html = renderToString(<Features05 {...Features05Demo.en} />);
+  expect(html).toContain("Pick the module that fits your day");
+  expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(0);
+  expect(html).toContain("role=\"tablist\"");
+});
+
+test('features-05 renders in Arabic', () => {
+  const html = renderToString(
+    <DirectionProvider direction="rtl">
+      <Features05 {...Features05Demo.ar} />
+    </DirectionProvider>,
+  );
+  expect(html).toContain("اختر الوحدة التي تناسب يومك");
+  expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(0);
+  expect(html).toContain("role=\"tablist\"");
 });
