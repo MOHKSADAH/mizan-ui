@@ -143,7 +143,7 @@ export type Settings01Props = {
   className?: string
   values: SettingsValues
   timezones: { value: string; label: string }[]
-  onSave?: (section: string, values: Record<string, FormDataEntryValue>) => void
+  onSave?: (section: string, values: Record<string, FormDataEntryValue>) => void | Promise<void>
 }
 
 const SECTIONS = ["profile", "account", "notifications", "security"] as const
@@ -168,9 +168,10 @@ export function Settings01({ lang = "en", labels, className, values, timezones, 
     security: t.tabSecurity,
   }
 
-  const submit = (name: Section) => (event: React.FormEvent<HTMLFormElement>) => {
+  const submit = (name: Section) => async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    onSave?.(name, Object.fromEntries(new FormData(event.currentTarget)))
+    setSaved(null)
+    await onSave?.(name, Object.fromEntries(new FormData(event.currentTarget)))
     setSaved(name)
   }
 
@@ -184,7 +185,7 @@ export function Settings01({ lang = "en", labels, className, values, timezones, 
   )
 
   const panel = (name: Section, title: string, description: string, fields: React.ReactNode) => (
-    <TabsContent value={name}>
+    <TabsContent value={name} keepMounted>
       <Card>
         <CardHeader>
           <CardTitle role="heading" aria-level={2}>
@@ -325,7 +326,7 @@ export function Settings01({ lang = "en", labels, className, values, timezones, 
                     <FieldLabel htmlFor={`${id}-${key}`}>{label}</FieldLabel>
                     <FieldDescription>{hint}</FieldDescription>
                   </FieldContent>
-                  <Switch id={`${id}-${key}`} name={key} defaultChecked={checked} />
+                  <Switch id={`${id}-${key}`} name={key} uncheckedValue="off" defaultChecked={checked} />
                 </Field>
               ))}
             </>
@@ -349,7 +350,7 @@ export function Settings01({ lang = "en", labels, className, values, timezones, 
                   <FieldLabel htmlFor={`${id}-2fa`}>{t.twoFactor}</FieldLabel>
                   <FieldDescription>{t.twoFactorHint}</FieldDescription>
                 </FieldContent>
-                <Switch id={`${id}-2fa`} name="twoFactor" defaultChecked={values.twoFactor} />
+                <Switch id={`${id}-2fa`} name="twoFactor" uncheckedValue="off" defaultChecked={values.twoFactor} />
               </Field>
             </>
           )}

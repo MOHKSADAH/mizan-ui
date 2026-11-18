@@ -19,3 +19,14 @@ test('renders Arabic', () => {
   expect(html).toContain('سارة العتيبي');
   expect(html).toContain('dir="rtl"');
 });
+
+test('keeps every tab form mounted so edits survive a tab switch', () => {
+  const html = renderToString(<Settings01 {...demo.en} />);
+  expect(html.match(/<form/g)).toHaveLength(4);
+});
+
+test('off switches submit "off" so a save can turn them off', () => {
+  const html = renderToString(<Settings01 {...demo.en} />);
+  expect(html).toContain('<input type="hidden" name="notifyMarketing" value="off"/>');
+  expect(html).toContain('<input type="hidden" name="twoFactor" value="off"/>');
+});
