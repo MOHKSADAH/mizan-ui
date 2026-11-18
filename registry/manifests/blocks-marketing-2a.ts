@@ -169,4 +169,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'Quote carousel with one, two or three cards and previous and next buttons in the header row.',
     files: ['registry/blocks/testimonials/testimonials-04.tsx'],
   },
+  {
+    name: 'pricing-02',
+    type: 'registry:block',
+    family: 'pricing',
+    title: 'Pricing 02',
+    description: 'Comparison table with a sticky first column, plan headers with price and call to action, and a labelled scroll region.',
+    files: ['registry/blocks/pricing/pricing-02.tsx'],
+  },
 ];
