@@ -7,10 +7,12 @@ import {
   cookieConsentLabelsAr,
 } from './cookie-consent';
 
-test('banner renders as a non-modal labelled dialog with three equal choices in en', () => {
+test('banner renders as a labelled region, not a dialog, with three equal choices in en', () => {
   const html = renderToString(<CookieConsent policyHref="https://example.com/cookies" />);
-  expect(html).toContain('role="dialog"');
-  expect(html).toContain('aria-modal="false"');
+  expect(html).toStartWith('<section');
+  expect(html).not.toContain('role="dialog"');
+  const id = html.match(/aria-labelledby="([^"]+)"/)?.[1];
+  expect(html).toContain(`id="${id}" class="font-medium">Cookies</p>`);
   for (const text of ['Accept all', 'Reject optional', 'Customize', 'Read the cookie policy']) expect(html).toContain(text);
 });
 

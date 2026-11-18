@@ -180,6 +180,7 @@ function CookieConsent({
   const l = { ...defaultLabels, ...labels }
   const [done, setDone] = React.useState(false)
   const [preferences, setPreferences] = React.useState(false)
+  const titleId = React.useId()
   const choose = (v: ConsentValue, choice: ConsentChoice) => {
     setDone(true)
     setPreferences(false)
@@ -188,18 +189,19 @@ function CookieConsent({
   return (
     <>
       {(open ?? !done) && (
+        // A labelled region, not a dialog: it does not take focus, so screen readers find it as a landmark.
         <section
           data-slot="cookie-consent"
-          role="dialog"
-          aria-modal="false"
-          aria-label={l.title}
+          aria-labelledby={titleId}
           className={cn(
             "fixed inset-x-4 bottom-4 z-50 flex max-w-md flex-col gap-3 rounded-xl bg-card p-4 text-sm text-card-foreground shadow-md ring-1 ring-foreground/10 sm:start-4 sm:end-auto",
             className
           )}
           {...props}
         >
-          <p className="font-medium">{l.title}</p>
+          <p id={titleId} className="font-medium">
+            {l.title}
+          </p>
           <p className="text-muted-foreground">
             {l.description}{" "}
             {policyHref && (

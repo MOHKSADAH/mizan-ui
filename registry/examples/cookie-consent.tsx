@@ -10,8 +10,8 @@ export const doc: ExampleDoc = {
   examples: { Default: { en: 'Default', ar: 'افتراضي' } },
   accessibility: [
     {
-      en: 'The banner is a non-modal dialog with a label. It does not take focus on load and does not trap Tab. The preferences dialog is modal and returns focus to the Customize button.',
-      ar: 'الشريط حوار غير مقيِّد له تسمية. لا يأخذ التركيز عند التحميل ولا يحبس Tab. أما حوار التفضيلات فمقيِّد ويعيد التركيز إلى زر التخصيص.',
+      en: 'The banner is a labelled region, so screen readers list it with the page landmarks. It does not take focus on load and does not trap Tab. The preferences dialog is modal and traps focus; closed without a choice, it returns focus to the Customize button.',
+      ar: 'الشريط منطقة لها تسمية، فتعرضه قارئات الشاشة مع معالم الصفحة. لا يأخذ التركيز عند التحميل ولا يحبس Tab. أما حوار التفضيلات فمقيِّد ويحبس التركيز، وإذا أُغلق دون اختيار يعيد التركيز إلى زر التخصيص.',
     },
     {
       en: 'Accept and Reject have the same weight. The wording is generic: get it reviewed for the rules that apply to your product, including Saudi PDPL, before you ship.',
