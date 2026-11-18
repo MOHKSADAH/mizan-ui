@@ -1,4 +1,4 @@
-import { MultiSelect, type MultiSelectOption } from '@/registry/ui/multi-select';
+import { MultiSelect, multiSelectLabelsAr, type MultiSelectOption } from '@/registry/ui/multi-select';
 import type { ExampleDoc, ExampleProps } from '@/registry/examples/types';
 
 export const doc: ExampleDoc = {
@@ -33,7 +33,7 @@ const cities = (lang: 'en' | 'ar'): MultiSelectOption[] => [
 export function Default({ lang }: ExampleProps) {
   return (
     <MultiSelect
-      lang={lang}
+      labels={lang === 'ar' ? multiSelectLabelsAr : undefined}
       options={cities(lang).map(({ group: _g, ...o }) => o)}
       defaultValue={['ruh']}
       placeholder={lang === 'ar' ? 'اختر المدن' : 'Select cities'}
@@ -43,5 +43,5 @@ export function Default({ lang }: ExampleProps) {
 }
 
 export function Grouped({ lang }: ExampleProps) {
-  return <MultiSelect lang={lang} options={cities(lang)} aria-label={lang === 'ar' ? 'المدن' : 'Cities'} />;
+  return <MultiSelect labels={lang === 'ar' ? multiSelectLabelsAr : undefined} options={cities(lang)} aria-label={lang === 'ar' ? 'المدن' : 'Cities'} />;
 }

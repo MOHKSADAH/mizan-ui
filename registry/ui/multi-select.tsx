@@ -5,7 +5,6 @@ import { Combobox as ComboboxPrimitive } from "@base-ui/react"
 import { XIcon } from "@phosphor-icons/react"
 import { cn } from "@/registry/lib/utils"
 import { arabicIncludes } from "@/registry/lib/gulf/arabic-normalize"
-import type { Lang } from "@/registry/lib/format"
 import {
   Combobox,
   ComboboxChip,
@@ -38,7 +37,6 @@ type MultiSelectProps = {
   placeholder?: string
   disabled?: boolean
   name?: string
-  lang?: Lang
   labels?: Partial<MultiSelectLabels>
   className?: string
   "aria-label"?: string
@@ -59,12 +57,11 @@ function MultiSelect({
   placeholder,
   disabled,
   name,
-  lang = "en",
   labels,
   className,
   "aria-label": ariaLabel,
 }: MultiSelectProps) {
-  const l = { ...(lang === "ar" ? multiSelectLabelsAr : multiSelectLabels), ...labels }
+  const l = { ...multiSelectLabels, ...labels }
   const anchor = useComboboxAnchor()
   const grouped = options.some((o) => o.group)
   const byValue = (values?: string[]) =>

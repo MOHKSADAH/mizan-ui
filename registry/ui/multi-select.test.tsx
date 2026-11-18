@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'bun:test';
 import { renderToString } from 'react-dom/server';
-import { MultiSelect, groupOptions, type MultiSelectOption } from './multi-select';
+import { MultiSelect, groupOptions, multiSelectLabelsAr, type MultiSelectOption } from './multi-select';
 
 const options: MultiSelectOption[] = [
   { value: 'ruh', label: 'الرياض', group: 'Central' },
@@ -20,7 +20,7 @@ describe('multi-select', () => {
   test('renders selected chips in en and ar, grouped or flat', () => {
     for (const lang of ['en', 'ar'] as const) {
       for (const list of [options, options.map(({ group: _g, ...o }) => o)]) {
-        const html = renderToString(<MultiSelect lang={lang} options={list} defaultValue={['ruh', 'jed']} aria-label="Cities" />);
+        const html = renderToString(<MultiSelect labels={lang === 'ar' ? multiSelectLabelsAr : undefined} options={list} defaultValue={['ruh', 'jed']} aria-label="Cities" />);
         expect(html).toContain('data-slot="multi-select"');
         expect(html).toContain('الرياض');
         expect(html).toContain('Jeddah');

@@ -1420,7 +1420,6 @@
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/arabic-normalize",
         "MOHKSADAH/mizan-ui/combobox",
-        "MOHKSADAH/mizan-ui/format",
         "MOHKSADAH/mizan-ui/utils"
       ],
       "files": [
