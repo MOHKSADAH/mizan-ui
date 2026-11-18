@@ -275,7 +275,13 @@ function FileUpload({
                   size="icon-xs"
                   disabled={disabled}
                   aria-label={fill(l.remove, { name: file.name })}
-                  onClick={() => remove(file)}
+                  onClick={(e) => {
+                    const root = e.currentTarget.closest("[data-slot=file-upload]")
+                    const buttons = Array.from(root?.querySelectorAll<HTMLElement>("[data-slot=file-upload-list] button") ?? [])
+                    const i = buttons.indexOf(e.currentTarget)
+                    ;(buttons[i + 1] ?? buttons[i - 1] ?? root?.querySelector<HTMLElement>("[data-slot=file-upload-dropzone]"))?.focus()
+                    remove(file)
+                  }}
                 >
                   <XIcon aria-hidden="true" />
                 </Button>
