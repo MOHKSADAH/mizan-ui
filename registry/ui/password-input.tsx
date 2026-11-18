@@ -4,7 +4,7 @@ import * as React from "react"
 import { Meter as MeterPrimitive } from "@base-ui/react/meter"
 import { CheckCircleIcon, CircleIcon, EyeIcon, EyeSlashIcon } from "@phosphor-icons/react"
 import { cn } from "@/registry/lib/utils"
-import type { Lang } from "@/registry/lib/format"
+import { plural } from "@/registry/lib/format"
 import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from "@/registry/ui/input-group"
 
 type PasswordRule = { id: string; label: string; test: (value: string) => boolean }
@@ -15,7 +15,7 @@ type PasswordInputLabels = {
   levels: [string, string, string, string, string]
   met: string
   unmet: string
-  minLength: string
+  minLength: (n: number) => string
   lowercase: string
   uppercase: string
   number: string
@@ -28,7 +28,7 @@ const passwordInputLabels: PasswordInputLabels = {
   levels: ["Too short", "Weak", "Fair", "Good", "Strong"],
   met: "met",
   unmet: "not met",
-  minLength: "At least {n} characters",
+  minLength: (n) => plural(n, { one: "At least {n} character", other: "At least {n} characters" }, { lang: "en" }),
   lowercase: "A lowercase letter",
   uppercase: "An uppercase letter",
   number: "A number",
@@ -41,7 +41,18 @@ const passwordInputLabelsAr: PasswordInputLabels = {
   levels: ["قصيرة جدًا", "ضعيفة", "متوسطة", "جيدة", "قوية"],
   met: "مستوفى",
   unmet: "غير مستوفى",
-  minLength: "{n} أحرف على الأقل",
+  minLength: (n) =>
+    plural(
+      n,
+      {
+        one: "حرف واحد على الأقل",
+        two: "حرفان على الأقل",
+        few: "{n} أحرف على الأقل",
+        many: "{n} حرفًا على الأقل",
+        other: "{n} حرف على الأقل",
+      },
+      { lang: "ar" }
+    ),
   lowercase: "حرف صغير",
   uppercase: "حرف كبير",
   number: "رقم",
@@ -50,7 +61,7 @@ const passwordInputLabelsAr: PasswordInputLabels = {
 
 function defaultRules(l: PasswordInputLabels, minLength: number): PasswordRule[] {
   return [
-    { id: "length", label: l.minLength.replace("{n}", String(minLength)), test: (v) => v.length >= minLength },
+    { id: "length", label: l.minLength(minLength), test: (v) => v.length >= minLength },
     { id: "lowercase", label: l.lowercase, test: (v) => /\p{Ll}/u.test(v) },
     { id: "uppercase", label: l.uppercase, test: (v) => /\p{Lu}/u.test(v) },
     { id: "number", label: l.number, test: (v) => /\p{N}/u.test(v) },
@@ -71,7 +82,6 @@ type PasswordInputProps = Omit<React.ComponentProps<"input">, "type"> & {
   showStrength?: boolean
   minLength?: number
   rules?: PasswordRule[]
-  lang?: Lang
   labels?: Partial<PasswordInputLabels>
   containerClassName?: string
 }
@@ -80,7 +90,6 @@ function PasswordInput({
   showStrength,
   minLength = 8,
   rules,
-  lang = "en",
   labels,
   className,
   containerClassName,
@@ -89,7 +98,7 @@ function PasswordInput({
   onChange,
   ...props
 }: PasswordInputProps) {
-  const l = { ...(lang === "ar" ? passwordInputLabelsAr : passwordInputLabels), ...labels }
+  const l = { ...passwordInputLabels, ...labels }
   const id = React.useId()
   const [visible, setVisible] = React.useState(false)
   const [inner, setInner] = React.useState(String(defaultValue ?? ""))

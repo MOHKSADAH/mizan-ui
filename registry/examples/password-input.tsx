@@ -1,4 +1,4 @@
-import { PasswordInput } from '@/registry/ui/password-input';
+import { PasswordInputDemo } from '@/registry/examples/password-input.client';
 import type { ExampleDoc, ExampleProps } from '@/registry/examples/types';
 
 export const doc: ExampleDoc = {
@@ -28,9 +28,9 @@ export const doc: ExampleDoc = {
 };
 
 export function Default({ lang }: ExampleProps) {
-  return <PasswordInput lang={lang} aria-label={lang === 'ar' ? 'كلمة المرور' : 'Password'} />;
+  return <PasswordInputDemo lang={lang} aria-label={lang === 'ar' ? 'كلمة المرور' : 'Password'} />;
 }
 
 export function Strength({ lang }: ExampleProps) {
-  return <PasswordInput lang={lang} showStrength aria-label={lang === 'ar' ? 'كلمة المرور' : 'Password'} />;
+  return <PasswordInputDemo lang={lang} showStrength aria-label={lang === 'ar' ? 'كلمة المرور' : 'Password'} />;
 }
