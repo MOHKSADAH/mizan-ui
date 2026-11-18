@@ -3,6 +3,7 @@ import { renderToString } from 'react-dom/server';
 import { DirectionProvider } from '@/registry/ui/direction';
 import Hero04, { demo as Hero04Demo } from './hero-04';
 import Hero05, { demo as Hero05Demo } from './hero-05';
+import Hero06, { demo as Hero06Demo } from './hero-06';
 
 test('hero-04 renders in English', () => {
   const html = renderToString(<Hero04 {...Hero04Demo.en} />);
@@ -36,4 +37,22 @@ test('hero-05 renders in Arabic', () => {
   );
   expect(html).toContain("شاهد أعمالك كاملة");
   expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(1);
+});
+
+test('hero-06 renders in English', () => {
+  const html = renderToString(<Hero06 {...Hero06Demo.en} />);
+  expect(html).toContain("Find the right property");
+  expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(1);
+  expect(html).toContain("role=\"search\"");
+});
+
+test('hero-06 renders in Arabic', () => {
+  const html = renderToString(
+    <DirectionProvider direction="rtl">
+      <Hero06 {...Hero06Demo.ar} />
+    </DirectionProvider>,
+  );
+  expect(html).toContain("اعثر على العقار المناسب");
+  expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(1);
+  expect(html).toContain("role=\"search\"");
 });

@@ -1554,6 +1554,27 @@
       ]
     },
     {
+      "name": "hero-06",
+      "type": "registry:block",
+      "title": "Hero 06",
+      "description": "Centered hero over a card that hosts a search or booking widget slot.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/label",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/hero/hero-06.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

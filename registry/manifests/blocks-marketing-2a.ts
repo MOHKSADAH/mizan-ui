@@ -41,4 +41,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'Centered hero followed by a full-width screenshot slot with a fixed 16:9 ratio.',
     files: ['registry/blocks/hero/hero-05.tsx'],
   },
+  {
+    name: 'hero-06',
+    type: 'registry:block',
+    family: 'hero',
+    title: 'Hero 06',
+    description: 'Centered hero over a card that hosts a search or booking widget slot.',
+    files: ['registry/blocks/hero/hero-06.tsx'],
+  },
 ];
