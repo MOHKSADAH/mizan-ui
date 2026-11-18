@@ -3400,6 +3400,580 @@
       ]
     },
     {
+      "name": "navbar-02",
+      "type": "registry:block",
+      "title": "Navbar 02",
+      "description": "Three-zone navbar with links at the start, a centered brand and actions at the end.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/direction",
+        "MOHKSADAH/mizan-ui/dropdown-menu",
+        "MOHKSADAH/mizan-ui/navigation-menu",
+        "MOHKSADAH/mizan-ui/sheet",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/navbar/navbar-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "navbar-03",
+      "type": "registry:block",
+      "title": "Navbar 03",
+      "description": "Navbar with a mega menu built from navigation-menu on desktop and an accordion list in the mobile sheet.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/accordion",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/direction",
+        "MOHKSADAH/mizan-ui/dropdown-menu",
+        "MOHKSADAH/mizan-ui/navigation-menu",
+        "MOHKSADAH/mizan-ui/sheet",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/navbar/navbar-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "navbar-05",
+      "type": "registry:block",
+      "title": "Navbar 05",
+      "description": "Minimal landing-page navbar with the brand, one call to action and a WhatsApp icon button.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/whatsapp-button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/navbar/navbar-05.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "hero-04",
+      "type": "registry:block",
+      "title": "Hero 04",
+      "description": "Start-aligned hero with a three-column stats row below the buttons.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/hero/hero-04.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "hero-05",
+      "type": "registry:block",
+      "title": "Hero 05",
+      "description": "Centered hero followed by a full-width screenshot slot with a fixed 16:9 ratio.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/hero/hero-05.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "hero-06",
+      "type": "registry:block",
+      "title": "Hero 06",
+      "description": "Centered hero over a card that hosts a search or booking widget slot.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/label",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/hero/hero-06.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "hero-07",
+      "type": "registry:block",
+      "title": "Hero 07",
+      "description": "Split hero with a poster and a dialog video player with required captions.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/dialog",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/hero/hero-07.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "features-02",
+      "type": "registry:block",
+      "title": "Features 02",
+      "description": "Alternating media and text rows that swap sides on large screens.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/features/features-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "features-03",
+      "type": "registry:block",
+      "title": "Features 03",
+      "description": "Flat bento grid of bordered cards with 4, 6 and 8 column spans.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/features/features-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "features-04",
+      "type": "registry:block",
+      "title": "Features 04",
+      "description": "Sticky heading column with a two-column list of icon features.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/features/features-04.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "features-05",
+      "type": "registry:block",
+      "title": "Features 05",
+      "description": "Tabbed feature panels with text and bullets beside a media slot.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/features/features-05.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "features-06",
+      "type": "registry:block",
+      "title": "Features 06",
+      "description": "Numbered process steps in an ordered list, linked by a rule on large screens.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/features/features-06.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "logo-cloud-02",
+      "type": "registry:block",
+      "title": "Logo Cloud 02",
+      "description": "Bordered logo grid with six columns on large screens.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/logo-cloud/logo-cloud-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "logo-cloud-03",
+      "type": "registry:block",
+      "title": "Logo Cloud 03",
+      "description": "Logo marquee with a hard clip, pause on hover and focus, and a static row for reduced motion.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/logo-cloud/logo-cloud-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "logo-cloud-04",
+      "type": "registry:block",
+      "title": "Logo Cloud 04",
+      "description": "Heading with text at the start and a bordered logo grid at the end.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/logo-cloud/logo-cloud-04.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "stats-02",
+      "type": "registry:block",
+      "title": "Stats 02",
+      "description": "Heading and text at the start with a two-by-two stats grid at the end.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/stats/stats-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "stats-03",
+      "type": "registry:block",
+      "title": "Stats 03",
+      "description": "Stat cards with a label, a value and a trend badge with icon and text.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/stats/stats-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "stats-04",
+      "type": "registry:block",
+      "title": "Stats 04",
+      "description": "One muted band of stats, stacked on mobile and divided on tablet and up.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/stats/stats-04.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-01",
+      "type": "registry:block",
+      "title": "Testimonials 01",
+      "description": "One large centered quote with the customer avatar, name and role.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/testimonials/testimonials-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-03",
+      "type": "registry:block",
+      "title": "Testimonials 03",
+      "description": "Masonry-style CSS columns of quote cards of varied length.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/testimonials/testimonials-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-04",
+      "type": "registry:block",
+      "title": "Testimonials 04",
+      "description": "Quote carousel with one, two or three cards and previous and next buttons in the header row.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/carousel",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/testimonials/testimonials-04.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "pricing-02",
+      "type": "registry:block",
+      "title": "Pricing 02",
+      "description": "Comparison table with a sticky first column, plan headers with price and call to action, and a labelled scroll region.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/table",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/pricing/pricing-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "pricing-03",
+      "type": "registry:block",
+      "title": "Pricing 03",
+      "description": "Single-plan card with the price and call to action at the start and a feature checklist at the end.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/pricing/pricing-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "pricing-04",
+      "type": "registry:block",
+      "title": "Pricing 04",
+      "description": "Plan cards with a period toggle and a VAT switch that announces the price mode.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/label",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/switch",
+        "MOHKSADAH/mizan-ui/toggle-group",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/pricing/pricing-04.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "pricing-05",
+      "type": "registry:block",
+      "title": "Pricing 05",
+      "description": "Service packages with a starting-from price, duration, bullets and a WhatsApp quote button.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/whatsapp-button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/pricing/pricing-05.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "blog-list-01",
+      "type": "registry:block",
+      "title": "Blog List 01",
+      "description": "Three-column grid of post cards with category, excerpt, date, reading time and pagination.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/pagination",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/blog-list/blog-list-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "app-shell-01",
       "type": "registry:block",
       "title": "App shell 01",
