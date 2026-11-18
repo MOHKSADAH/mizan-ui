@@ -404,9 +404,13 @@ export function DataTable01({
         </DropdownMenu>
       </div>
 
+      {/* Always mounted, so screen readers announce the count when the bar appears. */}
+      <p role="status" className="sr-only">
+        {selectedIds.length > 0 ? t.selected(selectedIds.length) : null}
+      </p>
       {selectedIds.length > 0 ? (
-        <div role="status" className="flex flex-wrap items-center gap-2 rounded-lg border bg-muted px-3 py-2 text-sm">
-          <span className="me-auto font-medium">{t.selected(selectedIds.length)}</span>
+        <div className="flex flex-wrap items-center gap-2 rounded-lg border bg-muted px-3 py-2 text-sm">
+          <span aria-hidden="true" className="me-auto font-medium">{t.selected(selectedIds.length)}</span>
           <Button size="sm" variant="outline" onClick={() => onBulkAction?.("ship", selectedIds)}>
             {t.markShipped}
           </Button>
