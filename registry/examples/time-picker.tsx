@@ -1,3 +1,4 @@
+import { LunchClosedTimePicker } from '@/registry/examples/time-picker.client';
 import { TimePicker, timePickerLabelsAr } from '@/registry/ui/time-picker';
 import type { ExampleDoc, ExampleProps } from '@/registry/examples/types';
 
@@ -11,6 +12,7 @@ export const doc: ExampleDoc = {
     Default: { en: '24 hour segments', ar: 'مقاطع بنظام 24 ساعة' },
     TwelveHour: { en: '12 hour with AM or PM (ص / م)', ar: 'نظام 12 ساعة مع ص / م' },
     List: { en: 'Popover with lists', ar: 'نافذة منبثقة بقوائم' },
+    Range: { en: 'Business hours: 09:00 to 17:00, lunch hour disabled', ar: 'ساعات العمل: من 09:00 إلى 17:00، مع تعطيل ساعة الغداء' },
   },
   accessibility: [
     {
@@ -25,6 +27,10 @@ export const doc: ExampleDoc = {
       en: 'The list variant uses listbox columns: Tab moves between columns, arrow keys move inside a column, Enter or Space selects, Escape closes.',
       ar: 'يستخدم النمط القائمي أعمدة listbox: ينقل Tab بين الأعمدة، وتتحرك مفاتيح الأسهم داخل العمود، ويختار Enter أو Space، ويغلق Escape.',
     },
+    {
+      en: 'Times outside min and max, or rejected by isTimeDisabled, are skipped by the arrow keys and shown as disabled options in the lists. A typed time outside the range sets aria-invalid.',
+      ar: 'تتخطى مفاتيح الأسهم الأوقات خارج min وmax أو التي يرفضها isTimeDisabled، وتظهر خيارات معطلة في القوائم. الوقت المكتوب خارج النطاق يضبط aria-invalid.',
+    },
   ],
 };
 
@@ -38,4 +44,17 @@ export function TwelveHour({ lang }: ExampleProps) {
 
 export function List({ lang }: ExampleProps) {
   return <TimePicker labels={lang === 'ar' ? timePickerLabelsAr : undefined} variant="list" hourCycle={12} minuteStep={5} aria-label={lang === 'ar' ? 'وقت الموعد' : 'Appointment time'} />;
+}
+
+export function Range({ lang }: ExampleProps) {
+  return (
+    <LunchClosedTimePicker
+      labels={lang === 'ar' ? timePickerLabelsAr : undefined}
+      variant="list"
+      min="09:00"
+      max="17:00"
+      minuteStep={15}
+      aria-label={lang === 'ar' ? 'وقت الموعد' : 'Appointment time'}
+    />
+  );
 }
