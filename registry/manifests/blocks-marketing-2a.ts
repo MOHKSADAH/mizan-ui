@@ -57,4 +57,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'Split hero with a poster and a dialog video player with required captions.',
     files: ['registry/blocks/hero/hero-07.tsx'],
   },
+  {
+    name: 'features-02',
+    type: 'registry:block',
+    family: 'features',
+    title: 'Features 02',
+    description: 'Alternating media and text rows that swap sides on large screens.',
+    files: ['registry/blocks/features/features-02.tsx'],
+  },
 ];
