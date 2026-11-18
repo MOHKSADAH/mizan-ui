@@ -57,4 +57,12 @@ export const appBlocks: ManifestItem[] = [
     description: 'Centered email and password sign-in card with a show-password toggle and an SSO slot.',
     files: ['registry/blocks/login/login-01.tsx'],
   },
+  {
+    name: 'login-02',
+    type: 'registry:block',
+    family: 'login',
+    title: 'Login 02',
+    description: 'Phone sign-in card with a +966 prefixed mobile field that sends a verification code.',
+    files: ['registry/blocks/login/login-02.tsx'],
+  },
 ];
