@@ -49,4 +49,12 @@ export const appBlocks: ManifestItem[] = [
     description: 'Settings page with vertical tabs on desktop, a select on mobile and forms built with Field.',
     files: ['registry/blocks/settings/settings-01.tsx'],
   },
+  {
+    name: 'login-01',
+    type: 'registry:block',
+    family: 'login',
+    title: 'Login 01',
+    description: 'Centered email and password sign-in card with a show-password toggle and an SSO slot.',
+    files: ['registry/blocks/login/login-01.tsx'],
+  },
 ];

@@ -1609,6 +1609,32 @@
       ]
     },
     {
+      "name": "login-01",
+      "type": "registry:block",
+      "title": "Login 01",
+      "description": "Centered email and password sign-in card with a show-password toggle and an SSO slot.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/alert",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/field",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/input-group",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/login/login-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
