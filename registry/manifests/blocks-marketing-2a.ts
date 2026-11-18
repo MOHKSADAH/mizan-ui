@@ -25,4 +25,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'Minimal landing-page navbar with the brand, one call to action and a WhatsApp icon button.',
     files: ['registry/blocks/navbar/navbar-05.tsx'],
   },
+  {
+    name: 'hero-04',
+    type: 'registry:block',
+    family: 'hero',
+    title: 'Hero 04',
+    description: 'Start-aligned hero with a three-column stats row below the buttons.',
+    files: ['registry/blocks/hero/hero-04.tsx'],
+  },
 ];
