@@ -8,6 +8,7 @@ import {
   getCountryCallingCode,
   parsePhoneNumberFromString,
   type CountryCode,
+  type PhoneNumber,
 } from "libphonenumber-js"
 import { cn } from "@/registry/lib/utils"
 import type { Lang } from "@/registry/lib/format"
@@ -52,6 +53,8 @@ const GCC: CountryCode[] = ["SA", "AE", "KW", "QA", "BH", "OM"]
 type Country = { code: CountryCode; dial: string; name: string }
 
 const toDigits = (text: string) => normalizeArabic(text).replace(/\D/g, "").slice(0, 15)
+const parseE164 = (e164?: string) => (e164 ? parsePhoneNumberFromString(e164) : undefined)
+const nationalDigits = (phone?: PhoneNumber) => phone?.formatNational().replace(/\D/g, "") ?? ""
 
 function listCountries(lang: Lang): Country[] {
   const names = new Intl.DisplayNames(lang, { type: "region" })
@@ -69,6 +72,7 @@ type PhoneInputProps = Omit<
   React.ComponentProps<typeof Input>,
   "value" | "defaultValue" | "onChange" | "type" | "children"
 > & {
+  value?: string
   defaultValue?: string
   defaultCountry?: CountryCode
   lang?: Lang
@@ -77,8 +81,10 @@ type PhoneInputProps = Omit<
   labels?: Partial<PhoneInputLabels>
 }
 
-// Uncontrolled: `defaultValue` is E.164. onValueChange reports E.164 once the digits parse, with a validity flag.
+// `value` and `defaultValue` are E.164. onValueChange reports E.164 once the digits parse (else undefined), with a validity flag.
+// An undefined `value` keeps the digits typed so far, so a partial number survives a controlled round trip.
 function PhoneInput({
+  value,
   defaultValue,
   defaultCountry = "SA",
   lang = "en",
@@ -92,15 +98,26 @@ function PhoneInput({
 }: PhoneInputProps) {
   const text = { ...phoneInputLabels, ...labels }
   const countries = React.useMemo(() => listCountries(lang), [lang])
-  const initial = defaultValue ? parsePhoneNumberFromString(defaultValue) : undefined
+  const initial = parseE164(value ?? defaultValue)
   const [code, setCode] = React.useState<CountryCode>(initial?.country ?? defaultCountry)
-  const [digits, setDigits] = React.useState(initial?.formatNational().replace(/\D/g, "") ?? "")
+  const [digits, setDigits] = React.useState(nationalDigits(initial))
+  const [prevValue, setPrevValue] = React.useState(value)
   const [touched, setTouched] = React.useState(false)
   const autoId = React.useId()
   const inputId = id ?? autoId
   const messageId = `${inputId}-message`
-  const country = countries.find((c) => c.code === code)!
   const phone = parsePhoneNumberFromString(digits, code)
+
+  if (value !== prevValue) {
+    setPrevValue(value)
+    if (value !== undefined && value !== phone?.number) {
+      const next = parseE164(value)
+      setCode(next?.country ?? code)
+      setDigits(nationalDigits(next))
+    }
+  }
+
+  const country = countries.find((c) => c.code === code)!
   const invalid = touched && digits !== "" && !phone?.isValid()
   const caret = React.useRef<{ input: HTMLInputElement; at: number } | null>(null)
 

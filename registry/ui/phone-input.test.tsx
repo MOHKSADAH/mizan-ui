@@ -16,6 +16,12 @@ describe("PhoneInput", () => {
     expect(renderToString(<PhoneInput defaultValue="+971501234567" />)).toContain("+971")
   })
 
+  test("shows a controlled E.164 value over defaultValue", () => {
+    const html = renderToString(<PhoneInput value="+971501234567" defaultValue="+966512345678" />)
+    expect(html).toContain("+971")
+    expect(html).toContain('value="050 123 4567"')
+  })
+
   test("renders in ar", () => {
     expect(renderToString(<PhoneInput lang="ar" labels={phoneInputLabelsAr} label="الجوال" />)).toContain("+966")
   })
