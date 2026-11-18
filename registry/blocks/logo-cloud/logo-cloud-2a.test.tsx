@@ -31,6 +31,12 @@ test('logo-cloud-03 renders in English', () => {
   expect(html).toContain("aria-hidden=\"true\"");
 });
 
+test('logo-cloud-03 repeats image logos as images in the loop copy', () => {
+  const logos = [{ name: 'Najd Trading', src: '/examples/najd.svg' }];
+  const html = renderToString(<LogoCloud03 title="Trusted" logos={logos} />);
+  expect(html.match(/<img /g)).toHaveLength(2);
+});
+
 test('logo-cloud-03 renders in Arabic', () => {
   const html = renderToString(
     <DirectionProvider direction="rtl">

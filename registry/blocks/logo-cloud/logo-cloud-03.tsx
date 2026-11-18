@@ -71,7 +71,7 @@ function LogoCloud03({ title, logos, duration = 40, headingLevel = 2, id, classN
             <ul aria-hidden="true" className="flex shrink-0 items-center gap-x-10 motion-reduce:hidden">
               {logos.map((logo) => (
                 <li key={logo.name} className="flex h-8 items-center text-foreground opacity-70">
-                  <Mark logo={{ ...logo, src: undefined, logo: logo.logo ?? logo.name }} />
+                  <Mark logo={logo} />
                 </li>
               ))}
             </ul>
