@@ -66,7 +66,7 @@ export const T = {
     money: ["Currencies", "Each currency uses its own decimal places. The official sign is used where one exists."],
     moneyCols: ["Currency"],
     icons: ["Interface icons", "Phosphor, in the current style.", "All six styles", "3D icons", "3dicons, free to use. Best for empty states, onboarding and feature tiles.", "Brand marks", "Payment, shipping and login marks for checkout and sign-in screens."],
-    footer: { crafted: "Designed and built by", rights: "Mizan UI. Open source under the MIT license. Signature artwork based on Alex Brush (SIL Open Font License)." },
+    footer: { crafted: "Designed and built by", rights: "Mizan UI. Open source under the MIT license. Signature artwork based on Allura (SIL Open Font License)." },
   },
   ar: {
     sec: {
@@ -109,7 +109,7 @@ export const T = {
     money: ["العملات", "لكل عملة خاناتها العشرية، ويُستخدم الرمز الرسمي حيث يوجد."],
     moneyCols: ["العملة"],
     icons: ["أيقونات الواجهة", "Phosphor بالنمط الحالي.", "الأنماط الستة", "أيقونات ثلاثية الأبعاد", "3dicons، مجانية الاستخدام. الأنسب للحالات الفارغة والتعريف وبطاقات المزايا.", "شعارات العلامات التجارية", "شعارات الدفع والشحن وتسجيل الدخول لشاشات إتمام الطلب وتسجيل الدخول."],
-    footer: { crafted: "تصميم وتطوير", rights: "Mizan UI. مفتوح المصدر بترخيص MIT. التوقيع مبني على خط Alex Brush (رخصة SIL للخطوط المفتوحة)." },
+    footer: { crafted: "تصميم وتطوير", rights: "Mizan UI. مفتوح المصدر بترخيص MIT. التوقيع مبني على خط Allura (رخصة SIL للخطوط المفتوحة)." },
   },
 };
 export const ROLE_SAMPLES = {

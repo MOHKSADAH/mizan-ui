@@ -11,9 +11,9 @@ Third-party assets
   https://github.com/shadcn-ui/ui, MIT License.
 - tweakcn theme presets (scripts/data/themes.json, registry/themes/tweakcn-*)
   https://github.com/jnsahaj/tweakcn, Apache License 2.0.
-- MKS signature artwork (components/signature.json), derived from Alex Brush
-  https://github.com/googlefonts/alex-brush, SIL Open Font License 1.1
-  (licenses/OFL-alex-brush.txt).
+- MKS signature artwork (components/signature.json), derived from Allura
+  https://github.com/googlefonts/allura, SIL Open Font License 1.1
+  (licenses/OFL-allura.txt).
 - Saudi riyal, UAE dirham and Omani rial signs (registry/ui/price.tsx), the
   official symbols published by SAMA, CBUAE and CBO.
 - @internationalized/date (Adobe, IslamicUmalquraCalendar and date math used by

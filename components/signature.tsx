@@ -21,7 +21,7 @@ const progress = (t: number) =>
           ? 1 - (0.5 * VMAX * (1 - t) * (1 - t)) / decel
           : VMAX * (t - accel / 2);
 
-// The last stroke (the underline swash) draws TAIL_SPEED times faster, so the signature ends with a flick.
+// The last stroke draws TAIL_SPEED times faster, so the signature ends with a flick.
 const TAIL_SPEED = 2.5;
 const TAIL_START = SIG.maskPaths[SIG.maskPaths.length - 1].start;
 const TAIL_TIME = TAIL_START + (1 - TAIL_START) / TAIL_SPEED;
