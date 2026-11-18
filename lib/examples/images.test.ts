@@ -2,7 +2,7 @@ import { expect, test } from 'bun:test';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const dir = join(import.meta.dir);
+const dir = join(import.meta.dir, '../../registry/examples');
 const sources = readdirSync(dir)
   .filter((f) => f.endsWith('.tsx'))
   .map((f) => readFileSync(join(dir, f), 'utf8'));
