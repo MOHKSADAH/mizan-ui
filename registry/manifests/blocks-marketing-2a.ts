@@ -89,4 +89,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'Tabbed feature panels with text and bullets beside a media slot.',
     files: ['registry/blocks/features/features-05.tsx'],
   },
+  {
+    name: 'features-06',
+    type: 'registry:block',
+    family: 'features',
+    title: 'Features 06',
+    description: 'Numbered process steps in an ordered list, linked by a rule on large screens.',
+    files: ['registry/blocks/features/features-06.tsx'],
+  },
 ];

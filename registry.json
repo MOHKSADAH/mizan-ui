@@ -1683,6 +1683,24 @@
       ]
     },
     {
+      "name": "features-06",
+      "type": "registry:block",
+      "title": "Features 06",
+      "description": "Numbered process steps in an ordered list, linked by a rule on large screens.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/features/features-06.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

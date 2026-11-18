@@ -5,6 +5,7 @@ import Features02, { demo as Features02Demo } from './features-02';
 import Features03, { demo as Features03Demo } from './features-03';
 import Features04, { demo as Features04Demo } from './features-04';
 import Features05, { demo as Features05Demo } from './features-05';
+import Features06, { demo as Features06Demo } from './features-06';
 
 test('features-02 renders in English', () => {
   const html = renderToString(<Features02 {...Features02Demo.en} />);
@@ -76,4 +77,22 @@ test('features-05 renders in Arabic', () => {
   expect(html).toContain("اختر الوحدة التي تناسب يومك");
   expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(0);
   expect(html).toContain("role=\"tablist\"");
+});
+
+test('features-06 renders in English', () => {
+  const html = renderToString(<Features06 {...Features06Demo.en} />);
+  expect(html).toContain("Up and running in four steps");
+  expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(0);
+  expect(html).toContain("<ol");
+});
+
+test('features-06 renders in Arabic', () => {
+  const html = renderToString(
+    <DirectionProvider direction="rtl">
+      <Features06 {...Features06Demo.ar} />
+    </DirectionProvider>,
+  );
+  expect(html).toContain("ابدأ العمل في أربع خطوات");
+  expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(0);
+  expect(html).toContain("<ol");
 });
