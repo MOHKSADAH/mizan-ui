@@ -78,7 +78,15 @@ function ProductGallery({
     const onSelect = () => {
       const index = api.selectedScrollSnap()
       setSelected(index)
-      thumbs.current[index]?.scrollIntoView({ block: "nearest", inline: "nearest" })
+      // Scroll only the strip: scrollIntoView would also scroll the page on every swipe.
+      // Screen-rect deltas are physical, so the same code is right in LTR and RTL.
+      const thumb = thumbs.current[index]
+      const strip = thumb?.closest("ul")
+      if (!thumb || !strip) return
+      const box = strip.getBoundingClientRect()
+      const rect = thumb.getBoundingClientRect()
+      if (rect.left < box.left) strip.scrollBy({ left: rect.left - box.left }) // mizan-allow-physical
+      else if (rect.right > box.right) strip.scrollBy({ left: rect.right - box.right }) // mizan-allow-physical
     }
     api.on("select", onSelect)
     return () => {
