@@ -1683,6 +1683,28 @@
       ]
     },
     {
+      "name": "otp-01",
+      "type": "registry:block",
+      "title": "OTP 01",
+      "description": "Verification code card with a six-digit field, a resend countdown announced in 10 second steps and a change-number link.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/field",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/input-otp",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/otp/otp-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

@@ -73,4 +73,12 @@ export const appBlocks: ManifestItem[] = [
     description: 'Centered sign-up card with name, email, password and a required terms checkbox.',
     files: ['registry/blocks/signup/signup-01.tsx'],
   },
+  {
+    name: 'otp-01',
+    type: 'registry:block',
+    family: 'otp',
+    title: 'OTP 01',
+    description: 'Verification code card with a six-digit field, a resend countdown announced in 10 second steps and a change-number link.',
+    files: ['registry/blocks/otp/otp-01.tsx'],
+  },
 ];
