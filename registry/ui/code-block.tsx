@@ -140,7 +140,7 @@ function CodeBlockCopyButton({
         )}
       </Button>
       <span aria-live="polite" className="sr-only">
-        {copied ? "Copied" : ""}
+        {copied ? text.copied : ""}
       </span>
     </>
   )
