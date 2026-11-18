@@ -153,7 +153,7 @@ function PhoneInput({
           itemToStringLabel={(c) => c.name}
           itemToStringValue={(c) => c.code}
           isItemEqualToValue={(a, b) => a.code === b.code}
-          filter={(c, query) => arabicIncludes(`${c.name} ${c.dial}`, query)}
+          filter={(c, query) => arabicIncludes(`${c.name} ${c.dial}`, query, { taMarbuta: true })}
         >
           <ComboboxTrigger
             render={<Button variant="outline" />}

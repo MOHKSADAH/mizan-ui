@@ -84,7 +84,7 @@ function RegionCitySelect({
     onValueChange?.(next)
   }
 
-  const filter = (item: Option, query: string) => arabicIncludes(item.search, query)
+  const filter = (item: Option, query: string) => arabicIncludes(item.search, query, { taMarbuta: true })
   const toLabel = (item: Option) => item.name
   const same = (a: Option, b: Option) => a.value === b.value
 
