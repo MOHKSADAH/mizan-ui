@@ -1,6 +1,7 @@
-import { HomeLayout } from 'fumadocs-ui/layouts/home';
-import { baseOptions } from '@/lib/layout.shared';
+import { SiteShell } from '@/components/docs-shell';
+import type { Lang } from '@/lib/strings';
 
-export default function Layout({ children }: LayoutProps<'/[lang]'>) {
-  return <HomeLayout {...baseOptions()}>{children}</HomeLayout>;
+export default async function Layout({ params, children }: LayoutProps<'/[lang]'>) {
+  const { lang } = await params;
+  return <SiteShell lang={lang as Lang}>{children}</SiteShell>;
 }
