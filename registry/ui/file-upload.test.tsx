@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'bun:test';
 import { renderToString } from 'react-dom/server';
-import { FileUpload, fileKey, matchesAccept, validateFiles } from './file-upload';
+import { FileUpload, fileKey, fileUploadLabelsAr, matchesAccept, validateFiles } from './file-upload';
 
 const file = (name: string, size = 10, type = '') => new File([new Uint8Array(size)], name, { type });
 
@@ -38,10 +38,15 @@ describe('file-upload', () => {
     const f = file('تقرير.pdf', 2048);
     for (const lang of ['en', 'ar'] as const) {
       const html = renderToString(
-        <FileUpload lang={lang} accept=".pdf" maxSize={1024 * 1024} maxFiles={2} defaultValue={[f]} progress={{ [fileKey(f)]: 40 }} />,
+        <FileUpload labels={lang === 'ar' ? fileUploadLabelsAr : undefined} accept=".pdf" maxSize={1024 * 1024} maxFiles={2} defaultValue={[f]} progress={{ [fileKey(f)]: 40 }} />,
       );
       expect(html).toContain('data-slot="file-upload"');
       expect(html).toContain('تقرير.pdf');
+      expect(html).toContain(lang === 'ar' ? 'حتى ملفين' : 'Up to 2 files');
     }
+  });
+
+  test('Arabic count labels use all plural forms', () => {
+    expect([1, 2, 3, 11, 100].map(fileUploadLabelsAr.maxFiles)).toEqual(['حتى ملف واحد', 'حتى ملفين', 'حتى 3 ملفات', 'حتى 11 ملفًا', 'حتى 100 ملف']);
   });
 });

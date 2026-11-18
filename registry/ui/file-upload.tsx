@@ -3,7 +3,7 @@
 import * as React from "react"
 import { FileIcon, UploadSimpleIcon, WarningCircleIcon, XIcon } from "@phosphor-icons/react"
 import { cn } from "@/registry/lib/utils"
-import { formatNumber, formatPercent, plural, type Lang, type PluralForms } from "@/registry/lib/format"
+import { formatNumber, formatPercent, plural } from "@/registry/lib/format"
 import { Button } from "@/registry/ui/button"
 import { Progress } from "@/registry/ui/progress"
 
@@ -14,10 +14,10 @@ type FileUploadLabels = {
   dragging: string
   accept: string
   maxSize: string
-  maxFiles: PluralForms
+  maxFiles: (n: number) => string
   remove: string
   removed: string
-  added: PluralForms
+  added: (n: number) => string
   rejectType: string
   rejectSize: string
   rejectCount: string
@@ -30,10 +30,10 @@ const fileUploadLabels: FileUploadLabels = {
   dragging: "Release to add files",
   accept: "Accepted: {accept}",
   maxSize: "Up to {size} each",
-  maxFiles: { one: "Up to {n} file", other: "Up to {n} files" },
+  maxFiles: (n) => plural(n, { one: "Up to {n} file", other: "Up to {n} files" }, { lang: "en" }),
   remove: "Remove {name}",
   removed: "{name} removed",
-  added: { one: "{n} file added", other: "{n} files added" },
+  added: (n) => plural(n, { one: "{n} file added", other: "{n} files added" }, { lang: "en" }),
   rejectType: "{name}: file type is not allowed",
   rejectSize: "{name}: larger than {size}",
   rejectCount: "{name}: file limit reached",
@@ -46,24 +46,27 @@ const fileUploadLabelsAr: FileUploadLabels = {
   dragging: "أفلت لإضافة الملفات",
   accept: "المسموح: {accept}",
   maxSize: "حتى {size} للملف",
-  maxFiles: {
-    zero: "حتى {n} ملف",
-    one: "حتى ملف واحد",
-    two: "حتى ملفين",
-    few: "حتى {n} ملفات",
-    many: "حتى {n} ملفًا",
-    other: "حتى {n} ملف",
-  },
+  maxFiles: (n) =>
+    plural(
+      n,
+      { zero: "حتى {n} ملف", one: "حتى ملف واحد", two: "حتى ملفين", few: "حتى {n} ملفات", many: "حتى {n} ملفًا", other: "حتى {n} ملف" },
+      { lang: "ar" }
+    ),
   remove: "إزالة {name}",
   removed: "تمت إزالة {name}",
-  added: {
-    zero: "لم تتم إضافة ملفات",
-    one: "تمت إضافة ملف واحد",
-    two: "تمت إضافة ملفين",
-    few: "تمت إضافة {n} ملفات",
-    many: "تمت إضافة {n} ملفًا",
-    other: "تمت إضافة {n} ملف",
-  },
+  added: (n) =>
+    plural(
+      n,
+      {
+        zero: "لم تتم إضافة ملفات",
+        one: "تمت إضافة ملف واحد",
+        two: "تمت إضافة ملفين",
+        few: "تمت إضافة {n} ملفات",
+        many: "تمت إضافة {n} ملفًا",
+        other: "تمت إضافة {n} ملف",
+      },
+      { lang: "ar" }
+    ),
   rejectType: "{name}: نوع الملف غير مسموح",
   rejectSize: "{name}: أكبر من {size}",
   rejectCount: "{name}: تم بلوغ حد الملفات",
@@ -105,7 +108,7 @@ function validateFiles(incoming: File[], current: File[], { accept, maxSize, max
   return { accepted, rejected, next: multiple ? [...current, ...accepted] : accepted.length ? accepted : current }
 }
 
-function formatSize(bytes: number, lang: Lang, units: Record<Unit, string>) {
+function formatSize(bytes: number, units: Record<Unit, string>) {
   const order: Unit[] = ["B", "KB", "MB", "GB"]
   let i = 0
   let n = bytes
@@ -113,7 +116,7 @@ function formatSize(bytes: number, lang: Lang, units: Record<Unit, string>) {
     n /= 1024
     i++
   }
-  return `${formatNumber(n, { lang }, { maximumFractionDigits: i ? 1 : 0 })} ${units[order[i]]}`
+  return `${formatNumber(n, { lang: "en" }, { maximumFractionDigits: i ? 1 : 0 })} ${units[order[i]]}`
 }
 
 const fill = (template: string, values: Record<string, string>) =>
@@ -127,7 +130,6 @@ type FileUploadProps = Omit<React.ComponentProps<"div">, "defaultValue" | "onCha
     onReject?: (rejections: FileRejection[]) => void
     progress?: Record<string, number>
     disabled?: boolean
-    lang?: Lang
     labels?: Partial<FileUploadLabels>
   }
 
@@ -142,13 +144,11 @@ function FileUpload({
   maxFiles,
   multiple = true,
   disabled,
-  lang = "en",
   labels,
   className,
   ...props
 }: FileUploadProps) {
-  const l = { ...(lang === "ar" ? fileUploadLabelsAr : fileUploadLabels), ...labels }
-  const locale = { lang }
+  const l = { ...fileUploadLabels, ...labels }
   const id = React.useId()
   const inputRef = React.useRef<HTMLInputElement>(null)
   const [inner, setInner] = React.useState<File[]>(defaultValue ?? [])
@@ -168,7 +168,7 @@ function FileUpload({
     if (rejected.length) onReject?.(rejected)
     if (accepted.length) {
       commit(next)
-      setStatus(plural(accepted.length, l.added, locale))
+      setStatus(l.added(accepted.length))
     }
   }
 
@@ -181,13 +181,13 @@ function FileUpload({
   const rejectText = ({ file, reason }: FileRejection) =>
     fill(reason === "type" ? l.rejectType : reason === "size" ? l.rejectSize : l.rejectCount, {
       name: file.name,
-      size: maxSize === undefined ? "" : formatSize(maxSize, lang, l.units),
+      size: maxSize === undefined ? "" : formatSize(maxSize, l.units),
     })
 
   const hints = [
     accept && fill(l.accept, { accept }),
-    maxSize !== undefined && fill(l.maxSize, { size: formatSize(maxSize, lang, l.units) }),
-    maxFiles !== undefined && multiple && plural(maxFiles, l.maxFiles, locale),
+    maxSize !== undefined && fill(l.maxSize, { size: formatSize(maxSize, l.units) }),
+    maxFiles !== undefined && multiple && l.maxFiles(maxFiles),
   ].filter(Boolean)
 
   return (
@@ -257,14 +257,14 @@ function FileUpload({
                       {file.name}
                     </bdi>
                     <bdi className="shrink-0 text-xs text-muted-foreground tabular-nums">
-                      {formatSize(file.size, lang, l.units)}
+                      {formatSize(file.size, l.units)}
                     </bdi>
                   </div>
                   {pct !== undefined && pct < 100 && (
                     <div className="flex items-center gap-2">
                       <Progress value={pct} aria-label={fill(l.progress, { name: file.name })} className="flex-1" />
                       <bdi className="text-xs text-muted-foreground tabular-nums">
-                        {formatPercent(pct / 100, locale)}
+                        {formatPercent(pct / 100, { lang: "en" })}
                       </bdi>
                     </div>
                   )}

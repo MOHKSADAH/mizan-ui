@@ -1,4 +1,4 @@
-import { FileUpload } from '@/registry/ui/file-upload';
+import { FileUploadDemo } from '@/registry/examples/file-upload.client';
 import type { ExampleDoc, ExampleProps } from '@/registry/examples/types';
 
 export const doc: ExampleDoc = {
@@ -28,9 +28,9 @@ export const doc: ExampleDoc = {
 };
 
 export function Default({ lang }: ExampleProps) {
-  return <FileUpload lang={lang} accept="image/*,.pdf" maxSize={5 * 1024 * 1024} maxFiles={3} />;
+  return <FileUploadDemo lang={lang} accept="image/*,.pdf" maxSize={5 * 1024 * 1024} maxFiles={3} />;
 }
 
 export function Single({ lang }: ExampleProps) {
-  return <FileUpload lang={lang} multiple={false} />;
+  return <FileUploadDemo lang={lang} multiple={false} />;
 }
