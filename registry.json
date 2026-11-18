@@ -1804,6 +1804,24 @@
       ]
     },
     {
+      "name": "stats-04",
+      "type": "registry:block",
+      "title": "Stats 04",
+      "description": "One muted band of stats, stacked on mobile and divided on tablet and up.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/stats/stats-04.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

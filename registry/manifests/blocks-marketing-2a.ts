@@ -137,4 +137,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'Stat cards with a label, a value and a trend badge with icon and text.',
     files: ['registry/blocks/stats/stats-03.tsx'],
   },
+  {
+    name: 'stats-04',
+    type: 'registry:block',
+    family: 'stats',
+    title: 'Stats 04',
+    description: 'One muted band of stats, stacked on mobile and divided on tablet and up.',
+    files: ['registry/blocks/stats/stats-04.tsx'],
+  },
 ];
