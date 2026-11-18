@@ -41,7 +41,7 @@ function RatingInput({
   className,
   ...props
 }: RatingInputProps) {
-  const l = { ...(lang === "ar" ? ratingInputLabelsAr : ratingInputLabels), ...labels }
+  const l = { ...ratingInputLabels, ...labels }
   const group = React.useId()
   const [inner, setInner] = React.useState(defaultValue)
   const [hover, setHover] = React.useState<number | null>(null)

@@ -1,4 +1,4 @@
-import { RatingInput } from '@/registry/ui/rating-input';
+import { RatingInput, ratingInputLabelsAr } from '@/registry/ui/rating-input';
 import type { ExampleDoc, ExampleProps } from '@/registry/examples/types';
 
 export const doc: ExampleDoc = {
@@ -24,9 +24,9 @@ export const doc: ExampleDoc = {
 };
 
 export function Default({ lang }: ExampleProps) {
-  return <RatingInput lang={lang} defaultValue={3} aria-label={lang === 'ar' ? 'التقييم' : 'Rating'} />;
+  return <RatingInput lang={lang} labels={lang === 'ar' ? ratingInputLabelsAr : undefined} defaultValue={3} aria-label={lang === 'ar' ? 'التقييم' : 'Rating'} />;
 }
 
 export function Half({ lang }: ExampleProps) {
-  return <RatingInput lang={lang} half showValue defaultValue={4.5} aria-label={lang === 'ar' ? 'التقييم' : 'Rating'} />;
+  return <RatingInput lang={lang} labels={lang === 'ar' ? ratingInputLabelsAr : undefined} half showValue defaultValue={4.5} aria-label={lang === 'ar' ? 'التقييم' : 'Rating'} />;
 }
