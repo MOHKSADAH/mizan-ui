@@ -47,8 +47,9 @@ function AvatarStack({ people, max = 4, size, lang = "en", digits = "latn", labe
   const rest = people.length - shown.length
   return (
     <AvatarGroup role="group" aria-label={plural(people.length, l.people, locale)} {...props}>
-      {shown.map((person) => (
-        <Avatar key={person.name} size={size}>
+      {shown.map((person, i) => (
+        // Names can repeat, so the position is the key.
+        <Avatar key={i} size={size}>
           {person.src && <AvatarImage src={person.src} alt={person.name} />}
           <AvatarFallback>
             <span aria-hidden="true">{initials(person.name)}</span>
