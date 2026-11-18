@@ -2,7 +2,7 @@ import * as React from "react"
 import { cn } from "@/registry/lib/utils"
 
 import { Button } from "@/registry/ui/button"
-import { CaretLeftIcon, CaretRightIcon, DotsThreeIcon } from "@phosphor-icons/react"
+import { CaretLeftIcon, CaretRightIcon, DotsThreeIcon } from "@phosphor-icons/react/ssr"
 
 type PaginationLabels = {
   label: string
