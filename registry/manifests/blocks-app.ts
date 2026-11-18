@@ -81,4 +81,12 @@ export const appBlocks: ManifestItem[] = [
     description: 'Verification code card with a six-digit field, a resend countdown announced in 10 second steps and a change-number link.',
     files: ['registry/blocks/otp/otp-01.tsx'],
   },
+  {
+    name: 'forgot-01',
+    type: 'registry:block',
+    family: 'forgot',
+    title: 'Forgot 01',
+    description: 'Password reset request by email with a generic confirmation screen that does not reveal whether the account exists.',
+    files: ['registry/blocks/forgot/forgot-01.tsx'],
+  },
 ];
