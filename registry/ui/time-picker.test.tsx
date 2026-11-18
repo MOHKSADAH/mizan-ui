@@ -76,10 +76,11 @@ describe('time-picker', () => {
 
   test('list variant renders the trigger with the value and a hidden input', () => {
     for (const lang of ['en', 'ar'] as const) {
-      const html = renderToString(<TimePicker variant="list" labels={ar(lang)} hourCycle={12} defaultValue="09:15" name="t" />);
+      const html = renderToString(<TimePicker variant="list" labels={ar(lang)} hourCycle={12} defaultValue="09:15" name="t" aria-label="Opening time" />);
       expect(html).toContain('data-slot="time-picker"');
       expect(html).toContain('name="t"');
       expect(html).toContain('09:15');
+      expect(html).toContain('<span class="sr-only">Opening time</span>');
     }
   });
 });

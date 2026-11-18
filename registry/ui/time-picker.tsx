@@ -170,6 +170,7 @@ function TimePicker({
           data-slot="time-picker"
         >
           <ClockIcon aria-hidden="true" data-icon="inline-start" />
+          {ariaLabel && <span className="sr-only">{ariaLabel}</span>}
           <bdi dir="ltr" className={cn("tabular-nums", !time && "text-muted-foreground")}>
             {time ? `${hourText}:${minuteText}${twelve ? ` ${periodText}` : ""}` : l.placeholder}
           </bdi>
