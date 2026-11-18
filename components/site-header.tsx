@@ -46,7 +46,7 @@ function TopNav({ lang }: { lang: Lang }) {
   }, [active, lang]);
 
   return (
-    <nav aria-label={t.nav.docs} className="hidden min-w-0 min-[900px]:flex">
+    <nav aria-label={t.nav.docs} className="hidden min-w-0 min-[60rem]:flex">
       <div ref={listRef} className="relative flex items-center gap-0.5">
         <span
           aria-hidden="true"
@@ -64,7 +64,7 @@ function TopNav({ lang }: { lang: Lang }) {
             href={localePath(lang, n.href)}
             aria-current={active === n.key ? 'page' : undefined}
             className={cn(
-              'relative z-10 inline-flex h-8 items-center gap-1.5 rounded-md px-2.5 text-sm font-medium text-muted-foreground outline-offset-[-2px] transition-colors duration-150 ease-out hover:text-foreground aria-[current=page]:text-foreground',
+              'relative z-10 inline-flex h-8 items-center gap-1.5 rounded-md px-2.5 text-sm whitespace-nowrap font-medium text-muted-foreground outline-offset-[-2px] transition-colors duration-150 ease-out hover:text-foreground aria-[current=page]:text-foreground',
             )}
           >
             {t.nav[n.key]}
@@ -89,7 +89,7 @@ function MobileMenu({ lang }: { lang: Lang }) {
   }
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <SheetTrigger render={<Button variant="ghost" size="icon-lg" className="min-[900px]:hidden" aria-label={t.menu} />}>
+      <SheetTrigger render={<Button variant="ghost" size="icon-lg" className="min-[60rem]:hidden" aria-label={t.menu} />}>
         <ListIcon className="size-5" />
       </SheetTrigger>
       <SheetContent side={lang === 'ar' ? 'right' : 'left'} className="w-[min(20rem,85vw)] gap-0 p-0">
@@ -168,7 +168,7 @@ export function SiteHeader({ lang }: { lang: Lang }) {
             </TooltipTrigger>
             <TooltipContent>{t.github}</TooltipContent>
           </Tooltip>
-          <ThemeCombobox lang={lang} />
+          <ThemeCombobox lang={lang} className="min-[60rem]:max-xl:**:data-[slot=theme-label]:hidden" />
           <ModeToggle lang={lang} />
           <LanguageMenu lang={lang} />
         </div>

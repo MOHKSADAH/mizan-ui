@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { MagnifyingGlassIcon } from '@phosphor-icons/react';
 import { Button } from '@/registry/ui/button';
 import {
+  Command,
   CommandDialog,
   CommandEmpty,
   CommandGroup,
@@ -54,29 +55,31 @@ export function CommandMenu({ lang }: { lang: Lang }) {
         onClick={() => setOpen(true)}
         aria-label={t.search}
         aria-keyshortcuts="Control+K Meta+K"
-        className="w-9 justify-start px-0 text-muted-foreground sm:w-40 sm:px-2.5 lg:w-56 max-sm:justify-center"
+        className="w-9 justify-center px-0 text-muted-foreground sm:w-40 sm:justify-start sm:px-2.5 min-[60rem]:w-9 min-[60rem]:justify-center min-[60rem]:px-0 xl:w-56 xl:justify-start xl:px-2.5"
       >
         <MagnifyingGlassIcon className="size-4" />
-        <span className="hidden truncate sm:inline">{t.search}…</span>
-        <KbdGroup className="ms-auto hidden sm:inline-flex" dir="ltr">
+        <span className="hidden truncate sm:inline min-[60rem]:hidden xl:inline">{t.search}…</span>
+        <KbdGroup className="ms-auto hidden sm:inline-flex min-[60rem]:hidden xl:inline-flex" dir="ltr">
           <Kbd>Ctrl</Kbd>
           <Kbd>K</Kbd>
         </KbdGroup>
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen} title={t.search} description={t.searchPh}>
-        <CommandInput placeholder={t.searchPh} />
-        <CommandList className="[scrollbar-width:thin]">
-          <CommandEmpty>{CH[lang].noResults}</CommandEmpty>
-          {groups.map((g) => (
-            <CommandGroup key={g.title} heading={g.title}>
-              {g.items.map((item) => (
-                <CommandItem key={g.title + item.href} value={`${g.title} ${item.title}`} onSelect={() => go(item.href)}>
-                  {item.title}
-                </CommandItem>
-              ))}
-            </CommandGroup>
-          ))}
-        </CommandList>
+        <Command>
+          <CommandInput placeholder={t.searchPh} />
+          <CommandList className="[scrollbar-width:thin]">
+            <CommandEmpty>{CH[lang].noResults}</CommandEmpty>
+            {groups.map((g) => (
+              <CommandGroup key={g.title} heading={g.title}>
+                {g.items.map((item) => (
+                  <CommandItem key={g.title + item.href} value={`${g.title} ${item.title}`} onSelect={() => go(item.href)}>
+                    {item.title}
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            ))}
+          </CommandList>
+        </Command>
       </CommandDialog>
     </>
   );
