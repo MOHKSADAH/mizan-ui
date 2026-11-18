@@ -156,10 +156,14 @@ function TagsInput({
               disabled={disabled}
               aria-label={fill(l.remove, { tag })}
               className="opacity-60 hover:opacity-100"
-              onClick={() => {
+              onClick={(e) => {
+                const buttons = Array.from(
+                  e.currentTarget.closest("[data-slot=tags-input]")?.querySelectorAll<HTMLElement>("[data-slot=tags-input-chip] button") ?? []
+                )
+                const i = buttons.indexOf(e.currentTarget)
+                ;(buttons[i + 1] ?? buttons[i - 1] ?? inputRef.current)?.focus()
                 commit(tags.filter((t) => t !== tag))
                 setMessage(fill(l.removed, { tag }))
-                inputRef.current?.focus()
               }}
             >
               <XIcon aria-hidden="true" />
