@@ -1572,7 +1572,6 @@
       ],
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/button",
-        "MOHKSADAH/mizan-ui/format",
         "MOHKSADAH/mizan-ui/input",
         "MOHKSADAH/mizan-ui/utils"
       ],

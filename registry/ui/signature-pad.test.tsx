@@ -1,11 +1,11 @@
 import { describe, expect, test } from 'bun:test';
 import { renderToString } from 'react-dom/server';
-import { SignaturePad } from './signature-pad';
+import { SignaturePad, signaturePadLabelsAr } from './signature-pad';
 
 describe('signature-pad', () => {
   test('renders the canvas, mode toggle, undo and clear in en and ar', () => {
     for (const lang of ['en', 'ar'] as const) {
-      const html = renderToString(<SignaturePad lang={lang} name="signature" />);
+      const html = renderToString(<SignaturePad labels={lang === 'ar' ? signaturePadLabelsAr : undefined} name="signature" />);
       expect(html).toContain('<canvas');
       expect(html).toContain('role="img"');
       expect(html).toContain('aria-pressed="true"');

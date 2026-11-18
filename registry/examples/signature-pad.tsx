@@ -1,4 +1,4 @@
-import { SignaturePad } from '@/registry/ui/signature-pad';
+import { SignaturePad, signaturePadLabelsAr } from '@/registry/ui/signature-pad';
 import type { ExampleDoc, ExampleProps } from '@/registry/examples/types';
 
 export const doc: ExampleDoc = {
@@ -27,5 +27,5 @@ export const doc: ExampleDoc = {
 };
 
 export function Default({ lang }: ExampleProps) {
-  return <SignaturePad lang={lang} />;
+  return <SignaturePad labels={lang === 'ar' ? signaturePadLabelsAr : undefined} />;
 }

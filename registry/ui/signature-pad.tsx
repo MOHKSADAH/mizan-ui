@@ -3,7 +3,6 @@
 import * as React from "react"
 import { ArrowUUpLeftIcon, EraserIcon } from "@phosphor-icons/react"
 import { cn } from "@/registry/lib/utils"
-import type { Lang } from "@/registry/lib/format"
 import { Button } from "@/registry/ui/button"
 import { Input } from "@/registry/ui/input"
 
@@ -65,7 +64,6 @@ type SignaturePadProps = Omit<React.ComponentProps<"div">, "onChange"> & {
   penColor?: string
   penWidth?: number
   name?: string
-  lang?: Lang
   labels?: Partial<SignaturePadLabels>
 }
 
@@ -75,12 +73,11 @@ function SignaturePad({
   penColor = "currentColor",
   penWidth = 2.5,
   name,
-  lang = "en",
   labels,
   className,
   ...props
 }: SignaturePadProps) {
-  const l = { ...(lang === "ar" ? signaturePadLabelsAr : signaturePadLabels), ...labels }
+  const l = { ...signaturePadLabels, ...labels }
   const id = React.useId()
   const canvas = React.useRef<HTMLCanvasElement>(null)
   const strokes = React.useRef<Point[][]>([])
