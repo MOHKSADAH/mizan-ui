@@ -3,6 +3,7 @@ import { renderToString } from 'react-dom/server';
 import { DirectionProvider } from '@/registry/ui/direction';
 import Testimonials01, { demo as Testimonials01Demo } from './testimonials-01';
 import Testimonials03, { demo as Testimonials03Demo } from './testimonials-03';
+import Testimonials04, { demo as Testimonials04Demo } from './testimonials-04';
 
 test('testimonials-01 renders in English', () => {
   const html = renderToString(<Testimonials01 {...Testimonials01Demo.en} />);
@@ -38,4 +39,23 @@ test('testimonials-03 renders in Arabic', () => {
   expect(html).toContain("فرق تخلّصت من ملاحقة الجداول");
   expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(0);
   expect(html).toContain("break-inside-avoid");
+});
+
+test('testimonials-04 renders in English', () => {
+  const html = renderToString(<Testimonials04 {...Testimonials04Demo.en} />);
+  expect(html).toContain("What our customers say");
+  expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(0);
+  expect(html).toContain("aria-roledescription=\"carousel\"");
+  expect(html).toContain("Previous testimonials");
+});
+
+test('testimonials-04 renders in Arabic', () => {
+  const html = renderToString(
+    <DirectionProvider direction="rtl">
+      <Testimonials04 {...Testimonials04Demo.ar} />
+    </DirectionProvider>,
+  );
+  expect(html).toContain("ماذا يقول عملاؤنا");
+  expect(html.match(/<h1[ >]/g)?.length ?? 0).toBe(0);
+  expect(html).toContain("الآراء السابقة");
 });

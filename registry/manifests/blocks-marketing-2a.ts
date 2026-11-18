@@ -161,4 +161,12 @@ export const marketingBlocks2a: ManifestItem[] = [
     description: 'Masonry-style CSS columns of quote cards of varied length.',
     files: ['registry/blocks/testimonials/testimonials-03.tsx'],
   },
+  {
+    name: 'testimonials-04',
+    type: 'registry:block',
+    family: 'testimonials',
+    title: 'Testimonials 04',
+    description: 'Quote carousel with one, two or three cards and previous and next buttons in the header row.',
+    files: ['registry/blocks/testimonials/testimonials-04.tsx'],
+  },
 ];
