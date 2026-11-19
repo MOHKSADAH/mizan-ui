@@ -3318,6 +3318,51 @@
       ]
     },
     {
+      "name": "view-switcher",
+      "type": "registry:ui",
+      "title": "View Switcher",
+      "description": "A list, grid and compact toggle on the segmented control, with ViewItems to render items per layout and a view transition between them.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/segmented-control",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/view-switcher.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
+      "name": "corner-video",
+      "type": "registry:ui",
+      "title": "Corner Video",
+      "description": "A floating video card docked at the bottom inline end: muted, with play, mute, close and an expand dialog, and a placeholder without a src.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/dialog",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/corner-video.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
       "name": "navbar-01",
       "type": "registry:block",
       "title": "Navbar 01",
@@ -6136,6 +6181,76 @@
       "files": [
         {
           "path": "registry/blocks/order-history/order-history-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "feature-accordion-01",
+      "type": "registry:block",
+      "title": "Feature accordion 01",
+      "description": "Numbered accordion of features beside one large media slot that follows the open item.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/accordion",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/feature-accordion/feature-accordion-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "case-stack-01",
+      "type": "registry:block",
+      "title": "Case stack 01",
+      "description": "Case studies as cards that stack with CSS position: sticky, each with a stat pair; a plain list on phones and with reduced motion.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/case-stack/case-stack-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "testimonial-stage-01",
+      "type": "registry:block",
+      "title": "Testimonial stage 01",
+      "description": "One testimonial at a time with a portrait, a large quote, a stat pair and a thumbnail rail; autoplay pauses on hover, focus and reduced motion.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/testimonial-stage/testimonial-stage-01.tsx",
           "type": "registry:block"
         }
       ]
