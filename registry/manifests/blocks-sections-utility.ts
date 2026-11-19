@@ -64,4 +64,13 @@ export const sectionsUtilityBlocks: ManifestItem[] = [
     badge: 'new',
     files: ['registry/blocks/video/video-01.tsx'],
   },
+  {
+    name: 'faq-03',
+    type: 'registry:block',
+    family: 'faq',
+    title: 'FAQ 03',
+    description: 'Question categories as tabs above an accordion, with an optional contact line.',
+    badge: 'new',
+    files: ['registry/blocks/faq/faq-03.tsx'],
+  },
 ];

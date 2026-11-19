@@ -123,6 +123,7 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'menu-01': () => import('@/registry/blocks/menu/menu-01'),
   'location-01': () => import('@/registry/blocks/location/location-01'),
   'video-01': () => import('@/registry/blocks/video/video-01'),
+  'faq-03': () => import('@/registry/blocks/faq/faq-03'),
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
   'agents-dashboard-page-01': () => import('@/registry/pages/agents-dashboard-page/agents-dashboard-page-01'),
   'chat-page-01': () => import('@/registry/pages/chat-page/chat-page-01'),
