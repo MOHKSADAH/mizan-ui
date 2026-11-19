@@ -15,4 +15,5 @@ export const aiItems: ManifestItem[] = [
   item('tool-call', 'data-display', 'Tool call card with the tool name, input and output as code, and the states input-streaming, running, done and error.'),
   item('sources', 'data-display', 'Collapsed list of source cards and numbered inline citations that open a hover card.'),
   item('message-actions', 'data-display', 'Copy, regenerate, like and dislike buttons and a 1/3 pager for regenerated responses.'),
+  item('suggestions', 'data-display', 'Prompt chips that put their text in the input, in a wrapping or a scrolling row.'),
 ];

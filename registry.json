@@ -3187,6 +3187,25 @@
       ]
     },
     {
+      "name": "suggestions",
+      "type": "registry:ui",
+      "title": "Suggestions",
+      "description": "Prompt chips that put their text in the input, in a wrapping or a scrolling row.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/suggestions.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
       "name": "navbar-01",
       "type": "registry:block",
       "title": "Navbar 01",
