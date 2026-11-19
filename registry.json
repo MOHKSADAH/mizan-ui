@@ -6286,6 +6286,29 @@
       ]
     },
     {
+      "name": "feature-carousel-01",
+      "type": "registry:block",
+      "title": "Feature carousel 01",
+      "description": "Feature chips on the start side and one media slot on the end side that follows the selected chip. Autoplay pauses on hover, focus and reduced motion.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/tabs",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/feature-carousel/feature-carousel-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
