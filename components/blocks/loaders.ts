@@ -65,5 +65,11 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'order-summary-01': () => import('@/registry/blocks/order-summary/order-summary-01'),
   'order-summary-02': () => import('@/registry/blocks/order-summary/order-summary-02'),
   'order-summary-03': () => import('@/registry/blocks/order-summary/order-summary-03'),
+  'product-detail-01': () => import('@/registry/blocks/product-detail/product-detail-01'),
+  'product-detail-02': () => import('@/registry/blocks/product-detail/product-detail-02'),
+  'product-detail-03': () => import('@/registry/blocks/product-detail/product-detail-03'),
+  'product-reviews-01': () => import('@/registry/blocks/product-reviews/product-reviews-01'),
+  'product-reviews-02': () => import('@/registry/blocks/product-reviews/product-reviews-02'),
+  'quick-view-01': () => import('@/registry/blocks/quick-view/quick-view-01'),
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
 };

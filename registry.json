@@ -2462,6 +2462,9 @@
       "type": "registry:ui",
       "title": "Product Gallery",
       "description": "Product image gallery with Embla swipe, thumbnails, RTL direction and optional zoom dialog.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/carousel",
         "MOHKSADAH/mizan-ui/dialog",
@@ -3022,6 +3025,29 @@
       ],
       "categories": [
         "forms"
+      ]
+    },
+    {
+      "name": "rating-summary",
+      "type": "registry:ui",
+      "title": "Rating Summary",
+      "description": "Average score, review total and a five-to-one star distribution with bars that fill from the inline start.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/rating-summary.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
       ]
     },
     {
@@ -4533,6 +4559,199 @@
       "files": [
         {
           "path": "registry/blocks/order-summary/order-summary-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "product-detail-01",
+      "type": "registry:block",
+      "title": "Product Detail 01",
+      "description": "Classic product page: gallery beside a buy box with price, installments, variants, quantity, delivery estimate and an accordion.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/accordion",
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/carousel",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/delivery-estimate",
+        "MOHKSADAH/mizan-ui/dialog",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/installments",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/product-gallery",
+        "MOHKSADAH/mizan-ui/quantity-stepper",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/share-button",
+        "MOHKSADAH/mizan-ui/stock-indicator",
+        "MOHKSADAH/mizan-ui/swatch-select",
+        "MOHKSADAH/mizan-ui/wishlist-button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/product-detail/product-detail-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "product-detail-02",
+      "type": "registry:block",
+      "title": "Product Detail 02",
+      "description": "Editorial product page: a full-width image grid, a sticky buy box and a specifications table.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/delivery-estimate",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/installments",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/product-gallery",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/stock-indicator",
+        "MOHKSADAH/mizan-ui/swatch-select",
+        "MOHKSADAH/mizan-ui/table",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/wishlist-button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/product-detail/product-detail-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "product-detail-03",
+      "type": "registry:block",
+      "title": "Product Detail 03",
+      "description": "Compact product page for quick buying on a phone, with a sticky add to cart bar.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/accordion",
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/carousel",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/delivery-estimate",
+        "MOHKSADAH/mizan-ui/dialog",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/product-gallery",
+        "MOHKSADAH/mizan-ui/quantity-stepper",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/sticky-action-bar",
+        "MOHKSADAH/mizan-ui/stock-indicator",
+        "MOHKSADAH/mizan-ui/swatch-select"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/product-detail/product-detail-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "product-reviews-01",
+      "type": "registry:block",
+      "title": "Product Reviews 01",
+      "description": "Rating summary and a review list with verified badge, photos, helpful votes, sort and pagination.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/image-lightbox",
+        "MOHKSADAH/mizan-ui/pagination",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/rating-summary",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/select"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/product-reviews/product-reviews-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "product-reviews-02",
+      "type": "registry:block",
+      "title": "Product Reviews 02",
+      "description": "Compact highlights: one lead review and two smaller review cards for a product page.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/product-reviews/product-reviews-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "quick-view-01",
+      "type": "registry:block",
+      "title": "Quick View 01",
+      "description": "Product quick view in a dialog on desktop and a bottom drawer on a phone, with gallery, variants and add to cart.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/carousel",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/dialog",
+        "MOHKSADAH/mizan-ui/drawer",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/product-gallery",
+        "MOHKSADAH/mizan-ui/quantity-stepper",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/stock-indicator",
+        "MOHKSADAH/mizan-ui/swatch-select",
+        "MOHKSADAH/mizan-ui/use-mobile",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/quick-view/quick-view-01.tsx",
           "type": "registry:block"
         }
       ]
