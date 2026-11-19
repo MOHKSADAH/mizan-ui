@@ -3074,6 +3074,191 @@
       ]
     },
     {
+      "name": "prompt-input",
+      "type": "registry:ui",
+      "title": "Prompt Input",
+      "description": "Chat input with an auto-direction textarea, an attachment strip, tool and model slots, and a send button that turns into stop.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/attachment",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/input-group",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/prompt-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "reasoning",
+      "type": "registry:ui",
+      "title": "Reasoning",
+      "description": "Collapsible \"thinking\" line with a shimmer while running, a duration when done and paragraphs that follow their own direction.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/trace",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/reasoning.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "tool-call",
+      "type": "registry:ui",
+      "title": "Tool Call",
+      "description": "Tool call card with the tool name, input and output as code, and the states input-streaming, running, done and error.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/code-block",
+        "MOHKSADAH/mizan-ui/collapsible",
+        "MOHKSADAH/mizan-ui/trace",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/tool-call.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "sources",
+      "type": "registry:ui",
+      "title": "Sources",
+      "description": "Collapsed list of source cards and numbered inline citations that open a hover card.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/hover-card",
+        "MOHKSADAH/mizan-ui/trace",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/sources.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "message-actions",
+      "type": "registry:ui",
+      "title": "Message Actions",
+      "description": "Copy, regenerate, like and dislike buttons and a 1/3 pager for regenerated responses.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/code-block",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/message-actions.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "suggestions",
+      "type": "registry:ui",
+      "title": "Suggestions",
+      "description": "Prompt chips that put their text in the input, in a wrapping or a scrolling row.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/suggestions.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "model-picker",
+      "type": "registry:ui",
+      "title": "Model Picker",
+      "description": "Searchable model list in a popover with the provider, the context size and the price per million tokens on each row.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/command",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/popover",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/model-picker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "context-meter",
+      "type": "registry:ui",
+      "title": "Context Meter",
+      "description": "Ring with the percent of the context window used and a popover with tokens and cost per row.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/popover",
+        "MOHKSADAH/mizan-ui/progress",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/context-meter.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "feedback"
+      ]
+    },
+    {
       "name": "navbar-01",
       "type": "registry:block",
       "title": "Navbar 01",
@@ -4970,6 +5155,77 @@
       ]
     },
     {
+      "name": "chat-welcome-01",
+      "type": "registry:block",
+      "title": "Chat welcome 01",
+      "description": "Empty chat with a greeting, the prompt input in the middle and prompt chips that fill it.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/prompt-input",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/suggestions"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/chat-welcome/chat-welcome-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "conversation-list-01",
+      "type": "registry:block",
+      "title": "Conversation list 01",
+      "description": "Chat history grouped by date, with search, a new chat button, inline rename and delete with a confirm.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/alert-dialog",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/dropdown-menu",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/input-group",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/conversation-list/conversation-list-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "chat-thread-01",
+      "type": "registry:block",
+      "title": "Chat thread 01",
+      "description": "A full thread: user message, reasoning, tool call, answer with citations, list and code block, sources and message actions.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/bubble",
+        "MOHKSADAH/mizan-ui/code-block",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/message",
+        "MOHKSADAH/mizan-ui/message-actions",
+        "MOHKSADAH/mizan-ui/reasoning",
+        "MOHKSADAH/mizan-ui/sources",
+        "MOHKSADAH/mizan-ui/tool-call",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/chat-thread/chat-thread-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "editorial-01",
       "type": "registry:block",
       "title": "Editorial 01",
@@ -5501,6 +5757,32 @@
       "files": [
         {
           "path": "registry/pages/home-page/home-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "chat-page-01",
+      "type": "registry:block",
+      "title": "Chat page 01",
+      "description": "Assistant chat page: chat history on the start side, a thread in a scroller and the prompt input with a context meter and a model picker.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/chat-thread-01",
+        "MOHKSADAH/mizan-ui/context-meter",
+        "MOHKSADAH/mizan-ui/conversation-list-01",
+        "MOHKSADAH/mizan-ui/message-scroller",
+        "MOHKSADAH/mizan-ui/model-picker",
+        "MOHKSADAH/mizan-ui/prompt-input",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/chat-page/chat-page-01.tsx",
           "type": "registry:block"
         }
       ]

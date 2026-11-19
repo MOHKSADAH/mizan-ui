@@ -1,4 +1,5 @@
 import type { ManifestItem } from '../manifest';
+import { aiChatBlocks } from './blocks-ai-chat';
 import { appBlocks } from './blocks-app';
 import { commerceBlocks } from './blocks-commerce';
 import { landingSectionBlocks } from './blocks-landing-sections';
@@ -16,6 +17,7 @@ export const blockItems: ManifestItem[] = [
   ...commerceBlocks,
   ...storefrontBlocks,
   ...storefrontProductBlocks,
+  ...aiChatBlocks,
   ...landingSectionBlocks,
   ...landingHeroBlocks,
   ...landingFooterBlocks,
