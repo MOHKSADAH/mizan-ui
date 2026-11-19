@@ -14,7 +14,7 @@ import { Container } from "@/registry/ui/container"
 import { Dialog, DialogContent, dialogLabelsAr, DialogTitle } from "@/registry/ui/dialog"
 import { Drawer, DrawerContent, DrawerTitle } from "@/registry/ui/drawer"
 import { Price } from "@/registry/ui/price"
-import { ProductGallery, productGalleryLabelsAr, type GalleryImage } from "@/registry/ui/product-gallery"
+import { ProductGallery, ProductImage, productGalleryLabelsAr, type GalleryImage } from "@/registry/ui/product-gallery"
 import { QuantityStepper, quantityStepperLabelsAr } from "@/registry/ui/quantity-stepper"
 import { Rating, ratingLabelsAr } from "@/registry/ui/rating"
 import { Section, SectionHeader } from "@/registry/ui/section"
@@ -261,15 +261,11 @@ function QuickView01({ lang = "en", products, onAddToCart, headingLevel = 2, lab
         <ul className="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 md:gap-x-6">
           {products.map((item) => (
             <li key={item.id} className="flex min-w-0 flex-col gap-3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={item.images[0].src}
-                alt={item.images[0].alt}
-                loading="lazy"
-                className="aspect-square w-full rounded-xl border border-border object-cover"
-              />
+              <div className="aspect-square w-full overflow-hidden rounded-xl border border-border">
+                <ProductImage image={item.images[0]} />
+              </div>
               <div className="flex flex-col gap-1">
-                <CardHeading className="font-medium text-balance">{item.title}</CardHeading>
+                <CardHeading className="font-semibold text-balance">{item.title}</CardHeading>
                 <Price amount={item.price} currency={item.currency} lang={lang} className="font-semibold" />
               </div>
               <Button
@@ -300,28 +296,15 @@ function QuickView01({ lang = "en", products, onAddToCart, headingLevel = 2, lab
   )
 }
 
-// A neutral stand-in for a product photo, so the demo needs no image files.
-const shapes = {
-  thobe:
-    '<path d="M340 100Q400 150 460 100L570 140L630 540L560 550L520 290V760H280V290L240 550L170 540L230 140Z" fill="oklch(T1 0.03 85)"/><rect x="394" y="135" width="12" height="340" rx="6" fill="oklch(T2 0.03 85)"/>',
-  perfume:
-    '<rect x="290" y="330" width="220" height="360" rx="28" fill="oklch(T1 0.04 70)"/><rect x="360" y="250" width="80" height="90" fill="oklch(T3 0.04 70)"/><rect x="340" y="160" width="120" height="100" rx="14" fill="oklch(T4 0.03 70)"/><rect x="320" y="440" width="160" height="120" rx="8" fill="oklch(T0 0.02 70)"/>',
-  coffee:
-    '<path d="M260 200H540L580 700H220Z" fill="oklch(T1 0.05 60)"/><rect x="260" y="170" width="280" height="44" rx="8" fill="oklch(T2 0.05 60)"/><circle cx="400" cy="470" r="100" fill="oklch(T0 0.03 60)"/>',
-}
+const swatches = [
+  ["white", "oklch(0.98 0 0)"],
+  ["cream", "oklch(0.9 0.04 85)"],
+  ["navy", "oklch(0.32 0.06 260)"],
+] as const
 
-const photo = (shape: keyof typeof shapes, tone: number) =>
-  `data:image/svg+xml,${encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"><rect width="800" height="800" fill="oklch(${tone} 0.02 80)"/>${shapes[shape]
-      .replace("T0", String(tone))
-      .replace("T1", (tone - 0.1).toFixed(2))
-      .replace("T2", (tone - 0.2).toFixed(2))
-      .replace("T3", (tone - 0.16).toFixed(2))
-      .replace("T4", (tone - 0.3).toFixed(2))}</svg>`
-  )}`
-
-const colors = (names: [string, string, string][]): SwatchOption[] =>
-  names.map(([value, label, color]) => ({ value, label, color }))
+// One color list for both languages: only the labels change.
+const colors = (labels: string[]): SwatchOption[] =>
+  swatches.map(([value, color], i) => ({ value, label: labels[i], color }))
 
 const sizes = ["52", "54", "56", "58"].map((s) => ({ value: s, label: s }))
 
@@ -334,8 +317,8 @@ const demo: { en: QuickView01Props; ar: QuickView01Props } = {
         title: "Men's Egyptian cotton thobe",
         brand: "Dar Al Aseel",
         images: [
-          { src: photo("thobe", 0.93), alt: "Front of the thobe" },
-          { src: photo("thobe", 0.88), alt: "Back of the thobe" },
+          { alt: "Front of the thobe" },
+          { alt: "Back of the thobe" },
         ],
         price: 289,
         compareAtPrice: 349,
@@ -344,11 +327,7 @@ const demo: { en: QuickView01Props; ar: QuickView01Props } = {
           {
             id: "color",
             label: "Color",
-            items: colors([
-              ["white", "White", "oklch(0.98 0 0)"],
-              ["cream", "Cream", "oklch(0.9 0.04 85)"],
-              ["navy", "Navy", "oklch(0.32 0.06 260)"],
-            ]),
+            items: colors(["White", "Cream", "Navy"]),
           },
           { id: "size", label: "Size", items: sizes, defaultValue: "56" },
         ],
@@ -360,8 +339,8 @@ const demo: { en: QuickView01Props; ar: QuickView01Props } = {
         title: "Oud Al Majlis eau de parfum",
         brand: "Bait Al Oud",
         images: [
-          { src: photo("perfume", 0.92), alt: "The bottle, front" },
-          { src: photo("perfume", 0.87), alt: "The bottle in its gift box" },
+          { alt: "The bottle, front" },
+          { alt: "The bottle in its gift box" },
         ],
         price: 459,
         rating: { value: 4.8, count: 612 },
@@ -383,8 +362,8 @@ const demo: { en: QuickView01Props; ar: QuickView01Props } = {
         id: "coffee",
         title: "Saudi coffee with cardamom and saffron, 250 g",
         images: [
-          { src: photo("coffee", 0.92), alt: "The coffee bag, front" },
-          { src: photo("coffee", 0.88), alt: "The bag label" },
+          { alt: "The coffee bag, front" },
+          { alt: "The bag label" },
         ],
         price: 45,
         compareAtPrice: 55,
@@ -403,8 +382,8 @@ const demo: { en: QuickView01Props; ar: QuickView01Props } = {
         title: "ثوب رجالي قطن مصري",
         brand: "دار الأصيل",
         images: [
-          { src: photo("thobe", 0.93), alt: "الثوب من الأمام" },
-          { src: photo("thobe", 0.88), alt: "الثوب من الخلف" },
+          { alt: "الثوب من الأمام" },
+          { alt: "الثوب من الخلف" },
         ],
         price: 289,
         compareAtPrice: 349,
@@ -413,11 +392,7 @@ const demo: { en: QuickView01Props; ar: QuickView01Props } = {
           {
             id: "color",
             label: "اللون",
-            items: colors([
-              ["white", "أبيض", "oklch(0.98 0 0)"],
-              ["cream", "كريمي", "oklch(0.9 0.04 85)"],
-              ["navy", "كحلي", "oklch(0.32 0.06 260)"],
-            ]),
+            items: colors(["أبيض", "كريمي", "كحلي"]),
           },
           { id: "size", label: "المقاس", items: sizes, defaultValue: "56" },
         ],
@@ -429,8 +404,8 @@ const demo: { en: QuickView01Props; ar: QuickView01Props } = {
         title: "عطر عود المجلس",
         brand: "بيت العود",
         images: [
-          { src: photo("perfume", 0.92), alt: "الزجاجة من الأمام" },
-          { src: photo("perfume", 0.87), alt: "الزجاجة في علبة الهدية" },
+          { alt: "الزجاجة من الأمام" },
+          { alt: "الزجاجة في علبة الهدية" },
         ],
         price: 459,
         rating: { value: 4.8, count: 612 },
@@ -452,8 +427,8 @@ const demo: { en: QuickView01Props; ar: QuickView01Props } = {
         id: "coffee",
         title: "قهوة سعودية بالهيل والزعفران، 250 جم",
         images: [
-          { src: photo("coffee", 0.92), alt: "كيس القهوة من الأمام" },
-          { src: photo("coffee", 0.88), alt: "ملصق الكيس" },
+          { alt: "كيس القهوة من الأمام" },
+          { alt: "ملصق الكيس" },
         ],
         price: 45,
         compareAtPrice: 55,

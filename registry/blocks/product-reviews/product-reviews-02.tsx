@@ -100,7 +100,7 @@ function ProductReviews02({
                     <Rating value={review.rating} lang={lang} labels={lang === "ar" ? ratingLabelsAr : undefined} />
                     <div className="flex flex-col gap-2">
                       {review.title ? (
-                        <CardHeading className={cn("font-semibold text-balance", lead ? "text-xl md:text-3xl" : "text-base")}>
+                        <CardHeading className="text-lg font-semibold text-balance md:text-xl">
                           {review.title}
                         </CardHeading>
                       ) : null}

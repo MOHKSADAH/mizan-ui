@@ -2462,6 +2462,9 @@
       "type": "registry:ui",
       "title": "Product Gallery",
       "description": "Product image gallery with Embla swipe, thumbnails, RTL direction and optional zoom dialog.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/carousel",
         "MOHKSADAH/mizan-ui/dialog",
@@ -4863,8 +4866,7 @@
         "MOHKSADAH/mizan-ui/section",
         "MOHKSADAH/mizan-ui/sticky-action-bar",
         "MOHKSADAH/mizan-ui/stock-indicator",
-        "MOHKSADAH/mizan-ui/swatch-select",
-        "MOHKSADAH/mizan-ui/utils"
+        "MOHKSADAH/mizan-ui/swatch-select"
       ],
       "files": [
         {

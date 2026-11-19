@@ -39,3 +39,9 @@ test('the quick view content in Arabic and with the item sold out', () => {
   expect(html).toContain('عرض التفاصيل كاملة');
   expect(html).not.toContain('أضف إلى السلة');
 });
+
+test('quick-view-01 shows the placeholder for a product without an image src', () => {
+  const html = renderToString(<QuickView01 {...demo.en} />);
+  expect(html).toContain('bg-muted');
+  expect(html).not.toContain('data:image');
+});
