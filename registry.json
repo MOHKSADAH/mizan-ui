@@ -5123,6 +5123,29 @@
       ]
     },
     {
+      "name": "agent-runs-01",
+      "type": "registry:block",
+      "title": "Agent runs 01",
+      "description": "Live run list with All, Mine and Needs you filters, a status icon, elapsed time and an Open state per run.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/run-status",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/segmented-control",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/agent-runs/agent-runs-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
