@@ -3068,6 +3068,30 @@
       ]
     },
     {
+      "name": "prompt-input",
+      "type": "registry:ui",
+      "title": "Prompt Input",
+      "description": "Chat input with an auto-direction textarea, an attachment strip, tool and model slots, and a send button that turns into stop.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/attachment",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/input-group",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/prompt-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
       "name": "navbar-01",
       "type": "registry:block",
       "title": "Navbar 01",
