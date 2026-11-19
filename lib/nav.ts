@@ -28,14 +28,30 @@ export const componentTitle = (name: string) =>
 const componentLinks = (category: Category) =>
   uiItems
     .filter((i) => i.category === category)
-    .map((i) => ({ title: i.title ?? componentTitle(i.name), href: `/docs/components/${i.name}`, badge: BADGES[i.name] }));
+    .map((i) => ({ title: i.title ?? componentTitle(i.name), href: `/docs/components/${i.name}`, badge: i.badge ?? BADGES[i.name] }));
 
-// Block families in first-seen order, with their variant counts.
+// Sections and pages are both blocks, so the view route and the loaders see them together.
 export const blockItems = manifest.filter((i) => i.type === 'registry:block' && i.family);
-export const blockFamilies = [...new Set(blockItems.map((b) => b.family!))].map((family) => ({
-  family,
-  items: blockItems.filter((b) => b.family === family),
-}));
+
+// Families in first-seen order. A family is new when any variant is new, else updated when any is updated.
+export const familiesOf = (items: typeof blockItems) =>
+  [...new Set(items.map((b) => b.family!))].map((family) => {
+    const variants = items.filter((b) => b.family === family);
+    const badge: Badge | undefined = variants.some((b) => b.badge === 'new')
+      ? 'new'
+      : variants.some((b) => b.badge === 'updated')
+        ? 'updated'
+        : undefined;
+    return { family, items: variants, badge };
+  });
+export const blockFamilies = familiesOf(blockItems.filter((b) => b.kind !== 'page'));
+export const pageFamilies = familiesOf(blockItems.filter((b) => b.kind === 'page'));
+
+const familyLink = (f: (typeof blockFamilies)[number]) => ({
+  title: `${componentTitle(f.family)} (${f.items.length})`,
+  href: `/blocks/${f.family}`,
+  badge: f.badge,
+});
 
 export function sidebarNav(pages: Record<string, string>): NavGroup[] {
   return [
@@ -61,9 +77,10 @@ export function sidebarNav(pages: Record<string, string>): NavGroup[] {
       key: 'blocks',
       items: [
         { title: pages.blocks, href: '/blocks' },
-        ...blockFamilies.map((f) => ({ title: `${componentTitle(f.family)} (${f.items.length})`, href: `/blocks/${f.family}` })),
+        ...blockFamilies.map(familyLink),
       ],
     },
+    { key: 'pages', items: pageFamilies.map(familyLink) },
     { key: 'ascii', items: componentLinks('ascii') },
     { key: 'charts', items: [{ title: pages.charts, href: '/charts' }] },
     { key: 'themes', items: [{ title: pages.themes, href: '/themes' }] },
