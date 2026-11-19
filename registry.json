@@ -3140,6 +3140,30 @@
       ]
     },
     {
+      "name": "sources",
+      "type": "registry:ui",
+      "title": "Sources",
+      "description": "Collapsed list of source cards and numbered inline citations that open a hover card.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/hover-card",
+        "MOHKSADAH/mizan-ui/trace",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/sources.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
       "name": "navbar-01",
       "type": "registry:block",
       "title": "Navbar 01",
