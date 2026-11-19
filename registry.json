@@ -5048,6 +5048,30 @@
       ]
     },
     {
+      "name": "agent-map-01",
+      "type": "registry:block",
+      "title": "Agent map 01",
+      "description": "An orchestrator on the start side, sub-agents in the middle and tools on the end side, joined by SVG lines that mirror in RTL. One agent waits for review.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/run-status",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/agent-map/agent-map-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
