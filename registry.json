@@ -4460,6 +4460,62 @@
       ]
     },
     {
+      "name": "product-reviews-01",
+      "type": "registry:block",
+      "title": "Product Reviews 01",
+      "description": "Rating summary and a review list with verified badge, photos, helpful votes, sort and pagination.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/image-lightbox",
+        "MOHKSADAH/mizan-ui/pagination",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/rating-summary",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/select"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/product-reviews/product-reviews-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "product-reviews-02",
+      "type": "registry:block",
+      "title": "Product Reviews 02",
+      "description": "Compact highlights: one lead review and two smaller review cards for a product page.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/product-reviews/product-reviews-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
