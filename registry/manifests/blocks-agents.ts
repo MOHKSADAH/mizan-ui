@@ -17,4 +17,5 @@ export const agentBlocks: ManifestItem[] = [
   block('agent-tools', 'Agent tools 01', 'Connected MCP servers with tool counts, on and off switches, expandable tool lists tagged read-only or writes, and sign-in and retry states.'),
   block('agent-runs', 'Agent runs 01', 'Live run list with All, Mine and Needs you filters, a status icon, elapsed time and an Open state per run.'),
   block('agent-spend', 'Agent spend 01', 'A total and budget bar split by agent, then per-step or per-model spend bars with a Step and Model toggle.'),
+  block('agent-roster', 'Agent roster 01', 'A team of agents with role, model, current task, status pill and cost each, and the total spent today.'),
 ];

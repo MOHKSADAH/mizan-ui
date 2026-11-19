@@ -5168,6 +5168,27 @@
       ]
     },
     {
+      "name": "agent-roster-01",
+      "type": "registry:block",
+      "title": "Agent roster 01",
+      "description": "A team of agents with role, model, current task, status pill and cost each, and the total spent today.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/run-status",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/agent-roster/agent-roster-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
