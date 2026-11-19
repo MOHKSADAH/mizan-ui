@@ -105,7 +105,7 @@ export function Notifications01({
   }
 
   return (
-    <Container size="wide" dir={dir} className={className}>
+    <Container size="wide" dir={dir} className={cn("py-6 md:py-8", className)}>
       <div className="flex h-14 items-center gap-3 border-b">
         <div className="min-w-0 flex-1 truncate">{children}</div>
         <Popover defaultOpen={defaultOpen}>

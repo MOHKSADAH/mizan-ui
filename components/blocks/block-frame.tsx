@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { DesktopIcon, DeviceMobileIcon, DeviceTabletIcon, ArrowSquareOutIcon } from '@phosphor-icons/react';
+import { Badge } from '@/registry/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/registry/ui/tabs';
 import { ToggleGroup, ToggleGroupItem } from '@/registry/ui/toggle-group';
 import { Button } from '@/registry/ui/button';
@@ -23,12 +24,17 @@ export function BlockFrame({
   title,
   lang,
   code,
-  height = 560,
+  badge,
+  fixedHeight = false,
+  height = fixedHeight ? 720 : 560,
 }: {
   name: string;
   title: string;
   lang: Lang;
   code: React.ReactNode;
+  badge?: 'new' | 'updated';
+  // Pages are tall: keep the frame at `height` and let it scroll instead of growing to the page.
+  fixedHeight?: boolean;
   height?: number;
 }) {
   const t = SITE[lang];
@@ -45,13 +51,13 @@ export function BlockFrame({
     const onMessage = (e: MessageEvent) => {
       if (e.origin !== location.origin || typeof e.data?.mizanBlockHeight !== 'number') return;
       if (!String(e.data.href).endsWith(`/blocks/view/${name}`)) return;
-      setFrameHeight(Math.max(240, e.data.mizanBlockHeight));
+      if (!fixedHeight) setFrameHeight(Math.max(240, e.data.mizanBlockHeight));
       setLoaded(true);
     };
     window.addEventListener('message', onMessage);
     frameRef.current?.contentWindow?.postMessage('mizan-measure', location.origin);
     return () => window.removeEventListener('message', onMessage);
-  }, [name]);
+  }, [name, fixedHeight]);
 
   return (
     <section aria-labelledby={`block-${name}`} className="grid min-w-0 gap-3">
@@ -59,6 +65,11 @@ export function BlockFrame({
         <div className="flex flex-wrap items-center justify-between gap-2">
           <h2 id={`block-${name}`} className="text-lg font-semibold tracking-tight">
             {title} <span className="font-mono text-sm font-normal text-muted-foreground" dir="ltr">{name}</span>
+            {badge && (
+              <Badge variant={badge === 'new' ? 'default' : 'outline'} className="ms-2 h-4 px-1.5 align-middle text-[0.65rem]">
+                {badge === 'new' ? t.newBadge : t.updatedBadge}
+              </Badge>
+            )}
           </h2>
           <div className="flex flex-wrap items-center gap-2">
             <TabsList>
