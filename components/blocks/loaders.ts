@@ -82,5 +82,8 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'editorial-02': () => import('@/registry/blocks/editorial/editorial-02'),
   'feature-switcher-01': () => import('@/registry/blocks/feature-switcher/feature-switcher-01'),
   'feature-switcher-02': () => import('@/registry/blocks/feature-switcher/feature-switcher-02'),
+  'bento-01': () => import('@/registry/blocks/bento/bento-01'),
+  'bento-02': () => import('@/registry/blocks/bento/bento-02'),
+  'bento-03': () => import('@/registry/blocks/bento/bento-03'),
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
 };

@@ -5058,6 +5058,84 @@
       ]
     },
     {
+      "name": "bento-01",
+      "type": "registry:block",
+      "title": "Bento 01",
+      "description": "Five unequal light tiles that hold real mini-UI: an order list, a sales stat, a team, a chat and a city breakdown.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar-group",
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/bubble",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/progress",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/stat-card",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/bento/bento-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "bento-02",
+      "type": "registry:block",
+      "title": "Bento 02",
+      "description": "Five tiles on three columns with a dark inverse tile and a primary tile, holding revenue, chat, stat, status and goal mini-UI.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/avatar-group",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/bubble",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/progress",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/sparkline",
+        "MOHKSADAH/mizan-ui/stat-card",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/bento/bento-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "bento-03",
+      "type": "registry:block",
+      "title": "Bento 03",
+      "description": "Four tiles on four columns (tall, wide, tall, wide) with stock, stat cards, a chat and order tracking.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/bubble",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/order-stepper",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/stat-card",
+        "MOHKSADAH/mizan-ui/stock-indicator",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/bento/bento-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
