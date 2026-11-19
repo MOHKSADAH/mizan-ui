@@ -19,4 +19,22 @@ export const sectionsIndustryBlocks: ManifestItem[] = [
     badge: 'new',
     files: ['registry/blocks/project-grid/project-grid-02.tsx'],
   },
+  {
+    name: 'services-01',
+    type: 'registry:block',
+    family: 'services',
+    title: 'Services 01',
+    description: 'Numbered services list on divided rows: small muted number, title, one line and an optional link arrow.',
+    badge: 'new',
+    files: ['registry/blocks/services/services-01.tsx'],
+  },
+  {
+    name: 'services-02',
+    type: 'registry:block',
+    family: 'services',
+    title: 'Services 02',
+    description: 'Split layout: a sticky heading with a button on one side, numbered services on the other.',
+    badge: 'new',
+    files: ['registry/blocks/services/services-02.tsx'],
+  },
 ];

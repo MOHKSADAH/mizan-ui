@@ -6190,6 +6190,50 @@
       ]
     },
     {
+      "name": "services-01",
+      "type": "registry:block",
+      "title": "Services 01",
+      "description": "Numbered services list on divided rows: small muted number, title, one line and an optional link arrow.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/services/services-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "services-02",
+      "type": "registry:block",
+      "title": "Services 02",
+      "description": "Split layout: a sticky heading with a button on one side, numbered services on the other.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/services/services-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
