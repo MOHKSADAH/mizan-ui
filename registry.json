@@ -6166,6 +6166,30 @@
       ]
     },
     {
+      "name": "comparison-01",
+      "type": "registry:block",
+      "title": "Comparison 01",
+      "description": "Comparison table for plans or us versus others, with check and dash cells read as text and a sticky first column on mobile.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/table"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/comparison/comparison-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",

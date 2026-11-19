@@ -10,4 +10,13 @@ export const sectionsUtilityBlocks: ManifestItem[] = [
     badge: 'new',
     files: ['registry/blocks/calculator/calculator-01.tsx'],
   },
+  {
+    name: 'comparison-01',
+    type: 'registry:block',
+    family: 'comparison',
+    title: 'Comparison 01',
+    description: 'Comparison table for plans or us versus others, with check and dash cells read as text and a sticky first column on mobile.',
+    badge: 'new',
+    files: ['registry/blocks/comparison/comparison-01.tsx'],
+  },
 ];
