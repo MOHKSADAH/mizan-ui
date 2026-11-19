@@ -106,7 +106,7 @@ export function AgentPlan01({
                   <li key={source.id} className="flex items-center gap-1.5 rounded-md border bg-background py-0.5 ps-1 pe-2 text-xs">
                     <span
                       aria-hidden="true"
-                      className="flex size-4 items-center justify-center rounded-sm bg-muted text-[10px] font-medium"
+                      className="flex size-4 items-center justify-center rounded-sm bg-muted text-xs font-medium"
                     >
                       {[...source.name][0]}
                     </span>

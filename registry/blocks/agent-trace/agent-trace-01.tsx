@@ -98,7 +98,7 @@ export type AgentTrace01Props = BlockBase & {
 }
 
 const kindIcon = { agent: RobotIcon, model: CpuIcon, tool: WrenchIcon }
-const kindBar: Record<SpanKind, string> = { agent: "bg-series-1", model: "bg-series-2", tool: "bg-series-3" }
+const kindBar: Record<SpanKind, string> = { agent: "bg-muted-foreground/40", model: "bg-series-1", tool: "bg-series-1" }
 const TICKS = [0, 0.25, 0.5, 0.75, 1]
 
 // The bars sit on an inline-start offset, so time runs from the start side in both directions.

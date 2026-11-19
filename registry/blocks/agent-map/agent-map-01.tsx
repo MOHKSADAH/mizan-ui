@@ -63,7 +63,6 @@ export type AgentMap01Props = BlockBase & {
 const ROW = 120
 
 const lineTone: Partial<Record<RunState, string>> = {
-  running: "text-info",
   "needs-you": "text-warning",
 }
 
@@ -81,7 +80,7 @@ function Connectors({ links }: { links: { from: number; to: number; tone?: strin
           stroke="currentColor"
           strokeWidth={1.5}
           vectorEffect="non-scaling-stroke"
-          className={cn(link.tone ?? "text-border")}
+          className={cn(link.tone ?? "text-muted-foreground/40")}
         />
       ))}
     </svg>
@@ -196,7 +195,7 @@ export function AgentMap01({
                       <NodeBox className="flex items-center gap-2 p-2">
                         <span
                           aria-hidden="true"
-                          className="flex size-5 shrink-0 items-center justify-center rounded-sm bg-muted text-[10px] font-medium"
+                          className="flex size-5 shrink-0 items-center justify-center rounded-sm bg-muted text-xs font-medium"
                         >
                           {[...tool.name][0]}
                         </span>
