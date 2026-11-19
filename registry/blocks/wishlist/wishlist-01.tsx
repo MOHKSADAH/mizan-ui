@@ -7,6 +7,7 @@ import type { Action, BlockBase, Currency, Lang, Plural } from "@/registry/lib/b
 import { plural } from "@/registry/lib/format"
 import { cn } from "@/registry/lib/utils"
 import { Button, buttonVariants } from "@/registry/ui/button"
+import { Card, CardContent } from "@/registry/ui/card"
 import { Container } from "@/registry/ui/container"
 import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "@/registry/ui/empty"
 import {
@@ -27,7 +28,7 @@ type WishlistItem = {
   name: string
   vendor?: string
   href: string
-  image: { src: string; alt: string }
+  image: { src?: string; alt: string; width?: number; height?: number }
   price: number
   compareAt?: number
   stock: "in" | "low" | "out"
@@ -133,40 +134,44 @@ function Wishlist01({
                 const unavailable = item.stock === "out"
                 return (
                   <li key={item.id}>
-                    <ProductCard orientation="horizontal" unavailable={unavailable} className="h-full rounded-xl border p-3">
-                      <ProductCardMedia>
-                        <ProductCardImage src={item.image.src} alt={item.image.alt} />
-                      </ProductCardMedia>
-                      <ProductCardBody>
-                        {item.vendor ? <ProductCardVendor>{item.vendor}</ProductCardVendor> : null}
-                        <ProductCardTitle as={ItemHeading} href={item.href}>
-                          {item.name}
-                        </ProductCardTitle>
-                        <ProductCardPrice amount={item.price} compareAt={item.compareAt} currency={currency} lang={lang} compareAtLabel={t.originalPrice} />
-                        <StockIndicator status={item.stock} count={item.stockCount} lang={lang} labels={t.stock} className="text-xs" />
-                        <ProductCardFooter>
-                          <Button
-                            variant="default"
-                            size="lg"
-                            className="h-10 flex-1"
-                            disabled={unavailable}
-                            onClick={() => leave(item, t.moved, onMoveToCart)}
-                          >
-                            <ShoppingCartSimpleIcon aria-hidden="true" weight="regular" />
-                            {unavailable ? t.outOfStock : t.moveToCart}
-                          </Button>
-                          <Button
-                            variant="outline"
-                            size="icon-lg"
-                            className="size-10"
-                            aria-label={t.remove.replace("{name}", item.name)}
-                            onClick={() => leave(item, t.removed, onRemove)}
-                          >
-                            <TrashIcon aria-hidden="true" weight="regular" />
-                          </Button>
-                        </ProductCardFooter>
-                      </ProductCardBody>
-                    </ProductCard>
+                    <Card size="sm" className="h-full">
+                      <CardContent>
+                        <ProductCard orientation="horizontal" unavailable={unavailable}>
+                          <ProductCardMedia>
+                            <ProductCardImage {...item.image} />
+                          </ProductCardMedia>
+                          <ProductCardBody>
+                            {item.vendor ? <ProductCardVendor>{item.vendor}</ProductCardVendor> : null}
+                            <ProductCardTitle as={ItemHeading} href={item.href}>
+                              {item.name}
+                            </ProductCardTitle>
+                            <ProductCardPrice amount={item.price} compareAt={item.compareAt} currency={currency} lang={lang} compareAtLabel={t.originalPrice} />
+                            <StockIndicator status={item.stock} count={item.stockCount} lang={lang} labels={t.stock} className="text-xs" />
+                            <ProductCardFooter>
+                              <Button
+                                variant="default"
+                                size="lg"
+                                className="h-10 flex-1"
+                                disabled={unavailable}
+                                onClick={() => leave(item, t.moved, onMoveToCart)}
+                              >
+                                <ShoppingCartSimpleIcon aria-hidden="true" weight="regular" />
+                                {unavailable ? t.outOfStock : t.moveToCart}
+                              </Button>
+                              <Button
+                                variant="outline"
+                                size="icon-lg"
+                                className="size-10"
+                                aria-label={t.remove.replace("{name}", item.name)}
+                                onClick={() => leave(item, t.removed, onRemove)}
+                              >
+                                <TrashIcon aria-hidden="true" weight="regular" />
+                              </Button>
+                            </ProductCardFooter>
+                          </ProductCardBody>
+                        </ProductCard>
+                      </CardContent>
+                    </Card>
                   </li>
                 )
               })}
@@ -196,18 +201,18 @@ function Wishlist01({
 }
 
 const catalog = [
-  { id: "tote", img: 1, price: 389, compareAt: 459, stock: "in", en: ["Handmade leather tote", "Najd Workshop"], ar: ["شنطة جلد يدوية", "مشغل نجد"] },
-  { id: "glasses", img: 5, price: 245, stock: "low", stockCount: 3, en: ["Metal frame sunglasses", "Zill"], ar: ["نظارة شمسية بإطار معدني", "ظل"] },
-  { id: "cushion", img: 7, price: 89, compareAt: 119, stock: "out", en: ["Embroidered majlis cushion", "Sadu House"], ar: ["مخدة مجلس مطرزة", "بيت السدو"] },
-  { id: "oud", img: 2, price: 520, stock: "in", en: ["Cambodian oud oil, 12 g", "Dar Al Tayeb"], ar: ["دهن عود كمبودي 12 جم", "دار الطيب"] },
+  { id: "tote", price: 389, compareAt: 459, stock: "in", en: ["Handmade leather tote", "Najd Workshop"], ar: ["شنطة جلد يدوية", "مشغل نجد"] },
+  { id: "glasses", price: 245, stock: "low", stockCount: 3, en: ["Metal frame sunglasses", "Zill"], ar: ["نظارة شمسية بإطار معدني", "ظل"] },
+  { id: "cushion", price: 89, compareAt: 119, stock: "out", en: ["Embroidered majlis cushion", "Sadu House"], ar: ["مخدة مجلس مطرزة", "بيت السدو"] },
+  { id: "oud", price: 520, stock: "in", en: ["Cambodian oud oil, 12 g", "Dar Al Tayeb"], ar: ["دهن عود كمبودي 12 جم", "دار الطيب"] },
 ] as const
 
 const build = (lang: Lang): Wishlist01Props => ({
   lang,
   title: lang === "ar" ? "المفضلة" : "Wishlist",
-  items: catalog.map(({ id, img, en, ar, ...rest }) => {
+  items: catalog.map(({ id, en, ar, ...rest }) => {
     const [name, vendor] = lang === "ar" ? ar : en
-    return { ...rest, id, name, vendor, href: `#${id}`, image: { src: `/examples/shop-${img}.svg`, alt: name } }
+    return { ...rest, id, name, vendor, href: `#${id}`, image: { alt: name } }
   }),
   shop: { label: lang === "ar" ? "تصفح المنتجات" : "Browse products", href: "#shop" },
   labels: lang === "ar" ? labelsAr : labelsEn,

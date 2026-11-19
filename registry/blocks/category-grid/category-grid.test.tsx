@@ -30,3 +30,12 @@ test('category-grid-02 renders in Arabic', () => {
   expect(html).toContain('أقسام المتجر');
   expect(html).toContain('الإلكترونيات');
 });
+
+test('category-grid-01 shows the placeholder without an image src and the image with one', () => {
+  expect(renderToString(<CategoryGrid01 {...demo01.en} />)).not.toContain('<img');
+  const [first, ...rest] = demo01.en.categories;
+  const html = renderToString(
+    <CategoryGrid01 {...demo01.en} categories={[{ ...first, image: { src: '/a.jpg', alt: 'Fragrance', width: 400, height: 400 } }, ...rest]} />,
+  );
+  expect(html).toContain('src="/a.jpg"');
+});

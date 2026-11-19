@@ -1,6 +1,6 @@
 import { expect, test } from 'bun:test';
 import { renderToString } from 'react-dom/server';
-import Cart01, { demo as cart01, labelsAr as cart01Ar, labelsEn as cart01En } from './cart-01';
+import Cart01, { checkCoupon, demo as cart01, labelsAr as cart01Ar, labelsEn as cart01En } from './cart-01';
 import Cart02, { demo as cart02, labelsAr as cart02Ar } from './cart-02';
 import Cart03, { demo as cart03, labelsAr as cart03Ar } from './cart-03';
 
@@ -70,4 +70,11 @@ test('cart-03 renders the trigger with the count in English and Arabic', () => {
   expect(ar).toContain('aria-label="فتح السلة، 5 منتجات"');
   expect(ar).toContain('رافد');
   expect(ar).toContain('dir="rtl"');
+});
+
+test('cart-01 coupon check moves to error when apply throws, rejects or returns null', async () => {
+  expect(await checkCoupon('A', async () => 0.1)).toEqual({ status: 'success', code: 'A', rate: 0.1 });
+  expect(await checkCoupon('A', async () => null)).toEqual({ status: 'error' });
+  expect(await checkCoupon('A', async () => { throw new Error('network'); })).toEqual({ status: 'error' });
+  expect(await checkCoupon('A', () => { throw new Error('sync'); })).toEqual({ status: 'error' });
 });

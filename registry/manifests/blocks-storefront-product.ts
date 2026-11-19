@@ -4,6 +4,7 @@ const block = (family: string, n: string, title: string, description: string): M
   name: `${family}-${n}`,
   type: 'registry:block',
   family,
+  badge: 'new',
   title,
   description,
   files: [`registry/blocks/${family}/${family}-${n}.tsx`],
