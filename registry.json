@@ -3109,6 +3109,24 @@
       ]
     },
     {
+      "name": "segmented-bar",
+      "type": "registry:ui",
+      "title": "Segmented Bar",
+      "description": "One bar split into parts, for a budget split by agent, with an optional text legend.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/segmented-bar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
       "name": "navbar-01",
       "type": "registry:block",
       "title": "Navbar 01",
