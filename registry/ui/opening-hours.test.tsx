@@ -78,6 +78,13 @@ describe("OpeningHours", () => {
     expect(html).toContain("9:00 ص")
   })
 
+  test("lists the two Friday ranges in time order, each time isolated, so rtl lays the first range at the start", () => {
+    const html = renderToString(<OpeningHours lang="ar" value={plain} now={now} labels={openingHoursLabelsAr} />)
+    const friday = html.split("<tr").find((row) => row.includes("الجمعة"))!
+    const times = [...friday.matchAll(/<bdi>([^<]+)<\/bdi>/g)].map((m) => m[1])
+    expect(times).toEqual(["9:00 ص", "11:30 ص", "1:30 م", "10:00 م"])
+  })
+
   test("renders the editor in en and ar", () => {
     expect(renderToString(<OpeningHoursEditor defaultValue={withRamadan} />)).toContain("Add split shift")
     expect(renderToString(<OpeningHoursEditor lang="ar" labels={openingHoursLabelsAr} defaultValue={withRamadan} />)).toContain(
