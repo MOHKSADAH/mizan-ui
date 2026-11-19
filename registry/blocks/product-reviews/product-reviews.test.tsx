@@ -16,13 +16,19 @@ test('product-reviews-01 renders the summary, the first page and the pager in En
   expect(html).toContain('aria-pressed="false"');
 });
 
-test('product-reviews-01 sorts by the chosen order and shows photos', () => {
+test('product-reviews-01 sorts by the chosen order', () => {
   const lowest = renderToString(<ProductReviews01 {...demo01.en} defaultSort="lowest" />);
   expect(lowest).toContain('Turki Al-Zahrani');
   expect(lowest.indexOf('Turki Al-Zahrani')).toBeLessThan(lowest.indexOf('Haifa Al-Harbi'));
   expect(lowest).not.toContain('Noura Al-Shammari');
-  const newest = renderToString(<ProductReviews01 {...demo01.en} />);
-  expect(newest).toContain('data-slot="image-lightbox"');
+});
+
+test('product-reviews-01 shows the photos of a review that has them', () => {
+  const [first, ...rest] = demo01.en.reviews;
+  const photos = [{ src: '/photo.jpg', alt: 'Photo from the customer' }];
+  const html = renderToString(<ProductReviews01 {...demo01.en} reviews={[{ ...first, photos }, ...rest]} />);
+  expect(html).toContain('data-slot="image-lightbox"');
+  expect(renderToString(<ProductReviews01 {...demo01.en} />)).not.toContain('data-slot="image-lightbox"');
 });
 
 test('product-reviews-01 hides the pager when everything fits on one page', () => {

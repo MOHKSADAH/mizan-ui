@@ -125,7 +125,7 @@ export function OrderSummary01({
               <span className="flex items-center gap-2">
                 <ShoppingCartIcon aria-hidden="true" className="size-4" />
                 {open ? t.hide : t.show}
-                <span className="font-normal text-muted-foreground">{t.items(count)}</span>
+                <span className="text-muted-foreground">{t.items(count)}</span>
                 <CaretDownIcon aria-hidden="true" className={cn("size-4", open && "rotate-180")} />
               </span>
               <Price amount={total} currency={currency} lang={lang} />

@@ -12,7 +12,7 @@ import { Container } from "@/registry/ui/container"
 import { DeliveryEstimate, deliveryEstimateLabelsAr } from "@/registry/ui/delivery-estimate"
 import { Installments, installmentsLabelsAr } from "@/registry/ui/installments"
 import { Price } from "@/registry/ui/price"
-import type { GalleryImage } from "@/registry/ui/product-gallery"
+import { ProductImage, type GalleryImage } from "@/registry/ui/product-gallery"
 import { Rating, ratingLabelsAr } from "@/registry/ui/rating"
 import { Section } from "@/registry/ui/section"
 import { StockIndicator, stockIndicatorLabelsAr, type StockStatus } from "@/registry/ui/stock-indicator"
@@ -41,7 +41,7 @@ type ProductDetail02Labels = {
 
 type ProductDetail02Props = BlockBase & {
   lang?: Lang
-  // A short pill above the title, such as the collection.
+  // A short line above the title, such as the collection.
   eyebrow?: string
   title: string
   summary?: string
@@ -122,25 +122,23 @@ function ProductDetail02({
       <Container size="wide" className="grid items-start gap-8 lg:grid-cols-12 lg:gap-12">
         <div className="grid min-w-0 grid-cols-2 gap-3 lg:col-span-8 lg:gap-4">
           {images.map((image, i) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              key={image.src}
-              src={image.src}
-              alt={image.alt}
-              loading={i === 0 ? "eager" : "lazy"}
+            <div
+              key={i}
               className={cn(
-                "w-full rounded-xl border border-border object-cover",
+                "overflow-hidden rounded-xl border border-border",
                 i === 0 || (i === images.length - 1 && images.length % 2 === 0)
                   ? "col-span-2 aspect-[4/3]"
                   : "aspect-square"
               )}
-            />
+            >
+              <ProductImage image={image} priority={i === 0} />
+            </div>
           ))}
         </div>
 
         <div className="flex min-w-0 flex-col gap-6 lg:sticky lg:top-8 lg:col-span-4">
           <div className="flex flex-col items-start gap-3">
-            {eyebrow ? <Badge variant="secondary">{eyebrow}</Badge> : null}
+            {eyebrow ? <p className="text-sm text-primary">{eyebrow}</p> : null}
             <Heading id={`${sid}-heading`} className="text-3xl font-semibold text-balance md:text-4xl">
               {title}
             </Heading>
@@ -250,12 +248,6 @@ function ProductDetail02({
   )
 }
 
-// A neutral stand-in for a product photo, so the demo needs no image files.
-const photo = (tone: number, zoom = false) =>
-  `data:image/svg+xml,${encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${zoom ? "250 150 300 300" : "0 0 800 800"}"><rect width="800" height="800" fill="oklch(${tone} 0.02 70)"/><rect x="290" y="330" width="220" height="360" rx="28" fill="oklch(${(tone - 0.1).toFixed(2)} 0.04 70)"/><rect x="360" y="250" width="80" height="90" fill="oklch(${(tone - 0.16).toFixed(2)} 0.04 70)"/><rect x="340" y="160" width="120" height="100" rx="14" fill="oklch(${(tone - 0.3).toFixed(2)} 0.03 70)"/><rect x="320" y="440" width="160" height="120" rx="8" fill="oklch(${(tone - 0.02).toFixed(2)} 0.02 70)"/></svg>`
-  )}`
-
 const sizes = [
   { value: "50", label: "50 ml" },
   { value: "100", label: "100 ml" },
@@ -268,10 +260,10 @@ const demo: { en: ProductDetail02Props; ar: ProductDetail02Props } = {
     title: "Oud Al Majlis eau de parfum",
     summary: "Cambodian oud with amber and a touch of saffron. It stays on your clothes until the next morning.",
     images: [
-      { src: photo(0.92), alt: "The bottle, front" },
-      { src: photo(0.88, true), alt: "The cap and neck" },
-      { src: photo(0.85, true), alt: "The label" },
-      { src: photo(0.9), alt: "The bottle in its gift box" },
+      { alt: "The bottle, front" },
+      { alt: "The cap and neck" },
+      { alt: "The label" },
+      { alt: "The bottle in its gift box" },
     ],
     price: 459,
     vat: { rate: 0.15, included: true },
@@ -296,10 +288,10 @@ const demo: { en: ProductDetail02Props; ar: ProductDetail02Props } = {
     title: "عطر عود المجلس",
     summary: "عود كمبودي مع العنبر ولمسة زعفران. يبقى على ملابسك إلى صباح اليوم التالي.",
     images: [
-      { src: photo(0.92), alt: "الزجاجة من الأمام" },
-      { src: photo(0.88, true), alt: "الغطاء والعنق" },
-      { src: photo(0.85, true), alt: "ملصق الزجاجة" },
-      { src: photo(0.9), alt: "الزجاجة في علبة الهدية" },
+      { alt: "الزجاجة من الأمام" },
+      { alt: "الغطاء والعنق" },
+      { alt: "ملصق الزجاجة" },
+      { alt: "الزجاجة في علبة الهدية" },
     ],
     price: 459,
     vat: { rate: 0.15, included: true },

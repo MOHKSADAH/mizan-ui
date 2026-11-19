@@ -287,12 +287,6 @@ function ProductReviews01({
   )
 }
 
-// A neutral stand-in for a shopper's photo, so the demo needs no image files.
-const photo = (tone: number) =>
-  `data:image/svg+xml,${encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"><rect width="800" height="800" fill="oklch(${tone} 0.02 85)"/><path d="M340 100Q400 150 460 100L570 140L630 540L560 550L520 290V760H280V290L240 550L170 540L230 140Z" fill="oklch(${(tone - 0.1).toFixed(2)} 0.03 85)"/></svg>`
-  )}`
-
 const distribution = [5, 2, 1, 0, 0]
 
 const demo: { en: ProductReviews01Props; ar: ProductReviews01Props } = {
@@ -310,10 +304,6 @@ const demo: { en: ProductReviews01Props; ar: ProductReviews01Props } = {
         title: "Worth every riyal",
         body: "I ordered size 56 and it fit perfectly. The fabric is soft and light, and I wore it all day at work without feeling the heat. The stitching is neat and the buttons are solid.",
         verified: true,
-        photos: [
-          { src: photo(0.93), alt: "The thobe, photo from the customer" },
-          { src: photo(0.88), alt: "The collar, photo from the customer" },
-        ],
         helpful: 14,
       },
       {
@@ -336,7 +326,6 @@ const demo: { en: ProductReviews01Props; ar: ProductReviews01Props } = {
         title: "Great, but the cream is lighter than the photo",
         body: "The quality is excellent, but the cream is a little lighter than in the photo. If you have an athletic build, take one size up.",
         verified: true,
-        photos: [{ src: photo(0.9), alt: "The cream thobe, photo from the customer" }],
         helpful: 11,
       },
       {
@@ -409,10 +398,6 @@ const demo: { en: ProductReviews01Props; ar: ProductReviews01Props } = {
         title: "يستاهل كل ريال",
         body: "أخذت مقاس 56 وجاء مضبوط على قياسي. القماش ناعم وخفيف، ولبسته يوم كامل في الدوام وما حسيت بحر. الخياطة مرتبة والأزرار ثابتة.",
         verified: true,
-        photos: [
-          { src: photo(0.93), alt: "الثوب، صورة من العميل" },
-          { src: photo(0.88), alt: "الياقة، صورة من العميل" },
-        ],
         helpful: 14,
       },
       {
@@ -435,7 +420,6 @@ const demo: { en: ProductReviews01Props; ar: ProductReviews01Props } = {
         title: "ممتاز، بس الكريمي أفتح من الصورة",
         body: "الجودة ممتازة، بس لون الكريمي أفتح شوي من الصورة. أنصح من جسمه رياضي يأخذ مقاس أكبر.",
         verified: true,
-        photos: [{ src: photo(0.9), alt: "الثوب الكريمي، صورة من العميل" }],
         helpful: 11,
       },
       {

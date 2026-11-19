@@ -51,7 +51,7 @@ type Product = {
   name: string
   vendor?: string
   href: string
-  image: { src: string; alt: string }
+  image: { src?: string; alt: string; width?: number; height?: number }
   price: number
   compareAt?: number
   rating?: number
@@ -414,7 +414,7 @@ function ProductGrid01({
                     <li key={p.id}>
                       <ProductCard unavailable={p.stock === "out"} className="h-full">
                         <ProductCardMedia>
-                          <ProductCardImage src={p.image.src} alt={p.image.alt} />
+                          <ProductCardImage {...p.image} />
                           <ProductCardBadges>
                             {p.compareAt ? (
                               <Badge variant="destructive">{t.discount.replace("{n}", formatPercent(1 - p.price / p.compareAt, { lang }, { max: 0 }))}</Badge>
@@ -519,17 +519,15 @@ function ProductGrid01({
   )
 }
 
-const shop = (n: number) => `/examples/shop-${n}.svg`
-
 const catalog = [
-  { id: "tote", img: 1, price: 389, compareAt: 459, rating: 4.7, reviews: 128, category: "bags", colors: ["brown", "black"], stock: "in", en: ["Handmade leather tote", "Najd Workshop"], ar: ["شنطة جلد يدوية", "مشغل نجد"] },
-  { id: "oud", img: 2, price: 520, rating: 4.9, reviews: 342, category: "fragrance", stock: "in", en: ["Cambodian oud oil, 12 g", "Dar Al Tayeb"], ar: ["دهن عود كمبودي 12 جم", "دار الطيب"] },
-  { id: "watch", img: 3, price: 749, compareAt: 899, rating: 4.5, reviews: 86, category: "watches", colors: ["black", "navy"], stock: "in", en: ["Classic watch, leather strap", "Khaleej Time"], ar: ["ساعة كلاسيك بسوار جلد", "ساعات الخليج"] },
-  { id: "cups", img: 4, price: 129, rating: 4.8, reviews: 215, category: "home", colors: ["cream"], stock: "in", en: ["Arabic coffee cups, set of 6", "Bayt Al Diyafa"], ar: ["فناجين قهوة عربية، طقم 6", "بيت الضيافة"] },
-  { id: "glasses", img: 5, price: 245, rating: 4.3, reviews: 54, category: "eyewear", colors: ["black", "brown"], stock: "low", en: ["Metal frame sunglasses", "Zill"], ar: ["نظارة شمسية بإطار معدني", "ظل"] },
-  { id: "thobe", img: 6, price: 279, rating: 4.6, reviews: 410, category: "clothing", sizes: ["S", "M", "L", "XL"], colors: ["white", "cream", "navy"], stock: "in", en: ["Men's summer cotton thobe", "Al Deera Tailors"], ar: ["ثوب رجالي قطن للصيف", "خياط الديرة"] },
-  { id: "cushion", img: 7, price: 89, compareAt: 119, rating: 4.4, reviews: 37, category: "home", colors: ["brown", "cream"], stock: "out", en: ["Embroidered majlis cushion", "Sadu House"], ar: ["مخدة مجلس مطرزة", "بيت السدو"] },
-  { id: "phones", img: 8, price: 429, rating: 4.6, reviews: 193, category: "electronics", colors: ["black", "white"], stock: "low", en: ["Wireless headphones", "Naghma"], ar: ["سماعات رأس لاسلكية", "نغمة"] },
+  { id: "tote", price: 389, compareAt: 459, rating: 4.7, reviews: 128, category: "bags", colors: ["brown", "black"], stock: "in", en: ["Handmade leather tote", "Najd Workshop"], ar: ["شنطة جلد يدوية", "مشغل نجد"] },
+  { id: "oud", price: 520, rating: 4.9, reviews: 342, category: "fragrance", stock: "in", en: ["Cambodian oud oil, 12 g", "Dar Al Tayeb"], ar: ["دهن عود كمبودي 12 جم", "دار الطيب"] },
+  { id: "watch", price: 749, compareAt: 899, rating: 4.5, reviews: 86, category: "watches", colors: ["black", "navy"], stock: "in", en: ["Classic watch, leather strap", "Khaleej Time"], ar: ["ساعة كلاسيك بسوار جلد", "ساعات الخليج"] },
+  { id: "cups", price: 129, rating: 4.8, reviews: 215, category: "home", colors: ["cream"], stock: "in", en: ["Arabic coffee cups, set of 6", "Bayt Al Diyafa"], ar: ["فناجين قهوة عربية، طقم 6", "بيت الضيافة"] },
+  { id: "glasses", price: 245, rating: 4.3, reviews: 54, category: "eyewear", colors: ["black", "brown"], stock: "low", en: ["Metal frame sunglasses", "Zill"], ar: ["نظارة شمسية بإطار معدني", "ظل"] },
+  { id: "thobe", price: 279, rating: 4.6, reviews: 410, category: "clothing", sizes: ["S", "M", "L", "XL"], colors: ["white", "cream", "navy"], stock: "in", en: ["Men's summer cotton thobe", "Al Deera Tailors"], ar: ["ثوب رجالي قطن للصيف", "خياط الديرة"] },
+  { id: "cushion", price: 89, compareAt: 119, rating: 4.4, reviews: 37, category: "home", colors: ["brown", "cream"], stock: "out", en: ["Embroidered majlis cushion", "Sadu House"], ar: ["مخدة مجلس مطرزة", "بيت السدو"] },
+  { id: "phones", price: 429, rating: 4.6, reviews: 193, category: "electronics", colors: ["black", "white"], stock: "low", en: ["Wireless headphones", "Naghma"], ar: ["سماعات رأس لاسلكية", "نغمة"] },
 ] as const
 
 const categoryNames = {
@@ -546,7 +544,7 @@ const build = (lang: Lang): ProductGrid01Props => ({
   lang,
   title: lang === "ar" ? "كل المنتجات" : "All products",
   description: lang === "ar" ? "توصيل لجميع مدن المملكة خلال 2 إلى 4 أيام عمل." : "Delivery to every city in the Kingdom in 2 to 4 working days.",
-  products: catalog.map(({ id, img, en, ar, ...rest }) => {
+  products: catalog.map(({ id, en, ar, ...rest }) => {
     const [name, vendor] = lang === "ar" ? ar : en
     return {
       ...rest,
@@ -554,7 +552,7 @@ const build = (lang: Lang): ProductGrid01Props => ({
       name,
       vendor,
       href: `#${id}`,
-      image: { src: shop(img), alt: name },
+      image: { alt: name },
       colors: "colors" in rest ? [...rest.colors] : undefined,
       sizes: "sizes" in rest ? [...rest.sizes] : undefined,
     }
