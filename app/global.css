@@ -7,6 +7,7 @@
 @import "../registry/base/tokens.css";
 @import "../registry/base/series.css";
 @import "./fonts.css";
+@import "./directions.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -72,9 +73,6 @@ html > body[data-scroll-locked] {
     letter-spacing: var(--tracking-normal);
     scrollbar-width: thin;
     scrollbar-color: color-mix(in oklch, var(--foreground) 25%, transparent) transparent;
-  }
-  h1, h2, h3, h4 {
-    font-family: var(--font-heading);
   }
 }
 
