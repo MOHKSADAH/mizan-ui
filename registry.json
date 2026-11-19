@@ -3413,6 +3413,26 @@
       ]
     },
     {
+      "name": "day-picker",
+      "type": "registry:ui",
+      "title": "Day Picker",
+      "description": "Daily, weekly and monthly segments that reveal weekday chips. The week starts on Saturday for Arabic and on Sunday for English, and a summary line reads the choice back.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/toggle-group",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/day-picker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
       "name": "navbar-01",
       "type": "registry:block",
       "title": "Navbar 01",
