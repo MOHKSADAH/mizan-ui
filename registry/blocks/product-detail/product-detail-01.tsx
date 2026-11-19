@@ -276,12 +276,6 @@ function ProductDetail01({
   )
 }
 
-// A neutral stand-in for a product photo, so the demo needs no image files.
-const photo = (tone: number, zoom = false) =>
-  `data:image/svg+xml,${encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${zoom ? "250 90 300 300" : "0 0 800 800"}"><rect width="800" height="800" fill="oklch(${tone} 0.02 85)"/><path d="M340 100Q400 150 460 100L570 140L630 540L560 550L520 290V760H280V290L240 550L170 540L230 140Z" fill="oklch(${(tone - 0.1).toFixed(2)} 0.03 85)"/><rect x="394" y="135" width="12" height="340" rx="6" fill="oklch(${(tone - 0.2).toFixed(2)} 0.03 85)"/></svg>`
-  )}`
-
 const Specs = ({ rows }: { rows: [string, string][] }) => (
   <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-2">
     {rows.map(([name, value]) => (
@@ -293,8 +287,16 @@ const Specs = ({ rows }: { rows: [string, string][] }) => (
   </dl>
 )
 
-const colors = (names: [string, string, string][]): SwatchOption[] =>
-  names.map(([value, label, color]) => ({ value, label, color }))
+const swatches = [
+  ["white", "oklch(0.98 0 0)"],
+  ["cream", "oklch(0.9 0.04 85)"],
+  ["grey", "oklch(0.72 0 0)"],
+  ["navy", "oklch(0.32 0.06 260)"],
+] as const
+
+// One color list for both languages: only the labels change.
+const colors = (labels: string[]): SwatchOption[] =>
+  swatches.map(([value, color], i) => ({ value, label: labels[i], color }))
 
 const sizes = ["52", "54", "56", "58", "60"].map((s) => ({ value: s, label: s, outOfStock: s === "60" }))
 
@@ -304,10 +306,10 @@ const demo: { en: ProductDetail01Props; ar: ProductDetail01Props } = {
     title: "Men's Egyptian cotton thobe",
     brand: "Dar Al Aseel",
     images: [
-      { src: photo(0.93), alt: "Front of the thobe" },
-      { src: photo(0.89), alt: "Back of the thobe" },
-      { src: photo(0.91, true), alt: "Collar and placket" },
-      { src: photo(0.86, true), alt: "Close-up of the cotton weave" },
+      { alt: "Front of the thobe" },
+      { alt: "Back of the thobe" },
+      { alt: "Collar and placket" },
+      { alt: "Close-up of the cotton weave" },
     ],
     price: 289,
     compareAtPrice: 349,
@@ -317,12 +319,7 @@ const demo: { en: ProductDetail01Props; ar: ProductDetail01Props } = {
       {
         id: "color",
         label: "Color",
-        items: colors([
-          ["white", "White", "oklch(0.98 0 0)"],
-          ["cream", "Cream", "oklch(0.9 0.04 85)"],
-          ["grey", "Grey", "oklch(0.72 0 0)"],
-          ["navy", "Navy", "oklch(0.32 0.06 260)"],
-        ]),
+        items: colors(["White", "Cream", "Grey", "Navy"]),
       },
       { id: "size", label: "Size", items: sizes, defaultValue: "56" },
     ],
@@ -374,10 +371,10 @@ const demo: { en: ProductDetail01Props; ar: ProductDetail01Props } = {
     title: "ثوب رجالي قطن مصري",
     brand: "دار الأصيل",
     images: [
-      { src: photo(0.93), alt: "الثوب من الأمام" },
-      { src: photo(0.89), alt: "الثوب من الخلف" },
-      { src: photo(0.91, true), alt: "الياقة والأزرار" },
-      { src: photo(0.86, true), alt: "لقطة قريبة لنسيج القطن" },
+      { alt: "الثوب من الأمام" },
+      { alt: "الثوب من الخلف" },
+      { alt: "الياقة والأزرار" },
+      { alt: "لقطة قريبة لنسيج القطن" },
     ],
     price: 289,
     compareAtPrice: 349,
@@ -387,12 +384,7 @@ const demo: { en: ProductDetail01Props; ar: ProductDetail01Props } = {
       {
         id: "color",
         label: "اللون",
-        items: colors([
-          ["white", "أبيض", "oklch(0.98 0 0)"],
-          ["cream", "كريمي", "oklch(0.9 0.04 85)"],
-          ["grey", "رمادي", "oklch(0.72 0 0)"],
-          ["navy", "كحلي", "oklch(0.32 0.06 260)"],
-        ]),
+        items: colors(["أبيض", "كريمي", "رمادي", "كحلي"]),
       },
       { id: "size", label: "المقاس", items: sizes, defaultValue: "56" },
     ],

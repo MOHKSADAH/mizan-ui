@@ -31,7 +31,7 @@ type Product = {
   name: string
   vendor?: string
   href: string
-  image: { src: string; alt: string }
+  image: { src?: string; alt: string; width?: number; height?: number }
   price: number
   compareAt?: number
   rating?: number
@@ -140,7 +140,7 @@ function ProductGrid03({
                 <CarouselItem key={p.id} className="basis-3/5 sm:basis-1/3 lg:basis-1/4">
                   <ProductCard unavailable={!inStock} className="h-full">
                     <ProductCardMedia>
-                      <ProductCardImage src={p.image.src} alt={p.image.alt} />
+                      <ProductCardImage {...p.image} />
                       <ProductCardBadges>
                         {p.compareAt ? <Badge variant="destructive">{t.discount.replace("{n}", formatPercent(1 - p.price / p.compareAt, { lang }, { max: 0 }))}</Badge> : null}
                         {!inStock ? <Badge variant="secondary">{t.outOfStock}</Badge> : null}
@@ -175,12 +175,12 @@ function ProductGrid03({
 }
 
 const catalog = [
-  { id: "oud", img: 2, price: 520, rating: 4.9, reviews: 342, en: ["Cambodian oud oil, 12 g", "Dar Al Tayeb"], ar: ["دهن عود كمبودي 12 جم", "دار الطيب"] },
-  { id: "thobe", img: 6, price: 279, rating: 4.6, reviews: 410, en: ["Men's summer cotton thobe", "Al Deera Tailors"], ar: ["ثوب رجالي قطن للصيف", "خياط الديرة"] },
-  { id: "cups", img: 4, price: 129, rating: 4.8, reviews: 215, en: ["Arabic coffee cups, set of 6", "Bayt Al Diyafa"], ar: ["فناجين قهوة عربية، طقم 6", "بيت الضيافة"] },
-  { id: "tote", img: 1, price: 389, compareAt: 459, rating: 4.7, reviews: 128, en: ["Handmade leather tote", "Najd Workshop"], ar: ["شنطة جلد يدوية", "مشغل نجد"] },
-  { id: "phones", img: 8, price: 429, rating: 4.6, reviews: 193, en: ["Wireless headphones", "Naghma"], ar: ["سماعات رأس لاسلكية", "نغمة"] },
-  { id: "watch", img: 3, price: 749, compareAt: 899, rating: 4.5, reviews: 86, en: ["Classic watch, leather strap", "Khaleej Time"], ar: ["ساعة كلاسيك بسوار جلد", "ساعات الخليج"] },
+  { id: "oud", price: 520, rating: 4.9, reviews: 342, en: ["Cambodian oud oil, 12 g", "Dar Al Tayeb"], ar: ["دهن عود كمبودي 12 جم", "دار الطيب"] },
+  { id: "thobe", price: 279, rating: 4.6, reviews: 410, en: ["Men's summer cotton thobe", "Al Deera Tailors"], ar: ["ثوب رجالي قطن للصيف", "خياط الديرة"] },
+  { id: "cups", price: 129, rating: 4.8, reviews: 215, en: ["Arabic coffee cups, set of 6", "Bayt Al Diyafa"], ar: ["فناجين قهوة عربية، طقم 6", "بيت الضيافة"] },
+  { id: "tote", price: 389, compareAt: 459, rating: 4.7, reviews: 128, en: ["Handmade leather tote", "Najd Workshop"], ar: ["شنطة جلد يدوية", "مشغل نجد"] },
+  { id: "phones", price: 429, rating: 4.6, reviews: 193, en: ["Wireless headphones", "Naghma"], ar: ["سماعات رأس لاسلكية", "نغمة"] },
+  { id: "watch", price: 749, compareAt: 899, rating: 4.5, reviews: 86, en: ["Classic watch, leather strap", "Khaleej Time"], ar: ["ساعة كلاسيك بسوار جلد", "ساعات الخليج"] },
 ] as const
 
 const build = (lang: Lang): ProductGrid03Props => ({
@@ -189,9 +189,9 @@ const build = (lang: Lang): ProductGrid03Props => ({
   title: lang === "ar" ? "الأكثر مبيعًا" : "Best sellers",
   description: lang === "ar" ? "ما يطلبه عملاؤنا أكثر من غيره، من الرياض إلى جدة والدمام." : "What customers order most, from Riyadh to Jeddah and Dammam.",
   viewAll: { href: "#all" },
-  products: catalog.map(({ id, img, en, ar, ...rest }) => {
+  products: catalog.map(({ id, en, ar, ...rest }) => {
     const [name, vendor] = lang === "ar" ? ar : en
-    return { ...rest, id, name, vendor, href: `#${id}`, image: { src: `/examples/shop-${img}.svg`, alt: name } }
+    return { ...rest, id, name, vendor, href: `#${id}`, image: { alt: name } }
   }),
   labels: lang === "ar" ? labelsAr : labelsEn,
 })
