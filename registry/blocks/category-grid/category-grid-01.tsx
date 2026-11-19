@@ -1,5 +1,5 @@
 import * as React from "react"
-import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr"
+import { ArrowUpRightIcon, ImageIcon } from "@phosphor-icons/react/ssr"
 
 import type { Action, BlockBase, Lang, Plural } from "@/registry/lib/block-types"
 import { plural } from "@/registry/lib/format"
@@ -13,7 +13,7 @@ type Category = {
   name: string
   count: number
   href: string
-  image: { src: string; alt: string }
+  image: { src?: string; alt: string; width?: number; height?: number }
 }
 
 type CategoryGrid01Labels = {
@@ -82,7 +82,20 @@ function CategoryGrid01({
                   className="group flex h-full flex-col gap-3 rounded-xl outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
                 >
                   <div className={cn("relative aspect-square overflow-hidden rounded-xl bg-muted", lead && "md:aspect-auto md:min-h-0 md:flex-1")}>
-                    <img src={c.image.src} alt={c.image.alt} loading="lazy" className="absolute inset-0 size-full object-cover" />
+                    {c.image.src ? (
+                      <img
+                        src={c.image.src}
+                        alt={c.image.alt}
+                        width={c.image.width}
+                        height={c.image.height}
+                        loading="lazy"
+                        className="absolute inset-0 size-full object-cover"
+                      />
+                    ) : (
+                      <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center text-muted-foreground">
+                        <ImageIcon aria-hidden="true" weight="duotone" className="size-16" />
+                      </div>
+                    )}
                   </div>
                   <div className="flex items-center justify-between gap-3">
                     <div className="min-w-0">
@@ -102,11 +115,11 @@ function CategoryGrid01({
 }
 
 const catalog = [
-  { id: "fragrance", img: 2, count: 86, en: "Fragrance and oud", ar: "العطور والعود" },
-  { id: "watches", img: 3, count: 54, en: "Watches", ar: "الساعات" },
-  { id: "bags", img: 1, count: 63, en: "Bags", ar: "الحقائب" },
-  { id: "home", img: 4, count: 120, en: "Home and hospitality", ar: "المنزل والضيافة" },
-  { id: "clothing", img: 6, count: 210, en: "Clothing", ar: "الملابس" },
+  { id: "fragrance", count: 86, en: "Fragrance and oud", ar: "العطور والعود" },
+  { id: "watches", count: 54, en: "Watches", ar: "الساعات" },
+  { id: "bags", count: 63, en: "Bags", ar: "الحقائب" },
+  { id: "home", count: 120, en: "Home and hospitality", ar: "المنزل والضيافة" },
+  { id: "clothing", count: 210, en: "Clothing", ar: "الملابس" },
 ] as const
 
 const build = (lang: Lang): CategoryGrid01Props => ({
@@ -119,7 +132,7 @@ const build = (lang: Lang): CategoryGrid01Props => ({
     name: c[lang],
     count: c.count,
     href: `#${c.id}`,
-    image: { src: `/examples/shop-${c.img}.svg`, alt: c[lang] },
+    image: { alt: c[lang] },
   })),
   labels: lang === "ar" ? labelsAr : labelsEn,
 })

@@ -63,6 +63,7 @@ bun run check:blocks
 - docs page with a preview, a variant grid and Arabic labels
 - a kitchen-sink entry
 - no physical classes
+- follows "Visual rules" (`bun run check:blocks`)
 - `rtl:rotate-180` on directional icons
 - `/ssr` icons in server components
 - checked in every theme (kitchen sink with the theme switcher)
@@ -103,6 +104,24 @@ bun run check:blocks
 - No variant imports another variant. Shared code comes only from `registry/ui`, `registry/lib` or `registry/hooks`.
 - `bun run check:blocks` enforces the exports, `Section`/`Container` and no hex or rgb colors.
 
+## Visual rules
+
+Original blocks are the baseline (`hero-01`, `features-01`, `pricing-01`, `dashboard-01`). A new block must look like them.
+
+- Section shell: `Section` from `registry/ui/section.tsx`, spacing `marketing` (default), `hero` or `compact`. No own `py-*`, no override (`pb-0`).
+- Section headings go through `SectionHeader` (`title`, `eyebrow`, `description`). Eyebrow is plain `text-primary` text, no pill.
+- Width through `Container` sizes only (`narrow`, `prose`, `wide`).
+- One heading weight: `font-semibold`. No `font-normal` heading, no weight split in a title, no `font-light`/`font-black`.
+- Hero `h1`: `text-4xl font-semibold text-balance md:text-5xl lg:text-6xl`. Nothing larger (`text-6xl` is the ceiling).
+- No arbitrary type sizes (`text-[...]`, `clamp`). `text-xs` is the floor.
+- Surfaces: `Card` (do not hand-roll `rounded-xl bg-card ring-1 ring-foreground/10`) or `bg-muted`/`bg-card` boxes.
+- Radius: `rounded-xl` is the ceiling for panels. `rounded-full` only for pills, badges, avatars, dots. No `rounded-2xl`, `rounded-3xl`, `rounded-[...]`.
+- No shadows (`shadow-*`).
+- No full-section or full-tile `bg-primary`, `bg-foreground` or `bg-secondary` slab. Dark comes from the theme's dark mode.
+- Images: no `src` means a `bg-muted` box with a centered muted Phosphor `ImageIcon` (`hero-05`, `features-02`). No drawn images, no `data:image/`. Media props stay `{ src, alt, width, height }`.
+- Charts: one series color (`--chart-1`) plus muted. Status colors only for meaning (success, warning, destructive, info).
+- Arabic charts keep the mirrored time axis (time runs right to left), as in `dashboard-01`.
+- `bun run check:blocks` fails on `text-[`, `text-7xl` and larger, `rounded-2xl`, `rounded-3xl`, `rounded-[`, `shadow-`, `font-black`, `font-light`, `font-extralight`, `font-thin`, `bg-foreground`, `data:image/` and a `font-normal` `h1`-`h3`, in `registry/blocks` and `registry/pages`. A line may opt out with a `mizan-allow-style` comment.
 ## Pages
 
 - A page is a full-page registry item that imports existing section blocks. It never copies them.

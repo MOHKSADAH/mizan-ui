@@ -64,3 +64,16 @@ test("the old price is a del with a spoken prefix, in en and ar", () => {
 test("a price without compareAt has no del", () => {
   expect(renderToString(<ProductCardPrice amount={199} />)).not.toContain("<del")
 })
+
+test("an image without a src renders the muted placeholder instead of an img", () => {
+  const html = renderToString(
+    <ProductCard>
+      <ProductCardMedia>
+        <ProductCardImage alt="Leather tote" />
+      </ProductCardMedia>
+    </ProductCard>,
+  )
+  expect(html).toContain('data-slot="product-card-image"')
+  expect(html).toContain("<svg")
+  expect(html).not.toContain("<img")
+})

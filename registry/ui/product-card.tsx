@@ -1,4 +1,5 @@
 import * as React from "react"
+import { ImageIcon } from "@phosphor-icons/react/ssr"
 
 import { cn } from "@/registry/lib/utils"
 import type { Digits, Lang } from "@/registry/lib/format"
@@ -27,7 +28,7 @@ function ProductCardMedia({ className, ...props }: React.ComponentProps<"div">) 
     <div
       data-slot="product-card-media"
       className={cn(
-        "relative aspect-4/5 shrink-0 overflow-hidden rounded-lg bg-muted group-data-[orientation=horizontal]/product-card:aspect-square group-data-[orientation=horizontal]/product-card:w-28 sm:group-data-[orientation=horizontal]/product-card:w-36",
+        "relative aspect-4/5 shrink-0 overflow-hidden rounded-xl bg-muted group-data-[orientation=horizontal]/product-card:aspect-square group-data-[orientation=horizontal]/product-card:w-28 sm:group-data-[orientation=horizontal]/product-card:w-36",
         className
       )}
       {...props}
@@ -35,10 +36,26 @@ function ProductCardMedia({ className, ...props }: React.ComponentProps<"div">) 
   )
 }
 
-function ProductCardImage({ alt, className, ...props }: React.ComponentProps<"img"> & { alt: string }) {
+// Without a src it shows the muted placeholder of the media box.
+function ProductCardImage({ alt, src, className, ...props }: React.ComponentProps<"img"> & { alt: string }) {
+  if (!src) {
+    return (
+      <div
+        data-slot="product-card-image"
+        aria-hidden="true"
+        className={cn(
+          "flex size-full items-center justify-center text-muted-foreground group-data-[unavailable]/product-card:opacity-60",
+          className
+        )}
+      >
+        <ImageIcon aria-hidden="true" weight="duotone" className="size-1/4 max-h-16 max-w-16" />
+      </div>
+    )
+  }
   return (
     <img
       data-slot="product-card-image"
+      src={src}
       alt={alt}
       loading="lazy"
       className={cn("size-full object-cover group-data-[unavailable]/product-card:opacity-60", className)}
@@ -77,11 +94,11 @@ type ProductCardTitleProps = React.ComponentProps<"h3"> & {
 
 function ProductCardTitle({ as: Heading = "h3", href, className, children, ...props }: ProductCardTitleProps) {
   return (
-    <Heading data-slot="product-card-title" className={cn("text-sm leading-snug font-medium text-balance", className)} {...props}>
+    <Heading data-slot="product-card-title" className={cn("text-sm leading-snug font-semibold text-balance", className)} {...props}>
       {href ? (
         <a
           href={href}
-          className="outline-none after:absolute after:inset-0 after:rounded-lg focus-visible:after:ring-3 focus-visible:after:ring-ring/50"
+          className="outline-none after:absolute after:inset-0 after:rounded-xl focus-visible:after:ring-3 focus-visible:after:ring-ring/50"
         >
           {children}
         </a>

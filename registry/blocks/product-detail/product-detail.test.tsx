@@ -62,3 +62,14 @@ test('product-detail-03 puts add to cart in a sticky bar and hides the inline bu
   expect(ar).toContain('قهوة سعودية بالهيل والزعفران');
   expect(ar).toContain('aria-label="الإجراءات"');
 });
+
+test('the demo galleries show the placeholder, not a drawn image', () => {
+  for (const html of [
+    renderToString(<ProductDetail01 {...demo01.en} />),
+    renderToString(<ProductDetail02 {...demo02.en} />),
+    renderToString(<ProductDetail03 {...demo03.en} />),
+  ]) {
+    expect(html).toContain('bg-muted');
+    expect(html).not.toContain('data:image');
+  }
+});

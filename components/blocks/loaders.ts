@@ -84,5 +84,11 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'hero-12': () => import('@/registry/blocks/hero/hero-12'),
   'stats-05': () => import('@/registry/blocks/stats/stats-05'),
   'logo-cloud-05': () => import('@/registry/blocks/logo-cloud/logo-cloud-05'),
+  'footer-05': () => import('@/registry/blocks/footer/footer-05'),
+  'footer-06': () => import('@/registry/blocks/footer/footer-06'),
+  'footer-07': () => import('@/registry/blocks/footer/footer-07'),
+  'cta-05': () => import('@/registry/blocks/cta/cta-05'),
+  'cta-06': () => import('@/registry/blocks/cta/cta-06'),
+  'newsletter-01': () => import('@/registry/blocks/newsletter/newsletter-01'),
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
 };

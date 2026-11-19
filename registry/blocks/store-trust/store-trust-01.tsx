@@ -97,7 +97,7 @@ function StoreTrust01({ lang = "en", freeShippingOver, returnDays, show = ALL, l
             const Icon = ICONS[key]
             return (
               <li key={key} className="flex items-start gap-3 bg-background p-4 sm:max-lg:odd:last:col-span-2">
-                <Icon aria-hidden="true" weight="regular" className={cn("mt-0.5 size-6 shrink-0 text-primary", FLIP.has(key) && "rtl:-scale-x-100")} />
+                <Icon aria-hidden="true" weight="regular" className={cn("mt-0.5 size-6 shrink-0 text-muted-foreground", FLIP.has(key) && "rtl:-scale-x-100")} />
                 <div className="flex flex-col gap-0.5">
                   <p className="text-sm font-semibold">{t[key]}</p>
                   <p className="text-xs text-muted-foreground">{note[key]}</p>
