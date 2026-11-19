@@ -135,6 +135,7 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'video-01': () => import('@/registry/blocks/video/video-01'),
   'faq-03': () => import('@/registry/blocks/faq/faq-03'),
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
+  'restaurant-page-01': () => import('@/registry/pages/restaurant-page/restaurant-page-01'),
   'agents-dashboard-page-01': () => import('@/registry/pages/agents-dashboard-page/agents-dashboard-page-01'),
   'chat-page-01': () => import('@/registry/pages/chat-page/chat-page-01'),
   'checkout-page-01': () => import('@/registry/pages/checkout-page/checkout-page-01'),

@@ -6580,6 +6580,33 @@
       ]
     },
     {
+      "name": "restaurant-page-01",
+      "type": "registry:block",
+      "title": "Restaurant page 01",
+      "description": "Cafe or restaurant: image-first hero, tabbed menu, two story rows, photo grid, map card with opening hours, one quote, an order app card and footer.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/app-download-01",
+        "MOHKSADAH/mizan-ui/features-02",
+        "MOHKSADAH/mizan-ui/footer-04",
+        "MOHKSADAH/mizan-ui/gallery-01",
+        "MOHKSADAH/mizan-ui/hero-11",
+        "MOHKSADAH/mizan-ui/location-01",
+        "MOHKSADAH/mizan-ui/menu-01",
+        "MOHKSADAH/mizan-ui/navbar-02",
+        "MOHKSADAH/mizan-ui/testimonials-01",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/restaurant-page/restaurant-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "agents-dashboard-page-01",
       "type": "registry:block",
       "title": "Agents dashboard page 01",

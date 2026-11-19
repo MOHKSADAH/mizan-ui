@@ -13,6 +13,16 @@ export const pageItems: ManifestItem[] = [
     description: 'Business home page: contact navbar, split hero with a live product panel, stat band, bento, steps, quote, one plan, FAQ, call card and legal footer.',
     files: ['registry/pages/home-page/home-page-01.tsx'],
   },
+  {
+    name: 'restaurant-page-01',
+    type: 'registry:block',
+    family: 'restaurant-page',
+    kind: 'page',
+    badge: 'new',
+    title: 'Restaurant page 01',
+    description: 'Cafe or restaurant: image-first hero, tabbed menu, two story rows, photo grid, map card with opening hours, one quote, an order app card and footer.',
+    files: ['registry/pages/restaurant-page/restaurant-page-01.tsx'],
+  },
   ...agentPages,
   ...aiChatPages,
   {
