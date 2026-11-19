@@ -64,4 +64,22 @@ export const landingSectionBlocks: ManifestItem[] = [
     badge: 'new',
     files: ['registry/blocks/bento/bento-03.tsx'],
   },
+  {
+    name: 'how-it-works-01',
+    type: 'registry:block',
+    family: 'how-it-works',
+    title: 'How it works 01',
+    description: 'Three to four steps with large numerals and a connecting rule that follows the reading direction.',
+    badge: 'new',
+    files: ['registry/blocks/how-it-works/how-it-works-01.tsx'],
+  },
+  {
+    name: 'how-it-works-02',
+    type: 'registry:block',
+    family: 'how-it-works',
+    title: 'How it works 02',
+    description: 'Vertical timeline of steps beside a heading column that stays sticky on large screens.',
+    badge: 'new',
+    files: ['registry/blocks/how-it-works/how-it-works-02.tsx'],
+  },
 ];

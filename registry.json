@@ -5136,6 +5136,48 @@
       ]
     },
     {
+      "name": "how-it-works-01",
+      "type": "registry:block",
+      "title": "How it works 01",
+      "description": "Three to four steps with large numerals and a connecting rule that follows the reading direction.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/how-it-works/how-it-works-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "how-it-works-02",
+      "type": "registry:block",
+      "title": "How it works 02",
+      "description": "Vertical timeline of steps beside a heading column that stays sticky on large screens.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/how-it-works/how-it-works-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
