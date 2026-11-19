@@ -114,7 +114,7 @@ export function Notifications01({
             {unread > 0 ? (
               <span
                 aria-hidden="true"
-                className="absolute end-0.5 top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-destructive px-1 text-[10px] leading-none font-medium text-destructive-foreground tabular-nums"
+                className="absolute end-0.5 top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-destructive px-1 text-xs leading-none font-medium text-destructive-foreground tabular-nums"
               >
                 {unread > 99 ? `${formatNumber(99, locale)}+` : formatNumber(unread, locale)}
               </span>

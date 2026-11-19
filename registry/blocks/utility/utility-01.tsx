@@ -44,7 +44,7 @@ function Utility01({
     <main id={mainId} aria-labelledby={`${sid}-heading`} className={className}>
       <Container size="prose" className="flex min-h-[60vh] flex-col items-center justify-center gap-6 py-16 text-center">
         {code ? (
-          <p dir="ltr" className="text-6xl font-semibold text-muted-foreground tabular-nums md:text-7xl">
+          <p dir="ltr" className="text-6xl font-semibold text-muted-foreground tabular-nums">
             {code}
           </p>
         ) : null}
