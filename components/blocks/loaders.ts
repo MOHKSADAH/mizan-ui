@@ -141,5 +141,8 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'checkout-page-02': () => import('@/registry/pages/checkout-page/checkout-page-02'),
   'order-confirmation-page-01': () => import('@/registry/pages/order-confirmation-page/order-confirmation-page-01'),
   'product-page-01': () => import('@/registry/pages/product-page/product-page-01'),
+  'real-estate-page-01': () => import('@/registry/pages/real-estate-page/real-estate-page-01'),
+  'tourism-page-01': () => import('@/registry/pages/tourism-page/tourism-page-01'),
+  'portfolio-page-01': () => import('@/registry/pages/portfolio-page/portfolio-page-01'),
   'store-home-page-01': () => import('@/registry/pages/store-home-page/store-home-page-01'),
 };
