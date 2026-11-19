@@ -6607,6 +6607,34 @@
       ]
     },
     {
+      "name": "clinic-page-01",
+      "type": "registry:block",
+      "title": "Clinic page 01",
+      "description": "Clinic home: phone navbar, split hero, number strip, numbered specialties, doctors, an online booking card, a family quote, tabbed FAQ, map card and footer with the licence line.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/booking-01",
+        "MOHKSADAH/mizan-ui/faq-03",
+        "MOHKSADAH/mizan-ui/footer-05",
+        "MOHKSADAH/mizan-ui/hero-02",
+        "MOHKSADAH/mizan-ui/location-01",
+        "MOHKSADAH/mizan-ui/navbar-04",
+        "MOHKSADAH/mizan-ui/services-02",
+        "MOHKSADAH/mizan-ui/stats-05",
+        "MOHKSADAH/mizan-ui/team-01",
+        "MOHKSADAH/mizan-ui/testimonials-05",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/clinic-page/clinic-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "agents-dashboard-page-01",
       "type": "registry:block",
       "title": "Agents dashboard page 01",

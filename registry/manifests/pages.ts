@@ -23,6 +23,16 @@ export const pageItems: ManifestItem[] = [
     description: 'Cafe or restaurant: image-first hero, tabbed menu, two story rows, photo grid, map card with opening hours, one quote, an order app card and footer.',
     files: ['registry/pages/restaurant-page/restaurant-page-01.tsx'],
   },
+  {
+    name: 'clinic-page-01',
+    type: 'registry:block',
+    family: 'clinic-page',
+    kind: 'page',
+    badge: 'new',
+    title: 'Clinic page 01',
+    description: 'Clinic home: phone navbar, split hero, number strip, numbered specialties, doctors, an online booking card, a family quote, tabbed FAQ, map card and footer with the licence line.',
+    files: ['registry/pages/clinic-page/clinic-page-01.tsx'],
+  },
   ...agentPages,
   ...aiChatPages,
   {
