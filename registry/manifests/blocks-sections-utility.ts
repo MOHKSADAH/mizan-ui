@@ -46,4 +46,13 @@ export const sectionsUtilityBlocks: ManifestItem[] = [
     badge: 'new',
     files: ['registry/blocks/menu/menu-01.tsx'],
   },
+  {
+    name: 'location-01',
+    type: 'registry:block',
+    family: 'location',
+    title: 'Location 01',
+    description: 'Location section: address card with opening hours, phone, WhatsApp and directions, beside a map slot.',
+    badge: 'new',
+    files: ['registry/blocks/location/location-01.tsx'],
+  },
 ];
