@@ -6635,6 +6635,34 @@
       ]
     },
     {
+      "name": "education-page-01",
+      "type": "registry:block",
+      "title": "Education page 01",
+      "description": "Academy or training center: split hero, partner strip, why-us list, course cards, a graduate story, instructors, steps, FAQ and a closing call in the footer.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/case-study-01",
+        "MOHKSADAH/mizan-ui/course-grid-01",
+        "MOHKSADAH/mizan-ui/faq-02",
+        "MOHKSADAH/mizan-ui/features-04",
+        "MOHKSADAH/mizan-ui/footer-07",
+        "MOHKSADAH/mizan-ui/hero-02",
+        "MOHKSADAH/mizan-ui/how-it-works-01",
+        "MOHKSADAH/mizan-ui/logo-cloud-05",
+        "MOHKSADAH/mizan-ui/navbar-01",
+        "MOHKSADAH/mizan-ui/team-02",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/education-page/education-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "agents-dashboard-page-01",
       "type": "registry:block",
       "title": "Agents dashboard page 01",

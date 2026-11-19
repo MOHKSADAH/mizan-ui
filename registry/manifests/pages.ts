@@ -33,6 +33,16 @@ export const pageItems: ManifestItem[] = [
     description: 'Clinic home: phone navbar, split hero, number strip, numbered specialties, doctors, an online booking card, a family quote, tabbed FAQ, map card and footer with the licence line.',
     files: ['registry/pages/clinic-page/clinic-page-01.tsx'],
   },
+  {
+    name: 'education-page-01',
+    type: 'registry:block',
+    family: 'education-page',
+    kind: 'page',
+    badge: 'new',
+    title: 'Education page 01',
+    description: 'Academy or training center: split hero, partner strip, why-us list, course cards, a graduate story, instructors, steps, FAQ and a closing call in the footer.',
+    files: ['registry/pages/education-page/education-page-01.tsx'],
+  },
   ...agentPages,
   ...aiChatPages,
   {
