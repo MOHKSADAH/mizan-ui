@@ -3068,6 +3068,28 @@
       ]
     },
     {
+      "name": "run-status",
+      "type": "registry:ui",
+      "title": "Run Status",
+      "description": "State pill for an agent run: running, done, idle, queued, failed or needs you, with an icon and text.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/run-status.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "feedback"
+      ]
+    },
+    {
       "name": "navbar-01",
       "type": "registry:block",
       "title": "Navbar 01",
