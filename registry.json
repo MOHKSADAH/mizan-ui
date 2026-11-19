@@ -6256,6 +6256,36 @@
       ]
     },
     {
+      "name": "pricing-06",
+      "type": "registry:block",
+      "title": "Pricing 06",
+      "description": "A plan picker card: monthly and yearly toggle, plans as radio rows that expand their features, a seats stepper and a SAR total with VAT.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/quantity-stepper",
+        "MOHKSADAH/mizan-ui/radio-group",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/toggle-group",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/pricing/pricing-06.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
