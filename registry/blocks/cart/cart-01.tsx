@@ -97,6 +97,16 @@ export type Cart01Props = BlockBase & {
 
 type Coupon = { status: CouponStatus; code?: string; rate?: number }
 
+// A thrown error counts as an invalid code, so the field never stays pending.
+export async function checkCoupon(code: string, apply?: Cart01Props["onApplyCoupon"]): Promise<Coupon> {
+  try {
+    const rate = await apply?.(code)
+    return rate ? { status: "success", code, rate } : { status: "error" }
+  } catch {
+    return { status: "error" }
+  }
+}
+
 function Thumb({ image }: { image?: Media }) {
   return (
     <div className="size-20 shrink-0 overflow-hidden rounded-lg bg-muted sm:size-24">
@@ -155,8 +165,7 @@ export function Cart01({
 
   async function applyCoupon(code: string) {
     setCoupon({ status: "pending" })
-    const rate = await onApplyCoupon?.(code)
-    setCoupon(rate ? { status: "success", code, rate } : { status: "error" })
+    setCoupon(await checkCoupon(code, onApplyCoupon))
   }
 
   return (
