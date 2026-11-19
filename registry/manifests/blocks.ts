@@ -12,6 +12,7 @@ import { sectionsIndustryBlocks } from './blocks-sections-industry';
 import { storefrontProductBlocks } from './blocks-storefront-product';
 import { storefrontBlocks } from './blocks-storefront';
 import { landingFooterBlocks } from './blocks-landing-footers';
+import { sectionsUtilityBlocks } from './blocks-sections-utility';
 
 export const blockItems: ManifestItem[] = [
   ...marketingBlocks,
@@ -27,4 +28,5 @@ export const blockItems: ManifestItem[] = [
   ...aiChatBlocks,
   ...checkoutBlocks,
   ...sectionsIndustryBlocks,
+  ...sectionsUtilityBlocks,
 ];
