@@ -16,4 +16,5 @@ export const storefrontBlocks: ManifestItem[] = [
   block('category-grid', '01', 'Category Grid 01', 'Image tiles with the category name and item count.'),
   block('category-grid', '02', 'Category Grid 02', 'Icon pill strip of categories for a store home, scrolling on mobile.'),
   block('wishlist', '01', 'Wishlist 01', 'Saved products with move to cart, remove, a live announcement and an empty state.'),
+  block('store-trust', '01', 'Store Trust 01', 'Trust strip: free shipping threshold, easy returns, cash on delivery, secure payment and VAT included.'),
 ];
