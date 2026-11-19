@@ -153,7 +153,7 @@ export function Cart03({
             {count > 0 && (
               <span
                 aria-hidden="true"
-                className="absolute -top-1 -end-1 flex min-w-4 items-center justify-center rounded-full bg-primary px-1 text-[0.625rem] leading-4 text-primary-foreground tabular-nums"
+                className="absolute -top-1 -end-1 flex min-w-4 items-center justify-center rounded-full bg-primary px-1 text-xs leading-4 text-primary-foreground tabular-nums"
               >
                 {formatNumber(count, { lang })}
               </span>
