@@ -4452,8 +4452,7 @@
         "MOHKSADAH/mizan-ui/section",
         "MOHKSADAH/mizan-ui/sticky-action-bar",
         "MOHKSADAH/mizan-ui/stock-indicator",
-        "MOHKSADAH/mizan-ui/swatch-select",
-        "MOHKSADAH/mizan-ui/utils"
+        "MOHKSADAH/mizan-ui/swatch-select"
       ],
       "files": [
         {

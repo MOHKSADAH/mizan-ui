@@ -5,7 +5,6 @@ import { ShoppingCartIcon } from "@phosphor-icons/react"
 
 import type { BlockBase, Currency, Lang, Vat } from "@/registry/lib/block-types"
 import { formatPercent } from "@/registry/lib/format"
-import { cn } from "@/registry/lib/utils"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/registry/ui/accordion"
 import { Badge } from "@/registry/ui/badge"
 import { Button } from "@/registry/ui/button"
@@ -109,8 +108,8 @@ function ProductDetail03({
   const addLabel = out ? t.soldOut : t.addToCart
 
   return (
-    <Section id={sid} spacing="compact" className={cn(className, "max-md:pb-[calc(var(--sticky-bar-height,0px)+--spacing(6))]")}>
-      <Container size="narrow" className="grid items-start gap-6 md:grid-cols-2 md:gap-10">
+    <Section id={sid} spacing="compact" className={className}>
+      <Container size="narrow" className="grid items-start gap-6 max-md:pb-[var(--sticky-bar-height,0px)] md:grid-cols-2 md:gap-10">
         <ProductGallery
           zoom
           images={images}
@@ -225,12 +224,6 @@ function ProductDetail03({
   )
 }
 
-// A neutral stand-in for a product photo, so the demo needs no image files.
-const photo = (tone: number, zoom = false) =>
-  `data:image/svg+xml,${encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${zoom ? "250 220 300 300" : "0 0 800 800"}"><rect width="800" height="800" fill="oklch(${tone} 0.02 60)"/><path d="M260 200H540L580 700H220Z" fill="oklch(${(tone - 0.12).toFixed(2)} 0.05 60)"/><rect x="260" y="170" width="280" height="44" rx="8" fill="oklch(${(tone - 0.2).toFixed(2)} 0.05 60)"/><circle cx="400" cy="470" r="100" fill="oklch(${tone} 0.03 60)"/></svg>`
-  )}`
-
 const weights = [
   { value: "250", label: "250 g" },
   { value: "500", label: "500 g" },
@@ -241,9 +234,9 @@ const demo: { en: ProductDetail03Props; ar: ProductDetail03Props } = {
     lang: "en",
     title: "Saudi coffee with cardamom and saffron, 250 g",
     images: [
-      { src: photo(0.92), alt: "The coffee bag, front" },
-      { src: photo(0.88, true), alt: "The bag label" },
-      { src: photo(0.9), alt: "The coffee in a dallah" },
+      { alt: "The coffee bag, front" },
+      { alt: "The bag label" },
+      { alt: "The coffee in a dallah" },
     ],
     price: 45,
     compareAtPrice: 55,
@@ -272,9 +265,9 @@ const demo: { en: ProductDetail03Props; ar: ProductDetail03Props } = {
     lang: "ar",
     title: "قهوة سعودية بالهيل والزعفران، 250 جم",
     images: [
-      { src: photo(0.92), alt: "كيس القهوة من الأمام" },
-      { src: photo(0.88, true), alt: "ملصق الكيس" },
-      { src: photo(0.9), alt: "القهوة في الدلّة" },
+      { alt: "كيس القهوة من الأمام" },
+      { alt: "ملصق الكيس" },
+      { alt: "القهوة في الدلّة" },
     ],
     price: 45,
     compareAtPrice: 55,
