@@ -46,6 +46,16 @@ export function resolveItems(registry, items, families) {
 // Arabic lives under /ar.
 export const urlOf = (base, path, lang) => `${base}${lang === 'ar' ? '/ar' : ''}${path}`;
 
+// A lazy image that never loads makes img.decode() wait forever, so each wait gives up after `ms`.
+// Playwright serializes this function, so it must not use anything outside its own body.
+export const DECODE_TIMEOUT_MS = 3000;
+export async function settlePage(ms) {
+  await document.fonts.ready;
+  await Promise.all(
+    [...document.images].map((img) => Promise.race([img.decode().catch(() => {}), new Promise((resolve) => setTimeout(resolve, ms))])),
+  );
+}
+
 const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 
 function contactSheet(names, themes, mobile) {
@@ -84,10 +94,7 @@ async function main() {
           if (!response?.ok()) throw new Error(`${name} (${lang}): HTTP ${response?.status()}`);
           const applied = await page.evaluate(() => document.documentElement.dataset.theme);
           if (applied !== theme) throw new Error(`${name}: theme is "${applied}", expected "${theme}"`);
-          await page.evaluate(async () => {
-            await document.fonts.ready;
-            await Promise.all([...document.images].map((img) => img.decode().catch(() => {})));
-          });
+          await page.evaluate(settlePage, DECODE_TIMEOUT_MS);
           const file = shotName(name, theme, lang, args.mobile);
           await page.screenshot({ path: `${args.out}/${file}`, fullPage: true, animations: 'disabled' });
           console.log(file);

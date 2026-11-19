@@ -5982,6 +5982,165 @@
       ]
     },
     {
+      "name": "checkout-01",
+      "type": "registry:block",
+      "title": "Checkout 01",
+      "description": "One-page checkout form: phone-first contact, Saudi address, shipping dates, payment with card details, collapsible sections on mobile.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/alert",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/card-input",
+        "MOHKSADAH/mizan-ui/checkbox",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/coupon-input",
+        "MOHKSADAH/mizan-ui/field",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/installments",
+        "MOHKSADAH/mizan-ui/payment-method-select",
+        "MOHKSADAH/mizan-ui/phone-input",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/radio-group",
+        "MOHKSADAH/mizan-ui/saudi-address-form",
+        "MOHKSADAH/mizan-ui/saudi-regions",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/spinner",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/checkout/checkout-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "checkout-02",
+      "type": "registry:block",
+      "title": "Checkout 02",
+      "description": "Multi-step checkout with a stepper: contact, address, shipping, payment and a review step with back and next.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/alert",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/card-input",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/field",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/installments",
+        "MOHKSADAH/mizan-ui/order-stepper",
+        "MOHKSADAH/mizan-ui/payment-method-select",
+        "MOHKSADAH/mizan-ui/phone-input",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/radio-group",
+        "MOHKSADAH/mizan-ui/saudi-address-form",
+        "MOHKSADAH/mizan-ui/saudi-regions",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/spinner",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/checkout/checkout-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "checkout-03",
+      "type": "registry:block",
+      "title": "Checkout 03",
+      "description": "Express checkout panel: Apple Pay, mada and STC Pay text buttons, an \"or pay another way\" divider and a compact form.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/field",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/phone-input",
+        "MOHKSADAH/mizan-ui/region-city-select",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/spinner"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/checkout/checkout-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "order-tracking-01",
+      "type": "registry:block",
+      "title": "Order Tracking 01",
+      "description": "Shipment timeline with courier, copyable tracking number, delivery estimate and a help link.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/copy-button",
+        "MOHKSADAH/mizan-ui/delivery-estimate",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/timeline",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/order-tracking/order-tracking-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "order-history-01",
+      "type": "registry:block",
+      "title": "Order History 01",
+      "description": "Past orders with status badge, total, reorder and invoice actions, and a status filter.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/empty",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/segmented-control",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/order-history/order-history-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
@@ -6063,6 +6222,115 @@
       "files": [
         {
           "path": "registry/pages/chat-page/chat-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "checkout-page-01",
+      "type": "registry:block",
+      "title": "Checkout page 01",
+      "description": "One-page checkout: a minimal store header, the checkout form, a sticky order summary beside it and a compact Gulf footer.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/checkout-01",
+        "MOHKSADAH/mizan-ui/footer-04",
+        "MOHKSADAH/mizan-ui/navbar-05",
+        "MOHKSADAH/mizan-ui/order-summary-01",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/checkout-page/checkout-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "checkout-page-02",
+      "type": "registry:block",
+      "title": "Checkout page 02",
+      "description": "Step-by-step checkout with a review step, and an order summary that carries the delivery date, VAT and installments.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/checkout-02",
+        "MOHKSADAH/mizan-ui/footer-04",
+        "MOHKSADAH/mizan-ui/navbar-05",
+        "MOHKSADAH/mizan-ui/order-summary-02",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/checkout-page/checkout-page-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "order-confirmation-page-01",
+      "type": "registry:block",
+      "title": "Order confirmation page 01",
+      "description": "After purchase: an account strip, the receipt, the shipment timeline with a pending courier, and a product rail.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/banner-01",
+        "MOHKSADAH/mizan-ui/footer-04",
+        "MOHKSADAH/mizan-ui/navbar-02",
+        "MOHKSADAH/mizan-ui/order-summary-03",
+        "MOHKSADAH/mizan-ui/order-tracking-01",
+        "MOHKSADAH/mizan-ui/product-grid-03",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/order-confirmation-page/order-confirmation-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "product-page-01",
+      "type": "registry:block",
+      "title": "Product page 01",
+      "description": "Store product page: gallery and buy box, reviews, a related products rail, a trust strip and a Gulf footer.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/footer-04",
+        "MOHKSADAH/mizan-ui/navbar-02",
+        "MOHKSADAH/mizan-ui/product-detail-01",
+        "MOHKSADAH/mizan-ui/product-grid-03",
+        "MOHKSADAH/mizan-ui/product-reviews-01",
+        "MOHKSADAH/mizan-ui/store-trust-01",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/product-page/product-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "store-home-page-01",
+      "type": "registry:block",
+      "title": "Store home page 01",
+      "description": "Store home: announcement strip, navbar, a hero with the best sellers of the week, category pills, a product rail, a category bento, trust strip, reviews and a Gulf footer.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/banner-01",
+        "MOHKSADAH/mizan-ui/category-grid-01",
+        "MOHKSADAH/mizan-ui/category-grid-02",
+        "MOHKSADAH/mizan-ui/footer-04",
+        "MOHKSADAH/mizan-ui/hero-02",
+        "MOHKSADAH/mizan-ui/navbar-02",
+        "MOHKSADAH/mizan-ui/product-card",
+        "MOHKSADAH/mizan-ui/product-grid-03",
+        "MOHKSADAH/mizan-ui/product-reviews-02",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/store-trust-01",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/store-home-page/store-home-page-01.tsx",
           "type": "registry:block"
         }
       ]
