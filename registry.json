@@ -4356,6 +4356,110 @@
       ]
     },
     {
+      "name": "product-detail-01",
+      "type": "registry:block",
+      "title": "Product Detail 01",
+      "description": "Classic product page: gallery beside a buy box with price, installments, variants, quantity, delivery estimate and an accordion.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/accordion",
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/carousel",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/delivery-estimate",
+        "MOHKSADAH/mizan-ui/dialog",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/installments",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/product-gallery",
+        "MOHKSADAH/mizan-ui/quantity-stepper",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/share-button",
+        "MOHKSADAH/mizan-ui/stock-indicator",
+        "MOHKSADAH/mizan-ui/swatch-select",
+        "MOHKSADAH/mizan-ui/wishlist-button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/product-detail/product-detail-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "product-detail-02",
+      "type": "registry:block",
+      "title": "Product Detail 02",
+      "description": "Editorial product page: a full-width image grid, a sticky buy box and a specifications table.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/delivery-estimate",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/installments",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/product-gallery",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/stock-indicator",
+        "MOHKSADAH/mizan-ui/swatch-select",
+        "MOHKSADAH/mizan-ui/table",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/wishlist-button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/product-detail/product-detail-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "product-detail-03",
+      "type": "registry:block",
+      "title": "Product Detail 03",
+      "description": "Compact product page for quick buying on a phone, with a sticky add to cart bar.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/accordion",
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/carousel",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/delivery-estimate",
+        "MOHKSADAH/mizan-ui/dialog",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/product-gallery",
+        "MOHKSADAH/mizan-ui/quantity-stepper",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/sticky-action-bar",
+        "MOHKSADAH/mizan-ui/stock-indicator",
+        "MOHKSADAH/mizan-ui/swatch-select",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/product-detail/product-detail-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
