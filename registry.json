@@ -4991,7 +4991,7 @@
       "name": "footer-06",
       "type": "registry:block",
       "title": "Footer 06",
-      "description": "Wordmark footer: one centered link row and a brand wordmark that fits the full width, scaled by font size only.",
+      "description": "Wordmark footer: a centered brand wordmark at hero scale, one link row and a legal line.",
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/block-types",
         "MOHKSADAH/mizan-ui/container",
@@ -5008,13 +5008,14 @@
       "name": "footer-07",
       "type": "registry:block",
       "title": "Footer 07",
-      "description": "Call-to-action band joined on top of a compact sitemap and legal row.",
+      "description": "Bordered card call-to-action band above a compact sitemap and legal row.",
       "dependencies": [
         "@phosphor-icons/react@^2.1.10"
       ],
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/block-types",
         "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
         "MOHKSADAH/mizan-ui/container",
         "MOHKSADAH/mizan-ui/utils"
       ],
@@ -5029,13 +5030,14 @@
       "name": "cta-05",
       "type": "registry:block",
       "title": "CTA 05",
-      "description": "Split call to action: a short headline, a benefit list and a phone mock built from registry components.",
+      "description": "Split call to action: a short headline, a benefit list and an app screen mock built from registry components in a card.",
       "dependencies": [
         "@phosphor-icons/react@^2.1.10"
       ],
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/block-types",
         "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
         "MOHKSADAH/mizan-ui/container",
         "MOHKSADAH/mizan-ui/format",
         "MOHKSADAH/mizan-ui/price",
@@ -5055,13 +5057,14 @@
       "name": "cta-06",
       "type": "registry:block",
       "title": "CTA 06",
-      "description": "Minimal display call to action: one large headline with weight contrast and one button on a tinted surface.",
+      "description": "Minimal call to action: one headline and one button in a bordered card.",
       "dependencies": [
         "@phosphor-icons/react@^2.1.10"
       ],
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/block-types",
         "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
         "MOHKSADAH/mizan-ui/container",
         "MOHKSADAH/mizan-ui/section",
         "MOHKSADAH/mizan-ui/utils"
@@ -5079,7 +5082,6 @@
       "title": "Newsletter 01",
       "description": "Newsletter signup with an email field, a consent line and a list of the last three issues.",
       "registryDependencies": [
-        "MOHKSADAH/mizan-ui/badge",
         "MOHKSADAH/mizan-ui/block-types",
         "MOHKSADAH/mizan-ui/button",
         "MOHKSADAH/mizan-ui/container",

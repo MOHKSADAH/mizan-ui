@@ -6,6 +6,8 @@ test('newsletter-01 renders the form, the consent line and the last three issues
   const html = renderToString(<Newsletter01 {...demo.ar} id="news" />);
   expect(html).toContain('aria-labelledby="news-heading"');
   expect(html).toContain('type="email"');
+  expect(html).toContain('text-primary">النشرة الأسبوعية');
+  expect(html).not.toContain('rounded-full');
   expect(html).toContain('dir="ltr"');
   expect(html).toContain('href="#privacy"');
   expect(html).toContain('سياسة الخصوصية');

@@ -4,11 +4,11 @@ import { ArrowRightIcon } from "@phosphor-icons/react/ssr"
 import type { Action, BlockBase } from "@/registry/lib/block-types"
 import { cn } from "@/registry/lib/utils"
 import { buttonVariants } from "@/registry/ui/button"
+import { Card, CardContent } from "@/registry/ui/card"
 import { Container } from "@/registry/ui/container"
 import { Section } from "@/registry/ui/section"
 
 type Cta06Props = BlockBase & {
-  // Write the key words in <strong>: the heading is regular weight, so the contrast is real.
   title: React.ReactNode
   cta: Action
 }
@@ -23,15 +23,17 @@ function Cta06({ title, cta, headingLevel = 2, id, className }: Cta06Props) {
   return (
     <Section id={sid} className={className}>
       <Container>
-        <div className="flex flex-col items-center gap-10 rounded-3xl bg-secondary px-6 py-16 text-center text-secondary-foreground md:py-24 lg:py-32">
-          <Heading id={`${sid}-heading`} className="max-w-4xl text-5xl font-normal text-balance md:text-6xl lg:text-7xl">
-            {title}
-          </Heading>
-          <a href={cta.href} className={cn(buttonVariants(), "h-14 w-full px-8 text-lg sm:w-auto")}>
-            {cta.label}
-            <ArrowRightIcon aria-hidden="true" weight="bold" className="rtl:rotate-180" />
-          </a>
-        </div>
+        <Card className="md:[--card-spacing:--spacing(10)]">
+          <CardContent className="flex flex-col items-center gap-6 text-center">
+            <Heading id={`${sid}-heading`} className="max-w-3xl text-2xl font-semibold text-balance md:text-3xl lg:text-4xl">
+              {title}
+            </Heading>
+            <a href={cta.href} className={cn(buttonVariants(), "h-12 w-full gap-2 px-6 text-base sm:w-auto")}>
+              {cta.label}
+              <ArrowRightIcon aria-hidden="true" weight="bold" className="rtl:rotate-180" />
+            </a>
+          </CardContent>
+        </Card>
       </Container>
     </Section>
   )
@@ -39,19 +41,11 @@ function Cta06({ title, cta, headingLevel = 2, id, className }: Cta06Props) {
 
 const demo: { en: Cta06Props; ar: Cta06Props } = {
   en: {
-    title: (
-      <>
-        <strong>Your first store</strong> starts here
-      </>
-    ),
+    title: "Your first store starts here",
     cta: { label: "Start your free trial", href: "#start" },
   },
   ar: {
-    title: (
-      <>
-        <strong>متجرك الأول</strong> يبدأ من هنا
-      </>
-    ),
+    title: "متجرك الأول يبدأ من هنا",
     cta: { label: "ابدأ تجربتك المجانية", href: "#start" },
   },
 }

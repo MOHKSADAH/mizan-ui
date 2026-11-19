@@ -5,6 +5,7 @@ import type { Action, BlockBase, Lang } from "@/registry/lib/block-types"
 import { formatPercent } from "@/registry/lib/format"
 import { cn } from "@/registry/lib/utils"
 import { buttonVariants } from "@/registry/ui/button"
+import { Card, CardContent } from "@/registry/ui/card"
 import { Container } from "@/registry/ui/container"
 import { Price } from "@/registry/ui/price"
 import { Progress } from "@/registry/ui/progress"
@@ -17,7 +18,6 @@ type Cta05Labels = { todaySales: string; goal: string; orders: string }
 
 type Cta05Props = BlockBase & {
   lang?: Lang
-  // Write the key words in <strong>: the heading is regular weight, so the contrast is real.
   title: React.ReactNode
   benefits: string[]
   primaryCta: Action
@@ -31,47 +31,41 @@ const labelsAr: Cta05Labels = { todaySales: "مبيعات اليوم", goal: "ه
 
 const cta = "h-12 w-full px-6 text-base sm:w-auto"
 
-// A decorative phone built from registry parts. It is hidden from assistive tech because the benefit list says the same.
+// A decorative app screen built from registry parts. It is hidden from assistive tech because the benefit list says the same.
 function PhoneMock({ lang, phone, t }: { lang: Lang; phone: Cta05Props["phone"]; t: Cta05Labels }) {
   const percent = Math.round((phone.sales / phone.goal) * 100)
   return (
-    <div
-      aria-hidden="true"
-      className="mx-auto flex h-[28rem] w-72 flex-col gap-4 overflow-hidden rounded-t-[2.5rem] border-8 border-b-0 border-foreground bg-background p-4 pt-6 text-start shadow-xl"
-    >
-      <span className="mx-auto h-1.5 w-16 shrink-0 rounded-full bg-foreground" />
-      <p className="text-sm font-semibold">{phone.store}</p>
-      <div className="flex flex-col gap-2 rounded-xl bg-muted p-3">
-        <p className="text-xs text-muted-foreground">{t.todaySales}</p>
-        <Price amount={phone.sales} lang={lang} className="text-2xl font-semibold" />
-        <Progress value={percent} className="gap-1 [&_[data-slot=progress-track]]:bg-background">
-          <span className="text-xs text-muted-foreground">
-            {t.goal} <bdi className="tabular-nums">{formatPercent(percent / 100, { lang })}</bdi>
-          </span>
-        </Progress>
-      </div>
-      <p className="text-xs font-medium text-muted-foreground">{t.orders}</p>
-      <ul className="flex flex-col gap-3">
-        {phone.orders.map((order) => (
-          <li key={order.number} className="flex items-center justify-between gap-2">
-            <div className="flex min-w-0 flex-col gap-1">
-              <span className="truncate text-sm font-medium">{order.customer}</span>
-              <span className="text-xs text-muted-foreground">
-                <bdi className="tabular-nums">{`#${order.number}`}</bdi>
-              </span>
-            </div>
-            <div className="flex shrink-0 flex-col items-end gap-1">
-              <Price amount={order.amount} lang={lang} className="text-sm font-medium" />
-              <StatusBadge
-                status={order.status}
-                labels={lang === "ar" ? statusBadgeLabelsAr : undefined}
-                className="h-4 px-1.5 text-[10px]"
-              />
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Card aria-hidden="true" className="mx-auto w-full max-w-sm text-start md:[--card-spacing:--spacing(6)]">
+      <CardContent className="flex flex-col gap-4">
+        <p className="text-sm font-semibold">{phone.store}</p>
+        <div className="flex flex-col gap-2 rounded-lg bg-muted p-3">
+          <p className="text-xs text-muted-foreground">{t.todaySales}</p>
+          <Price amount={phone.sales} lang={lang} className="text-2xl font-semibold" />
+          <Progress value={percent} className="gap-1 [&_[data-slot=progress-track]]:bg-background">
+            <span className="text-xs text-muted-foreground">
+              {t.goal} <bdi className="tabular-nums">{formatPercent(percent / 100, { lang })}</bdi>
+            </span>
+          </Progress>
+        </div>
+        <p className="text-xs font-medium text-muted-foreground">{t.orders}</p>
+        <ul className="flex flex-col gap-3">
+          {phone.orders.map((order) => (
+            <li key={order.number} className="flex items-center justify-between gap-2">
+              <div className="flex min-w-0 flex-col gap-1">
+                <span className="truncate text-sm font-medium">{order.customer}</span>
+                <span className="text-xs text-muted-foreground">
+                  <bdi className="tabular-nums">{`#${order.number}`}</bdi>
+                </span>
+              </div>
+              <div className="flex shrink-0 flex-col items-end gap-1">
+                <Price amount={order.amount} lang={lang} className="text-sm font-medium" />
+                <StatusBadge status={order.status} labels={lang === "ar" ? statusBadgeLabelsAr : undefined} />
+              </div>
+            </li>
+          ))}
+        </ul>
+      </CardContent>
+    </Card>
   )
 }
 
@@ -95,7 +89,7 @@ function Cta05({
     <Section id={sid} className={className}>
       <Container className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <div className="flex flex-col items-start gap-6">
-          <Heading id={`${sid}-heading`} className="text-4xl font-normal text-balance md:text-5xl">
+          <Heading id={`${sid}-heading`} className="text-2xl font-semibold text-balance md:text-3xl lg:text-4xl">
             {title}
           </Heading>
           <ul className="flex flex-col gap-3 text-lg">
@@ -117,9 +111,7 @@ function Cta05({
             ) : null}
           </div>
         </div>
-        <div className="overflow-hidden rounded-3xl bg-secondary px-6 pt-10 sm:px-16">
-          <PhoneMock lang={lang} phone={phone} t={t} />
-        </div>
+        <PhoneMock lang={lang} phone={phone} t={t} />
       </Container>
     </Section>
   )
@@ -128,11 +120,7 @@ function Cta05({
 const demo: { en: Cta05Props; ar: Cta05Props } = {
   en: {
     lang: "en",
-    title: (
-      <>
-        Run your store <strong>from your phone</strong>
-      </>
-    ),
+    title: "Run your store from your phone",
     benefits: [
       "An alert the moment a new order lands",
       "Update stock from the same screen",
@@ -154,11 +142,7 @@ const demo: { en: Cta05Props; ar: Cta05Props } = {
   },
   ar: {
     lang: "ar",
-    title: (
-      <>
-        <strong>أدر متجرك</strong> من جوالك
-      </>
-    ),
+    title: "أدر متجرك من جوالك",
     benefits: [
       "إشعار فوري مع كل طلب جديد",
       "حدّث المخزون من الشاشة نفسها",

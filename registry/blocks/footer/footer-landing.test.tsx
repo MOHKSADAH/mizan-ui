@@ -37,12 +37,12 @@ test('footer-05 renders in English and omits every optional row', () => {
   expect(bare).not.toContain('Commercial registration');
 });
 
-test('footer-06 renders the wordmark for the width fit, with no letter spacing', () => {
+test('footer-06 renders the wordmark at the hero scale, not clipped and with no letter spacing', () => {
   const ar = renderToString(<Footer06 {...demo06.ar} />);
   expect(ar).toContain('رواق');
-  expect(ar).toContain('tracking-normal');
-  expect(ar).not.toMatch(/tracking-(tight|tighter|wide|wider|widest)/);
-  expect(ar).toContain('aria-hidden="true"');
+  expect(ar).toContain('text-4xl font-semibold');
+  expect(ar).toContain('lg:text-6xl');
+  expect(ar).not.toMatch(/tracking-|cqw|overflow-hidden/);
   expect(ar.match(/<nav /g)).toHaveLength(1);
   const en = renderToString(<Footer06 {...demo06.en} />);
   expect(en).toContain('>Rewaq<');
@@ -51,7 +51,9 @@ test('footer-06 renders the wordmark for the width fit, with no letter spacing',
 
 test('footer-07 joins the call to action band to the sitemap and isolates the numbers', () => {
   const html = renderToString(<Footer07 {...demo07.ar} />);
-  expect(html).toContain('<strong>أصدر أول فاتورة إلكترونية</strong>');
+  expect(html).toContain('أصدر أول فاتورة إلكترونية لك اليوم');
+  expect(html).toContain('data-slot="card"');
+  expect(html).not.toMatch(/rounded-3xl|bg-muted\/50|text-primary-foreground\/80/);
   expect(html).toContain('href="#start"');
   expect(html).toContain('href="#demo"');
   expect(html).toContain('rtl:rotate-180');

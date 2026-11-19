@@ -4,12 +4,11 @@ import * as React from "react"
 
 import type { BlockBase, Lang } from "@/registry/lib/block-types"
 import { formatDate, formatNumber } from "@/registry/lib/format"
-import { Badge } from "@/registry/ui/badge"
 import { Button } from "@/registry/ui/button"
 import { Container } from "@/registry/ui/container"
 import { Field, FieldError, FieldLabel } from "@/registry/ui/field"
 import { Input } from "@/registry/ui/input"
-import { Section } from "@/registry/ui/section"
+import { Section, SectionHeader } from "@/registry/ui/section"
 
 type Issue = {
   number: number
@@ -37,7 +36,6 @@ type Newsletter01Labels = {
 type Newsletter01Props = BlockBase & {
   lang?: Lang
   eyebrow?: string
-  // Write the key words in <strong>: the heading is regular weight, so the contrast is real.
   title: React.ReactNode
   description?: string
   readers?: number
@@ -96,7 +94,6 @@ function Newsletter01({
   const t = { ...labelsEn, ...labels }
   const uid = React.useId()
   const sid = id ?? uid
-  const Heading = `h${headingLevel}` as "h2" | "h3"
   const [error, setError] = React.useState<string>()
   const [status, setStatus] = React.useState<Status>("idle")
 
@@ -135,8 +132,8 @@ function Newsletter01({
           <span
             className={
               isLead
-                ? "text-2xl font-semibold text-balance group-hover:underline md:text-3xl"
-                : "text-lg font-medium text-balance group-hover:underline md:text-xl"
+                ? "text-xl font-semibold text-balance group-hover:underline md:text-2xl"
+                : "text-lg font-semibold text-balance group-hover:underline md:text-xl"
             }
           >
             {issue.title}
@@ -153,15 +150,14 @@ function Newsletter01({
     <Section id={sid} className={className}>
       <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="flex flex-col items-start gap-6 lg:col-span-5">
-          {eyebrow ? (
-            <Badge variant="secondary" className="h-7 px-3 text-sm">
-              {eyebrow}
-            </Badge>
-          ) : null}
-          <Heading id={`${sid}-heading`} className="text-4xl font-normal text-balance md:text-5xl">
-            {title}
-          </Heading>
-          {description ? <p className="text-lg text-muted-foreground">{description}</p> : null}
+          <SectionHeader
+            id={sid}
+            eyebrow={eyebrow}
+            title={title}
+            description={description}
+            headingLevel={headingLevel}
+            className="mb-0 md:mb-0"
+          />
           {status === "success" ? (
             <p role="status" className="rounded-lg bg-muted px-4 py-3 text-base">
               {t.success}
@@ -226,11 +222,7 @@ const demo: { en: Newsletter01Props; ar: Newsletter01Props } = {
   en: {
     lang: "en",
     eyebrow: "Weekly newsletter",
-    title: (
-      <>
-        <strong>Thursday letter,</strong> Gulf commerce in five minutes
-      </>
-    ),
+    title: "Thursday letter, Gulf commerce in five minutes",
     description: "Numbers, stories and merchant questions, in your inbox every Thursday morning. No ads, and you can leave any time.",
     readers: 12400,
     issues: [
@@ -244,11 +236,7 @@ const demo: { en: Newsletter01Props; ar: Newsletter01Props } = {
   ar: {
     lang: "ar",
     eyebrow: "النشرة الأسبوعية",
-    title: (
-      <>
-        <strong>نشرة الخميس،</strong> تجارة الخليج في خمس دقائق
-      </>
-    ),
+    title: "نشرة الخميس، تجارة الخليج في خمس دقائق",
     description: "أرقام وقصص وأسئلة التجّار، تصلك صباح كل خميس. بلا إعلانات، وتلغي اشتراكك متى شئت.",
     readers: 12400,
     issues: [
