@@ -6141,6 +6141,55 @@
       ]
     },
     {
+      "name": "project-grid-01",
+      "type": "registry:block",
+      "title": "Project grid 01",
+      "description": "Real-estate or portfolio project cards with an image slot, status badge, project name, type, city and unit count.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/project-grid/project-grid-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "project-grid-02",
+      "type": "registry:block",
+      "title": "Project grid 02",
+      "description": "Project cards with a city filter and a type filter, a live result count and an empty state.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/project-grid/project-grid-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
