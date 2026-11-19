@@ -5189,6 +5189,33 @@
       ]
     },
     {
+      "name": "agent-cost-01",
+      "type": "registry:block",
+      "title": "Agent cost 01",
+      "description": "A cost estimate with a model choice, tokens, cost and time, a credits bar with a warning when the estimate is over, and Cancel and Run.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/alert",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/segmented-bar",
+        "MOHKSADAH/mizan-ui/segmented-control"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/agent-cost/agent-cost-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",

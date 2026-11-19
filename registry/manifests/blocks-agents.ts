@@ -18,4 +18,5 @@ export const agentBlocks: ManifestItem[] = [
   block('agent-runs', 'Agent runs 01', 'Live run list with All, Mine and Needs you filters, a status icon, elapsed time and an Open state per run.'),
   block('agent-spend', 'Agent spend 01', 'A total and budget bar split by agent, then per-step or per-model spend bars with a Step and Model toggle.'),
   block('agent-roster', 'Agent roster 01', 'A team of agents with role, model, current task, status pill and cost each, and the total spent today.'),
+  block('agent-cost', 'Agent cost 01', 'A cost estimate with a model choice, tokens, cost and time, a credits bar with a warning when the estimate is over, and Cancel and Run.'),
 ];
