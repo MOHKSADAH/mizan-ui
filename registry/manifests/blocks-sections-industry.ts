@@ -64,4 +64,13 @@ export const sectionsIndustryBlocks: ManifestItem[] = [
     badge: 'new',
     files: ['registry/blocks/team/team-02.tsx'],
   },
+  {
+    name: 'course-grid-01',
+    type: 'registry:block',
+    family: 'course-grid',
+    title: 'Course grid 01',
+    description: 'Course or bootcamp cards with a tag, duration, level, start date, price in SAR or free, and an image slot.',
+    badge: 'new',
+    files: ['registry/blocks/course-grid/course-grid-01.tsx'],
+  },
 ];
