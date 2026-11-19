@@ -6580,6 +6580,93 @@
       ]
     },
     {
+      "name": "saas-page-01",
+      "type": "registry:block",
+      "title": "SaaS page 01",
+      "description": "Software landing page: mega-menu navbar, a hero with the live dashboard, brand strip, one-sentence problem, numbered steps, a tab switcher, plans, tabbed FAQ, changelog and a call card.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/cta-04",
+        "MOHKSADAH/mizan-ui/cta-06",
+        "MOHKSADAH/mizan-ui/editorial-02",
+        "MOHKSADAH/mizan-ui/faq-03",
+        "MOHKSADAH/mizan-ui/feature-switcher-01",
+        "MOHKSADAH/mizan-ui/footer-05",
+        "MOHKSADAH/mizan-ui/hero-09",
+        "MOHKSADAH/mizan-ui/how-it-works-01",
+        "MOHKSADAH/mizan-ui/logo-cloud-05",
+        "MOHKSADAH/mizan-ui/navbar-03",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/pricing-01",
+        "MOHKSADAH/mizan-ui/stat-card",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/saas-page/saas-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "fintech-page-01",
+      "type": "registry:block",
+      "title": "Fintech page 01",
+      "description": "Financing landing page: an account-card hero, alternating product rows, an installment calculator, partner boxes, a trust list, app download, FAQ and a footer with the central bank licence line.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/app-download-01",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/calculator-01",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/faq-02",
+        "MOHKSADAH/mizan-ui/features-02",
+        "MOHKSADAH/mizan-ui/features-04",
+        "MOHKSADAH/mizan-ui/footer-05",
+        "MOHKSADAH/mizan-ui/hero-02",
+        "MOHKSADAH/mizan-ui/logo-cloud-04",
+        "MOHKSADAH/mizan-ui/navbar-01",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/progress",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/fintech-page/fintech-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "agency-page-01",
+      "type": "registry:block",
+      "title": "Agency page 01",
+      "description": "Studio landing page: a concept hero, client line, numbered services, a wide case study, a process, a stat strip, one quote, a brief form and a wordmark footer.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/case-study-01",
+        "MOHKSADAH/mizan-ui/contact-01",
+        "MOHKSADAH/mizan-ui/footer-06",
+        "MOHKSADAH/mizan-ui/hero-12",
+        "MOHKSADAH/mizan-ui/how-it-works-02",
+        "MOHKSADAH/mizan-ui/logo-cloud-01",
+        "MOHKSADAH/mizan-ui/navbar-02",
+        "MOHKSADAH/mizan-ui/services-01",
+        "MOHKSADAH/mizan-ui/stats-05",
+        "MOHKSADAH/mizan-ui/testimonials-05",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/agency-page/agency-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "agents-dashboard-page-01",
       "type": "registry:block",
       "title": "Agents dashboard page 01",
