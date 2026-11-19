@@ -6611,6 +6611,37 @@
       ]
     },
     {
+      "name": "fintech-page-01",
+      "type": "registry:block",
+      "title": "Fintech page 01",
+      "description": "Financing landing page: an account-card hero, alternating product rows, an installment calculator, partner boxes, a trust list, app download, FAQ and a footer with the central bank licence line.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/app-download-01",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/calculator-01",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/faq-02",
+        "MOHKSADAH/mizan-ui/features-02",
+        "MOHKSADAH/mizan-ui/features-04",
+        "MOHKSADAH/mizan-ui/footer-05",
+        "MOHKSADAH/mizan-ui/hero-02",
+        "MOHKSADAH/mizan-ui/logo-cloud-04",
+        "MOHKSADAH/mizan-ui/navbar-01",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/progress",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/fintech-page/fintech-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "agents-dashboard-page-01",
       "type": "registry:block",
       "title": "Agents dashboard page 01",

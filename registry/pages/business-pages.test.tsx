@@ -1,5 +1,6 @@
 import { expect, test } from 'bun:test';
 import { renderToString } from 'react-dom/server';
+import FintechPage01, { demo as fintech } from './fintech-page/fintech-page-01';
 import SaasPage01, { demo as saas } from './saas-page/saas-page-01';
 
 const ids = (html: string, list: string[]) => {
@@ -34,6 +35,29 @@ test('saas-page-01 renders Arabic page copy', () => {
     'ما الجديد في بسطة',
     'جرّب بسطة على متجرك هذا الأسبوع',
   ]) {
+    expect(html).toContain(text);
+  }
+});
+
+test('fintech-page-01 composes its sections and ends with the licence line', () => {
+  const html = renderToString(<FintechPage01 {...fintech.en} />);
+  expect(html).toContain('<main id="main-content"');
+  ids(html, ['how', 'calculator', 'trust', 'app', 'faq']);
+  for (const text of [
+    'Personal financing with a fixed installment',
+    'Know your installment before you apply',
+    'Security and trust',
+    'Maysara in your pocket',
+    'licensed by the Saudi Central Bank, licence no.',
+    '7/202601',
+  ]) {
+    expect(html).toContain(text);
+  }
+});
+
+test('fintech-page-01 renders Arabic page copy', () => {
+  const html = renderToString(<FintechPage01 {...fintech.ar} />);
+  for (const text of ['تمويل شخصي بقسط ثابت', 'اعرف قسطك قبل أن تطلب', 'أمانك قبل أي شيء آخر', 'ميسرة في جيبك', 'بترخيص رقم']) {
     expect(html).toContain(text);
   }
 });
