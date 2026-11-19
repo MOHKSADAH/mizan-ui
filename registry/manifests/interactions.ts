@@ -9,4 +9,12 @@ export const interactionItems: ManifestItem[] = [
     description: 'A handle you drag toward the inline end to confirm a payment or an order, with keyboard steps and an optional plain button.',
     files: ['registry/ui/slide-to-confirm.tsx'],
   },
+  {
+    name: 'view-switcher',
+    type: 'registry:ui',
+    category: 'navigation',
+    badge: 'new',
+    description: 'A list, grid and compact toggle on the segmented control, with ViewItems to render items per layout and a view transition between them.',
+    files: ['registry/ui/view-switcher.tsx'],
+  },
 ];

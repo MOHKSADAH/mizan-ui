@@ -3340,6 +3340,28 @@
       ]
     },
     {
+      "name": "view-switcher",
+      "type": "registry:ui",
+      "title": "View Switcher",
+      "description": "A list, grid and compact toggle on the segmented control, with ViewItems to render items per layout and a view transition between them.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/segmented-control",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/view-switcher.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
       "name": "navbar-01",
       "type": "registry:block",
       "title": "Navbar 01",
