@@ -2,11 +2,8 @@
 
 import * as React from "react"
 import {
-  ArrowDownIcon,
-  ArrowUpIcon,
   CheckCircleIcon,
   ClockIcon,
-  MinusIcon,
   PackageIcon,
   TruckIcon,
   XCircleIcon,
@@ -19,9 +16,7 @@ import type { Plural } from "@/registry/lib/block-types"
 import {
   formatCompact,
   formatDate,
-  formatNumber,
   formatPercent,
-  formatSigned,
   plural,
   type Lang,
   type Locale,
@@ -33,6 +28,7 @@ import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } f
 import { Container } from "@/registry/ui/container"
 import { Price } from "@/registry/ui/price"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/registry/ui/select"
+import { StatCard, statCardLabelsAr } from "@/registry/ui/stat-card"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/registry/ui/table"
 
 export type Dashboard01Labels = {
@@ -220,15 +216,16 @@ export function Dashboard01({
   const day = (date: string, options: Intl.DateTimeFormatOptions) => formatDate(new Date(`${date}T00:00:00Z`), locale, options)
   const money = (value: number) => <Price amount={value} currency={currency} lang={lang} />
 
+  // StatCard takes the change in percent, so 0.102 becomes 10.2.
   const kpis = [
-    { id: "revenue", label: t.revenue, value: money(now.revenue), delta: change(now.revenue, before.revenue) },
-    { id: "orders", label: t.orders, value: formatNumber(now.orders, locale), delta: change(now.orders, before.orders) },
-    { id: "aov", label: t.aov, value: money(Math.round(now.aov)), delta: change(now.aov, before.aov) },
+    { id: "revenue", label: t.revenue, value: money(now.revenue), delta: change(now.revenue, before.revenue) * 100 },
+    { id: "orders", label: t.orders, value: now.orders, delta: change(now.orders, before.orders) * 100 },
+    { id: "aov", label: t.aov, value: money(Math.round(now.aov)), delta: change(now.aov, before.aov) * 100 },
     {
       id: "conversion",
       label: t.conversion,
       value: formatPercent(now.conversion, locale, { max: 2 }),
-      delta: change(now.conversion, before.conversion),
+      delta: change(now.conversion, before.conversion) * 100,
     },
   ]
 
@@ -259,18 +256,16 @@ export function Dashboard01({
 
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         {kpis.map((kpi) => (
-          <Card key={kpi.id} size="sm">
-            <CardContent>
-              <dl className="grid gap-1">
-                <dt className="text-sm text-muted-foreground">{kpi.label}</dt>
-                <dd className="text-xl font-semibold tabular-nums md:text-2xl">{kpi.value}</dd>
-                <dd className="flex flex-wrap items-center gap-x-1.5 text-xs">
-                  <Delta value={kpi.delta} locale={locale} />
-                  <span className="text-muted-foreground">{t.vsPrevious}</span>
-                </dd>
-              </dl>
-            </CardContent>
-          </Card>
+          <StatCard
+            key={kpi.id}
+            size="sm"
+            lang={lang}
+            label={kpi.label}
+            value={kpi.value}
+            delta={kpi.delta}
+            showPrevious
+            labels={{ ...(rtl ? statCardLabelsAr : {}), vsPrevious: t.vsPrevious }}
+          />
         ))}
       </div>
 
@@ -492,24 +487,6 @@ export function Dashboard01({
 }
 
 export default Dashboard01
-
-function Delta({ value, locale }: { value: number; locale: Locale }) {
-  const Arrow = value > 0 ? ArrowUpIcon : value < 0 ? ArrowDownIcon : MinusIcon
-  const text = formatSigned(value, locale, { style: "percent", maximumFractionDigits: 1 }).replace("٪", "%")
-  return (
-    <span
-      className={cn(
-        "inline-flex items-center gap-0.5 font-medium",
-        value > 0 && "text-success",
-        value < 0 && "text-destructive",
-        value === 0 && "text-muted-foreground"
-      )}
-    >
-      <Arrow aria-hidden="true" className="size-3" />
-      {text}
-    </span>
-  )
-}
 
 const DAY_MS = 86_400_000
 

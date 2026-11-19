@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { ImageIcon } from "@phosphor-icons/react"
 
 import { cn } from "@/registry/lib/utils"
 import { formatNumber, type Digits, type Lang } from "@/registry/lib/format"
@@ -16,9 +17,12 @@ import {
 import { Dialog, DialogContent, DialogTitle, type DialogLabels } from "@/registry/ui/dialog"
 
 type GalleryImage = {
-  src: string
+  // Without a src the gallery shows a muted placeholder with an image icon.
+  src?: string
   // Required: it names the image for screen readers and for the thumbnail button.
   alt: string
+  width?: number
+  height?: number
   // A larger file for the zoom dialog. Defaults to src.
   zoomSrc?: string
 }
@@ -42,6 +46,42 @@ const productGalleryLabelsAr: ProductGalleryLabels = {
   thumbnails: "اختر صورة",
   slide: (n, total) => `الصورة ${n} من ${total}`,
   zoom: "تكبير",
+}
+
+// One product image, or the placeholder when it has no src. It fills its parent box.
+function ProductImage({
+  image,
+  priority,
+  className,
+}: {
+  image: GalleryImage
+  priority?: boolean
+  className?: string
+}) {
+  if (!image.src) {
+    return (
+      <div
+        role={image.alt ? "img" : undefined}
+        aria-label={image.alt || undefined}
+        aria-hidden={image.alt ? undefined : true}
+        className={cn("flex size-full items-center justify-center bg-muted text-muted-foreground", className)}
+      >
+        <ImageIcon aria-hidden="true" weight="duotone" className="size-1/4 max-h-16 max-w-16" />
+      </div>
+    )
+  }
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={image.src}
+      alt={image.alt}
+      width={image.width}
+      height={image.height}
+      loading={priority ? "eager" : "lazy"}
+      draggable={false}
+      className={cn("size-full object-cover", className)}
+    />
+  )
 }
 
 type ProductGalleryProps = Omit<React.ComponentProps<"div">, "children"> & {
@@ -94,11 +134,6 @@ function ProductGallery({
     }
   }, [api])
 
-  const image = (item: GalleryImage, index: number, className: string) => (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img src={item.src} alt={item.alt} loading={index === 0 ? "eager" : "lazy"} draggable={false} className={className} />
-  )
-
   return (
     <div data-slot="product-gallery" className={cn("flex min-w-0 flex-col gap-3", className)} {...props}>
       <Carousel
@@ -110,21 +145,23 @@ function ProductGallery({
         <CarouselContent className="ms-0">
           {images.map((item, index) => (
             <CarouselItem
-              key={item.src}
+              key={index}
               aria-label={t.slide(formatNumber(index + 1, locale), formatNumber(images.length, locale))}
               className="ps-0"
             >
-              {zoom ? (
+              {zoom && item.src ? (
                 <button
                   type="button"
                   aria-label={`${item.alt}, ${t.zoom}`}
                   onClick={() => setZoomed(index)}
                   className="block aspect-square w-full cursor-zoom-in outline-none focus-visible:ring-3 focus-visible:ring-inset focus-visible:ring-ring/50"
                 >
-                  {image(item, index, "size-full object-cover")}
+                  <ProductImage image={item} priority={index === 0} />
                 </button>
               ) : (
-                <div className="aspect-square w-full">{image(item, index, "size-full object-cover")}</div>
+                <div className="aspect-square w-full">
+                  <ProductImage image={item} priority={index === 0} />
+                </div>
               )}
             </CarouselItem>
           ))}
@@ -142,7 +179,7 @@ function ProductGallery({
           className="flex gap-2 overflow-x-auto p-1 [scrollbar-width:thin]"
         >
           {images.map((item, index) => (
-            <li key={item.src} className="shrink-0">
+            <li key={index} className="shrink-0">
               <button
                 type="button"
                 ref={(node) => {
@@ -153,8 +190,7 @@ function ProductGallery({
                 onClick={() => api?.scrollTo(index)}
                 className="block size-16 overflow-hidden rounded-lg border border-border outline-none focus-visible:ring-3 focus-visible:ring-ring/50 aria-[current=true]:border-foreground aria-[current=true]:outline-2 aria-[current=true]:outline-offset-2 aria-[current=true]:outline-solid aria-[current=true]:outline-foreground"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={item.src} alt="" loading="lazy" draggable={false} className="size-full object-cover" />
+                <ProductImage image={{ ...item, alt: "" }} />
               </button>
             </li>
           ))}
@@ -181,5 +217,5 @@ function ProductGallery({
   )
 }
 
-export { ProductGallery, productGalleryLabelsAr }
+export { ProductGallery, ProductImage, productGalleryLabelsAr }
 export type { GalleryImage, ProductGalleryLabels }

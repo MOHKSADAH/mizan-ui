@@ -10,13 +10,15 @@ import { Slider } from '@/registry/ui/slider';
 import { Textarea } from '@/registry/ui/textarea';
 import { ToggleGroup, ToggleGroupItem } from '@/registry/ui/toggle-group';
 import { formatNumber } from '@/registry/lib/format';
+import { directions } from '@/lib/directions';
 import { themeById, TUNE_VARS, type IconWeight, type Tune } from '@/lib/settings';
 import { CH, SITE, type Lang } from '@/lib/strings';
 import { useSettings } from '@/components/settings';
+import { DirectionSelect } from '@/components/direction-select';
 import { ThemeCombobox } from '@/components/theme-combobox';
 import { bidi } from '@/components/looks/text';
 
-const FONTS = ['auto', 'geist', 'plex', 'markazi', 'kufi', 'readex', 'tajawal'] as const;
+const FONTS = ['auto', 'geist', 'plex', 'markazi', 'kufi', 'readex', 'tajawal', ...directions.map((d) => d.id)];
 const WEIGHTS = ['auto', 'thin', 'light', 'regular', 'bold', 'fill', 'duotone'] as const;
 const CURRENCIES = ['SAR', 'AED', 'KWD', 'QAR', 'BHD', 'OMR', 'EGP', 'USD', 'EUR', 'GBP'];
 
@@ -162,7 +164,8 @@ export function Customizer({ lang }: { lang: Lang }) {
     copy(themeCss(all, theme, tune));
   };
 
-  const fonts = Object.fromEntries(FONTS.map((f) => [f, bidi(c.fonts[f], lang)]));
+  const directionNames = Object.fromEntries(directions.map((d) => [d.id, d.name[lang]]));
+  const fonts = Object.fromEntries(FONTS.map((f) => [f, bidi(directionNames[f] ?? c.fonts[f as keyof typeof c.fonts], lang)]));
   const weights = Object.fromEntries(
     WEIGHTS.map((w) => [
       w,
@@ -176,7 +179,10 @@ export function Customizer({ lang }: { lang: Lang }) {
 
   return (
     <section aria-label={c.h1} className="grid grid-cols-1 gap-5 rounded-xl border p-4 sm:p-5">
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+        <Control label={c.direction}>
+          <DirectionSelect lang={lang} className="w-full" />
+        </Control>
         <Control label={c.theme}>
           <ThemeCombobox lang={lang} className="h-8 w-full max-w-none justify-between" />
         </Control>

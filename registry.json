@@ -2346,6 +2346,54 @@
       ]
     },
     {
+      "name": "card-input",
+      "type": "registry:ui",
+      "title": "Card Input",
+      "description": "Card number, expiry and CVC with brand detection, a Luhn check, a past-date check and a mada BIN list you pass in.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/gulf-validators",
+        "MOHKSADAH/mizan-ui/input-group",
+        "MOHKSADAH/mizan-ui/input-mask",
+        "MOHKSADAH/mizan-ui/label",
+        "MOHKSADAH/mizan-ui/mask",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/card-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "payment-result",
+      "type": "registry:ui",
+      "title": "Payment Result",
+      "description": "Processing, success and failed states after a payment or a provider redirect, with a reason and retry actions.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/spinner",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/payment-result.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
       "name": "installments",
       "type": "registry:ui",
       "title": "Installments",
@@ -2414,6 +2462,9 @@
       "type": "registry:ui",
       "title": "Product Gallery",
       "description": "Product image gallery with Embla swipe, thumbnails, RTL direction and optional zoom dialog.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/carousel",
         "MOHKSADAH/mizan-ui/dialog",
@@ -2992,6 +3043,29 @@
       "files": [
         {
           "path": "registry/ui/product-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "rating-summary",
+      "type": "registry:ui",
+      "title": "Rating Summary",
+      "description": "Average score, review total and a five-to-one star distribution with bars that fill from the inline start.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/rating-summary.tsx",
           "type": "registry:ui"
         }
       ],
@@ -4073,6 +4147,7 @@
         "MOHKSADAH/mizan-ui/format",
         "MOHKSADAH/mizan-ui/price",
         "MOHKSADAH/mizan-ui/select",
+        "MOHKSADAH/mizan-ui/stat-card",
         "MOHKSADAH/mizan-ui/table",
         "MOHKSADAH/mizan-ui/utils"
       ],
@@ -4356,6 +4431,355 @@
       ]
     },
     {
+      "name": "cart-01",
+      "type": "registry:block",
+      "title": "Cart 01",
+      "description": "Cart page with line items, quantity steppers, a coupon field, a VAT summary and a checkout button.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/coupon-input",
+        "MOHKSADAH/mizan-ui/empty",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/quantity-stepper",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/stock-indicator",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cart/cart-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "cart-02",
+      "type": "registry:block",
+      "title": "Cart 02",
+      "description": "Slide-over cart in a Sheet with a free shipping progress bar and a pinned total and checkout footer.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/delivery-estimate",
+        "MOHKSADAH/mizan-ui/empty",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/quantity-stepper",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/sheet",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cart/cart-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "cart-03",
+      "type": "registry:block",
+      "title": "Cart 03",
+      "description": "Mini cart popover for a navbar with the first lines, an \"and n more\" count, a subtotal and two actions.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/popover",
+        "MOHKSADAH/mizan-ui/price"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cart/cart-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "order-summary-01",
+      "type": "registry:block",
+      "title": "Order summary 01",
+      "description": "Sticky checkout aside whose line items collapse behind a toggle with the total on mobile.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/order-summary/order-summary-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "order-summary-02",
+      "type": "registry:block",
+      "title": "Order summary 02",
+      "description": "Checkout summary with a delivery estimate, free shipping progress and Tabby-style installments with an eligibility range.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/delivery-estimate",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/installments",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/order-summary/order-summary-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "order-summary-03",
+      "type": "registry:block",
+      "title": "Order summary 03",
+      "description": "Receipt-style confirmation with a payment result, a copyable order number, a status badge and the totals.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/copy-button",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/payment-result",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/order-summary/order-summary-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "product-detail-01",
+      "type": "registry:block",
+      "title": "Product Detail 01",
+      "description": "Classic product page: gallery beside a buy box with price, installments, variants, quantity, delivery estimate and an accordion.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/accordion",
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/carousel",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/delivery-estimate",
+        "MOHKSADAH/mizan-ui/dialog",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/installments",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/product-gallery",
+        "MOHKSADAH/mizan-ui/quantity-stepper",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/share-button",
+        "MOHKSADAH/mizan-ui/stock-indicator",
+        "MOHKSADAH/mizan-ui/swatch-select",
+        "MOHKSADAH/mizan-ui/wishlist-button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/product-detail/product-detail-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "product-detail-02",
+      "type": "registry:block",
+      "title": "Product Detail 02",
+      "description": "Editorial product page: a full-width image grid, a sticky buy box and a specifications table.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/delivery-estimate",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/installments",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/product-gallery",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/stock-indicator",
+        "MOHKSADAH/mizan-ui/swatch-select",
+        "MOHKSADAH/mizan-ui/table",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/wishlist-button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/product-detail/product-detail-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "product-detail-03",
+      "type": "registry:block",
+      "title": "Product Detail 03",
+      "description": "Compact product page for quick buying on a phone, with a sticky add to cart bar.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/accordion",
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/carousel",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/delivery-estimate",
+        "MOHKSADAH/mizan-ui/dialog",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/product-gallery",
+        "MOHKSADAH/mizan-ui/quantity-stepper",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/sticky-action-bar",
+        "MOHKSADAH/mizan-ui/stock-indicator",
+        "MOHKSADAH/mizan-ui/swatch-select"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/product-detail/product-detail-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "product-reviews-01",
+      "type": "registry:block",
+      "title": "Product Reviews 01",
+      "description": "Rating summary and a review list with verified badge, photos, helpful votes, sort and pagination.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/image-lightbox",
+        "MOHKSADAH/mizan-ui/pagination",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/rating-summary",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/select"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/product-reviews/product-reviews-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "product-reviews-02",
+      "type": "registry:block",
+      "title": "Product Reviews 02",
+      "description": "Compact highlights: one lead review and two smaller review cards for a product page.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/product-reviews/product-reviews-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "quick-view-01",
+      "type": "registry:block",
+      "title": "Quick View 01",
+      "description": "Product quick view in a dialog on desktop and a bottom drawer on a phone, with gallery, variants and add to cart.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/carousel",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/dialog",
+        "MOHKSADAH/mizan-ui/drawer",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/product-gallery",
+        "MOHKSADAH/mizan-ui/quantity-stepper",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/stock-indicator",
+        "MOHKSADAH/mizan-ui/swatch-select",
+        "MOHKSADAH/mizan-ui/use-mobile",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/quick-view/quick-view-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "product-grid-01",
       "type": "registry:block",
       "title": "Product Grid 01",
@@ -4541,6 +4965,38 @@
       "files": [
         {
           "path": "registry/blocks/store-trust/store-trust-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "home-page-01",
+      "type": "registry:block",
+      "title": "Home page 01",
+      "description": "Business home page: contact navbar, split hero with a live product panel, stat band, bento, steps, quote, one plan, FAQ, call card and legal footer.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/cta-04",
+        "MOHKSADAH/mizan-ui/faq-02",
+        "MOHKSADAH/mizan-ui/features-03",
+        "MOHKSADAH/mizan-ui/features-06",
+        "MOHKSADAH/mizan-ui/footer-04",
+        "MOHKSADAH/mizan-ui/hero-02",
+        "MOHKSADAH/mizan-ui/navbar-04",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/pricing-03",
+        "MOHKSADAH/mizan-ui/progress",
+        "MOHKSADAH/mizan-ui/stats-04",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/testimonials-01",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/home-page/home-page-01.tsx",
           "type": "registry:block"
         }
       ]
@@ -10371,6 +10827,205 @@
           "shadow-y": "1px",
           "tracking-normal": "0em"
         }
+      }
+    },
+    {
+      "name": "direction-neutral-saas",
+      "type": "registry:theme",
+      "title": "Neutral SaaS direction",
+      "description": "Theme mizan-base, fonts, radius and spacing, with the fonts installed from Fontsource.",
+      "dependencies": [
+        "@fontsource-variable/inter@^5",
+        "@fontsource/ibm-plex-sans-arabic@^5",
+        "@fontsource-variable/geist-mono@^5"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/theme-mizan-base"
+      ],
+      "css": {
+        "@import \"@fontsource-variable/inter\"": {},
+        "@import \"@fontsource/ibm-plex-sans-arabic/400.css\"": {},
+        "@import \"@fontsource/ibm-plex-sans-arabic/500.css\"": {},
+        "@import \"@fontsource/ibm-plex-sans-arabic/600.css\"": {},
+        "@import \"@fontsource/ibm-plex-sans-arabic/700.css\"": {},
+        "@import \"@fontsource-variable/geist-mono\"": {}
+      },
+      "cssVars": {
+        "theme": {
+          "font-sans": "var(--font-body)",
+          "font-heading": "var(--font-display)",
+          "font-mono": "var(--font-code)"
+        },
+        "light": {
+          "font-body": "\"Inter Variable\", \"IBM Plex Sans Arabic\", system-ui, sans-serif",
+          "font-display": "\"Inter Variable\", \"IBM Plex Sans Arabic\", system-ui, sans-serif",
+          "font-code": "\"Geist Mono Variable\", ui-monospace, monospace",
+          "tracking-heading": "-0.02em",
+          "radius": "0.5rem",
+          "spacing": "0.23rem"
+        },
+        "dark": {}
+      }
+    },
+    {
+      "name": "direction-editorial",
+      "type": "registry:theme",
+      "title": "Editorial direction",
+      "description": "Theme mizan-sand, fonts, radius and spacing, with the fonts installed from Fontsource.",
+      "dependencies": [
+        "@fontsource/instrument-serif@^5",
+        "@fontsource/amiri@^5",
+        "@fontsource-variable/inter@^5",
+        "@fontsource/ibm-plex-sans-arabic@^5",
+        "@fontsource-variable/geist-mono@^5"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/theme-mizan-sand"
+      ],
+      "css": {
+        "@import \"@fontsource/instrument-serif/400.css\"": {},
+        "@import \"@fontsource/amiri/400.css\"": {},
+        "@import \"@fontsource/amiri/700.css\"": {},
+        "@import \"@fontsource-variable/inter\"": {},
+        "@import \"@fontsource/ibm-plex-sans-arabic/400.css\"": {},
+        "@import \"@fontsource/ibm-plex-sans-arabic/500.css\"": {},
+        "@import \"@fontsource/ibm-plex-sans-arabic/600.css\"": {},
+        "@import \"@fontsource/ibm-plex-sans-arabic/700.css\"": {},
+        "@import \"@fontsource-variable/geist-mono\"": {}
+      },
+      "cssVars": {
+        "theme": {
+          "font-sans": "var(--font-body)",
+          "font-heading": "var(--font-display)",
+          "font-mono": "var(--font-code)"
+        },
+        "light": {
+          "font-body": "\"Inter Variable\", \"IBM Plex Sans Arabic\", system-ui, sans-serif",
+          "font-display": "\"Instrument Serif\", \"Amiri\", serif",
+          "font-code": "\"Geist Mono Variable\", ui-monospace, monospace",
+          "tracking-heading": "-0.01em",
+          "radius": "0.875rem",
+          "spacing": "0.27rem"
+        },
+        "dark": {}
+      }
+    },
+    {
+      "name": "direction-bold-commerce",
+      "type": "registry:theme",
+      "title": "Bold commerce direction",
+      "description": "Theme mizan-souq, fonts, radius and spacing, with the fonts installed from Fontsource.",
+      "dependencies": [
+        "@fontsource-variable/plus-jakarta-sans@^5",
+        "@fontsource-variable/alexandria@^5",
+        "@fontsource/ibm-plex-sans-arabic@^5",
+        "@fontsource-variable/geist-mono@^5"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/theme-mizan-souq"
+      ],
+      "css": {
+        "@import \"@fontsource-variable/plus-jakarta-sans\"": {},
+        "@import \"@fontsource-variable/alexandria\"": {},
+        "@import \"@fontsource/ibm-plex-sans-arabic/400.css\"": {},
+        "@import \"@fontsource/ibm-plex-sans-arabic/500.css\"": {},
+        "@import \"@fontsource/ibm-plex-sans-arabic/600.css\"": {},
+        "@import \"@fontsource/ibm-plex-sans-arabic/700.css\"": {},
+        "@import \"@fontsource-variable/geist-mono\"": {}
+      },
+      "cssVars": {
+        "theme": {
+          "font-sans": "var(--font-body)",
+          "font-heading": "var(--font-display)",
+          "font-mono": "var(--font-code)"
+        },
+        "light": {
+          "font-body": "\"Plus Jakarta Sans Variable\", \"IBM Plex Sans Arabic\", system-ui, sans-serif",
+          "font-display": "\"Plus Jakarta Sans Variable\", \"Alexandria Variable\", system-ui, sans-serif",
+          "font-code": "\"Geist Mono Variable\", ui-monospace, monospace",
+          "tracking-heading": "-0.03em",
+          "radius": "1.5rem",
+          "spacing": "0.25rem"
+        },
+        "dark": {}
+      }
+    },
+    {
+      "name": "direction-heritage",
+      "type": "registry:theme",
+      "title": "Heritage direction",
+      "description": "Theme mizan-oasis, fonts, radius and spacing, with the fonts installed from Fontsource.",
+      "dependencies": [
+        "@fontsource-variable/cormorant-garamond@^5",
+        "@fontsource-variable/reem-kufi@^5",
+        "@fontsource-variable/inter@^5",
+        "@fontsource/almarai@^5",
+        "@fontsource-variable/geist-mono@^5"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/theme-mizan-oasis"
+      ],
+      "css": {
+        "@import \"@fontsource-variable/cormorant-garamond\"": {},
+        "@import \"@fontsource-variable/reem-kufi\"": {},
+        "@import \"@fontsource-variable/inter\"": {},
+        "@import \"@fontsource/almarai/400.css\"": {},
+        "@import \"@fontsource/almarai/700.css\"": {},
+        "@import \"@fontsource-variable/geist-mono\"": {}
+      },
+      "cssVars": {
+        "theme": {
+          "font-sans": "var(--font-body)",
+          "font-heading": "var(--font-display)",
+          "font-mono": "var(--font-code)"
+        },
+        "light": {
+          "font-body": "\"Inter Variable\", \"Almarai\", system-ui, sans-serif",
+          "font-display": "\"Cormorant Garamond Variable\", \"Reem Kufi Variable\", serif",
+          "font-code": "\"Geist Mono Variable\", ui-monospace, monospace",
+          "tracking-heading": "0em",
+          "radius": "0.125rem",
+          "spacing": "0.27rem"
+        },
+        "dark": {}
+      }
+    },
+    {
+      "name": "direction-dark-tech",
+      "type": "registry:theme",
+      "title": "Dark tech direction",
+      "description": "Theme mizan-noir, fonts, radius and spacing, with the fonts installed from Fontsource.",
+      "dependencies": [
+        "@fontsource-variable/geist@^5",
+        "@fontsource/ibm-plex-sans-arabic@^5",
+        "@fontsource-variable/geist-mono@^5"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/theme-mizan-noir"
+      ],
+      "css": {
+        "@import \"@fontsource-variable/geist\"": {},
+        "@import \"@fontsource/ibm-plex-sans-arabic/400.css\"": {},
+        "@import \"@fontsource/ibm-plex-sans-arabic/500.css\"": {},
+        "@import \"@fontsource/ibm-plex-sans-arabic/600.css\"": {},
+        "@import \"@fontsource/ibm-plex-sans-arabic/700.css\"": {},
+        "@import \"@fontsource-variable/geist-mono\"": {}
+      },
+      "cssVars": {
+        "theme": {
+          "font-sans": "var(--font-body)",
+          "font-heading": "var(--font-display)",
+          "font-mono": "var(--font-code)"
+        },
+        "light": {
+          "font-body": "\"Geist Variable\", \"IBM Plex Sans Arabic\", system-ui, sans-serif",
+          "font-display": "\"Geist Variable\", \"IBM Plex Sans Arabic\", system-ui, sans-serif",
+          "font-code": "\"Geist Mono Variable\", ui-monospace, monospace",
+          "tracking-heading": "-0.02em",
+          "radius": "0.375rem",
+          "spacing": "0.23rem"
+        },
+        "dark": {}
       }
     }
   ]

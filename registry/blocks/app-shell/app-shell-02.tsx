@@ -247,10 +247,9 @@ export function AppShell02({
               </DropdownMenu>
             </div>
           </header>
+          {/* Pages are blocks and bring their own Container, so the shell adds no padding of its own. */}
           <div id="main-content" tabIndex={-1} className="min-h-0 flex-1 overflow-y-auto outline-none">
-            <Container size="wide" className="py-6">
-              {children}
-            </Container>
+            {children}
           </div>
         </SidebarInset>
       </SidebarProvider>
@@ -270,7 +269,7 @@ type SampleProps = {
 
 function Sample({ lang, title, description, stats, list }: SampleProps) {
   return (
-    <div className="flex flex-col gap-6">
+    <Container size="wide" className="flex flex-col gap-6 py-6">
       <div>
         <h1 className="text-2xl font-semibold">{title}</h1>
         <p className="text-sm text-muted-foreground">{description}</p>
@@ -300,7 +299,7 @@ function Sample({ lang, title, description, stats, list }: SampleProps) {
           ))}
         </CardContent>
       </Card>
-    </div>
+    </Container>
   )
 }
 
