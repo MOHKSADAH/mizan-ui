@@ -5146,6 +5146,28 @@
       ]
     },
     {
+      "name": "agent-spend-01",
+      "type": "registry:block",
+      "title": "Agent spend 01",
+      "description": "A total and budget bar split by agent, then per-step or per-model spend bars with a Step and Model toggle.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/segmented-bar",
+        "MOHKSADAH/mizan-ui/segmented-control"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/agent-spend/agent-spend-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
