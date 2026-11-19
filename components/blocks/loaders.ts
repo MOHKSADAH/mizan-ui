@@ -118,6 +118,7 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'order-history-01': () => import('@/registry/blocks/order-history/order-history-01'),
   'feature-accordion-01': () => import('@/registry/blocks/feature-accordion/feature-accordion-01'),
   'case-stack-01': () => import('@/registry/blocks/case-stack/case-stack-01'),
+  'testimonial-stage-01': () => import('@/registry/blocks/testimonial-stage/testimonial-stage-01'),
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
   'agents-dashboard-page-01': () => import('@/registry/pages/agents-dashboard-page/agents-dashboard-page-01'),
   'chat-page-01': () => import('@/registry/pages/chat-page/chat-page-01'),

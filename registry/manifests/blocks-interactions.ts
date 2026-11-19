@@ -19,4 +19,13 @@ export const interactionBlocks: ManifestItem[] = [
     badge: 'new',
     files: ['registry/blocks/case-stack/case-stack-01.tsx'],
   },
+  {
+    name: 'testimonial-stage-01',
+    type: 'registry:block',
+    family: 'testimonial-stage',
+    title: 'Testimonial stage 01',
+    description: 'One testimonial at a time with a portrait, a large quote, a stat pair and a thumbnail rail; autoplay pauses on hover, focus and reduced motion.',
+    badge: 'new',
+    files: ['registry/blocks/testimonial-stage/testimonial-stage-01.tsx'],
+  },
 ];

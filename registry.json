@@ -6274,6 +6274,29 @@
       ]
     },
     {
+      "name": "testimonial-stage-01",
+      "type": "registry:block",
+      "title": "Testimonial stage 01",
+      "description": "One testimonial at a time with a portrait, a large quote, a stat pair and a thumbnail rail; autoplay pauses on hover, focus and reduced motion.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/testimonial-stage/testimonial-stage-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
