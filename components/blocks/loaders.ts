@@ -94,5 +94,11 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'how-it-works-01': () => import('@/registry/blocks/how-it-works/how-it-works-01'),
   'how-it-works-02': () => import('@/registry/blocks/how-it-works/how-it-works-02'),
   'testimonials-05': () => import('@/registry/blocks/testimonials/testimonials-05'),
+  'footer-05': () => import('@/registry/blocks/footer/footer-05'),
+  'footer-06': () => import('@/registry/blocks/footer/footer-06'),
+  'footer-07': () => import('@/registry/blocks/footer/footer-07'),
+  'cta-05': () => import('@/registry/blocks/cta/cta-05'),
+  'cta-06': () => import('@/registry/blocks/cta/cta-06'),
+  'newsletter-01': () => import('@/registry/blocks/newsletter/newsletter-01'),
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
 };
