@@ -4381,6 +4381,86 @@
       ]
     },
     {
+      "name": "cart-01",
+      "type": "registry:block",
+      "title": "Cart 01",
+      "description": "Cart page with line items, quantity steppers, a coupon field, a VAT summary and a checkout button.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/coupon-input",
+        "MOHKSADAH/mizan-ui/empty",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/quantity-stepper",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/stock-indicator",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cart/cart-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "cart-02",
+      "type": "registry:block",
+      "title": "Cart 02",
+      "description": "Slide-over cart in a Sheet with a free shipping progress bar and a pinned total and checkout footer.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/delivery-estimate",
+        "MOHKSADAH/mizan-ui/empty",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/quantity-stepper",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/sheet",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cart/cart-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "cart-03",
+      "type": "registry:block",
+      "title": "Cart 03",
+      "description": "Mini cart popover for a navbar with the first lines, an \"and n more\" count, a subtotal and two actions.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/popover",
+        "MOHKSADAH/mizan-ui/price"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cart/cart-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
