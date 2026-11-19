@@ -3074,6 +3074,65 @@
       ]
     },
     {
+      "name": "run-status",
+      "type": "registry:ui",
+      "title": "Run Status",
+      "description": "State pill for an agent run: running, done, idle, queued, failed or needs you, with an icon and text.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/run-status.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "feedback"
+      ]
+    },
+    {
+      "name": "step-list",
+      "type": "registry:ui",
+      "title": "Step List",
+      "description": "Vertical checklist of steps with a status icon, a title and a short value at the end side.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/run-status",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/step-list.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "segmented-bar",
+      "type": "registry:ui",
+      "title": "Segmented Bar",
+      "description": "One bar split into parts, for a budget split by agent, with an optional text legend.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/segmented-bar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
       "name": "navbar-01",
       "type": "registry:block",
       "title": "Navbar 01",
@@ -5474,6 +5533,199 @@
       ]
     },
     {
+      "name": "agent-plan-01",
+      "type": "registry:block",
+      "title": "Agent plan 01",
+      "description": "A task the agent is working on: source apps, a checklist of steps with status and a value each, an estimate and a Stop button.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/run-status",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/step-list"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/agent-plan/agent-plan-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "agent-map-01",
+      "type": "registry:block",
+      "title": "Agent map 01",
+      "description": "An orchestrator on the start side, sub-agents in the middle and tools on the end side, joined by SVG lines that mirror in RTL. One agent waits for review.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/run-status",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/agent-map/agent-map-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "agent-trace-01",
+      "type": "registry:block",
+      "title": "Agent trace 01",
+      "description": "A run header (duration, cost, tokens, tool calls, agents) over a waterfall of nested steps on a time axis, with a selected-step panel.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/run-status",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/agent-trace/agent-trace-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "agent-tools-01",
+      "type": "registry:block",
+      "title": "Agent tools 01",
+      "description": "Connected MCP servers with tool counts, on and off switches, expandable tool lists tagged read-only or writes, and sign-in and retry states.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/switch",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/agent-tools/agent-tools-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "agent-runs-01",
+      "type": "registry:block",
+      "title": "Agent runs 01",
+      "description": "Live run list with All, Mine and Needs you filters, a status icon, elapsed time and an Open state per run.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/run-status",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/segmented-control",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/agent-runs/agent-runs-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "agent-spend-01",
+      "type": "registry:block",
+      "title": "Agent spend 01",
+      "description": "A total and budget bar split by agent, then per-step or per-model spend bars with a Step and Model toggle.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/segmented-bar",
+        "MOHKSADAH/mizan-ui/segmented-control"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/agent-spend/agent-spend-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "agent-roster-01",
+      "type": "registry:block",
+      "title": "Agent roster 01",
+      "description": "A team of agents with role, model, current task, status pill and cost each, and the total spent today.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/run-status",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/agent-roster/agent-roster-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "agent-cost-01",
+      "type": "registry:block",
+      "title": "Agent cost 01",
+      "description": "A cost estimate with a model choice, tokens, cost and time, a credits bar with a warning when the estimate is over, and Cancel and Run.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/alert",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/segmented-bar",
+        "MOHKSADAH/mizan-ui/segmented-control"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/agent-cost/agent-cost-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
@@ -5501,6 +5753,34 @@
       "files": [
         {
           "path": "registry/pages/home-page/home-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "agents-dashboard-page-01",
+      "type": "registry:block",
+      "title": "Agents dashboard page 01",
+      "description": "AI agents dashboard in the app shell: live runs, the running plan, agent map, roster, spend, trace, MCP tools and a cost estimate.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/agent-cost-01",
+        "MOHKSADAH/mizan-ui/agent-map-01",
+        "MOHKSADAH/mizan-ui/agent-plan-01",
+        "MOHKSADAH/mizan-ui/agent-roster-01",
+        "MOHKSADAH/mizan-ui/agent-runs-01",
+        "MOHKSADAH/mizan-ui/agent-spend-01",
+        "MOHKSADAH/mizan-ui/agent-tools-01",
+        "MOHKSADAH/mizan-ui/agent-trace-01",
+        "MOHKSADAH/mizan-ui/app-shell-01",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/agents-dashboard-page/agents-dashboard-page-01.tsx",
           "type": "registry:block"
         }
       ]
