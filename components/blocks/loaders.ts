@@ -82,4 +82,5 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'conversation-list-01': () => import('@/registry/blocks/conversation-list/conversation-list-01'),
   'chat-thread-01': () => import('@/registry/blocks/chat-thread/chat-thread-01'),
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
+  'chat-page-01': () => import('@/registry/pages/chat-page/chat-page-01'),
 };

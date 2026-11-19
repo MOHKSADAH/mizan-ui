@@ -5252,6 +5252,32 @@
       ]
     },
     {
+      "name": "chat-page-01",
+      "type": "registry:block",
+      "title": "Chat page 01",
+      "description": "Assistant chat page: chat history on the start side, a thread in a scroller and the prompt input with a context meter and a model picker.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/chat-thread-01",
+        "MOHKSADAH/mizan-ui/context-meter",
+        "MOHKSADAH/mizan-ui/conversation-list-01",
+        "MOHKSADAH/mizan-ui/message-scroller",
+        "MOHKSADAH/mizan-ui/model-picker",
+        "MOHKSADAH/mizan-ui/prompt-input",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/chat-page/chat-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

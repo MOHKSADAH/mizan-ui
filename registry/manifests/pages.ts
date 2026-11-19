@@ -1,4 +1,5 @@
 import type { ManifestItem } from '../manifest';
+import { aiChatPages } from './blocks-ai-chat';
 
 export const pageItems: ManifestItem[] = [
   {
@@ -11,4 +12,5 @@ export const pageItems: ManifestItem[] = [
     description: 'Business home page: contact navbar, split hero with a live product panel, stat band, bento, steps, quote, one plan, FAQ, call card and legal footer.',
     files: ['registry/pages/home-page/home-page-01.tsx'],
   },
+  ...aiChatPages,
 ];
