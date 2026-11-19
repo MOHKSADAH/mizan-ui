@@ -1,5 +1,5 @@
 import { expect, test } from 'bun:test';
-import { parseShotArgs, resolveItems, shotName, urlOf } from './shots.mjs';
+import { parseShotArgs, resolveItems, settlePage, shotName, urlOf } from './shots.mjs';
 
 const registry = [
   { name: 'button', type: 'registry:ui' },
@@ -32,4 +32,15 @@ test('blocks open in the view route, components in docs, a family expands to its
   expect(resolveItems(registry, [], ['data-table']).map((i) => i.name)).toEqual(['data-table-01']);
   expect(() => resolveItems(registry, ['nope'], [])).toThrow();
   expect(urlOf('http://x', '/docs/components/button', 'ar')).toBe('http://x/ar/docs/components/button');
+});
+
+test('settlePage gives up on an image that never decodes', async () => {
+  const g = globalThis as unknown as { document: unknown };
+  const saved = g.document;
+  g.document = { fonts: { ready: Promise.resolve() }, images: [{ decode: () => new Promise(() => {}) }, { decode: () => Promise.reject(new Error('broken')) }] };
+  try {
+    await settlePage(20);
+  } finally {
+    g.document = saved;
+  }
 });
