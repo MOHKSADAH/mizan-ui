@@ -6141,6 +6141,31 @@
       ]
     },
     {
+      "name": "calculator-01",
+      "type": "registry:block",
+      "title": "Calculator 01",
+      "description": "Estimator with a slider, a number field and term buttons, beside a live result card with the monthly installment.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/label",
+        "MOHKSADAH/mizan-ui/number-field",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/slider",
+        "MOHKSADAH/mizan-ui/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/calculator/calculator-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
