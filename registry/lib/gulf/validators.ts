@@ -7,7 +7,7 @@ const toLatinDigits = (s: string) =>
 
 const clean = (s: string) => toLatinDigits(s).replace(/\s+/g, "")
 
-function luhn(digits: string) {
+export function luhn(digits: string) {
   let sum = 0
   for (let i = 0; i < digits.length; i++) {
     let d = Number(digits[digits.length - 1 - i])

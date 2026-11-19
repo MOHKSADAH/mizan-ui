@@ -2346,6 +2346,54 @@
       ]
     },
     {
+      "name": "card-input",
+      "type": "registry:ui",
+      "title": "Card Input",
+      "description": "Card number, expiry and CVC with brand detection, a Luhn check, a past-date check and a mada BIN list you pass in.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/gulf-validators",
+        "MOHKSADAH/mizan-ui/input-group",
+        "MOHKSADAH/mizan-ui/input-mask",
+        "MOHKSADAH/mizan-ui/label",
+        "MOHKSADAH/mizan-ui/mask",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/card-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "payment-result",
+      "type": "registry:ui",
+      "title": "Payment Result",
+      "description": "Processing, success and failed states after a payment or a provider redirect, with a reason and retry actions.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/spinner",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/payment-result.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
       "name": "installments",
       "type": "registry:ui",
       "title": "Installments",
