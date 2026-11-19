@@ -2414,6 +2414,9 @@
       "type": "registry:ui",
       "title": "Product Gallery",
       "description": "Product image gallery with Embla swipe, thumbnails, RTL direction and optional zoom dialog.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/carousel",
         "MOHKSADAH/mizan-ui/dialog",

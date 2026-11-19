@@ -43,3 +43,11 @@ test("the current thumbnail mark never replaces the focus ring", () => {
   expect(html).not.toMatch(/aria-\[current=true\]:ring-/)
   expect(html).toContain("aria-[current=true]:outline-solid")
 })
+
+test("an image without a src renders the muted placeholder and no zoom button", () => {
+  const html = renderToString(<ProductGallery images={[{ alt: "Front view" }, { alt: "Back view" }]} zoom />)
+  expect(html).toContain("bg-muted")
+  expect(html).toContain('aria-label="Front view"')
+  expect(html).not.toContain("<img")
+  expect(html).not.toContain("Zoom in")
+})
