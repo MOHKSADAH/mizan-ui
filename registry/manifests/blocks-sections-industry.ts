@@ -46,4 +46,22 @@ export const sectionsIndustryBlocks: ManifestItem[] = [
     badge: 'new',
     files: ['registry/blocks/case-study/case-study-01.tsx'],
   },
+  {
+    name: 'team-01',
+    type: 'registry:block',
+    family: 'team',
+    title: 'Team 01',
+    description: 'Team or instructor grid with a photo slot, name, role, optional bio and social links.',
+    badge: 'new',
+    files: ['registry/blocks/team/team-01.tsx'],
+  },
+  {
+    name: 'team-02',
+    type: 'registry:block',
+    family: 'team',
+    title: 'Team 02',
+    description: 'Compact two-column team list with a round avatar, name, role and optional social links.',
+    badge: 'new',
+    files: ['registry/blocks/team/team-02.tsx'],
+  },
 ];
