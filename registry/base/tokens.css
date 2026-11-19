@@ -17,6 +17,8 @@
   --shadow-x: 0px;
   --shadow-y: 1px;
   --tracking-normal: 0em;
+  --tracking-heading: var(--tracking-normal);
+  --font-weight-strong: 700;
 
   /* Real families first: next/font's metric fallbacks cover every code point and would draw Arabic in Arial. */
   --font-body: "Geist", "IBM Plex Sans Arabic", var(--font-geist), var(--font-plex-arabic), system-ui, sans-serif;
@@ -69,4 +71,50 @@
   --shadow-tint: color-mix(in oklab, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent);
   --shadow-tint-half: color-mix(in oklab, var(--shadow-color) calc(var(--shadow-opacity) * 50%), transparent);
   --shadow-tint-strong: color-mix(in oklab, var(--shadow-color) min(100%, calc(var(--shadow-opacity) * 250%)), transparent);
+}
+
+@layer base {
+  /* Headings use the display font. One rule here covers every block, so no block repeats font-heading. */
+  :where(h1, h2, h3, h4, h5, h6, [data-slot='card-title'], [data-slot$='dialog-title'], [data-slot='sheet-title'], [data-slot='drawer-title'], [data-slot='empty-title']) {
+    font-family: var(--font-display);
+    letter-spacing: var(--tracking-heading);
+    font-synthesis-weight: none;
+  }
+  /* Headline contrast: write the heading in font-normal and wrap the key words in <strong> for a real bold. */
+  :where(h1, h2, h3, h4, h5, h6, [data-slot='card-title'], [data-slot$='dialog-title'], [data-slot='sheet-title'], [data-slot='drawer-title'], [data-slot='empty-title']) :where(strong, b) {
+    font-weight: var(--font-weight-strong);
+  }
+
+  /*
+   * Arabic. :lang(ar) follows the script, so Arabic inside an English page counts; [dir=rtl] would also catch
+   * Hebrew and Latin text in a mirrored layout. Arabic letters join, so any letter spacing breaks them.
+   * Only the root and elements with their own lang attribute are set, so descendants inherit and keep their own utilities.
+   * Line heights are set through Tailwind's size variables because text-* utilities always set line-height.
+   */
+  :is(:root, [lang]):lang(ar) {
+    --text-xs--line-height: 1.7;
+    --text-sm--line-height: 1.7;
+    --text-base--line-height: 1.7;
+    --text-lg--line-height: 1.7;
+    --text-xl--line-height: 1.7;
+    --text-2xl--line-height: 1.3;
+    --text-3xl--line-height: 1.3;
+    --text-4xl--line-height: 1.3;
+    --text-5xl--line-height: 1.3;
+    --text-6xl--line-height: 1.3;
+    --text-7xl--line-height: 1.3;
+    --text-8xl--line-height: 1.3;
+    --text-9xl--line-height: 1.3;
+    letter-spacing: 0;
+    line-height: 1.7;
+  }
+  :where(h1, h2, h3, h4, h5, h6, [data-slot='card-title'], [data-slot$='dialog-title'], [data-slot='sheet-title'], [data-slot='drawer-title'], [data-slot='empty-title']):lang(ar) {
+    --tw-leading: 1.3;
+    line-height: 1.3;
+  }
+}
+
+/* Outside any layer on purpose: it beats tracking-* utilities, so an Arabic heading never gets letter spacing. */
+:where(h1, h2, h3, h4, h5, h6, [data-slot='card-title'], [data-slot$='dialog-title'], [data-slot='sheet-title'], [data-slot='drawer-title'], [data-slot='empty-title']):lang(ar) {
+  letter-spacing: 0;
 }

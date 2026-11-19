@@ -1,5 +1,6 @@
 import { manifest, type ManifestItem } from '../registry/manifest';
 import { gitConfig } from '../lib/shared';
+import { DENSITY, directionFonts, directions, fontStack } from '../lib/directions';
 import themeIndex from '../lib/themes/index.json';
 import themeTokens from '../lib/themes/tokens.json';
 
@@ -66,6 +67,31 @@ if (import.meta.main) {
           type: 'registry:theme',
           title: `${name} theme`,
           cssVars: { light: { ...(radius && { radius }), ...light }, dark },
+        };
+      }),
+      ...directions.map((d) => {
+        const used = [...new Set([d.display, d.body].flatMap((p) => [p.latin, p.arabic]).concat(d.code))].map((id) => directionFonts[id]);
+        const family = (f: { family: string }) => `"${f.family}"`;
+        return {
+          name: `direction-${d.id}`,
+          type: 'registry:theme',
+          title: `${d.name.en} direction`,
+          description: `Theme ${d.theme}, fonts, radius and spacing, with the fonts installed from Fontsource.`,
+          dependencies: used.map((f) => `${f.package}@^5`),
+          registryDependencies: [address(`theme-${d.theme}`)],
+          css: Object.fromEntries(used.flatMap((f) => f.imports).map((i) => [`@import "${i}"`, {}])),
+          cssVars: {
+            theme: { 'font-sans': 'var(--font-body)', 'font-heading': 'var(--font-display)', 'font-mono': 'var(--font-code)' },
+            light: {
+              'font-body': fontStack(d.body, family),
+              'font-display': fontStack(d.display, family),
+              'font-code': fontStack({ latin: d.code, arabic: d.code }, family),
+              'tracking-heading': d.tracking,
+              radius: d.radius,
+              spacing: `${DENSITY[d.density]}rem`,
+            },
+            dark: {},
+          },
         };
       }),
     ],
