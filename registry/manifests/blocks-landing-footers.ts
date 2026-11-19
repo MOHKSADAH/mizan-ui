@@ -16,4 +16,5 @@ export const landingFooterBlocks: ManifestItem[] = [
   block('footer', '07', 'Footer 07', 'Call-to-action band joined on top of a compact sitemap and legal row.'),
   block('cta', '05', 'CTA 05', 'Split call to action: a short headline, a benefit list and a phone mock built from registry components.'),
   block('cta', '06', 'CTA 06', 'Minimal display call to action: one large headline with weight contrast and one button on a tinted surface.'),
+  block('newsletter', '01', 'Newsletter 01', 'Newsletter signup with an email field, a consent line and a list of the last three issues.'),
 ];

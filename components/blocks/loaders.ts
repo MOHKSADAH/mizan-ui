@@ -83,5 +83,6 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'footer-07': () => import('@/registry/blocks/footer/footer-07'),
   'cta-05': () => import('@/registry/blocks/cta/cta-05'),
   'cta-06': () => import('@/registry/blocks/cta/cta-06'),
+  'newsletter-01': () => import('@/registry/blocks/newsletter/newsletter-01'),
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
 };
