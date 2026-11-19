@@ -5023,6 +5023,31 @@
       ]
     },
     {
+      "name": "agent-plan-01",
+      "type": "registry:block",
+      "title": "Agent plan 01",
+      "description": "A task the agent is working on: source apps, a checklist of steps with status and a value each, an estimate and a Stop button.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/run-status",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/step-list"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/agent-plan/agent-plan-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
