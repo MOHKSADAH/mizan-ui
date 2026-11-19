@@ -7,6 +7,7 @@ import { gulfItems } from './manifests/gulf';
 import { inputsItems } from './manifests/inputs';
 import { pageItems } from './manifests/pages';
 import { storefrontProductItems } from './manifests/storefront-product';
+import { storefrontItems } from './manifests/storefront';
 
 export type Category = 'forms' | 'data-display' | 'overlays' | 'navigation' | 'feedback' | 'layout' | 'commerce' | 'ascii';
 
@@ -61,6 +62,7 @@ export const uiItems: ManifestItem[] = [
   ...asciiItems,
   ...inputsItems,
   ...storefrontProductItems,
+  ...storefrontItems,
 ];
 
 export const manifest: ManifestItem[] = [
