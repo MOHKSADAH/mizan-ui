@@ -4964,6 +4964,96 @@
       ]
     },
     {
+      "name": "hero-09",
+      "type": "registry:block",
+      "title": "Hero 09",
+      "description": "Product hero with a pill eyebrow that holds a stat, CTAs, logo pills and a real dashboard overlapping a phone storefront that bleeds off the inline-end edge.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/product-card",
+        "MOHKSADAH/mizan-ui/progress",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/stat-card",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/hero/hero-09.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "hero-10",
+      "type": "registry:block",
+      "title": "Hero 10",
+      "description": "Editorial hero with a very large headline in mixed weights, a lead image on a warm card that follows the image ratio, and an author, category and date row.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/hero/hero-10.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "hero-11",
+      "type": "registry:block",
+      "title": "Hero 11",
+      "description": "Full-bleed photo hero with the text on a solid panel, two CTAs and a short facts row for tourism and real estate.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/hero/hero-11.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "hero-12",
+      "type": "registry:block",
+      "title": "Hero 12",
+      "description": "Concept hero with one giant display word, a value line, two CTAs and a row of tilted cards that mirror in RTL.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/hero/hero-12.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
