@@ -4970,6 +4970,245 @@
       ]
     },
     {
+      "name": "editorial-01",
+      "type": "registry:block",
+      "title": "Editorial 01",
+      "description": "One large lead story with image, title and a meta line (colored author, program, date), beside a list of smaller rows.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/editorial/editorial-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "editorial-02",
+      "type": "registry:block",
+      "title": "Editorial 02",
+      "description": "Numbered editorial list with large numerals, a title and a one-line summary on each row.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/editorial/editorial-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "feature-switcher-01",
+      "type": "registry:block",
+      "title": "Feature switcher 01",
+      "description": "Numbered feature rows on one side; the selected row swaps one large media panel on the other side (tabs pattern).",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/bubble",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/stat-card",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/stock-indicator",
+        "MOHKSADAH/mizan-ui/tabs",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/feature-switcher/feature-switcher-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "feature-switcher-02",
+      "type": "registry:block",
+      "title": "Feature switcher 02",
+      "description": "Horizontal tabs above a wide media panel with a caption, for product tours.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar-group",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/order-stepper",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/stat-card",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/feature-switcher/feature-switcher-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "bento-01",
+      "type": "registry:block",
+      "title": "Bento 01",
+      "description": "Five unequal light tiles that hold real mini-UI: an order list, a sales stat, a team, a chat and a city breakdown.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar-group",
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/bubble",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/progress",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/stat-card",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/bento/bento-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "bento-02",
+      "type": "registry:block",
+      "title": "Bento 02",
+      "description": "Five tiles on three columns with a dark inverse tile and a primary tile, holding revenue, chat, stat, status and goal mini-UI.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/avatar-group",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/bubble",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/progress",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/sparkline",
+        "MOHKSADAH/mizan-ui/stat-card",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/bento/bento-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "bento-03",
+      "type": "registry:block",
+      "title": "Bento 03",
+      "description": "Four tiles on four columns (tall, wide, tall, wide) with stock, stat cards, a chat and order tracking.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/bubble",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/order-stepper",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/stat-card",
+        "MOHKSADAH/mizan-ui/stock-indicator",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/bento/bento-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "how-it-works-01",
+      "type": "registry:block",
+      "title": "How it works 01",
+      "description": "Three to four steps with large numerals and a connecting rule that follows the reading direction.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/how-it-works/how-it-works-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "how-it-works-02",
+      "type": "registry:block",
+      "title": "How it works 02",
+      "description": "Vertical timeline of steps beside a heading column that stays sticky on large screens.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/how-it-works/how-it-works-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-05",
+      "type": "registry:block",
+      "title": "Testimonials 05",
+      "description": "One large quote with name, role, company and city, an optional photo, and a row of other customers.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/testimonials/testimonials-05.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "hero-09",
       "type": "registry:block",
       "title": "Hero 09",
