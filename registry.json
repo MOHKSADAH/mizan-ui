@@ -2977,6 +2977,26 @@
       ]
     },
     {
+      "name": "product-card",
+      "type": "registry:ui",
+      "title": "Product Card",
+      "description": "Composable product card: media with badges and action slot, title link, vendor, price with compare-at, swatches, vertical or list.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/product-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
       "name": "navbar-01",
       "type": "registry:block",
       "title": "Navbar 01",
