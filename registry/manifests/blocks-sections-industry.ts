@@ -37,4 +37,13 @@ export const sectionsIndustryBlocks: ManifestItem[] = [
     badge: 'new',
     files: ['registry/blocks/services/services-02.tsx'],
   },
+  {
+    name: 'case-study-01',
+    type: 'registry:block',
+    family: 'case-study',
+    title: 'Case study 01',
+    description: 'Selected-work showcase: a wide image, client, title, summary, a bordered strip of result numbers and a link.',
+    badge: 'new',
+    files: ['registry/blocks/case-study/case-study-01.tsx'],
+  },
 ];

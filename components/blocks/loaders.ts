@@ -120,6 +120,7 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'project-grid-02': () => import('@/registry/blocks/project-grid/project-grid-02'),
   'services-01': () => import('@/registry/blocks/services/services-01'),
   'services-02': () => import('@/registry/blocks/services/services-02'),
+  'case-study-01': () => import('@/registry/blocks/case-study/case-study-01'),
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
   'agents-dashboard-page-01': () => import('@/registry/pages/agents-dashboard-page/agents-dashboard-page-01'),
   'chat-page-01': () => import('@/registry/pages/chat-page/chat-page-01'),

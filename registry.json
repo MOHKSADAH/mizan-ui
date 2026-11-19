@@ -6234,6 +6234,28 @@
       ]
     },
     {
+      "name": "case-study-01",
+      "type": "registry:block",
+      "title": "Case study 01",
+      "description": "Selected-work showcase: a wide image, client, title, summary, a bordered strip of result numbers and a link.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/case-study/case-study-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
