@@ -1,5 +1,6 @@
 import { expect, test } from 'bun:test';
 import { renderToString } from 'react-dom/server';
+import PortfolioPage01, { demo as pf01 } from './portfolio-page/portfolio-page-01';
 import RealEstatePage01, { demo as re01 } from './real-estate-page/real-estate-page-01';
 import TourismPage01, { demo as tr01 } from './tourism-page/tourism-page-01';
 
@@ -37,3 +38,17 @@ test('tourism-page-01 renders Arabic with experience durations in hours', () => 
   expect(html).not.toContain('<img');
 });
 
+test('portfolio-page-01 has every section the navbar links point to', () => {
+  const html = renderToString(<PortfolioPage01 {...pf01.en} />);
+  expect(html).toContain('<main id="main-content"');
+  for (const id of navIds(pf01.en.navbar.links)) expect(html).toContain(`id="${id}"`);
+  expect(html).toContain('id="contact"');
+  expect(html).toContain('Your brand identity in six weeks');
+});
+
+test('portfolio-page-01 renders Arabic with the package prices and no images', () => {
+  const html = renderToString(<PortfolioPage01 {...pf01.ar} />);
+  expect(html).toContain('هوية علامتك تُسلَّم في ستة أسابيع، لا في ستة أشهر');
+  expect(html).toContain('هوية كاملة · 22,000 ريال');
+  expect(html).not.toContain('<img');
+});

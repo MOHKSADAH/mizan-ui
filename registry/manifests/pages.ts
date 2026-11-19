@@ -76,6 +76,16 @@ export const pageItems: ManifestItem[] = [
     files: ['registry/pages/tourism-page/tourism-page-01.tsx'],
   },
   {
+    name: 'portfolio-page-01',
+    type: 'registry:block',
+    family: 'portfolio-page',
+    kind: 'page',
+    badge: 'new',
+    title: 'Portfolio page 01',
+    description: 'Designer portfolio: split hero, number strip, a full case study, work cards, fixed-price packages, one client quote, journal articles, tabbed answers and the brief form.',
+    files: ['registry/pages/portfolio-page/portfolio-page-01.tsx'],
+  },
+  {
     name: 'store-home-page-01',
     type: 'registry:block',
     family: 'store-home-page',

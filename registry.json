@@ -6769,6 +6769,36 @@
       ]
     },
     {
+      "name": "portfolio-page-01",
+      "type": "registry:block",
+      "title": "Portfolio page 01",
+      "description": "Designer portfolio: split hero, number strip, a full case study, work cards, fixed-price packages, one client quote, journal articles, tabbed answers and the brief form.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/case-study-01",
+        "MOHKSADAH/mizan-ui/contact-01",
+        "MOHKSADAH/mizan-ui/editorial-01",
+        "MOHKSADAH/mizan-ui/faq-03",
+        "MOHKSADAH/mizan-ui/footer-06",
+        "MOHKSADAH/mizan-ui/hero-02",
+        "MOHKSADAH/mizan-ui/navbar-02",
+        "MOHKSADAH/mizan-ui/project-grid-01",
+        "MOHKSADAH/mizan-ui/services-01",
+        "MOHKSADAH/mizan-ui/stats-04",
+        "MOHKSADAH/mizan-ui/testimonials-05",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/whatsapp"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/portfolio-page/portfolio-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "store-home-page-01",
       "type": "registry:block",
       "title": "Store home page 01",
