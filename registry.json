@@ -6642,6 +6642,31 @@
       ]
     },
     {
+      "name": "agency-page-01",
+      "type": "registry:block",
+      "title": "Agency page 01",
+      "description": "Studio landing page: a concept hero, client line, numbered services, a wide case study, a process, a stat strip, one quote, a brief form and a wordmark footer.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/case-study-01",
+        "MOHKSADAH/mizan-ui/contact-01",
+        "MOHKSADAH/mizan-ui/footer-06",
+        "MOHKSADAH/mizan-ui/hero-12",
+        "MOHKSADAH/mizan-ui/how-it-works-02",
+        "MOHKSADAH/mizan-ui/logo-cloud-01",
+        "MOHKSADAH/mizan-ui/navbar-02",
+        "MOHKSADAH/mizan-ui/services-01",
+        "MOHKSADAH/mizan-ui/stats-05",
+        "MOHKSADAH/mizan-ui/testimonials-05",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/agency-page/agency-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "agents-dashboard-page-01",
       "type": "registry:block",
       "title": "Agents dashboard page 01",

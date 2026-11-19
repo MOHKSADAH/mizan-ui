@@ -1,5 +1,6 @@
 import { expect, test } from 'bun:test';
 import { renderToString } from 'react-dom/server';
+import AgencyPage01, { demo as agency } from './agency-page/agency-page-01';
 import FintechPage01, { demo as fintech } from './fintech-page/fintech-page-01';
 import SaasPage01, { demo as saas } from './saas-page/saas-page-01';
 
@@ -62,3 +63,25 @@ test('fintech-page-01 renders Arabic page copy', () => {
   }
 });
 
+test('agency-page-01 composes its sections and uses the studio name as the h1', () => {
+  const html = renderToString(<AgencyPage01 {...agency.en} />);
+  expect(html).toContain('<main id="main-content"');
+  ids(html, ['services', 'work', 'process', 'contact']);
+  expect(html).toMatch(/<h1[^>]*>Nabd<\/h1>/);
+  for (const text of [
+    'Four services, and one team accountable for the result',
+    'A project we are proud of',
+    'From the idea to the first user in four stages',
+    'Nabd in numbers',
+    'Tell us your idea',
+  ]) {
+    expect(html).toContain(text);
+  }
+});
+
+test('agency-page-01 renders Arabic page copy', () => {
+  const html = renderToString(<AgencyPage01 {...agency.ar} />);
+  for (const text of ['أربع خدمات، وفريق واحد مسؤول عن النتيجة', 'مشروع نفخر به', 'نبض بالأرقام', 'احكِ لنا فكرتك']) {
+    expect(html).toContain(text);
+  }
+});

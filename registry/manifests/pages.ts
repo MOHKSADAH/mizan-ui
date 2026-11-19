@@ -33,6 +33,16 @@ export const pageItems: ManifestItem[] = [
     description: 'Financing landing page: an account-card hero, alternating product rows, an installment calculator, partner boxes, a trust list, app download, FAQ and a footer with the central bank licence line.',
     files: ['registry/pages/fintech-page/fintech-page-01.tsx'],
   },
+  {
+    name: 'agency-page-01',
+    type: 'registry:block',
+    family: 'agency-page',
+    kind: 'page',
+    badge: 'new',
+    title: 'Agency page 01',
+    description: 'Studio landing page: a concept hero, client line, numbered services, a wide case study, a process, a stat strip, one quote, a brief form and a wordmark footer.',
+    files: ['registry/pages/agency-page/agency-page-01.tsx'],
+  },
   ...agentPages,
   ...aiChatPages,
   {

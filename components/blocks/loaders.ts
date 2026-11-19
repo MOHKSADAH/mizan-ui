@@ -137,6 +137,7 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
   'saas-page-01': () => import('@/registry/pages/saas-page/saas-page-01'),
   'fintech-page-01': () => import('@/registry/pages/fintech-page/fintech-page-01'),
+  'agency-page-01': () => import('@/registry/pages/agency-page/agency-page-01'),
   'agents-dashboard-page-01': () => import('@/registry/pages/agents-dashboard-page/agents-dashboard-page-01'),
   'chat-page-01': () => import('@/registry/pages/chat-page/chat-page-01'),
   'checkout-page-01': () => import('@/registry/pages/checkout-page/checkout-page-01'),
