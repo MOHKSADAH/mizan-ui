@@ -5067,6 +5067,7 @@
         "MOHKSADAH/mizan-ui/badge",
         "MOHKSADAH/mizan-ui/block-types",
         "MOHKSADAH/mizan-ui/bubble",
+        "MOHKSADAH/mizan-ui/card",
         "MOHKSADAH/mizan-ui/container",
         "MOHKSADAH/mizan-ui/price",
         "MOHKSADAH/mizan-ui/progress",
@@ -5095,6 +5096,7 @@
         "MOHKSADAH/mizan-ui/avatar-group",
         "MOHKSADAH/mizan-ui/block-types",
         "MOHKSADAH/mizan-ui/bubble",
+        "MOHKSADAH/mizan-ui/card",
         "MOHKSADAH/mizan-ui/container",
         "MOHKSADAH/mizan-ui/format",
         "MOHKSADAH/mizan-ui/price",
@@ -5120,6 +5122,7 @@
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/block-types",
         "MOHKSADAH/mizan-ui/bubble",
+        "MOHKSADAH/mizan-ui/card",
         "MOHKSADAH/mizan-ui/container",
         "MOHKSADAH/mizan-ui/order-stepper",
         "MOHKSADAH/mizan-ui/price",
@@ -5188,6 +5191,7 @@
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/avatar",
         "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
         "MOHKSADAH/mizan-ui/container",
         "MOHKSADAH/mizan-ui/section"
       ],

@@ -10,7 +10,9 @@ const h1 = (html: string) => html.match(/<h1[ >]/g)?.length ?? 0;
 test('editorial-01 renders a lead and one row per item in English', () => {
   const html = renderToString(<Editorial01 {...Editorial01Demo.en} />);
   expect(html).toContain('How a Jeddah perfume store doubled its sales');
-  expect(html).toContain('font-normal');
+  expect(html).not.toContain('font-normal');
+  expect(html).not.toContain('<img');
+  expect(html.match(/bg-muted/g)?.length).toBeGreaterThanOrEqual(1 + Editorial01Demo.en.items.length);
   expect(h1(html)).toBe(0);
   expect(html.match(/<article/g)?.length).toBe(1 + Editorial01Demo.en.items.length);
   expect(html).toContain('Reem Al-Ghamdi');
@@ -23,6 +25,13 @@ test('editorial-01 renders in Arabic with the author as a colored meta line', ()
   expect(html).toContain('text-primary">ريم الغامدي');
   expect(html).toContain('rtl:rotate-180');
   expect(h1(html)).toBe(0);
+});
+
+test('editorial-01 shows the photo when an image has a src', () => {
+  const image = { src: '/lead.jpg', alt: 'Lead photo', width: 400, height: 300 };
+  const html = renderToString(<Editorial01 {...Editorial01Demo.en} lead={{ ...Editorial01Demo.en.lead, image }} />);
+  expect(html).toContain('src="/lead.jpg"');
+  expect(html.match(/<img/g)?.length).toBe(1);
 });
 
 test('editorial-02 numbers each row with two digits', () => {

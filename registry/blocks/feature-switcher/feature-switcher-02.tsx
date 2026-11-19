@@ -45,9 +45,9 @@ function FeatureSwitcher02({ eyebrow, title, description, tabs, defaultTab, head
           </div>
           {tabs.map((tab) => (
             <TabsContent key={tab.id} value={tab.id} className="flex flex-col gap-6">
-              <div className="min-h-[24rem] rounded-2xl border bg-muted p-4 sm:p-6 lg:p-10">{tab.media}</div>
+              <div className="min-h-[24rem] rounded-xl border bg-muted p-4 sm:p-6 lg:p-10">{tab.media}</div>
               <div className="flex max-w-3xl flex-col gap-2">
-                <p className="text-xl font-semibold">{tab.title}</p>
+                <p className="text-lg font-semibold md:text-xl">{tab.title}</p>
                 <p className="text-base text-muted-foreground">{tab.description}</p>
               </div>
             </TabsContent>
@@ -78,13 +78,15 @@ function OrderRows({ lang }: { lang: Lang }) {
   return (
     <ul className="grid gap-2">
       {orders(ar).map((o) => (
-        <li key={o.number} className="flex items-center gap-3 rounded-lg border bg-card p-3 text-sm">
-          <div className="grid min-w-0 flex-1">
-            <span className="truncate font-medium">{o.name}</span>
-            <span className="text-xs text-muted-foreground"><bdi>{o.number}</bdi></span>
-          </div>
-          <Price amount={o.amount} lang={lang} className="font-medium" />
-          <StatusBadge status={o.status} labels={ar ? statusBadgeLabelsAr : undefined} />
+        <li key={o.number}>
+          <Card size="sm" className="flex-row items-center gap-3 px-3 text-sm">
+            <div className="grid min-w-0 flex-1">
+              <span className="truncate font-medium">{o.name}</span>
+              <span className="text-xs text-muted-foreground"><bdi>{o.number}</bdi></span>
+            </div>
+            <Price amount={o.amount} lang={lang} className="font-medium" />
+            <StatusBadge status={o.status} labels={ar ? statusBadgeLabelsAr : undefined} />
+          </Card>
         </li>
       ))}
     </ul>
@@ -170,11 +172,7 @@ const arMedia = tour("ar")
 const demo: { en: FeatureSwitcher02Props; ar: FeatureSwitcher02Props } = {
   en: {
     eyebrow: "Product tour",
-    title: (
-      <>
-        <span>Walk through a normal morning</span> <span className="font-normal">in the dashboard</span>
-      </>
-    ),
+    title: "Walk through a normal morning in the dashboard",
     tabs: [
       { id: "dashboard", label: "Dashboard", title: "Sales before your first coffee", description: "Today's sales, orders and average basket, each compared with yesterday, with the latest orders underneath." },
       { id: "orders", label: "Orders", title: "Every order, one status", description: "Follow an order from payment to the courier. Your customer sees the same steps on the tracking link." },
@@ -183,11 +181,7 @@ const demo: { en: FeatureSwitcher02Props; ar: FeatureSwitcher02Props } = {
   },
   ar: {
     eyebrow: "جولة في المنتج",
-    title: (
-      <>
-        <span>صباح عادي</span> <span className="font-normal">داخل لوحة التحكم</span>
-      </>
-    ),
+    title: "صباح عادي داخل لوحة التحكم",
     tabs: [
       { id: "dashboard", label: "لوحة التحكم", title: "مبيعاتك قبل قهوة الصباح", description: "مبيعات اليوم والطلبات ومتوسط السلة، كلٌّ منها مقارنةً بالأمس، وتحتها آخر الطلبات." },
       { id: "orders", label: "الطلبات", title: "كل طلب، وحالته الواضحة", description: "تابع الطلب من الدفع حتى المندوب، ويرى عميلك الخطوات نفسها في رابط التتبع." },

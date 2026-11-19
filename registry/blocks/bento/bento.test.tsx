@@ -7,7 +7,7 @@ import Bento03, { demo as Bento03Demo } from './bento-03';
 
 const rtl = (node: React.ReactNode) => renderToString(<DirectionProvider direction="rtl">{node}</DirectionProvider>);
 const h1 = (html: string) => html.match(/<h1[ >]/g)?.length ?? 0;
-const tiles = (html: string) => html.match(/<li class="flex flex-col justify-between/g)?.length;
+const tiles = (html: string) => html.match(/data-slot="bento-tile"/g)?.length;
 
 test('bento-01 renders five unequal tiles in English', () => {
   const html = renderToString(<Bento01 {...Bento01Demo.en} />);
@@ -26,10 +26,11 @@ test('bento-01 renders Saudi order data in Arabic', () => {
   expect(h1(html)).toBe(0);
 });
 
-test('bento-02 holds one inverse tile', () => {
+test('bento-02 keeps every tile on a card or muted surface', () => {
   const html = renderToString(<Bento02 {...Bento02Demo.en} />);
   expect(tiles(html)).toBe(5);
-  expect(html.match(/<li class="[^"]*bg-foreground text-background/g)?.length).toBe(1);
+  expect(html).not.toContain('bg-foreground');
+  expect(html).not.toContain('bg-background/');
   expect(h1(html)).toBe(0);
 });
 

@@ -3,6 +3,7 @@ import * as React from "react"
 import type { BlockBase, Lang } from "@/registry/lib/block-types"
 import { cn } from "@/registry/lib/utils"
 import { Bubble, BubbleContent, BubbleGroup } from "@/registry/ui/bubble"
+import { Card, CardContent } from "@/registry/ui/card"
 import { Container } from "@/registry/ui/container"
 import { OrderStepper, orderStepperLabelsAr } from "@/registry/ui/order-stepper"
 import { Price } from "@/registry/ui/price"
@@ -25,7 +26,7 @@ const labelsEn = {}
 const labelsAr = {}
 
 const AREAS = ["lg:row-span-2", "md:col-span-2", "lg:row-span-2", "md:col-span-2"]
-const TONES: Record<BentoTone, string> = { default: "bg-card text-card-foreground ring-1 ring-foreground/10", muted: "bg-muted" }
+const TONES: Record<BentoTone, string> = { default: "", muted: "bg-muted ring-0" }
 
 function Bento03({ eyebrow, title, description, tiles, headingLevel = 2, id, className }: Bento03Props) {
   const uid = React.useId()
@@ -37,12 +38,14 @@ function Bento03({ eyebrow, title, description, tiles, headingLevel = 2, id, cla
         <SectionHeader id={sid} eyebrow={eyebrow} title={title} description={description} headingLevel={headingLevel} />
         <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {tiles.map(({ title: tileTitle, description: tileDescription, visual, tone = "default" }, i) => (
-            <li key={tileTitle} className={cn("flex flex-col justify-between gap-8 overflow-hidden rounded-xl p-6", TONES[tone], AREAS[i])}>
-              <div className="flex flex-1 flex-col justify-center gap-4">{visual}</div>
-              <div className="flex flex-col gap-2">
-                <TileHeading className="text-lg font-semibold">{tileTitle}</TileHeading>
-                <p className="text-base text-muted-foreground">{tileDescription}</p>
-              </div>
+            <li key={tileTitle} className={AREAS[i]}>
+              <Card data-slot="bento-tile" className={cn("h-full justify-between gap-8 md:[--card-spacing:--spacing(6)]", TONES[tone])}>
+                <CardContent className="flex flex-1 flex-col justify-center gap-4">{visual}</CardContent>
+                <CardContent className="flex flex-col gap-2">
+                  <TileHeading className="text-lg font-semibold md:text-xl">{tileTitle}</TileHeading>
+                  <p className="text-base text-muted-foreground">{tileDescription}</p>
+                </CardContent>
+              </Card>
             </li>
           ))}
         </ul>
@@ -145,11 +148,7 @@ const arVisuals = visuals("ar")
 const demo: { en: Bento03Props; ar: Bento03Props } = {
   en: {
     eyebrow: "Daily operations",
-    title: (
-      <>
-        <span>Four things you check</span> <span className="font-normal">before noon</span>
-      </>
-    ),
+    title: "Four things you check before noon",
     description: "Stock, sales, customer messages and deliveries, each on its own tile.",
     tiles: [
       { title: "Stock that warns you", description: "Low items are flagged before they cost you a sale." },
@@ -160,11 +159,7 @@ const demo: { en: Bento03Props; ar: Bento03Props } = {
   },
   ar: {
     eyebrow: "العمليات اليومية",
-    title: (
-      <>
-        <span>أربعة أشياء تتفقدها</span> <span className="font-normal">قبل الظهر</span>
-      </>
-    ),
+    title: "أربعة أشياء تتفقدها قبل الظهر",
     description: "المخزون والمبيعات ورسائل العملاء والتوصيل، كلٌّ في بطاقته.",
     tiles: [
       { title: "مخزون ينبّهك", description: "نشير إلى الأصناف القليلة قبل أن تخسر بسببها عملية بيع." },
