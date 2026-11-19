@@ -1,6 +1,7 @@
 import type { ManifestItem } from '../manifest';
 import { appBlocks } from './blocks-app';
 import { commerceBlocks } from './blocks-commerce';
+import { landingSectionBlocks } from './blocks-landing-sections';
 import { marketingBlocks } from './blocks-marketing';
 import { marketingBlocks2a } from './blocks-marketing-2a';
 import { storefrontProductBlocks } from './blocks-storefront-product';
@@ -13,4 +14,5 @@ export const blockItems: ManifestItem[] = [
   ...commerceBlocks,
   ...storefrontBlocks,
   ...storefrontProductBlocks,
+  ...landingSectionBlocks,
 ];

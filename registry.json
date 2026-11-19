@@ -4964,6 +4964,50 @@
       ]
     },
     {
+      "name": "editorial-01",
+      "type": "registry:block",
+      "title": "Editorial 01",
+      "description": "One large lead story with image, title and a meta line (colored author, program, date), beside a list of smaller rows.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/editorial/editorial-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "editorial-02",
+      "type": "registry:block",
+      "title": "Editorial 02",
+      "description": "Numbered editorial list with large numerals, a title and a one-line summary on each row.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/editorial/editorial-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
