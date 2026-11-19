@@ -1,0 +1,78 @@
+{
+  "fonts": {
+    "geist": { "family": "Geist Variable", "package": "@fontsource-variable/geist", "imports": ["@fontsource-variable/geist"], "variable": "--font-geist", "generic": "sans-serif" },
+    "geist-mono": { "family": "Geist Mono Variable", "package": "@fontsource-variable/geist-mono", "imports": ["@fontsource-variable/geist-mono"], "variable": "--font-geist-mono", "generic": "monospace" },
+    "inter": { "family": "Inter Variable", "package": "@fontsource-variable/inter", "imports": ["@fontsource-variable/inter"], "variable": "--font-inter", "generic": "sans-serif" },
+    "plus-jakarta": { "family": "Plus Jakarta Sans Variable", "package": "@fontsource-variable/plus-jakarta-sans", "imports": ["@fontsource-variable/plus-jakarta-sans"], "variable": "--font-plus-jakarta", "generic": "sans-serif" },
+    "instrument-serif": { "family": "Instrument Serif", "package": "@fontsource/instrument-serif", "imports": ["@fontsource/instrument-serif/400.css"], "variable": "--font-instrument-serif", "generic": "serif" },
+    "cormorant": { "family": "Cormorant Garamond Variable", "package": "@fontsource-variable/cormorant-garamond", "imports": ["@fontsource-variable/cormorant-garamond"], "variable": "--font-cormorant", "generic": "serif" },
+    "plex-arabic": {
+      "family": "IBM Plex Sans Arabic",
+      "package": "@fontsource/ibm-plex-sans-arabic",
+      "imports": ["@fontsource/ibm-plex-sans-arabic/400.css", "@fontsource/ibm-plex-sans-arabic/500.css", "@fontsource/ibm-plex-sans-arabic/600.css", "@fontsource/ibm-plex-sans-arabic/700.css"],
+      "variable": "--font-plex-arabic",
+      "generic": "sans-serif"
+    },
+    "amiri": { "family": "Amiri", "package": "@fontsource/amiri", "imports": ["@fontsource/amiri/400.css", "@fontsource/amiri/700.css"], "variable": "--font-amiri", "generic": "serif" },
+    "alexandria": { "family": "Alexandria Variable", "package": "@fontsource-variable/alexandria", "imports": ["@fontsource-variable/alexandria"], "variable": "--font-alexandria", "generic": "sans-serif" },
+    "reem-kufi": { "family": "Reem Kufi Variable", "package": "@fontsource-variable/reem-kufi", "imports": ["@fontsource-variable/reem-kufi"], "variable": "--font-reem-kufi", "generic": "sans-serif" },
+    "almarai": { "family": "Almarai", "package": "@fontsource/almarai", "imports": ["@fontsource/almarai/400.css", "@fontsource/almarai/700.css"], "variable": "--font-almarai", "generic": "sans-serif" }
+  },
+  "directions": [
+    {
+      "id": "neutral-saas",
+      "name": { "en": "Neutral SaaS", "ar": "SaaS محايد" },
+      "theme": "mizan-base",
+      "display": { "latin": "inter", "arabic": "plex-arabic" },
+      "body": { "latin": "inter", "arabic": "plex-arabic" },
+      "code": "geist-mono",
+      "radius": "0.5rem",
+      "density": "dense",
+      "tracking": "-0.02em"
+    },
+    {
+      "id": "editorial",
+      "name": { "en": "Editorial", "ar": "تحريري" },
+      "theme": "mizan-sand",
+      "display": { "latin": "instrument-serif", "arabic": "amiri" },
+      "body": { "latin": "inter", "arabic": "plex-arabic" },
+      "code": "geist-mono",
+      "radius": "0.875rem",
+      "density": "airy",
+      "tracking": "-0.01em"
+    },
+    {
+      "id": "bold-commerce",
+      "name": { "en": "Bold commerce", "ar": "تجارة جريئة" },
+      "theme": "mizan-souq",
+      "display": { "latin": "plus-jakarta", "arabic": "alexandria" },
+      "body": { "latin": "plus-jakarta", "arabic": "plex-arabic" },
+      "code": "geist-mono",
+      "radius": "1.5rem",
+      "density": "normal",
+      "tracking": "-0.03em"
+    },
+    {
+      "id": "heritage",
+      "name": { "en": "Heritage", "ar": "تراثي" },
+      "theme": "mizan-oasis",
+      "display": { "latin": "cormorant", "arabic": "reem-kufi" },
+      "body": { "latin": "inter", "arabic": "almarai" },
+      "code": "geist-mono",
+      "radius": "0.125rem",
+      "density": "airy",
+      "tracking": "0em"
+    },
+    {
+      "id": "dark-tech",
+      "name": { "en": "Dark tech", "ar": "تقنية داكنة" },
+      "theme": "mizan-noir",
+      "display": { "latin": "geist", "arabic": "plex-arabic" },
+      "body": { "latin": "geist", "arabic": "plex-arabic" },
+      "code": "geist-mono",
+      "radius": "0.375rem",
+      "density": "dense",
+      "tracking": "-0.02em"
+    }
+  ]
+}

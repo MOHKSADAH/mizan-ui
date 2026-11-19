@@ -12,7 +12,7 @@
     "test": "bun test",
     "check:physical": "bun scripts/check-physical-classes.ts",
     "check:blocks": "bun scripts/check-blocks.ts",
-    "registry:generate": "bun scripts/build-themes.ts && bun scripts/build-aa.ts && bun scripts/build-registry.ts && bun scripts/build-blocks-map.ts",
+    "registry:generate": "bun scripts/build-themes.ts && bun scripts/build-directions.ts && bun scripts/build-aa.ts && bun scripts/build-registry.ts && bun scripts/build-blocks-map.ts",
     "build:aa": "bun scripts/build-aa.ts"
   },
   "dependencies": {

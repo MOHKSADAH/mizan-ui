@@ -7,6 +7,7 @@
 @import "../registry/base/tokens.css";
 @import "../registry/base/series.css";
 @import "./fonts.css";
+@import "./directions.css";
 
 @custom-variant dark (&:is(.dark *));
 
