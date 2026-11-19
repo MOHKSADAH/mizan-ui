@@ -1,5 +1,6 @@
 import { Badge } from '@/registry/ui/badge';
 import { Button } from '@/registry/ui/button';
+import { Card, CardContent } from '@/registry/ui/card';
 import {
   ProductCard,
   ProductCardAction,
@@ -56,7 +57,6 @@ export const doc: ExampleDoc = {
   ],
 };
 
-const shop = (n: number) => `/examples/shop-${n}.svg`;
 const t = (lang: ExampleProps['lang'], en: string, ar: string) => (lang === 'ar' ? ar : en);
 
 const colors = (lang: ExampleProps['lang']) => [
@@ -69,7 +69,7 @@ export function Default({ lang }: ExampleProps) {
   return (
     <ProductCard className="w-56">
       <ProductCardMedia>
-        <ProductCardImage src={shop(1)} alt={t(lang, 'Handmade leather tote', 'شنطة جلد يدوية')} />
+        <ProductCardImage alt={t(lang, 'Handmade leather tote', 'شنطة جلد يدوية')} />
         <ProductCardBadges>
           <Badge variant="destructive">{t(lang, '15% off', 'خصم 15%')}</Badge>
         </ProductCardBadges>
@@ -95,21 +95,25 @@ export function Default({ lang }: ExampleProps) {
 
 export function List({ lang }: ExampleProps) {
   return (
-    <ProductCard orientation="horizontal" className="w-full max-w-md rounded-xl border p-3">
-      <ProductCardMedia>
-        <ProductCardImage src={shop(2)} alt={t(lang, 'Cambodian oud oil', 'دهن عود كمبودي')} />
-      </ProductCardMedia>
-      <ProductCardBody>
-        <ProductCardVendor>{t(lang, 'Dar Al Tayeb', 'دار الطيب')}</ProductCardVendor>
-        <ProductCardTitle href="#oud">{t(lang, 'Cambodian oud oil, 12 g', 'دهن عود كمبودي 12 جم')}</ProductCardTitle>
-        <ProductCardPrice amount={520} lang={lang} />
-        <ProductCardFooter>
-          <Button size="lg" className="h-10 flex-1">
-            {t(lang, 'Add to cart', 'أضف للسلة')}
-          </Button>
-        </ProductCardFooter>
-      </ProductCardBody>
-    </ProductCard>
+    <Card size="sm" className="w-full max-w-md">
+      <CardContent>
+        <ProductCard orientation="horizontal">
+          <ProductCardMedia>
+            <ProductCardImage alt={t(lang, 'Cambodian oud oil', 'دهن عود كمبودي')} />
+          </ProductCardMedia>
+          <ProductCardBody>
+            <ProductCardVendor>{t(lang, 'Dar Al Tayeb', 'دار الطيب')}</ProductCardVendor>
+            <ProductCardTitle href="#oud">{t(lang, 'Cambodian oud oil, 12 g', 'دهن عود كمبودي 12 جم')}</ProductCardTitle>
+            <ProductCardPrice amount={520} lang={lang} />
+            <ProductCardFooter>
+              <Button size="lg" className="h-10 flex-1">
+                {t(lang, 'Add to cart', 'أضف للسلة')}
+              </Button>
+            </ProductCardFooter>
+          </ProductCardBody>
+        </ProductCard>
+      </CardContent>
+    </Card>
   );
 }
 
@@ -117,7 +121,7 @@ export function Unavailable({ lang }: ExampleProps) {
   return (
     <ProductCard unavailable className="w-56">
       <ProductCardMedia>
-        <ProductCardImage src={shop(7)} alt={t(lang, 'Embroidered majlis cushion', 'مخدة مجلس مطرزة')} />
+        <ProductCardImage alt={t(lang, 'Embroidered majlis cushion', 'مخدة مجلس مطرزة')} />
         <ProductCardBadges>
           <Badge variant="secondary">{t(lang, 'Out of stock', 'نفدت الكمية')}</Badge>
         </ProductCardBadges>
