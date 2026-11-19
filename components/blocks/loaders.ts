@@ -87,5 +87,6 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'bento-03': () => import('@/registry/blocks/bento/bento-03'),
   'how-it-works-01': () => import('@/registry/blocks/how-it-works/how-it-works-01'),
   'how-it-works-02': () => import('@/registry/blocks/how-it-works/how-it-works-02'),
+  'testimonials-05': () => import('@/registry/blocks/testimonials/testimonials-05'),
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
 };

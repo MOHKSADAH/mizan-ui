@@ -5178,6 +5178,27 @@
       ]
     },
     {
+      "name": "testimonials-05",
+      "type": "registry:block",
+      "title": "Testimonials 05",
+      "description": "One large quote with name, role, company and city, an optional photo, and a row of other customers.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/testimonials/testimonials-05.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",

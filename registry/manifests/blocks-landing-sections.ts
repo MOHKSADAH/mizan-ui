@@ -82,4 +82,13 @@ export const landingSectionBlocks: ManifestItem[] = [
     badge: 'new',
     files: ['registry/blocks/how-it-works/how-it-works-02.tsx'],
   },
+  {
+    name: 'testimonials-05',
+    type: 'registry:block',
+    family: 'testimonials',
+    title: 'Testimonials 05',
+    description: 'One large quote with name, role, company and city, an optional photo, and a row of other customers.',
+    badge: 'new',
+    files: ['registry/blocks/testimonials/testimonials-05.tsx'],
+  },
 ];
