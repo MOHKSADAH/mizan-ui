@@ -5248,6 +5248,34 @@
       ]
     },
     {
+      "name": "agents-dashboard-page-01",
+      "type": "registry:block",
+      "title": "Agents dashboard page 01",
+      "description": "AI agents dashboard in the app shell: live runs, the running plan, agent map, roster, spend, trace, MCP tools and a cost estimate.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/agent-cost-01",
+        "MOHKSADAH/mizan-ui/agent-map-01",
+        "MOHKSADAH/mizan-ui/agent-plan-01",
+        "MOHKSADAH/mizan-ui/agent-roster-01",
+        "MOHKSADAH/mizan-ui/agent-runs-01",
+        "MOHKSADAH/mizan-ui/agent-spend-01",
+        "MOHKSADAH/mizan-ui/agent-tools-01",
+        "MOHKSADAH/mizan-ui/agent-trace-01",
+        "MOHKSADAH/mizan-ui/app-shell-01",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/agents-dashboard-page/agents-dashboard-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

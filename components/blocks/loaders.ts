@@ -87,4 +87,5 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'agent-roster-01': () => import('@/registry/blocks/agent-roster/agent-roster-01'),
   'agent-cost-01': () => import('@/registry/blocks/agent-cost/agent-cost-01'),
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
+  'agents-dashboard-page-01': () => import('@/registry/pages/agents-dashboard-page/agents-dashboard-page-01'),
 };
