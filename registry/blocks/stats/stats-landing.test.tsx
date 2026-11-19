@@ -6,9 +6,10 @@ import Stats05, { demo as Stats05Demo } from './stats-05';
 const rtl = (node: React.ReactNode) => renderToString(<DirectionProvider direction="rtl">{node}</DirectionProvider>);
 const h1 = (html: string) => html.match(/<h1[ >]/g)?.length ?? 0;
 
-test('stats-05 sets the lead number apart and keeps a context sentence per number', () => {
+test('stats-05 sets the lead number one step larger and keeps a context sentence per number', () => {
   const html = renderToString(<Stats05 {...Stats05Demo.en} />);
-  expect(html).toContain('lg:text-[11rem]');
+  expect(html.match(/text-5xl/g)?.length).toBe(1);
+  expect(html.match(/tabular-nums text-4xl/g)?.length).toBe(3);
   expect(html).toContain('<dl');
   expect(html).toContain('The median across chat and WhatsApp.');
   expect(h1(html)).toBe(0);

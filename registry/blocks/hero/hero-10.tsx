@@ -1,5 +1,5 @@
 import * as React from "react"
-import { ArrowRightIcon } from "@phosphor-icons/react/ssr"
+import { ArrowRightIcon, ImageIcon } from "@phosphor-icons/react/ssr"
 
 import type { Action, BlockBase, Lang, Media } from "@/registry/lib/block-types"
 import { formatDate } from "@/registry/lib/format"
@@ -14,14 +14,12 @@ type Hero10Labels = { by: string; in: string }
 type Hero10Props = Omit<BlockBase, "headingLevel"> & {
   headingLevel?: 1 | 2 | 3
   lang?: Lang
-  // A pill above the title, for example an issue number or a section name.
   eyebrow?: React.ReactNode
-  // Mix weights with <strong>: the heading is font-normal, so the strong part stands out.
-  title: React.ReactNode
+  title: string
   description?: string
   cta: Action
-  // The frame follows the image width and height, so any ratio works.
-  media: Media
+  // Without a src the box shows the placeholder. The frame follows the width and height.
+  media: Omit<Media, "src"> & { src?: string }
   meta: { author: string; category: string; date: Date }
   labels?: Partial<Hero10Labels>
 }
@@ -50,54 +48,46 @@ function Hero10({
   const Heading = `h${headingLevel}` as const
   return (
     <Section id={sid} spacing="hero" className={className}>
-      <Container className="flex flex-col gap-10 md:gap-14">
+      <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div className="flex flex-col items-start gap-6">
-          {eyebrow ? (
-            <p className="inline-flex items-center gap-2 rounded-full border bg-card px-4 py-1.5 text-sm font-medium">
-              {eyebrow}
-            </p>
-          ) : null}
-          <Heading
-            id={`${sid}-heading`}
-            className="max-w-4xl text-5xl font-normal text-balance sm:text-6xl md:text-7xl lg:text-8xl"
-          >
+          {eyebrow ? <p className="text-sm font-medium text-primary">{eyebrow}</p> : null}
+          <Heading id={`${sid}-heading`} className="text-4xl font-semibold text-balance md:text-5xl lg:text-6xl">
             {title}
           </Heading>
+          {description ? <p className="max-w-xl text-lg text-muted-foreground md:text-xl">{description}</p> : null}
+          <a href={cta.href} {...external(cta)} className={cn(buttonVariants(), "h-12 px-6 text-base")}>
+            {cta.label}
+            <ArrowRightIcon aria-hidden="true" weight="bold" className="rtl:rotate-180" />
+          </a>
+          <p className="flex flex-wrap items-center gap-x-3 gap-y-2 border-t pt-6 text-sm text-muted-foreground">
+            <span className="flex items-center gap-2">
+              <Avatar size="sm">
+                <AvatarFallback>{meta.author.charAt(0)}</AvatarFallback>
+              </Avatar>
+              <span>{t.by}</span>
+              <span className="font-medium text-foreground">{meta.author}</span>
+            </span>
+            <span aria-hidden="true" className="hidden sm:inline">·</span>
+            <span>
+              {t.in} <span className="font-medium text-foreground">{meta.category}</span>
+            </span>
+            <span aria-hidden="true" className="hidden sm:inline">·</span>
+            <time dateTime={meta.date.toISOString().slice(0, 10)}>
+              <bdi>{formatDate(meta.date, { lang }, { dateStyle: "long" })}</bdi>
+            </time>
+          </p>
         </div>
-        <div className="grid items-end gap-8 lg:grid-cols-12 lg:gap-10">
-          <div className="flex flex-col items-start gap-6 lg:col-span-5">
-            {description ? <p className="text-lg text-muted-foreground md:text-xl">{description}</p> : null}
-            <a href={cta.href} {...external(cta)} className={cn(buttonVariants(), "h-12 px-6 text-base")}>
-              {cta.label}
-              <ArrowRightIcon aria-hidden="true" weight="bold" className="rtl:rotate-180" />
-            </a>
-            <p className="flex flex-wrap items-center gap-x-3 gap-y-2 border-t pt-6 text-sm text-muted-foreground">
-              <span className="flex items-center gap-2">
-                <Avatar size="sm">
-                  <AvatarFallback>{meta.author.charAt(0)}</AvatarFallback>
-                </Avatar>
-                <span>{t.by}</span>
-                <span className="font-medium text-primary">{meta.author}</span>
-              </span>
-              <span aria-hidden="true" className="hidden sm:inline">·</span>
-              <span>
-                {t.in} <span className="font-medium text-foreground">{meta.category}</span>
-              </span>
-              <span aria-hidden="true" className="hidden sm:inline">·</span>
-              <time dateTime={meta.date.toISOString().slice(0, 10)}>
-                <bdi>{formatDate(meta.date, { lang }, { dateStyle: "long" })}</bdi>
-              </time>
-            </p>
-          </div>
-          <div className="rounded-3xl bg-muted p-3 md:p-4 lg:col-span-7">
-            <img
-              src={media.src}
-              alt={media.alt}
-              width={media.width}
-              height={media.height}
-              className="h-auto w-full rounded-2xl object-cover"
-            />
-          </div>
+        <div
+          style={{ aspectRatio: `${media.width} / ${media.height}` }}
+          className="w-full overflow-hidden rounded-xl border bg-muted"
+        >
+          {media.src ? (
+            <img src={media.src} alt={media.alt} width={media.width} height={media.height} className="size-full object-cover" />
+          ) : (
+            <div aria-hidden="true" className="flex size-full items-center justify-center text-muted-foreground">
+              <ImageIcon aria-hidden="true" weight="duotone" className="size-16" />
+            </div>
+          )}
         </div>
       </Container>
     </Section>
@@ -108,29 +98,21 @@ const demo: { en: Hero10Props; ar: Hero10Props } = {
   en: {
     lang: "en",
     eyebrow: "Issue 24 · Culture and cities",
-    title: (
-      <>
-        <strong>Riyadh</strong> as you have not read it before
-      </>
-    ),
+    title: "Riyadh as you have not read it before",
     description:
       "A long read on the old quarters of the city and how life changes there, between small cafes, bookshops and mud-brick walls.",
     cta: { label: "Read the story", href: "#story" },
-    media: { src: "/examples/editorial.svg", alt: "A mud-brick wall with an arched door and a palm tree at sunset", width: 800, height: 600 },
+    media: { alt: "The old quarter of Riyadh", width: 4, height: 3 },
     meta: { author: "Reem Al-Dosari", category: "Culture and cities", date: new Date("2026-11-18T09:00:00Z") },
     labels: labelsEn,
   },
   ar: {
     lang: "ar",
     eyebrow: "العدد 24 · ثقافة وعمران",
-    title: (
-      <>
-        <strong>الرياض</strong> كما لم تقرأها من قبل
-      </>
-    ),
+    title: "الرياض كما لم تقرأها من قبل",
     description: "قراءة مطوّلة في أحياء المدينة القديمة، وكيف تتبدّل الحياة فيها بين المقاهي الصغيرة والمكتبات والجدران الطينية.",
     cta: { label: "اقرأ الحكاية", href: "#story" },
-    media: { src: "/examples/editorial.svg", alt: "جدار طيني بباب مقوّس ونخلة عند الغروب", width: 800, height: 600 },
+    media: { alt: "حي الرياض القديم", width: 4, height: 3 },
     meta: { author: "ريم الدوسري", category: "ثقافة وعمران", date: new Date("2026-11-18T09:00:00Z") },
     labels: labelsAr,
   },

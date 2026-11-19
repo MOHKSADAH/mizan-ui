@@ -1,10 +1,11 @@
 import * as React from "react"
-import { CheckCircleIcon, ShoppingCartSimpleIcon, StorefrontIcon } from "@phosphor-icons/react/ssr"
+import { ImageIcon, StorefrontIcon } from "@phosphor-icons/react/ssr"
 
 import type { Action, BlockBase, Lang } from "@/registry/lib/block-types"
 import { formatPercent } from "@/registry/lib/format"
 import { cn } from "@/registry/lib/utils"
 import { buttonVariants } from "@/registry/ui/button"
+import { Card } from "@/registry/ui/card"
 import { Container } from "@/registry/ui/container"
 import { Price } from "@/registry/ui/price"
 import {
@@ -22,7 +23,8 @@ import { StatCard, statCardLabelsAr } from "@/registry/ui/stat-card"
 import { StatusBadge, statusBadgeLabelsAr, type OrderStatus } from "@/registry/ui/status-badge"
 
 type Order = { id: string; customer: string; amount: number; status: OrderStatus; when: string }
-type Product = { name: string; price: number; compareAt?: number; image: string }
+// Without an image the product shows the placeholder.
+type Product = { name: string; price: number; compareAt?: number; image?: string }
 
 type Hero09Labels = {
   preview: string
@@ -38,10 +40,8 @@ type Hero09Labels = {
 type Hero09Props = Omit<BlockBase, "headingLevel"> & {
   headingLevel?: 1 | 2 | 3
   lang?: Lang
-  // A pill above the title. It can hold a stat, for example an icon, a bold number and a short sentence.
   eyebrow?: React.ReactNode
-  // Mix weights with <strong>: the heading is font-normal, so the strong part stands out.
-  title: React.ReactNode
+  title: string
   description?: string
   primaryCta: Action
   secondaryCta?: Action
@@ -51,8 +51,6 @@ type Hero09Props = Omit<BlockBase, "headingLevel"> & {
     sales: { amount: number; delta: number; spark?: number[] }
     orders: { value: number; delta: number }
     goal: { current: number; target: number }
-    // Bar heights in percent. The bars sit at the inline-end of the dashboard and are clipped with it.
-    chart: number[]
     recent: Order[]
   }
   store: { name: string; products: Product[] }
@@ -60,7 +58,7 @@ type Hero09Props = Omit<BlockBase, "headingLevel"> & {
 }
 
 const labelsEn: Hero09Labels = {
-  preview: "Preview of the Rafid dashboard and a store on a phone",
+  preview: "Preview of the Rafid dashboard and a store",
   sales: "Sales",
   orders: "Orders",
   goal: "Monthly goal",
@@ -71,7 +69,7 @@ const labelsEn: Hero09Labels = {
 }
 
 const labelsAr: Hero09Labels = {
-  preview: "معاينة للوحة تحكم رافد ومتجر على الجوال",
+  preview: "معاينة للوحة تحكم رافد ومتجر",
   sales: "المبيعات",
   orders: "الطلبات",
   goal: "هدف الشهر",
@@ -106,15 +104,11 @@ function Hero09({
   const goal = dashboard.goal.current / dashboard.goal.target
   const ar = lang === "ar"
   return (
-    <Section id={sid} spacing="hero" className={cn("overflow-hidden", className)}>
-      <Container className="grid items-center gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-8">
+    <Section id={sid} spacing="hero" className={className}>
+      <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div className="flex flex-col items-start gap-6">
-          {eyebrow ? (
-            <p className="inline-flex max-w-full items-center gap-2 rounded-full border bg-card px-4 py-1.5 text-sm">
-              {eyebrow}
-            </p>
-          ) : null}
-          <Heading id={`${sid}-heading`} className="text-4xl font-normal text-balance md:text-5xl">
+          {eyebrow ? <p className="text-sm font-medium text-primary">{eyebrow}</p> : null}
+          <Heading id={`${sid}-heading`} className="text-4xl font-semibold text-balance md:text-5xl lg:text-6xl">
             {title}
           </Heading>
           {description ? <p className="max-w-xl text-lg text-muted-foreground md:text-xl">{description}</p> : null}
@@ -137,7 +131,7 @@ function Hero09({
               <p className="text-sm text-muted-foreground">{t.trustedBy}</p>
               <ul className="flex flex-wrap gap-2">
                 {brands.map((brand) => (
-                  <li key={brand} className="rounded-full border bg-card px-4 py-1.5 text-sm font-medium">
+                  <li key={brand} className="rounded-full border px-4 py-1.5 text-sm text-muted-foreground">
                     {brand}
                   </li>
                 ))}
@@ -146,126 +140,104 @@ function Hero09({
           ) : null}
         </div>
 
-        {/* Below lg the composition stacks inside the viewport. From lg it may run past the column and the section clips it at the inline-end edge; only the decorative chart (xl and up) can be cut. */}
-        <div className="min-w-0">
-          <div role="img" aria-label={t.preview} className="flex flex-col gap-6 lg:w-max lg:flex-row lg:items-start lg:gap-0">
-            <div className="relative z-10 order-2 mx-auto w-60 shrink-0 overflow-hidden lg:order-1 lg:mx-0 lg:w-52 rounded-[2rem] border-[6px] border-foreground bg-background">
-              <div className="flex items-center justify-between bg-primary px-4 py-3 text-primary-foreground">
-                <span className="flex items-center gap-2 text-sm font-medium">
-                  <StorefrontIcon aria-hidden="true" weight="bold" className="size-4" />
-                  {store.name}
-                </span>
-                <ShoppingCartSimpleIcon aria-hidden="true" weight="bold" className="size-4" />
-              </div>
-              <div className="flex flex-col gap-4 p-3">
-                {store.products.map((product) => (
-                  <ProductCard key={product.name}>
-                    <ProductCardMedia className="aspect-4/3">
-                      <ProductCardImage src={product.image} alt="" />
-                    </ProductCardMedia>
-                    <ProductCardBody>
-                      <ProductCardTitle as="h4">{product.name}</ProductCardTitle>
-                      <ProductCardPrice
-                        amount={product.price}
-                        compareAt={product.compareAt}
-                        compareAtLabel={t.originalPrice}
-                        lang={lang}
-                      />
-                      <ProductCardFooter className="pt-1">
-                        <span className={cn(buttonVariants({ variant: "outline", size: "sm" }), "w-full")}>{t.buy}</span>
-                      </ProductCardFooter>
-                    </ProductCardBody>
-                  </ProductCard>
-                ))}
-              </div>
+        <Card role="img" aria-label={t.preview} className="min-w-0 gap-6 border p-4 md:p-6">
+          <p className="text-sm font-medium">{dashboard.title}</p>
+          <div className="grid gap-3 sm:grid-cols-2">
+            <StatCard
+              label={t.sales}
+              value={<Price amount={dashboard.sales.amount} lang={lang} />}
+              delta={dashboard.sales.delta}
+              spark={dashboard.sales.spark}
+              lang={lang}
+              labels={ar ? statCardLabelsAr : undefined}
+            />
+            <StatCard
+              label={t.orders}
+              value={dashboard.orders.value}
+              delta={dashboard.orders.delta}
+              lang={lang}
+              labels={ar ? statCardLabelsAr : undefined}
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <div className="flex items-baseline justify-between gap-2 text-sm">
+              <span className="font-medium">{t.goal}</span>
+              <span className="tabular-nums">{formatPercent(goal, { lang }, { max: 0 })}</span>
             </div>
-
-            <div className="order-1 flex w-full gap-6 rounded-2xl border bg-muted p-4 lg:order-2 lg:mt-14 lg:-ms-10 lg:w-max lg:ps-12">
-              <div className="flex w-full flex-col gap-4 lg:w-[22rem] lg:shrink-0">
-                <p className="text-sm font-medium">{dashboard.title}</p>
-                <div className="grid gap-3 sm:grid-cols-2">
-                  <StatCard
-                    label={t.sales}
-                    value={<Price amount={dashboard.sales.amount} lang={lang} />}
-                    delta={dashboard.sales.delta}
-                    spark={dashboard.sales.spark}
-                    lang={lang}
-                    labels={ar ? statCardLabelsAr : undefined}
-                  />
-                  <StatCard
-                    label={t.orders}
-                    value={dashboard.orders.value}
-                    delta={dashboard.orders.delta}
-                    lang={lang}
-                    labels={ar ? statCardLabelsAr : undefined}
-                  />
-                </div>
-                <div className="flex flex-col gap-2 rounded-xl border bg-card p-4">
-                  <div className="flex items-baseline justify-between gap-2 text-sm">
-                    <span className="font-medium">{t.goal}</span>
-                    <span className="tabular-nums">{formatPercent(goal, { lang }, { max: 0 })}</span>
+            <Progress value={Math.round(goal * 100)} aria-label={t.goal} />
+            <p className="flex items-center justify-between gap-2 text-xs text-muted-foreground">
+              <Price amount={dashboard.goal.current} lang={lang} />
+              <Price amount={dashboard.goal.target} lang={lang} />
+            </p>
+          </div>
+          <div className="flex flex-col gap-2">
+            <p className="text-sm font-medium">{t.recent}</p>
+            <ul className="flex flex-col divide-y">
+              {dashboard.recent.map((order) => (
+                <li key={order.id} className="flex items-center justify-between gap-3 py-3 first:pt-0 last:pb-0">
+                  <div className="flex min-w-0 flex-col gap-1">
+                    <span className="truncate text-sm font-medium">{order.customer}</span>
+                    <span className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <bdi dir="ltr">{`#${order.id}`}</bdi>
+                      <bdi>{order.when}</bdi>
+                    </span>
                   </div>
-                  <Progress value={Math.round(goal * 100)} aria-label={t.goal} />
-                  <p className="flex items-center justify-between gap-2 text-xs text-muted-foreground">
-                    <Price amount={dashboard.goal.current} lang={lang} />
-                    <Price amount={dashboard.goal.target} lang={lang} />
-                  </p>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <p className="text-sm font-medium">{t.recent}</p>
-                  <ul className="flex flex-col gap-2">
-                    {dashboard.recent.map((order) => (
-                      <li key={order.id} className="flex items-center justify-between gap-3 rounded-xl border bg-card p-3">
-                        <div className="flex min-w-0 flex-col gap-1">
-                          <span className="truncate text-sm font-medium">{order.customer}</span>
-                          <span className="flex items-center gap-2 text-xs text-muted-foreground">
-                            <bdi dir="ltr">{`#${order.id}`}</bdi>
-                            <bdi>{order.when}</bdi>
-                          </span>
-                        </div>
-                        <div className="flex shrink-0 flex-col items-end gap-1">
-                          <Price amount={order.amount} lang={lang} className="text-sm font-semibold" />
-                          <StatusBadge status={order.status} labels={ar ? statusBadgeLabelsAr : undefined} />
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div aria-hidden="true" className="hidden w-56 shrink-0 items-end gap-2 self-stretch overflow-hidden xl:flex">
-                {dashboard.chart.map((height, i) => (
-                  <span key={i} style={{ height: `${height}%` }} className="w-4 shrink-0 rounded-t-md bg-primary" />
-                ))}
-              </div>
+                  <div className="flex shrink-0 flex-col items-end gap-1">
+                    <Price amount={order.amount} lang={lang} className="text-sm font-semibold" />
+                    <StatusBadge status={order.status} labels={ar ? statusBadgeLabelsAr : undefined} />
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex flex-col gap-3">
+            <p className="flex items-center gap-2 text-sm font-medium">
+              <StorefrontIcon aria-hidden="true" weight="bold" className="size-4" />
+              {store.name}
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {store.products.map((product) => (
+                <ProductCard key={product.name}>
+                  <ProductCardMedia className="aspect-4/3">
+                    {product.image ? (
+                      <ProductCardImage src={product.image} alt="" />
+                    ) : (
+                      <div aria-hidden="true" className="flex size-full items-center justify-center text-muted-foreground">
+                        <ImageIcon aria-hidden="true" weight="duotone" className="size-10" />
+                      </div>
+                    )}
+                  </ProductCardMedia>
+                  <ProductCardBody>
+                    <ProductCardTitle as="h4">{product.name}</ProductCardTitle>
+                    <ProductCardPrice
+                      amount={product.price}
+                      compareAt={product.compareAt}
+                      compareAtLabel={t.originalPrice}
+                      lang={lang}
+                    />
+                    <ProductCardFooter className="pt-1">
+                      <span className={cn(buttonVariants({ variant: "outline", size: "sm" }), "w-full")}>{t.buy}</span>
+                    </ProductCardFooter>
+                  </ProductCardBody>
+                </ProductCard>
+              ))}
             </div>
           </div>
-        </div>
+        </Card>
       </Container>
     </Section>
   )
 }
-
-const shop = (n: number) => `/examples/shop-${n}.svg`
 
 const demo: { en: Hero09Props; ar: Hero09Props } = {
   en: {
     lang: "en",
     eyebrow: (
       <>
-        <CheckCircleIcon aria-hidden="true" weight="fill" className="size-4 shrink-0 text-primary" />
-        <span>
-          <strong>
-            <bdi>+12,000</bdi>
-          </strong>{" "}
-          stores selling on Rafid across the Kingdom
-        </span>
+        <bdi>+12,000</bdi> stores selling on Rafid across the Kingdom
       </>
     ),
-    title: (
-      <>
-        <strong>Your online store</strong> ready to sell in one day
-      </>
-    ),
+    title: "Your online store, ready to sell in one day",
     description:
       "Build your store, connect payments and shipping, and follow orders and stock from one dashboard in Arabic and English.",
     primaryCta: { label: "Create your free store", href: "#start" },
@@ -276,7 +248,6 @@ const demo: { en: Hero09Props; ar: Hero09Props } = {
       sales: { amount: 248339, delta: 12.4, spark: [12, 18, 15, 24, 22, 31, 29, 38] },
       orders: { value: 692, delta: 6.8 },
       goal: { current: 248339, target: 300000 },
-      chart: [22, 30, 26, 38, 34, 46, 42, 58, 52, 66, 74, 88],
       recent: [
         { id: "360243", customer: "Abdullah Al-Harbi", amount: 1240, status: "pending", when: "23 minutes ago" },
         { id: "360242", customer: "Noura Al-Qahtani", amount: 385, status: "shipped", when: "1 hour ago" },
@@ -286,8 +257,8 @@ const demo: { en: Hero09Props; ar: Hero09Props } = {
     store: {
       name: "Al Dar Perfumes",
       products: [
-        { name: "Oud Wood Perfume 50 ml", price: 249, compareAt: 329, image: shop(1) },
-        { name: "Bakhoor Burner Set", price: 89, image: shop(2) },
+        { name: "Oud Wood Perfume 50 ml", price: 249, compareAt: 329 },
+        { name: "Bakhoor Burner Set", price: 89 },
       ],
     },
     labels: labelsEn,
@@ -296,20 +267,10 @@ const demo: { en: Hero09Props; ar: Hero09Props } = {
     lang: "ar",
     eyebrow: (
       <>
-        <CheckCircleIcon aria-hidden="true" weight="fill" className="size-4 shrink-0 text-primary" />
-        <span>
-          <strong>
-            <bdi>+12,000</bdi>
-          </strong>{" "}
-          متجر يبيع على رافد في أنحاء المملكة
-        </span>
+        <bdi>+12,000</bdi> متجر يبيع على رافد في أنحاء المملكة
       </>
     ),
-    title: (
-      <>
-        <strong>متجرك الإلكتروني</strong> جاهز للبيع في يوم واحد
-      </>
-    ),
+    title: "متجرك الإلكتروني جاهز للبيع في يوم واحد",
     description: "أنشئ متجرك، واربط الدفع والشحن، وتابع طلباتك ومخزونك من لوحة واحدة تعمل بالعربية والإنجليزية.",
     primaryCta: { label: "أنشئ متجرك مجانًا", href: "#start" },
     secondaryCta: { label: "شاهد عرضًا تجريبيًا", href: "#demo" },
@@ -319,7 +280,6 @@ const demo: { en: Hero09Props; ar: Hero09Props } = {
       sales: { amount: 248339, delta: 12.4, spark: [12, 18, 15, 24, 22, 31, 29, 38] },
       orders: { value: 692, delta: 6.8 },
       goal: { current: 248339, target: 300000 },
-      chart: [22, 30, 26, 38, 34, 46, 42, 58, 52, 66, 74, 88],
       recent: [
         { id: "360243", customer: "عبدالله الحربي", amount: 1240, status: "pending", when: "منذ 23 دقيقة" },
         { id: "360242", customer: "نورة القحطاني", amount: 385, status: "shipped", when: "منذ ساعة" },
@@ -329,8 +289,8 @@ const demo: { en: Hero09Props; ar: Hero09Props } = {
     store: {
       name: "عطور الدار",
       products: [
-        { name: "عطر عود الخشب 50 مل", price: 249, compareAt: 329, image: shop(1) },
-        { name: "طقم مبخرة وبخور", price: 89, image: shop(2) },
+        { name: "عطر عود الخشب 50 مل", price: 249, compareAt: 329 },
+        { name: "طقم مبخرة وبخور", price: 89 },
       ],
     },
     labels: labelsAr,

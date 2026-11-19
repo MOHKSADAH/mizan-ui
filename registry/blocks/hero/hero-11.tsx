@@ -1,4 +1,5 @@
 import * as React from "react"
+import { ImageIcon } from "@phosphor-icons/react/ssr"
 
 import type { Action, BlockBase, Media } from "@/registry/lib/block-types"
 import { cn } from "@/registry/lib/utils"
@@ -8,14 +9,13 @@ import { Section } from "@/registry/ui/section"
 
 type Hero11Props = Omit<BlockBase, "headingLevel"> & {
   headingLevel?: 1 | 2 | 3
-  // A pill above the title, for example a project status.
   eyebrow?: React.ReactNode
-  // Mix weights with <strong>: the heading is font-normal, so the strong part stands out.
-  title: React.ReactNode
+  title: string
   description?: string
   primaryCta: Action
   secondaryCta?: Action
-  media: Media
+  // Without a src the box shows the placeholder.
+  media: Omit<Media, "src"> & { src?: string }
   // Short facts under the buttons, for example a region, a phase count and a delivery year.
   facts?: React.ReactNode[]
 }
@@ -42,57 +42,52 @@ function Hero11({
   const sid = id ?? uid
   const Heading = `h${headingLevel}` as const
   return (
-    <Section
-      id={sid}
-      spacing="compact"
-      className={cn(
-        "relative flex min-h-[34rem] items-end overflow-hidden bg-muted pt-56 md:min-h-[40rem] md:pt-8 lg:min-h-[44rem] lg:pt-10",
-        className
-      )}
-    >
-      <img
-        src={media.src}
-        alt={media.alt}
-        width={media.width}
-        height={media.height}
-        className="absolute inset-0 size-full object-cover"
-      />
-      <Container className="relative">
-        <div className="flex max-w-xl flex-col items-start gap-5 rounded-3xl border bg-background p-6 md:p-8">
-          {eyebrow ? (
-            <p className="inline-flex items-center gap-2 rounded-full border bg-card px-4 py-1.5 text-sm font-medium">
-              {eyebrow}
-            </p>
-          ) : null}
-          <Heading id={`${sid}-heading`} className="text-4xl font-normal text-balance md:text-5xl">
-            {title}
-          </Heading>
-          {description ? <p className="text-lg text-muted-foreground">{description}</p> : null}
-          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-            <a href={primaryCta.href} {...external(primaryCta)} className={cn(buttonVariants(), cta)}>
-              {primaryCta.label}
-            </a>
-            {secondaryCta ? (
-              <a
-                href={secondaryCta.href}
-                {...external(secondaryCta)}
-                className={cn(buttonVariants({ variant: "outline" }), cta)}
-              >
-                {secondaryCta.label}
-              </a>
-            ) : null}
-          </div>
-          {facts?.length ? (
-            <ul className="flex w-full flex-wrap items-center gap-x-4 gap-y-2 border-t pt-5 text-sm font-medium">
-              {facts.map((fact, i) => (
-                <li key={i} className="flex items-center gap-4">
-                  {i > 0 ? <span aria-hidden="true" className="text-muted-foreground">·</span> : null}
-                  <span>{fact}</span>
-                </li>
-              ))}
-            </ul>
-          ) : null}
+    <Section id={sid} spacing="hero" className={className}>
+      <Container className="flex flex-col gap-12">
+        <div className="aspect-video w-full overflow-hidden rounded-xl border bg-muted">
+          {media.src ? (
+            <img src={media.src} alt={media.alt} width={media.width} height={media.height} className="size-full object-cover" />
+          ) : (
+            <div aria-hidden="true" className="flex size-full items-center justify-center text-muted-foreground">
+              <ImageIcon aria-hidden="true" weight="duotone" className="size-16" />
+            </div>
+          )}
         </div>
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
+          <div className="flex flex-col items-start gap-4">
+            {eyebrow ? <p className="text-sm font-medium text-primary">{eyebrow}</p> : null}
+            <Heading id={`${sid}-heading`} className="text-4xl font-semibold text-balance md:text-5xl lg:text-6xl">
+              {title}
+            </Heading>
+          </div>
+          <div className="flex flex-col items-start gap-6">
+            {description ? <p className="text-lg text-muted-foreground md:text-xl">{description}</p> : null}
+            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+              <a href={primaryCta.href} {...external(primaryCta)} className={cn(buttonVariants(), cta)}>
+                {primaryCta.label}
+              </a>
+              {secondaryCta ? (
+                <a
+                  href={secondaryCta.href}
+                  {...external(secondaryCta)}
+                  className={cn(buttonVariants({ variant: "outline" }), cta)}
+                >
+                  {secondaryCta.label}
+                </a>
+              ) : null}
+            </div>
+          </div>
+        </div>
+        {facts?.length ? (
+          <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 border-t pt-6 text-sm text-muted-foreground">
+            {facts.map((fact, i) => (
+              <li key={i} className="flex items-center gap-4">
+                {i > 0 ? <span aria-hidden="true">·</span> : null}
+                <span>{fact}</span>
+              </li>
+            ))}
+          </ul>
+        ) : null}
       </Container>
     </Section>
   )
@@ -101,28 +96,20 @@ function Hero11({
 const demo: { en: Hero11Props; ar: Hero11Props } = {
   en: {
     eyebrow: "New residential project",
-    title: (
-      <>
-        <strong>Villas in the north of Riyadh</strong> with room to breathe
-      </>
-    ),
+    title: "Villas in the north of Riyadh with room to breathe",
     description: "Plots from 450 sqm, wide streets and a park within five minutes of every home.",
     primaryCta: { label: "Book a site visit", href: "#visit" },
     secondaryCta: { label: "Download the brochure", href: "#brochure" },
-    media: { src: "/examples/estate.svg", alt: "Villas with flat roofs and palm trees at sunset", width: 1600, height: 900 },
+    media: { alt: "Villas in the north of Riyadh", width: 1600, height: 900 },
     facts: ["Riyadh region", <>4 phases</>, <>Delivery <bdi>2027</bdi></>],
   },
   ar: {
     eyebrow: "مشروع سكني جديد",
-    title: (
-      <>
-        <strong>فلل شمال الرياض</strong> بمساحات تتسع لك
-      </>
-    ),
+    title: "فلل شمال الرياض بمساحات تتسع لك",
     description: "قطع من 450 م² وشوارع عريضة وحديقة على بُعد خمس دقائق من كل منزل.",
     primaryCta: { label: "احجز زيارة للموقع", href: "#visit" },
     secondaryCta: { label: "حمّل الكتيّب", href: "#brochure" },
-    media: { src: "/examples/estate.svg", alt: "فلل بأسطح مستوية ونخيل عند الغروب", width: 1600, height: 900 },
+    media: { alt: "فلل شمال الرياض", width: 1600, height: 900 },
     facts: ["منطقة الرياض", <><bdi>4</bdi> مراحل</>, <>تسليم <bdi>2027</bdi></>],
   },
 }
