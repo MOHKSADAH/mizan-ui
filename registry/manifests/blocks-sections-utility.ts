@@ -55,4 +55,13 @@ export const sectionsUtilityBlocks: ManifestItem[] = [
     badge: 'new',
     files: ['registry/blocks/location/location-01.tsx'],
   },
+  {
+    name: 'video-01',
+    type: 'registry:block',
+    family: 'video',
+    title: 'Video 01',
+    description: 'Video section: a poster with a play button that opens a dialog with the video or iframe you pass, and a captions note.',
+    badge: 'new',
+    files: ['registry/blocks/video/video-01.tsx'],
+  },
 ];
