@@ -1,5 +1,6 @@
 import type { ManifestItem } from '../manifest';
 import { agentPages } from './pages-agents';
+import { aiChatPages } from './blocks-ai-chat';
 
 export const pageItems: ManifestItem[] = [
   {
@@ -13,4 +14,5 @@ export const pageItems: ManifestItem[] = [
     files: ['registry/pages/home-page/home-page-01.tsx'],
   },
   ...agentPages,
+  ...aiChatPages,
 ];
