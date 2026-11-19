@@ -262,6 +262,7 @@ export function Cart01({
                 </Sub>
                 {onApplyCoupon && (
                   <CouponInput
+                    className="[&>p:empty]:hidden"
                     status={coupon.status}
                     appliedCode={coupon.status === "success" ? coupon.code : undefined}
                     labels={lang === "ar" ? couponInputLabelsAr : undefined}
