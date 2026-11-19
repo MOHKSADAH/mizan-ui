@@ -5196,6 +5196,30 @@
       ]
     },
     {
+      "name": "chat-thread-01",
+      "type": "registry:block",
+      "title": "Chat thread 01",
+      "description": "A full thread: user message, reasoning, tool call, answer with citations, list and code block, sources and message actions.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/bubble",
+        "MOHKSADAH/mizan-ui/code-block",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/message",
+        "MOHKSADAH/mizan-ui/message-actions",
+        "MOHKSADAH/mizan-ui/reasoning",
+        "MOHKSADAH/mizan-ui/sources",
+        "MOHKSADAH/mizan-ui/tool-call",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/chat-thread/chat-thread-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",

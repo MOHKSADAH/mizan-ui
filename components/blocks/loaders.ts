@@ -80,5 +80,6 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'quick-view-01': () => import('@/registry/blocks/quick-view/quick-view-01'),
   'chat-welcome-01': () => import('@/registry/blocks/chat-welcome/chat-welcome-01'),
   'conversation-list-01': () => import('@/registry/blocks/conversation-list/conversation-list-01'),
+  'chat-thread-01': () => import('@/registry/blocks/chat-thread/chat-thread-01'),
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
 };
