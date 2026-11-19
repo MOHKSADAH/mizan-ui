@@ -3318,6 +3318,121 @@
       ]
     },
     {
+      "name": "form-wizard",
+      "type": "registry:ui",
+      "title": "Form Wizard",
+      "description": "Multi-step form card with a numbered or dotted step header, a body that follows the step height, per-step validation, a back and next footer and a completion state. Steps slide from the end side and mirror in RTL.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/order-stepper",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/form-wizard.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
+      "name": "undo-button",
+      "type": "registry:ui",
+      "title": "Undo Button",
+      "description": "Destructive button that turns into \"Undo (5)\" with a countdown and runs the action at 0. Escape undoes it, and a live region announces the start and the result.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/undo-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "feedback"
+      ]
+    },
+    {
+      "name": "async-button",
+      "type": "registry:ui",
+      "title": "Async Button",
+      "description": "Button with idle, pending, done and error states. The label changes in place at a fixed width and a live region announces each state.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/spinner",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/async-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "feedback"
+      ]
+    },
+    {
+      "name": "avatar-stack-list",
+      "type": "registry:ui",
+      "title": "Avatar Stack List",
+      "description": "Overlapping avatars on a button that open a popover with a searchable member list and a role badge on each row.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/avatar-group",
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/command",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/popover",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/avatar-stack-list.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
+      "name": "day-picker",
+      "type": "registry:ui",
+      "title": "Day Picker",
+      "description": "Daily, weekly and monthly segments that reveal weekday chips. The week starts on Saturday for Arabic and on Sunday for English, and a summary line reads the choice back.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/toggle-group",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/day-picker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
       "name": "navbar-01",
       "type": "registry:block",
       "title": "Navbar 01",
@@ -6136,6 +6251,59 @@
       "files": [
         {
           "path": "registry/blocks/order-history/order-history-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "pricing-06",
+      "type": "registry:block",
+      "title": "Pricing 06",
+      "description": "A plan picker card: monthly and yearly toggle, plans as radio rows that expand their features, a seats stepper and a SAR total with VAT.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/quantity-stepper",
+        "MOHKSADAH/mizan-ui/radio-group",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/toggle-group",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/pricing/pricing-06.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "feature-carousel-01",
+      "type": "registry:block",
+      "title": "Feature carousel 01",
+      "description": "Feature chips on the start side and one media slot on the end side that follows the selected chip. Autoplay pauses on hover, focus and reduced motion.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/tabs",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/feature-carousel/feature-carousel-01.tsx",
           "type": "registry:block"
         }
       ]

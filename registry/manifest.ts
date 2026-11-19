@@ -4,6 +4,7 @@ import { asciiItems } from './manifests/ascii';
 import { blockItems } from './manifests/blocks';
 import { commerceItems } from './manifests/commerce';
 import { displayItems } from './manifests/display';
+import { flowItems } from './manifests/flows';
 import { foundationItems } from './manifests/foundation';
 import { gulfItems } from './manifests/gulf';
 import { inputsItems } from './manifests/inputs';
@@ -67,6 +68,7 @@ export const uiItems: ManifestItem[] = [
   ...storefrontItems,
   ...agentItems,
   ...aiItems,
+  ...flowItems,
 ];
 
 export const manifest: ManifestItem[] = [

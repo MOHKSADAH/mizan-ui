@@ -116,6 +116,8 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'checkout-03': () => import('@/registry/blocks/checkout/checkout-03'),
   'order-tracking-01': () => import('@/registry/blocks/order-tracking/order-tracking-01'),
   'order-history-01': () => import('@/registry/blocks/order-history/order-history-01'),
+  'pricing-06': () => import('@/registry/blocks/pricing/pricing-06'),
+  'feature-carousel-01': () => import('@/registry/blocks/feature-carousel/feature-carousel-01'),
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
   'agents-dashboard-page-01': () => import('@/registry/pages/agents-dashboard-page/agents-dashboard-page-01'),
   'chat-page-01': () => import('@/registry/pages/chat-page/chat-page-01'),
