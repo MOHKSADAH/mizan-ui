@@ -3090,6 +3090,25 @@
       ]
     },
     {
+      "name": "step-list",
+      "type": "registry:ui",
+      "title": "Step List",
+      "description": "Vertical checklist of steps with a status icon, a title and a short value at the end side.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/run-status",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/step-list.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
       "name": "navbar-01",
       "type": "registry:block",
       "title": "Navbar 01",
