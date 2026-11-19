@@ -1,5 +1,5 @@
 import { expect, test } from 'bun:test';
-import type { ManifestItem } from '../registry/manifest';
+import { manifest, type ManifestItem } from '../registry/manifest';
 import { address, itemOf, readImports, toItem } from './build-registry';
 
 test('reads static, re-export and dynamic imports', () => {
@@ -39,4 +39,19 @@ test('a nested lib file resolves to its item name', () => {
   expect(itemOf('@/registry/lib/gulf/arabic-normalize')).toBe('arabic-normalize');
   expect(itemOf('@/registry/lib/gulf/validators')).toBe('gulf-validators');
   expect(itemOf('@/registry/ui/button')).toBe('button');
+});
+
+test('manifest-only fields stay out of the registry item', async () => {
+  const item = await toItem({ ...dialog, kind: 'page', badge: 'new', family: 'x' }, versions);
+  expect(Object.keys(item)).not.toContain('badge');
+  expect(Object.keys(item)).not.toContain('kind');
+  expect(Object.keys(item)).not.toContain('family');
+});
+
+test('a page lists every section it imports as a registry dependency', async () => {
+  const home = manifest.find((i) => i.name === 'home-page-01')!;
+  const sections = (await Bun.file(home.files[0]).text()).match(/@\/registry\/blocks\/[\w/-]+/g)!;
+  const deps = (await toItem(home, { ...versions })).registryDependencies!;
+  expect(sections.length).toBe(10);
+  for (const spec of sections) expect(deps).toContain(address(itemOf(spec)!));
 });

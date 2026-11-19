@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ServerCodeBlock } from 'fumadocs-ui/components/codeblock.rsc';
 import { i18n } from '@/lib/i18n';
-import { blockFamilies, componentTitle } from '@/lib/nav';
+import { blockFamilies, componentTitle, pageFamilies } from '@/lib/nav';
 import { SITE, type Lang } from '@/lib/strings';
 import { PageHeader } from '@/components/page-header';
 import { BlockFrame } from '@/components/blocks/block-frame';
@@ -12,7 +12,8 @@ import { BlockFrame } from '@/components/blocks/block-frame';
 export default async function Page(props: PageProps<'/[lang]/blocks/[family]'>) {
   const { lang: l, family } = await props.params;
   const lang = l as Lang;
-  const group = blockFamilies.find((f) => f.family === family);
+  const isPage = pageFamilies.some((f) => f.family === family);
+  const group = [...blockFamilies, ...pageFamilies].find((f) => f.family === family);
   if (!group) notFound();
   const sources = await Promise.all(
     group.items.map((b) => readFile(path.join(process.cwd(), b.files[0]), 'utf8').catch(() => '')),
@@ -22,7 +23,7 @@ export default async function Page(props: PageProps<'/[lang]/blocks/[family]'>) 
     <div className="grid min-w-0 gap-12">
       <PageHeader
         title={componentTitle(family)}
-        description={`${SITE[lang].pages.blocks} · ${group.items.length}`}
+        description={`${isPage ? SITE[lang].groups.pages : SITE[lang].pages.blocks} · ${group.items.length}`}
       />
       {group.items.map((b, i) => (
         <BlockFrame
@@ -30,6 +31,8 @@ export default async function Page(props: PageProps<'/[lang]/blocks/[family]'>) 
           name={b.name}
           title={b.title ?? componentTitle(b.name)}
           lang={lang}
+          badge={b.badge}
+          fixedHeight={isPage}
           code={<ServerCodeBlock code={sources[i]} lang="tsx" codeblock={{ dir: 'ltr' }} />}
         />
       ))}
@@ -38,7 +41,7 @@ export default async function Page(props: PageProps<'/[lang]/blocks/[family]'>) 
 }
 
 export function generateStaticParams() {
-  return i18n.languages.flatMap((lang) => blockFamilies.map((f) => ({ lang, family: f.family })));
+  return i18n.languages.flatMap((lang) => [...blockFamilies, ...pageFamilies].map((f) => ({ lang, family: f.family })));
 }
 
 export async function generateMetadata(props: PageProps<'/[lang]/blocks/[family]'>): Promise<Metadata> {

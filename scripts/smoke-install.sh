@@ -3,7 +3,7 @@
 set -euo pipefail
 PORT="${PORT:-4000}"
 BASE="http://localhost:$PORT"
-ITEMS="${ITEMS:-button price sidebar chart format}"
+ITEMS="${ITEMS:-button price sidebar chart format home-page-01}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 APP="$(mktemp -d)/smoke"
 
@@ -19,7 +19,8 @@ sleep 1
 bunx shadcn init -t vite -b base -p nova --rtl --no-monorepo -y -n smoke -c "$(dirname "$APP")"
 cd "$APP"
 bunx shadcn add -y --overwrite $(for i in $ITEMS; do printf '%s/r/%s.json ' "$BASE" "$i"; done)
-for f in src/components/ui/button.tsx src/components/ui/price.tsx src/components/ui/sidebar.tsx src/components/ui/chart.tsx src/lib/format.ts; do test -f "$f" || { echo "missing $f"; exit 1; }; done
+for f in src/components/ui/button.tsx src/components/ui/price.tsx src/components/ui/sidebar.tsx src/components/ui/chart.tsx src/lib/format.ts src/components/home-page-01.tsx src/components/hero-02.tsx; do test -f "$f" || { echo "missing $f"; exit 1; }; done
+grep -q 'from "@/components/hero-02"' src/components/home-page-01.tsx || { echo "page import of a section not rewritten"; exit 1; }
 grep -rn "@/registry" src && { echo "unrewritten registry import"; exit 1; } || true
 bunx tsc -b
 bunx vite build
