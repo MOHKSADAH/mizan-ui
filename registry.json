@@ -3028,29 +3028,6 @@
       ]
     },
     {
-      "name": "product-card",
-      "type": "registry:ui",
-      "title": "Product Card",
-      "description": "Composable product card: media with badges and action slot, title link, vendor, price with compare-at, swatches, vertical or list.",
-      "dependencies": [
-        "@phosphor-icons/react@^2.1.10"
-      ],
-      "registryDependencies": [
-        "MOHKSADAH/mizan-ui/format",
-        "MOHKSADAH/mizan-ui/price",
-        "MOHKSADAH/mizan-ui/utils"
-      ],
-      "files": [
-        {
-          "path": "registry/ui/product-card.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "categories": [
-        "commerce"
-      ]
-    },
-    {
       "name": "rating-summary",
       "type": "registry:ui",
       "title": "Rating Summary",
@@ -3066,6 +3043,29 @@
       "files": [
         {
           "path": "registry/ui/rating-summary.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "product-card",
+      "type": "registry:ui",
+      "title": "Product Card",
+      "description": "Composable product card: media with badges and action slot, title link, vendor, price with compare-at, swatches, vertical or list.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/product-card.tsx",
           "type": "registry:ui"
         }
       ],
@@ -4587,6 +4587,196 @@
       ]
     },
     {
+      "name": "product-grid-01",
+      "type": "registry:block",
+      "title": "Product Grid 01",
+      "description": "Product grid with a filter sidebar (category, price, size, color, availability) that becomes a sheet on mobile, sort, count and pagination.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/checkbox",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/direction",
+        "MOHKSADAH/mizan-ui/empty",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/label",
+        "MOHKSADAH/mizan-ui/pagination",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/product-card",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/select",
+        "MOHKSADAH/mizan-ui/sheet",
+        "MOHKSADAH/mizan-ui/slider",
+        "MOHKSADAH/mizan-ui/toggle-group",
+        "MOHKSADAH/mizan-ui/wishlist-button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/product-grid/product-grid-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "product-grid-02",
+      "type": "registry:block",
+      "title": "Product Grid 02",
+      "description": "Product grid with a category pill toolbar, price, sale and stock filters, active filter chips and a result count.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/empty",
+        "MOHKSADAH/mizan-ui/filter-chips",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/product-card",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/select",
+        "MOHKSADAH/mizan-ui/toggle",
+        "MOHKSADAH/mizan-ui/toggle-group",
+        "MOHKSADAH/mizan-ui/wishlist-button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/product-grid/product-grid-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "product-grid-03",
+      "type": "registry:block",
+      "title": "Product Grid 03",
+      "description": "Product rail with swipe and arrow controls for a best sellers or new arrivals section.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/carousel",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/product-card",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/wishlist-button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/product-grid/product-grid-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "category-grid-01",
+      "type": "registry:block",
+      "title": "Category Grid 01",
+      "description": "Image tiles with the category name and item count.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/category-grid/category-grid-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "category-grid-02",
+      "type": "registry:block",
+      "title": "Category Grid 02",
+      "description": "Icon pill strip of categories for a store home, scrolling on mobile.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/category-grid/category-grid-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "wishlist-01",
+      "type": "registry:block",
+      "title": "Wishlist 01",
+      "description": "Saved products with move to cart, remove, a live announcement and an empty state.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/empty",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/product-card",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/stock-indicator",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/wishlist/wishlist-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "store-trust-01",
+      "type": "registry:block",
+      "title": "Store Trust 01",
+      "description": "Trust strip: free shipping threshold, easy returns, cash on delivery, secure payment and VAT included.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/store-trust/store-trust-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "product-detail-01",
       "type": "registry:block",
       "title": "Product Detail 01",
@@ -4780,150 +4970,51 @@
       ]
     },
     {
-      "name": "product-grid-01",
+      "name": "footer-05",
       "type": "registry:block",
-      "title": "Product Grid 01",
-      "description": "Product grid with a filter sidebar (category, price, size, color, availability) that becomes a sheet on mobile, sort, count and pagination.",
+      "title": "Footer 05",
+      "description": "Gulf company footer: link columns, support phone and WhatsApp, country selector, app store buttons, and a legal row with CR number, VAT number and licence.",
       "dependencies": [
         "@phosphor-icons/react@^2.1.10"
       ],
       "registryDependencies": [
-        "MOHKSADAH/mizan-ui/badge",
         "MOHKSADAH/mizan-ui/block-types",
         "MOHKSADAH/mizan-ui/button",
-        "MOHKSADAH/mizan-ui/checkbox",
         "MOHKSADAH/mizan-ui/container",
         "MOHKSADAH/mizan-ui/direction",
-        "MOHKSADAH/mizan-ui/empty",
-        "MOHKSADAH/mizan-ui/format",
-        "MOHKSADAH/mizan-ui/label",
-        "MOHKSADAH/mizan-ui/pagination",
-        "MOHKSADAH/mizan-ui/price",
-        "MOHKSADAH/mizan-ui/product-card",
-        "MOHKSADAH/mizan-ui/rating",
-        "MOHKSADAH/mizan-ui/section",
         "MOHKSADAH/mizan-ui/select",
-        "MOHKSADAH/mizan-ui/sheet",
-        "MOHKSADAH/mizan-ui/slider",
-        "MOHKSADAH/mizan-ui/toggle-group",
-        "MOHKSADAH/mizan-ui/wishlist-button"
-      ],
-      "files": [
-        {
-          "path": "registry/blocks/product-grid/product-grid-01.tsx",
-          "type": "registry:block"
-        }
-      ]
-    },
-    {
-      "name": "product-grid-02",
-      "type": "registry:block",
-      "title": "Product Grid 02",
-      "description": "Product grid with a category pill toolbar, price, sale and stock filters, active filter chips and a result count.",
-      "dependencies": [
-        "@phosphor-icons/react@^2.1.10"
-      ],
-      "registryDependencies": [
-        "MOHKSADAH/mizan-ui/badge",
-        "MOHKSADAH/mizan-ui/block-types",
-        "MOHKSADAH/mizan-ui/button",
-        "MOHKSADAH/mizan-ui/container",
-        "MOHKSADAH/mizan-ui/empty",
-        "MOHKSADAH/mizan-ui/filter-chips",
-        "MOHKSADAH/mizan-ui/format",
-        "MOHKSADAH/mizan-ui/product-card",
-        "MOHKSADAH/mizan-ui/rating",
-        "MOHKSADAH/mizan-ui/section",
-        "MOHKSADAH/mizan-ui/select",
-        "MOHKSADAH/mizan-ui/toggle",
-        "MOHKSADAH/mizan-ui/toggle-group",
-        "MOHKSADAH/mizan-ui/wishlist-button"
-      ],
-      "files": [
-        {
-          "path": "registry/blocks/product-grid/product-grid-02.tsx",
-          "type": "registry:block"
-        }
-      ]
-    },
-    {
-      "name": "product-grid-03",
-      "type": "registry:block",
-      "title": "Product Grid 03",
-      "description": "Product rail with swipe and arrow controls for a best sellers or new arrivals section.",
-      "dependencies": [
-        "@phosphor-icons/react@^2.1.10"
-      ],
-      "registryDependencies": [
-        "MOHKSADAH/mizan-ui/badge",
-        "MOHKSADAH/mizan-ui/block-types",
-        "MOHKSADAH/mizan-ui/button",
-        "MOHKSADAH/mizan-ui/carousel",
-        "MOHKSADAH/mizan-ui/container",
-        "MOHKSADAH/mizan-ui/format",
-        "MOHKSADAH/mizan-ui/product-card",
-        "MOHKSADAH/mizan-ui/rating",
-        "MOHKSADAH/mizan-ui/section",
         "MOHKSADAH/mizan-ui/utils",
-        "MOHKSADAH/mizan-ui/wishlist-button"
+        "MOHKSADAH/mizan-ui/whatsapp-button"
       ],
       "files": [
         {
-          "path": "registry/blocks/product-grid/product-grid-03.tsx",
+          "path": "registry/blocks/footer/footer-05.tsx",
           "type": "registry:block"
         }
       ]
     },
     {
-      "name": "category-grid-01",
+      "name": "footer-06",
       "type": "registry:block",
-      "title": "Category Grid 01",
-      "description": "Image tiles with the category name and item count.",
-      "dependencies": [
-        "@phosphor-icons/react@^2.1.10"
-      ],
+      "title": "Footer 06",
+      "description": "Wordmark footer: a centered brand wordmark at hero scale, one link row and a legal line.",
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/block-types",
-        "MOHKSADAH/mizan-ui/button",
         "MOHKSADAH/mizan-ui/container",
-        "MOHKSADAH/mizan-ui/format",
-        "MOHKSADAH/mizan-ui/section",
         "MOHKSADAH/mizan-ui/utils"
       ],
       "files": [
         {
-          "path": "registry/blocks/category-grid/category-grid-01.tsx",
+          "path": "registry/blocks/footer/footer-06.tsx",
           "type": "registry:block"
         }
       ]
     },
     {
-      "name": "category-grid-02",
+      "name": "footer-07",
       "type": "registry:block",
-      "title": "Category Grid 02",
-      "description": "Icon pill strip of categories for a store home, scrolling on mobile.",
-      "dependencies": [
-        "@phosphor-icons/react@^2.1.10"
-      ],
-      "registryDependencies": [
-        "MOHKSADAH/mizan-ui/block-types",
-        "MOHKSADAH/mizan-ui/button",
-        "MOHKSADAH/mizan-ui/container",
-        "MOHKSADAH/mizan-ui/section",
-        "MOHKSADAH/mizan-ui/utils"
-      ],
-      "files": [
-        {
-          "path": "registry/blocks/category-grid/category-grid-02.tsx",
-          "type": "registry:block"
-        }
-      ]
-    },
-    {
-      "name": "wishlist-01",
-      "type": "registry:block",
-      "title": "Wishlist 01",
-      "description": "Saved products with move to cart, remove, a live announcement and an empty state.",
+      "title": "Footer 07",
+      "description": "Bordered card call-to-action band above a compact sitemap and legal row.",
       "dependencies": [
         "@phosphor-icons/react@^2.1.10"
       ],
@@ -4932,39 +5023,82 @@
         "MOHKSADAH/mizan-ui/button",
         "MOHKSADAH/mizan-ui/card",
         "MOHKSADAH/mizan-ui/container",
-        "MOHKSADAH/mizan-ui/empty",
-        "MOHKSADAH/mizan-ui/format",
-        "MOHKSADAH/mizan-ui/product-card",
-        "MOHKSADAH/mizan-ui/section",
-        "MOHKSADAH/mizan-ui/stock-indicator",
         "MOHKSADAH/mizan-ui/utils"
       ],
       "files": [
         {
-          "path": "registry/blocks/wishlist/wishlist-01.tsx",
+          "path": "registry/blocks/footer/footer-07.tsx",
           "type": "registry:block"
         }
       ]
     },
     {
-      "name": "store-trust-01",
+      "name": "cta-05",
       "type": "registry:block",
-      "title": "Store Trust 01",
-      "description": "Trust strip: free shipping threshold, easy returns, cash on delivery, secure payment and VAT included.",
+      "title": "CTA 05",
+      "description": "Split call to action: a short headline, a benefit list and an app screen mock built from registry components in a card.",
       "dependencies": [
         "@phosphor-icons/react@^2.1.10"
       ],
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
         "MOHKSADAH/mizan-ui/container",
         "MOHKSADAH/mizan-ui/format",
         "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/progress",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/cta-05.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "cta-06",
+      "type": "registry:block",
+      "title": "CTA 06",
+      "description": "Minimal call to action: one headline and one button in a bordered card.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
         "MOHKSADAH/mizan-ui/section",
         "MOHKSADAH/mizan-ui/utils"
       ],
       "files": [
         {
-          "path": "registry/blocks/store-trust/store-trust-01.tsx",
+          "path": "registry/blocks/cta/cta-06.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "newsletter-01",
+      "type": "registry:block",
+      "title": "Newsletter 01",
+      "description": "Newsletter signup with an email field, a consent line and a list of the last three issues.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/field",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/newsletter/newsletter-01.tsx",
           "type": "registry:block"
         }
       ]

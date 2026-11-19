@@ -3,7 +3,16 @@ import { appBlocks } from './blocks-app';
 import { commerceBlocks } from './blocks-commerce';
 import { marketingBlocks } from './blocks-marketing';
 import { marketingBlocks2a } from './blocks-marketing-2a';
-import { storefrontBlocks } from './blocks-storefront';
 import { storefrontProductBlocks } from './blocks-storefront-product';
+import { storefrontBlocks } from './blocks-storefront';
+import { landingFooterBlocks } from './blocks-landing-footers';
 
-export const blockItems: ManifestItem[] = [...marketingBlocks, ...marketingBlocks2a, ...appBlocks, ...commerceBlocks, ...storefrontProductBlocks, ...storefrontBlocks];
+export const blockItems: ManifestItem[] = [
+  ...marketingBlocks,
+  ...marketingBlocks2a,
+  ...appBlocks,
+  ...commerceBlocks,
+  ...storefrontBlocks,
+  ...storefrontProductBlocks,
+  ...landingFooterBlocks,
+];

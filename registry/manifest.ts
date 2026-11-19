@@ -5,9 +5,9 @@ import { displayItems } from './manifests/display';
 import { foundationItems } from './manifests/foundation';
 import { gulfItems } from './manifests/gulf';
 import { inputsItems } from './manifests/inputs';
-import { storefrontItems } from './manifests/storefront';
-import { storefrontProductItems } from './manifests/storefront-product';
 import { pageItems } from './manifests/pages';
+import { storefrontProductItems } from './manifests/storefront-product';
+import { storefrontItems } from './manifests/storefront';
 
 export type Category = 'forms' | 'data-display' | 'overlays' | 'navigation' | 'feedback' | 'layout' | 'commerce' | 'ascii';
 
@@ -61,8 +61,8 @@ export const uiItems: ManifestItem[] = [
   ...commerceItems,
   ...asciiItems,
   ...inputsItems,
-  ...storefrontItems,
   ...storefrontProductItems,
+  ...storefrontItems,
 ];
 
 export const manifest: ManifestItem[] = [
