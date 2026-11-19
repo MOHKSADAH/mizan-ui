@@ -5073,6 +5073,24 @@
       ]
     },
     {
+      "name": "logo-cloud-05",
+      "type": "registry:block",
+      "title": "Logo cloud 05",
+      "description": "Bordered grid of brand names set as text marks in different weights, under one sentence of social proof.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/logo-cloud/logo-cloud-05.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
