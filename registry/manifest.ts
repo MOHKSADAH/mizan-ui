@@ -7,6 +7,7 @@ import { displayItems } from './manifests/display';
 import { foundationItems } from './manifests/foundation';
 import { gulfItems } from './manifests/gulf';
 import { inputsItems } from './manifests/inputs';
+import { interactionItems } from './manifests/interactions';
 import { pageItems } from './manifests/pages';
 import { storefrontProductItems } from './manifests/storefront-product';
 import { storefrontItems } from './manifests/storefront';
@@ -67,6 +68,7 @@ export const uiItems: ManifestItem[] = [
   ...storefrontItems,
   ...agentItems,
   ...aiItems,
+  ...interactionItems,
 ];
 
 export const manifest: ManifestItem[] = [
