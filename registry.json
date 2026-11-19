@@ -6738,6 +6738,37 @@
       ]
     },
     {
+      "name": "tourism-page-01",
+      "type": "registry:block",
+      "title": "Tourism page 01",
+      "description": "Heritage stay landing page: offer strip, image-first hero, stay rows, experience cards, a video band, a tabbed gallery, one guest quote, a map split and the newsletter.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/banner-01",
+        "MOHKSADAH/mizan-ui/course-grid-01",
+        "MOHKSADAH/mizan-ui/features-02",
+        "MOHKSADAH/mizan-ui/footer-01",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/gallery-02",
+        "MOHKSADAH/mizan-ui/hero-11",
+        "MOHKSADAH/mizan-ui/location-01",
+        "MOHKSADAH/mizan-ui/navbar-04",
+        "MOHKSADAH/mizan-ui/newsletter-01",
+        "MOHKSADAH/mizan-ui/testimonials-05",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/video-01",
+        "MOHKSADAH/mizan-ui/whatsapp"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/tourism-page/tourism-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "store-home-page-01",
       "type": "registry:block",
       "title": "Store home page 01",

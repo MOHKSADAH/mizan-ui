@@ -66,6 +66,16 @@ export const pageItems: ManifestItem[] = [
     files: ['registry/pages/real-estate-page/real-estate-page-01.tsx'],
   },
   {
+    name: 'tourism-page-01',
+    type: 'registry:block',
+    family: 'tourism-page',
+    kind: 'page',
+    badge: 'new',
+    title: 'Tourism page 01',
+    description: 'Heritage stay landing page: offer strip, image-first hero, stay rows, experience cards, a video band, a tabbed gallery, one guest quote, a map split and the newsletter.',
+    files: ['registry/pages/tourism-page/tourism-page-01.tsx'],
+  },
+  {
     name: 'store-home-page-01',
     type: 'registry:block',
     family: 'store-home-page',
