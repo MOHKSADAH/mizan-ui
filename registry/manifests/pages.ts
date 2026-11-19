@@ -1,4 +1,5 @@
 import type { ManifestItem } from '../manifest';
+import { aiChatPages } from './blocks-ai-chat';
 
 export const pageItems: ManifestItem[] = [
   {
@@ -61,4 +62,5 @@ export const pageItems: ManifestItem[] = [
     description: 'Store home: announcement strip, navbar, a hero with the best sellers of the week, category pills, a product rail, a category bento, trust strip, reviews and a Gulf footer.',
     files: ['registry/pages/store-home-page/store-home-page-01.tsx'],
   },
+  ...aiChatPages,
 ];
