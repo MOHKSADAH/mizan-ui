@@ -82,5 +82,6 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'checkout-02': () => import('@/registry/blocks/checkout/checkout-02'),
   'checkout-03': () => import('@/registry/blocks/checkout/checkout-03'),
   'order-tracking-01': () => import('@/registry/blocks/order-tracking/order-tracking-01'),
+  'order-history-01': () => import('@/registry/blocks/order-history/order-history-01'),
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
 };
