@@ -59,4 +59,7 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'empty-state-01': () => import('@/registry/blocks/empty-state/empty-state-01'),
   'empty-state-02': () => import('@/registry/blocks/empty-state/empty-state-02'),
   'notifications-01': () => import('@/registry/blocks/notifications/notifications-01'),
+  'product-grid-01': () => import('@/registry/blocks/product-grid/product-grid-01'),
+  'product-grid-02': () => import('@/registry/blocks/product-grid/product-grid-02'),
+  'product-grid-03': () => import('@/registry/blocks/product-grid/product-grid-03'),
 };
