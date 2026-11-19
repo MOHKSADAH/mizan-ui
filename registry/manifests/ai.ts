@@ -17,4 +17,5 @@ export const aiItems: ManifestItem[] = [
   item('message-actions', 'data-display', 'Copy, regenerate, like and dislike buttons and a 1/3 pager for regenerated responses.'),
   item('suggestions', 'data-display', 'Prompt chips that put their text in the input, in a wrapping or a scrolling row.'),
   item('model-picker', 'forms', 'Searchable model list in a popover with the provider, the context size and the price per million tokens on each row.'),
+  item('context-meter', 'feedback', 'Ring with the percent of the context window used and a popover with tokens and cost per row.'),
 ];
