@@ -5149,6 +5149,28 @@
       ]
     },
     {
+      "name": "chat-welcome-01",
+      "type": "registry:block",
+      "title": "Chat welcome 01",
+      "description": "Empty chat with a greeting, the prompt input in the middle and prompt chips that fill it.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/prompt-input",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/suggestions"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/chat-welcome/chat-welcome-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
