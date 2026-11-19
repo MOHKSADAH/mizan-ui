@@ -37,4 +37,13 @@ export const sectionsUtilityBlocks: ManifestItem[] = [
     badge: 'new',
     files: ['registry/blocks/booking/booking-01.tsx'],
   },
+  {
+    name: 'menu-01',
+    type: 'registry:block',
+    family: 'menu',
+    title: 'Menu 01',
+    description: 'Cafe or restaurant menu: categories as tabs, items with name, description, price in riyals, text tags and an optional image slot.',
+    badge: 'new',
+    files: ['registry/blocks/menu/menu-01.tsx'],
+  },
 ];
