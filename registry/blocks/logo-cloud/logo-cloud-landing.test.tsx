@@ -6,11 +6,12 @@ import LogoCloud05, { demo as LogoCloud05Demo } from './logo-cloud-05';
 const rtl = (node: React.ReactNode) => renderToString(<DirectionProvider direction="rtl">{node}</DirectionProvider>);
 const h1 = (html: string) => html.match(/<h1[ >]/g)?.length ?? 0;
 
-test('logo-cloud-05 renders text marks in different weights in a bordered grid', () => {
+test('logo-cloud-05 renders text marks in one weight in a bordered grid', () => {
   const html = renderToString(<LogoCloud05 {...LogoCloud05Demo.en} />);
-  expect(html).toContain('font-light');
-  expect(html).toContain('font-black');
+  expect(html).not.toContain('font-light');
+  expect(html).not.toContain('font-black');
   expect(html).toContain('border-s');
+  expect(html.match(/<li /g)?.length).toBe(8);
   expect(html).not.toContain('<img');
 });
 
