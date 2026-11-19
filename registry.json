@@ -6214,6 +6214,30 @@
       ]
     },
     {
+      "name": "booking-01",
+      "type": "registry:block",
+      "title": "Booking 01",
+      "description": "Appointment booking for a clinic: service select, day and time slots, and a confirm card with the Gregorian and Hijri date.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/label",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/select",
+        "MOHKSADAH/mizan-ui/slot-picker"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/booking/booking-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",

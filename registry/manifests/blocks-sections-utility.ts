@@ -28,4 +28,13 @@ export const sectionsUtilityBlocks: ManifestItem[] = [
     badge: 'new',
     files: ['registry/blocks/app-download/app-download-01.tsx'],
   },
+  {
+    name: 'booking-01',
+    type: 'registry:block',
+    family: 'booking',
+    title: 'Booking 01',
+    description: 'Appointment booking for a clinic: service select, day and time slots, and a confirm card with the Gregorian and Hijri date.',
+    badge: 'new',
+    files: ['registry/blocks/booking/booking-01.tsx'],
+  },
 ];

@@ -119,6 +119,7 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'calculator-01': () => import('@/registry/blocks/calculator/calculator-01'),
   'comparison-01': () => import('@/registry/blocks/comparison/comparison-01'),
   'app-download-01': () => import('@/registry/blocks/app-download/app-download-01'),
+  'booking-01': () => import('@/registry/blocks/booking/booking-01'),
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
   'agents-dashboard-page-01': () => import('@/registry/pages/agents-dashboard-page/agents-dashboard-page-01'),
   'chat-page-01': () => import('@/registry/pages/chat-page/chat-page-01'),
