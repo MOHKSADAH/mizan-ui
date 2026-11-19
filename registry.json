@@ -3389,6 +3389,30 @@
       ]
     },
     {
+      "name": "avatar-stack-list",
+      "type": "registry:ui",
+      "title": "Avatar Stack List",
+      "description": "Overlapping avatars on a button that open a popover with a searchable member list and a role badge on each row.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/avatar-group",
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/command",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/popover",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/avatar-stack-list.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
       "name": "navbar-01",
       "type": "registry:block",
       "title": "Navbar 01",
