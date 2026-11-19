@@ -16,4 +16,5 @@ export const aiItems: ManifestItem[] = [
   item('sources', 'data-display', 'Collapsed list of source cards and numbered inline citations that open a hover card.'),
   item('message-actions', 'data-display', 'Copy, regenerate, like and dislike buttons and a 1/3 pager for regenerated responses.'),
   item('suggestions', 'data-display', 'Prompt chips that put their text in the input, in a wrapping or a scrolling row.'),
+  item('model-picker', 'forms', 'Searchable model list in a popover with the provider, the context size and the price per million tokens on each row.'),
 ];
