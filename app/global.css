@@ -73,9 +73,6 @@ html > body[data-scroll-locked] {
     scrollbar-width: thin;
     scrollbar-color: color-mix(in oklch, var(--foreground) 25%, transparent) transparent;
   }
-  h1, h2, h3, h4 {
-    font-family: var(--font-heading);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
