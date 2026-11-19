@@ -62,4 +62,6 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'product-grid-01': () => import('@/registry/blocks/product-grid/product-grid-01'),
   'product-grid-02': () => import('@/registry/blocks/product-grid/product-grid-02'),
   'product-grid-03': () => import('@/registry/blocks/product-grid/product-grid-03'),
+  'category-grid-01': () => import('@/registry/blocks/category-grid/category-grid-01'),
+  'category-grid-02': () => import('@/registry/blocks/category-grid/category-grid-02'),
 };

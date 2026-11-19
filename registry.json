@@ -4448,6 +4448,51 @@
       ]
     },
     {
+      "name": "category-grid-01",
+      "type": "registry:block",
+      "title": "Category Grid 01",
+      "description": "Image tiles with the category name and item count.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/category-grid/category-grid-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "category-grid-02",
+      "type": "registry:block",
+      "title": "Category Grid 02",
+      "description": "Icon pill strip of categories for a store home, scrolling on mobile.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/category-grid/category-grid-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
