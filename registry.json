@@ -2462,6 +2462,9 @@
       "type": "registry:ui",
       "title": "Product Gallery",
       "description": "Product image gallery with Embla swipe, thumbnails, RTL direction and optional zoom dialog.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/carousel",
         "MOHKSADAH/mizan-ui/dialog",
@@ -3052,6 +3055,9 @@
       "type": "registry:ui",
       "title": "Product Card",
       "description": "Composable product card: media with badges and action slot, title link, vendor, price with compare-at, swatches, vertical or list.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/format",
         "MOHKSADAH/mizan-ui/price",
@@ -4731,6 +4737,7 @@
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/block-types",
         "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
         "MOHKSADAH/mizan-ui/container",
         "MOHKSADAH/mizan-ui/empty",
         "MOHKSADAH/mizan-ui/format",
@@ -4863,8 +4870,7 @@
         "MOHKSADAH/mizan-ui/section",
         "MOHKSADAH/mizan-ui/sticky-action-bar",
         "MOHKSADAH/mizan-ui/stock-indicator",
-        "MOHKSADAH/mizan-ui/swatch-select",
-        "MOHKSADAH/mizan-ui/utils"
+        "MOHKSADAH/mizan-ui/swatch-select"
       ],
       "files": [
         {
@@ -5198,6 +5204,271 @@
       "files": [
         {
           "path": "registry/blocks/testimonials/testimonials-05.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "hero-09",
+      "type": "registry:block",
+      "title": "Hero 09",
+      "description": "Product hero with CTAs, brand pills and a dashboard and storefront preview composed from registry components in one card.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/product-card",
+        "MOHKSADAH/mizan-ui/progress",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/stat-card",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/hero/hero-09.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "hero-10",
+      "type": "registry:block",
+      "title": "Hero 10",
+      "description": "Editorial hero split: title, description, CTA and an author, category and date row beside an image box with a placeholder.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/hero/hero-10.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "hero-11",
+      "type": "registry:block",
+      "title": "Hero 11",
+      "description": "Image-first hero: a wide image box with a placeholder, then the title, CTAs and a short facts row on the page background.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/hero/hero-11.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "hero-12",
+      "type": "registry:block",
+      "title": "Hero 12",
+      "description": "Studio hero with the name as the page heading, a value line, two CTAs and a row of four concept cards with letter labels.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/hero/hero-12.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "stats-05",
+      "type": "registry:block",
+      "title": "Stats 05",
+      "description": "Numbers band with a lead number one step larger than the rest, hairline dividers and a sentence of context under each number.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/stats/stats-05.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "logo-cloud-05",
+      "type": "registry:block",
+      "title": "Logo cloud 05",
+      "description": "Bordered grid of brand names set as text marks in one weight, under one sentence of social proof.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/logo-cloud/logo-cloud-05.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "footer-05",
+      "type": "registry:block",
+      "title": "Footer 05",
+      "description": "Gulf company footer: link columns, support phone and WhatsApp, country selector, app store buttons, and a legal row with CR number, VAT number and licence.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/direction",
+        "MOHKSADAH/mizan-ui/select",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/whatsapp-button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/footer/footer-05.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "footer-06",
+      "type": "registry:block",
+      "title": "Footer 06",
+      "description": "Wordmark footer: a centered brand wordmark at hero scale, one link row and a legal line.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/footer/footer-06.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "footer-07",
+      "type": "registry:block",
+      "title": "Footer 07",
+      "description": "Bordered card call-to-action band above a compact sitemap and legal row.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/footer/footer-07.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "cta-05",
+      "type": "registry:block",
+      "title": "CTA 05",
+      "description": "Split call to action: a short headline, a benefit list and an app screen mock built from registry components in a card.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/progress",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/cta-05.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "cta-06",
+      "type": "registry:block",
+      "title": "CTA 06",
+      "description": "Minimal call to action: one headline and one button in a bordered card.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/cta-06.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "newsletter-01",
+      "type": "registry:block",
+      "title": "Newsletter 01",
+      "description": "Newsletter signup with an email field, a consent line and a list of the last three issues.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/field",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/input",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/newsletter/newsletter-01.tsx",
           "type": "registry:block"
         }
       ]

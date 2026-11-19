@@ -34,12 +34,43 @@ export function checkPage(source: string): string[] {
   return [...problems, ...colorProblems(source)];
 }
 
+// Visual house style (see "Visual rules" in AGENTS.md). A line may opt out with a mizan-allow-style comment.
+const STYLE_RULES: [RegExp, string][] = [
+  [/(?<![\w-])text-\[/, 'arbitrary text size (use the type scale, text-xs is the floor)'],
+  [/(?<![\w-])text-[7-9]xl\b/, 'text size above text-6xl'],
+  [/(?<![\w-])rounded(?:-[a-z]+)?-(?:2xl|3xl)\b/, 'radius above rounded-xl'],
+  [/(?<![\w-])rounded(?:-[a-z]+)?-\[/, 'arbitrary radius'],
+  [/(?<![\w-])(?:drop-|inset-|text-)?shadow-/, 'shadow utility (no shadows)'],
+  [/(?<![\w-])font-(?:black|light|extralight|thin)\b/, 'light or black font weight (headings use font-semibold)'],
+  [/(?<![\w-])bg-foreground\b/, 'bg-foreground slab'],
+  [/data:image\//, 'data-URI image (use the bg-muted ImageIcon placeholder)'],
+];
+const HEADING_TAG = /<h[1-3]\b(?:[^>]|(?<==)>)*>/g;
+
+export function checkStyle(source: string): string[] {
+  const lines = source.split('\n');
+  const found: [number, string][] = [];
+  lines.forEach((line, i) => {
+    for (const [pattern, rule] of STYLE_RULES) if (pattern.test(line)) found.push([i + 1, rule]);
+  });
+  for (const tag of source.matchAll(HEADING_TAG)) {
+    const at = tag[0].search(/(?<![\w-])font-normal\b/);
+    if (at >= 0) found.push([source.slice(0, tag.index + at).split('\n').length, 'heading with font-normal (headings use font-semibold)']);
+  }
+  return found
+    .filter(([line]) => !lines[line - 1].includes('mizan-allow-style'))
+    .sort((a, b) => a[0] - b[0])
+    .map(([line, rule]) => `line ${line}: ${rule}`);
+}
+
 if (import.meta.main) {
   const violations: string[] = [];
-  for await (const file of new Glob('registry/blocks/**/*.{ts,tsx}').scan('.')) {
+  for await (const file of new Glob('registry/{blocks,pages}/**/*.{ts,tsx}').scan('.')) {
     const path = file.replaceAll('\\', '/');
     if (/\.test\.tsx?$/.test(path)) continue;
-    for (const problem of checkBlock(await Bun.file(file).text())) violations.push(`${path}: ${problem}`);
+    const source = await Bun.file(file).text();
+    if (path.startsWith('registry/blocks/')) for (const problem of checkBlock(source)) violations.push(`${path}: ${problem}`);
+    for (const problem of checkStyle(source)) violations.push(`${path}: ${problem}`);
   }
   for await (const file of new Glob('registry/pages/**/*.{ts,tsx}').scan('.')) {
     const path = file.replaceAll('\\', '/');
@@ -48,8 +79,10 @@ if (import.meta.main) {
     for (const problem of checkPage(await Bun.file(file).text())) violations.push(`${path}: ${problem}`);
   }
   if (violations.length) {
-    console.error(`Block and page contract violations (see "Blocks" and "Pages" in AGENTS.md):\n${violations.join('\n')}`);
+    console.error(
+      `Block and page violations (see "Blocks", "Pages" and "Visual rules" in AGENTS.md; a line may opt out with mizan-allow-style):\n${violations.join('\n')}`,
+    );
     process.exit(1);
   }
-  console.log('All blocks and pages follow their contract.');
+  console.log('All blocks and pages follow their contract and the visual rules.');
 }

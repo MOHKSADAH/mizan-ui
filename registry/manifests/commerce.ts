@@ -1,11 +1,12 @@
 import type { ManifestItem } from '../manifest';
 
-const item = (name: string, description: string): ManifestItem => ({
+const item = (name: string, description: string, badge?: ManifestItem['badge']): ManifestItem => ({
   name,
   type: 'registry:ui',
   category: 'commerce',
   files: [`registry/ui/${name}.tsx`],
   description,
+  ...(badge && { badge }),
 });
 
 export const commerceItems: ManifestItem[] = [
@@ -15,8 +16,8 @@ export const commerceItems: ManifestItem[] = [
   item('filter-chips', 'Removable active-filter chips with clear all, a live result count and a scrolling row.'),
   item('status-badge', 'Order status badge (pending to refunded) with an icon, text and a status token color.'),
   item('payment-method-select', 'Radio group of payment methods with icon slots, fee, disabled reason and a details panel.'),
-  item('card-input', 'Card number, expiry and CVC with brand detection, a Luhn check, a past-date check and a mada BIN list you pass in.'),
-  item('payment-result', 'Processing, success and failed states after a payment or a provider redirect, with a reason and retry actions.'),
+  item('card-input', 'Card number, expiry and CVC with brand detection, a Luhn check, a past-date check and a mada BIN list you pass in.', 'new'),
+  item('payment-result', 'Processing, success and failed states after a payment or a provider redirect, with a reason and retry actions.', 'new'),
   item('installments', 'A "4 payments of X" widget with a dated schedule, eligibility range and a provider slot.'),
   item('vat-summary', 'Order totals with subtotal, discount, shipping, VAT (rate, inclusive or exclusive) and total.'),
   item('coupon-input', 'Coupon code field with apply and remove, pending, success and error states and an applied-code chip.'),
