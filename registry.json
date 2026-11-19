@@ -2977,6 +2977,29 @@
       ]
     },
     {
+      "name": "rating-summary",
+      "type": "registry:ui",
+      "title": "Rating Summary",
+      "description": "Average score, review total and a five-to-one star distribution with bars that fill from the inline start.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/rating-summary.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
       "name": "navbar-01",
       "type": "registry:block",
       "title": "Navbar 01",
