@@ -1,12 +1,20 @@
 import {
+  Alexandria,
+  Almarai,
+  Amiri,
+  Cormorant_Garamond,
   Geist,
   Geist_Mono,
   IBM_Plex_Mono,
   IBM_Plex_Sans,
   IBM_Plex_Sans_Arabic,
+  Inter,
+  Instrument_Serif,
   Markazi_Text,
   Noto_Kufi_Arabic,
+  Plus_Jakarta_Sans,
   Readex_Pro,
+  Reem_Kufi,
   Tajawal,
   Vazirmatn,
 } from 'next/font/google';
@@ -32,7 +40,20 @@ const tajawal = Tajawal({
   preload: false,
 });
 
-export const fontVariables = [geist, plexArabic, geistMono, plexMono, plex, markazi, kufi, vazirmatn, readex, tajawal]
+// Direction fonts. Each variable matches a font in scripts/data/directions.json.
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', preload: false });
+const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-plus-jakarta', preload: false });
+const instrumentSerif = Instrument_Serif({ subsets: ['latin'], weight: '400', variable: '--font-instrument-serif', preload: false });
+const cormorant = Cormorant_Garamond({ subsets: ['latin'], variable: '--font-cormorant', preload: false });
+const amiri = Amiri({ subsets: ['arabic'], weight: ['400', '700'], variable: '--font-amiri', preload: false });
+const alexandria = Alexandria({ subsets: ['arabic'], variable: '--font-alexandria', preload: false });
+const reemKufi = Reem_Kufi({ subsets: ['arabic'], variable: '--font-reem-kufi', preload: false });
+const almarai = Almarai({ subsets: ['arabic'], weight: ['400', '700'], variable: '--font-almarai', preload: false });
+
+export const fontVariables = [
+  geist, plexArabic, geistMono, plexMono, plex, markazi, kufi, vazirmatn, readex, tajawal,
+  inter, plusJakarta, instrumentSerif, cormorant, amiri, alexandria, reemKufi, almarai,
+]
   .map((f) => f.variable)
   .join(' ');
 
