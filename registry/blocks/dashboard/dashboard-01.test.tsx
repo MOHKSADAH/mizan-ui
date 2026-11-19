@@ -28,3 +28,12 @@ test('sample data is consistent: revenue is orders x aov and the categories add 
   expect(Number.isInteger(revenue)).toBe(true);
   expect(shares).toBeCloseTo(1, 10);
 });
+
+test('KPI deltas are spoken and keep their tone', () => {
+  const en = renderToString(<Dashboard01 {...demo.en} />);
+  expect(en).toContain('data-slot="stat-card-delta"');
+  expect(en).toContain('Increase of');
+  expect(en).toContain('text-success');
+  const ar = renderToString(<Dashboard01 {...demo.ar} />);
+  expect(ar).toContain('زيادة بمقدار');
+});
