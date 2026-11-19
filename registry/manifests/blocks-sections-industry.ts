@@ -73,4 +73,22 @@ export const sectionsIndustryBlocks: ManifestItem[] = [
     badge: 'new',
     files: ['registry/blocks/course-grid/course-grid-01.tsx'],
   },
+  {
+    name: 'gallery-01',
+    type: 'registry:block',
+    family: 'gallery',
+    title: 'Gallery 01',
+    description: 'Photo wall of square tiles that open in the image lightbox, with the placeholder when a photo has no src.',
+    badge: 'new',
+    files: ['registry/blocks/gallery/gallery-01.tsx'],
+  },
+  {
+    name: 'gallery-02',
+    type: 'registry:block',
+    family: 'gallery',
+    title: 'Gallery 02',
+    description: 'Photo wall with category tabs; each tab opens its photos in the image lightbox.',
+    badge: 'new',
+    files: ['registry/blocks/gallery/gallery-02.tsx'],
+  },
 ];

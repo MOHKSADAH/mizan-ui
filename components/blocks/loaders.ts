@@ -124,6 +124,8 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'team-01': () => import('@/registry/blocks/team/team-01'),
   'team-02': () => import('@/registry/blocks/team/team-02'),
   'course-grid-01': () => import('@/registry/blocks/course-grid/course-grid-01'),
+  'gallery-01': () => import('@/registry/blocks/gallery/gallery-01'),
+  'gallery-02': () => import('@/registry/blocks/gallery/gallery-02'),
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
   'agents-dashboard-page-01': () => import('@/registry/pages/agents-dashboard-page/agents-dashboard-page-01'),
   'chat-page-01': () => import('@/registry/pages/chat-page/chat-page-01'),
