@@ -74,3 +74,14 @@ test('product-grid-03 renders in Arabic', () => {
   expect(html).toContain('عرض الكل');
   expect(html).toContain('المنتجات السابقة');
 });
+
+test('the demo grids show placeholders, not drawn images', () => {
+  for (const html of [
+    renderToString(<ProductGrid01 {...demo01.en} />),
+    renderToString(<ProductGrid02 {...demo02.en} />),
+    renderToString(<ProductGrid03 {...demo03.en} />),
+  ]) {
+    expect(html).toContain('data-slot="product-card-image"');
+    expect(html).not.toContain('<img');
+  }
+});

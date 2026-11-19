@@ -3055,6 +3055,9 @@
       "type": "registry:ui",
       "title": "Product Card",
       "description": "Composable product card: media with badges and action slot, title link, vendor, price with compare-at, swatches, vertical or list.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/format",
         "MOHKSADAH/mizan-ui/price",
@@ -4734,6 +4737,7 @@
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/block-types",
         "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
         "MOHKSADAH/mizan-ui/container",
         "MOHKSADAH/mizan-ui/empty",
         "MOHKSADAH/mizan-ui/format",
