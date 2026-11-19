@@ -35,3 +35,8 @@ test('the sparkline renders on the server, mirrored in RTL', () => {
   expect(html).toContain('<polyline points="2.0,');
   expect(html).toContain('rtl:-scale-x-100');
 });
+
+test('a node value renders as is', () => {
+  const html = renderToString(<StatCard label="Revenue" value={<b>SAR 5</b>} />);
+  expect(html).toContain('<b>SAR 5</b>');
+});

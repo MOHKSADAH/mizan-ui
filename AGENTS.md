@@ -67,6 +67,7 @@ bun run check:blocks
 - `rtl:rotate-180` on directional icons
 - `/ssr` icons in server components
 - checked in every theme (kitchen sink with the theme switcher)
+- `badge: 'new'` in its manifest entry (sidebar, /blocks card and variant heading show it); `'updated'` for a changed item
 - one Conventional Commit
 
 ## New-theme checklist
@@ -121,6 +122,15 @@ Original blocks are the baseline (`hero-01`, `features-01`, `pricing-01`, `dashb
 - Charts: one series color (`--chart-1`) plus muted. Status colors only for meaning (success, warning, destructive, info).
 - Arabic charts keep the mirrored time axis (time runs right to left), as in `dashboard-01`.
 - `bun run check:blocks` fails on `text-[`, `text-7xl` and larger, `rounded-2xl`, `rounded-3xl`, `rounded-[`, `shadow-`, `font-black`, `font-light`, `font-extralight`, `font-thin`, `bg-foreground`, `data:image/` and a `font-normal` `h1`-`h3`, in `registry/blocks` and `registry/pages`. A line may opt out with a `mizan-allow-style` comment.
+## Pages
+
+- A page is a full-page registry item that imports existing section blocks. It never copies them.
+- File `registry/pages/<family>-page/<family>-page-NN.tsx`, for example `registry/pages/home-page/home-page-01.tsx`. Manifest entries live in `registry/manifests/pages.ts`: `{ name: '<family>-page-NN', type: 'registry:block', family: '<family>-page', kind: 'page', ... }`.
+- Type is `registry:block`, not `registry:page`: `registry:page` needs a framework `target`, and we install into five frameworks. The shadcn CLI puts the page and its sections in the `components` alias, and rewrites their imports.
+- It exports a named PascalCase component, `export default` of it, and `demo: { en: Props; ar: Props }`. Props are one object per section. A page has no `labelsEn` or `labelsAr`: section labels come from each section's own `labelsEn` and `labelsAr`. `demo` carries the page's own industry copy, written Arabic first, with the English a natural translation. Pick sections that vary the rhythm (split, band, list, quote, full-width), not a stack of card grids.
+- The root is a plain `div` with `<main id="main-content">` for the sections. The page sets section ids that match the navbar links.
+- It imports only from `registry/blocks`, `registry/ui`, `registry/lib` and `registry/hooks`. `registry.json` lists every section as a full address in `registryDependencies`, so pinned installs pin the sections too.
+- `bun run check:blocks` enforces the path, the exports, a block import, the import boundary and no hex or rgb colors.
 
 ## Commits
 

@@ -5,6 +5,9 @@ import { displayItems } from './manifests/display';
 import { foundationItems } from './manifests/foundation';
 import { gulfItems } from './manifests/gulf';
 import { inputsItems } from './manifests/inputs';
+import { storefrontItems } from './manifests/storefront';
+import { storefrontProductItems } from './manifests/storefront-product';
+import { pageItems } from './manifests/pages';
 
 export type Category = 'forms' | 'data-display' | 'overlays' | 'navigation' | 'feedback' | 'layout' | 'commerce' | 'ascii';
 
@@ -17,6 +20,10 @@ export type ManifestItem = {
   category?: Category;
   // Blocks only: the family (navbar, hero, ...) the numbered variant belongs to.
   family?: string;
+  // Pages only: a full page composed of section blocks. Docs group pages apart from sections.
+  kind?: 'page';
+  // Marks a new or changed item in the docs nav. Docs only: it never reaches registry.json.
+  badge?: 'new' | 'updated';
   title?: string;
   description?: string;
 };
@@ -54,6 +61,8 @@ export const uiItems: ManifestItem[] = [
   ...commerceItems,
   ...asciiItems,
   ...inputsItems,
+  ...storefrontItems,
+  ...storefrontProductItems,
 ];
 
 export const manifest: ManifestItem[] = [
@@ -62,4 +71,5 @@ export const manifest: ManifestItem[] = [
   { name: 'use-mobile', type: 'registry:hook', files: ['registry/hooks/use-mobile.ts'] },
   ...uiItems,
   ...blockItems,
+  ...pageItems,
 ];

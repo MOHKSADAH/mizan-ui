@@ -65,7 +65,8 @@ function Sparkline({ values, className }: { values: number[]; className?: string
 
 type StatCardProps = Omit<React.ComponentProps<typeof Card>, "children"> & {
   label: React.ReactNode
-  value: number
+  // A number is formatted with compact and formatOptions; any other node, such as a Price, renders as is.
+  value: React.ReactNode
   compact?: boolean
   formatOptions?: Intl.NumberFormatOptions
   // Change in percent, for example 12.4. Zero is neutral.
@@ -119,7 +120,7 @@ function StatCard({
       </p>
       <p data-slot="stat-card-value" className="text-2xl font-semibold tabular-nums">
         <bdi dir="ltr">
-          {compact ? formatCompact(value, locale) : formatNumber(value, locale, formatOptions)}
+          {typeof value !== "number" ? value : compact ? formatCompact(value, locale) : formatNumber(value, locale, formatOptions)}
         </bdi>
       </p>
       {rounded !== undefined && (

@@ -4,7 +4,7 @@ export const CH = {
   en: {
     h1: "Pick a look", sub: "Change the controls and every screen below updates. Each choice is a separate install, so a project takes only what it uses.",
     theme: "Theme", mode: "Mode", toDark: "Switch to dark mode", toLight: "Switch to light mode", language: "Language", langBtn: "العربية",
-    font: "Font", iconStyle: "Icon style", currency: "Currency", numerals: "Numerals", western: "123", arabicIndic: "١٢٣",
+    font: "Font", direction: "Direction", iconStyle: "Icon style", currency: "Currency", numerals: "Numerals", western: "123", arabicIndic: "١٢٣",
     fine: "Fine tuning", fineHint: "Radius, spacing, shadow, letter spacing", radius: "Radius", spacing: "Spacing", shadowOpacity: "Shadow strength", shadowBlur: "Shadow blur", shadowY: "Shadow offset", tracking: "Letter spacing (Latin)",
     reset: "Reset to theme", copyCss: "Copy theme CSS", copied: "Copied to clipboard", copyFail: "Copy failed. Select the text and copy it manually.", install: "Install this theme", copyInstall: "Copy install command",
     search: "Search themes…", results: { one: "{n} result", other: "{n} results" }, noResults: "No results", notAA: "Community theme, not checked for WCAG AA contrast.",
@@ -15,7 +15,7 @@ export const CH = {
   ar: {
     h1: "اختر المظهر", sub: "غيّر الإعدادات وستتحدّث كل الشاشات أدناه. كل خيار يُثبَّت منفصلًا، فيأخذ كل مشروع ما يحتاجه فقط.",
     theme: "الثيم", mode: "الوضع", toDark: "التبديل إلى الوضع الداكن", toLight: "التبديل إلى الوضع الفاتح", language: "اللغة", langBtn: "English",
-    font: "الخط", iconStyle: "نمط الأيقونات", currency: "العملة", numerals: "الأرقام", western: "123", arabicIndic: "١٢٣",
+    font: "الخط", direction: "الاتجاه التصميمي", iconStyle: "نمط الأيقونات", currency: "العملة", numerals: "الأرقام", western: "123", arabicIndic: "١٢٣",
     fine: "ضبط دقيق", fineHint: "الزوايا والمسافات والظل وتباعد الأحرف", radius: "استدارة الزوايا", spacing: "المسافات", shadowOpacity: "قوة الظل", shadowBlur: "تمويه الظل", shadowY: "إزاحة الظل", tracking: "تباعد الأحرف (اللاتينية)",
     reset: "استعادة إعدادات الثيم", copyCss: "نسخ CSS الخاص بالثيم", copied: "تم النسخ", copyFail: "تعذّر النسخ. حدّد النص وانسخه يدويًا.", install: "تثبيت هذا الثيم", copyInstall: "نسخ أمر التثبيت",
     search: "ابحث في الثيمات…", results: { zero: "لا نتائج", one: "نتيجة واحدة", two: "نتيجتان", few: "{n} نتائج", many: "{n} نتيجة", other: "{n} نتيجة" }, noResults: "لا توجد نتائج", notAA: "ثيم من المجتمع، لم يُتحقَّق من تباينه وفق WCAG AA.",
@@ -60,6 +60,8 @@ export const T = {
     heading: "Heading", body: "Body", metaRole: "Meta",
     usedFor: { heading: "Page titles, card titles, section headings.", body: "Paragraphs, labels, buttons and inputs.", meta: "Prices, dates, order IDs, counts and badges, with tabular numbers." },
     metaKeys: ["Price", "Date", "Hijri date", "Order ID", "Count", "Badge", "Paid"],
+    directionsTitle: ["Directions", "Each direction sets a theme, a font pair, a radius and a density together. Pick one in the header or on the Themes page."],
+    directionRows: ["Display", "Body", "Radius, density"], directionSample: { h: ["Your store ", "ready", " in minutes"], b: "Add your products, turn on mada and Apple Pay, and start taking orders today.", meta: ["Order", "SAR"] }, density: { dense: "Dense", normal: "Normal", airy: "Airy" },
     scaleTitle: ["Type scale", "Sizes and weights used across the components."], scaleCols: ["Style", "Size / weight", "Sample"],
     colors: ["Color tokens", "Token names follow shadcn. Values come from the selected theme and mode."],
     shape: ["Radius, shadow and spacing", "Driven by {code:--radius}, {code:--shadow-*} and {code:--spacing}. Adjust them under Fine tuning."],
@@ -103,6 +105,8 @@ export const T = {
     heading: "العناوين", body: "النص", metaRole: "الأرقام والتسميات",
     usedFor: { heading: "عناوين الصفحات والبطاقات والأقسام.", body: "الفقرات والتسميات والأزرار والحقول.", meta: "الأسعار والتواريخ وأرقام الطلبات والعدّادات والشارات، بأرقام جدولية." },
     metaKeys: ["السعر", "التاريخ", "التاريخ الهجري", "رقم الطلب", "العدد", "شارة", "مدفوع"],
+    directionsTitle: ["الاتجاهات التصميمية", "كل اتجاه يضبط الثيم وزوج الخطوط واستدارة الزوايا والكثافة معًا. اختر واحدًا من الشريط العلوي أو من صفحة الثيمات."],
+    directionRows: ["العناوين", "النص", "الاستدارة والكثافة"], directionSample: { h: ["", "متجرك جاهز", " في دقائق"], b: "أضف منتجاتك، وفعّل الدفع بمدى وأبل باي، وابدأ استقبال الطلبات اليوم.", meta: ["الطلب", "ر.س"] }, density: { dense: "كثيف", normal: "عادي", airy: "مريح" },
     scaleTitle: ["سلّم الخطوط", "المقاسات والأوزان المستخدمة في المكوّنات."], scaleCols: ["النمط", "المقاس / الوزن", "مثال"],
     colors: ["رموز الألوان", "أسماء الرموز تتبع shadcn، والقيم من الثيم والوضع المختارين."],
     shape: ["الزوايا والظل والمسافات", "تتحكم بها {code:--radius} و {code:--shadow-*} و {code:--spacing}. عدّلها من الضبط الدقيق."],
@@ -130,7 +134,7 @@ export const SITE = {
     github: "GitHub repository", menu: "Open menu", closeMenu: "Close menu", openSidebar: "Open navigation",
     groups: {
       start: "Getting started", components: "Components", forms: "Forms", "data-display": "Data display", overlays: "Overlays",
-      navigation: "Navigation", feedback: "Feedback", layout: "Layout", commerce: "Commerce", blocks: "Blocks", charts: "Charts",
+      navigation: "Navigation", feedback: "Feedback", layout: "Layout", commerce: "Commerce", blocks: "Blocks", pages: "Pages", charts: "Charts",
       themes: "Themes", icons: "Icons", foundations: "Foundations", ascii: "ASCII",
     },
     pages: { introduction: "Introduction", installation: "Installation", typography: "Typography", tokens: "Colors and sizes", icons: "Icons", themes: "Themes", charts: "Charts", changelog: "Changelog", blocks: "Blocks", components: "Components", home: "Pick a look" },
@@ -149,7 +153,7 @@ export const SITE = {
     github: "مستودع GitHub", menu: "فتح القائمة", closeMenu: "إغلاق القائمة", openSidebar: "فتح التنقل",
     groups: {
       start: "البدء", components: "المكوّنات", forms: "النماذج", "data-display": "عرض البيانات", overlays: "النوافذ المنبثقة",
-      navigation: "التنقل", feedback: "الحالة والتنبيهات", layout: "التخطيط", commerce: "التجارة", blocks: "القوالب", charts: "الرسوم البيانية",
+      navigation: "التنقل", feedback: "الحالة والتنبيهات", layout: "التخطيط", commerce: "التجارة", blocks: "القوالب", pages: "الصفحات", charts: "الرسوم البيانية",
       themes: "الثيمات", icons: "الأيقونات", foundations: "الأساسيات", ascii: "ASCII",
     },
     pages: { introduction: "مقدمة", installation: "التثبيت", typography: "الخطوط", tokens: "الألوان والمقاسات", icons: "الأيقونات", themes: "الثيمات", charts: "الرسوم البيانية", changelog: "سجل التغييرات", blocks: "القوالب", components: "المكوّنات", home: "اختر المظهر" },

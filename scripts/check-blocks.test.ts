@@ -1,5 +1,5 @@
 import { expect, test } from 'bun:test';
-import { checkBlock, checkStyle } from './check-blocks';
+import { checkBlock, checkPage, checkStyle } from './check-blocks';
 
 const good = `
 import { Section } from '@/registry/ui/section';
@@ -104,4 +104,30 @@ test('reports the line number', () => {
 test('a mizan-allow-style comment opts a line out', () => {
   expect(checkStyle(`${cls('rounded-2xl shadow-md')} {/* mizan-allow-style */}`)).toEqual([]);
   expect(checkStyle('<h2\n  className="font-normal" // mizan-allow-style\n>x</h2>')).toEqual([]);
+});
+const page = `
+import { Hero01, demo as hero } from '@/registry/blocks/hero/hero-01';
+import { cn } from '@/registry/lib/utils';
+export function HomePage01() { return <main className={cn('flex')}><Hero01 {...hero.en} /></main>; }
+export const demo = { en: {}, ar: {} };
+export default HomePage01;
+`;
+
+test('accepts a page that composes blocks and has no labels or Section root', () => {
+  expect(checkPage(page)).toEqual([]);
+});
+
+test('reports a page without a demo, a default export or a block import', () => {
+  expect(checkPage(`import { cn } from '@/registry/lib/utils';\nexport function P() { return null; }`)).toEqual([
+    'missing export default',
+    'missing export demo',
+    'imports no section block',
+  ]);
+});
+
+test('flags page imports from outside the registry and color literals', () => {
+  expect(checkPage(`${page}\nimport { x } from '@/components/x';\nconst c = '#fff000';`)).toEqual([
+    'import @/components/x is outside registry/blocks, ui, lib and hooks',
+    'color literal on line 9',
+  ]);
 });

@@ -13,7 +13,10 @@ const COPY = {
     items: (n: string) => [
       'Components: the full shadcn set on Base UI, with right-to-left support and Phosphor icons.',
       `Themes: ${n} themes as installable token files, with light and dark modes.`,
-      'Commerce pieces: a price component with the official riyal, dirham and rial signs, and number and date formats for English and Arabic.',
+      'Commerce pieces: a price component with the official riyal, dirham and rial signs, VAT summary, coupons, installments, delivery estimates, payment methods and product gallery.',
+      'Gulf pieces: Hijri dates, IBAN, Saudi ID, VAT and phone inputs, the Saudi national address form and a ZATCA simplified invoice with QR.',
+      'Inputs, display and ASCII packs: file upload, tags, masks, color picker, signature pad, stat card, countdown, marquee, timeline, tree view and more.',
+      '59 blocks with English and Arabic labels: navbars, heroes, features, pricing, testimonials, footers, app shells, dashboard, data tables, settings and sign-in screens.',
       'Docs site: component pages with previews and code, blocks, charts, typography, tokens and icons, in English and Arabic.',
     ],
   },
@@ -23,7 +26,10 @@ const COPY = {
     items: (n: string) => [
       'المكوّنات: مجموعة shadcn كاملة على Base UI، مع دعم الاتجاه من اليمين إلى اليسار وأيقونات Phosphor.',
       `الثيمات: ${n} ثيمًا كملفات رموز قابلة للتثبيت، بوضعين فاتح وداكن.`,
-      'قطع التجارة: مكوّن سعر بالرموز الرسمية للريال والدرهم والريال العُماني، وتنسيقات للأرقام والتواريخ بالعربية والإنجليزية.',
+      'قطع التجارة: مكوّن سعر بالرموز الرسمية للريال والدرهم والريال العُماني، وملخص الضريبة والقسائم والتقسيط وموعد التوصيل وطرق الدفع ومعرض صور المنتج.',
+      'قطع خليجية: التاريخ الهجري، وحقول الآيبان والهوية الوطنية والرقم الضريبي والجوال، ونموذج العنوان الوطني، وفاتورة ضريبية مبسطة برمز QR.',
+      'حزم الإدخال والعرض وASCII: رفع الملفات والوسوم والأقنعة ومنتقي الألوان والتوقيع وبطاقة الإحصاء والعد التنازلي والشريط المتحرك والخط الزمني والشجرة وغيرها.',
+      '59 قالبًا بتسميات عربية وإنجليزية: أشرطة التنقل والواجهات والمزايا والأسعار والآراء والتذييلات وهياكل التطبيقات ولوحة التحكم والجداول والإعدادات وشاشات الدخول.',
       'موقع التوثيق: صفحات المكوّنات بمعاينة وشيفرة، والقوالب والرسوم البيانية والخطوط والرموز والأيقونات، بالعربية والإنجليزية.',
     ],
   },
