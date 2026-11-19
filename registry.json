@@ -3381,6 +3381,29 @@
       ]
     },
     {
+      "name": "corner-video",
+      "type": "registry:ui",
+      "title": "Corner Video",
+      "description": "A floating video card docked at the bottom inline end: muted, with play, mute, close and an expand dialog, and a placeholder without a src.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/dialog",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/corner-video.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ]
+    },
+    {
       "name": "navbar-01",
       "type": "registry:block",
       "title": "Navbar 01",
