@@ -12,6 +12,7 @@ const block = (family: string, title: string, description: string): ManifestItem
 
 export const aiChatBlocks: ManifestItem[] = [
   block('chat-welcome', 'Chat welcome 01', 'Empty chat with a greeting, the prompt input in the middle and prompt chips that fill it.'),
+  block('conversation-list', 'Conversation list 01', 'Chat history grouped by date, with search, a new chat button, inline rename and delete with a confirm.'),
 ];
 
 export const aiChatPages: ManifestItem[] = [
