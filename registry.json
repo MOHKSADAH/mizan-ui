@@ -6141,6 +6141,228 @@
       ]
     },
     {
+      "name": "project-grid-01",
+      "type": "registry:block",
+      "title": "Project grid 01",
+      "description": "Real-estate or portfolio project cards with an image slot, status badge, project name, type, city and unit count.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/project-grid/project-grid-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "project-grid-02",
+      "type": "registry:block",
+      "title": "Project grid 02",
+      "description": "Project cards with a city filter and a type filter, a live result count and an empty state.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/project-grid/project-grid-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "services-01",
+      "type": "registry:block",
+      "title": "Services 01",
+      "description": "Numbered services list on divided rows: small muted number, title, one line and an optional link arrow.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/services/services-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "services-02",
+      "type": "registry:block",
+      "title": "Services 02",
+      "description": "Split layout: a sticky heading with a button on one side, numbered services on the other.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/services/services-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "case-study-01",
+      "type": "registry:block",
+      "title": "Case study 01",
+      "description": "Selected-work showcase: a wide image, client, title, summary, a bordered strip of result numbers and a link.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/case-study/case-study-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "team-01",
+      "type": "registry:block",
+      "title": "Team 01",
+      "description": "Team or instructor grid with a photo slot, name, role, optional bio and social links.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/team/team-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "team-02",
+      "type": "registry:block",
+      "title": "Team 02",
+      "description": "Compact two-column team list with a round avatar, name, role and optional social links.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/team/team-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "course-grid-01",
+      "type": "registry:block",
+      "title": "Course grid 01",
+      "description": "Course or bootcamp cards with a tag, duration, level, start date, price in SAR or free, and an image slot.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/course-grid/course-grid-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "gallery-01",
+      "type": "registry:block",
+      "title": "Gallery 01",
+      "description": "Photo wall of square tiles that open in the image lightbox, with the placeholder when a photo has no src.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/image-lightbox",
+        "MOHKSADAH/mizan-ui/section"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/gallery/gallery-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "gallery-02",
+      "type": "registry:block",
+      "title": "Gallery 02",
+      "description": "Photo wall with category tabs; each tab opens its photos in the image lightbox.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/image-lightbox",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/gallery/gallery-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
