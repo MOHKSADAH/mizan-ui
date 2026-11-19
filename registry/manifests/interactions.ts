@@ -17,4 +17,12 @@ export const interactionItems: ManifestItem[] = [
     description: 'A list, grid and compact toggle on the segmented control, with ViewItems to render items per layout and a view transition between them.',
     files: ['registry/ui/view-switcher.tsx'],
   },
+  {
+    name: 'action-dock',
+    type: 'registry:ui',
+    category: 'navigation',
+    badge: 'new',
+    description: 'A phone bottom dock on the bottom nav where one item opens a tray (search) or an action list (New) right above it.',
+    files: ['registry/ui/action-dock.tsx'],
+  },
 ];

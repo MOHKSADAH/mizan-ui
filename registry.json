@@ -3362,6 +3362,25 @@
       ]
     },
     {
+      "name": "action-dock",
+      "type": "registry:ui",
+      "title": "Action Dock",
+      "description": "A phone bottom dock on the bottom nav where one item opens a tray (search) or an action list (New) right above it.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/bottom-nav",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/action-dock.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "navigation"
+      ]
+    },
+    {
       "name": "navbar-01",
       "type": "registry:block",
       "title": "Navbar 01",
