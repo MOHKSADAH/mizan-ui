@@ -15,4 +15,5 @@ export const landingHeroBlocks: ManifestItem[] = [
   block('hero', 10, 'Hero 10', 'Editorial hero with a very large headline in mixed weights, a lead image on a warm card that follows the image ratio, and an author, category and date row.'),
   block('hero', 11, 'Hero 11', 'Full-bleed photo hero with the text on a solid panel, two CTAs and a short facts row for tourism and real estate.'),
   block('hero', 12, 'Hero 12', 'Concept hero with one giant display word, a value line, two CTAs and a row of tilted cards that mirror in RTL.'),
+  block('stats', 5, 'Stats 05', 'Numbers band with one lead number set much larger than the rest and a sentence of context under each number.'),
 ];

@@ -5054,6 +5054,25 @@
       ]
     },
     {
+      "name": "stats-05",
+      "type": "registry:block",
+      "title": "Stats 05",
+      "description": "Numbers band with one lead number set much larger than the rest and a sentence of context under each number.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/stats/stats-05.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",
