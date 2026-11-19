@@ -62,4 +62,7 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'cart-01': () => import('@/registry/blocks/cart/cart-01'),
   'cart-02': () => import('@/registry/blocks/cart/cart-02'),
   'cart-03': () => import('@/registry/blocks/cart/cart-03'),
+  'order-summary-01': () => import('@/registry/blocks/order-summary/order-summary-01'),
+  'order-summary-02': () => import('@/registry/blocks/order-summary/order-summary-02'),
+  'order-summary-03': () => import('@/registry/blocks/order-summary/order-summary-03'),
 };

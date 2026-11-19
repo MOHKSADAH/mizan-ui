@@ -4461,6 +4461,82 @@
       ]
     },
     {
+      "name": "order-summary-01",
+      "type": "registry:block",
+      "title": "Order summary 01",
+      "description": "Sticky checkout aside whose line items collapse behind a toggle with the total on mobile.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/order-summary/order-summary-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "order-summary-02",
+      "type": "registry:block",
+      "title": "Order summary 02",
+      "description": "Checkout summary with a delivery estimate, free shipping progress and Tabby-style installments with an eligibility range.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/delivery-estimate",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/installments",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/order-summary/order-summary-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "order-summary-03",
+      "type": "registry:block",
+      "title": "Order summary 03",
+      "description": "Receipt-style confirmation with a payment result, a copyable order number, a status badge and the totals.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/copy-button",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/payment-result",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/order-summary/order-summary-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",
