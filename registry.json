@@ -4333,6 +4333,38 @@
       ]
     },
     {
+      "name": "home-page-01",
+      "type": "registry:block",
+      "title": "Home page 01",
+      "description": "Business home page: contact navbar, split hero with a live product panel, stat band, bento, steps, quote, one plan, FAQ, call card and legal footer.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/cta-04",
+        "MOHKSADAH/mizan-ui/faq-02",
+        "MOHKSADAH/mizan-ui/features-03",
+        "MOHKSADAH/mizan-ui/features-06",
+        "MOHKSADAH/mizan-ui/footer-04",
+        "MOHKSADAH/mizan-ui/hero-02",
+        "MOHKSADAH/mizan-ui/navbar-04",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/pricing-03",
+        "MOHKSADAH/mizan-ui/progress",
+        "MOHKSADAH/mizan-ui/stats-04",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/testimonials-01",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/home-page/home-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

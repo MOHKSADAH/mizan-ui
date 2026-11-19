@@ -130,7 +130,7 @@ export const SITE = {
     github: "GitHub repository", menu: "Open menu", closeMenu: "Close menu", openSidebar: "Open navigation",
     groups: {
       start: "Getting started", components: "Components", forms: "Forms", "data-display": "Data display", overlays: "Overlays",
-      navigation: "Navigation", feedback: "Feedback", layout: "Layout", commerce: "Commerce", blocks: "Blocks", charts: "Charts",
+      navigation: "Navigation", feedback: "Feedback", layout: "Layout", commerce: "Commerce", blocks: "Blocks", pages: "Pages", charts: "Charts",
       themes: "Themes", icons: "Icons", foundations: "Foundations", ascii: "ASCII",
     },
     pages: { introduction: "Introduction", installation: "Installation", typography: "Typography", tokens: "Colors and sizes", icons: "Icons", themes: "Themes", charts: "Charts", changelog: "Changelog", blocks: "Blocks", components: "Components", home: "Pick a look" },
@@ -149,7 +149,7 @@ export const SITE = {
     github: "مستودع GitHub", menu: "فتح القائمة", closeMenu: "إغلاق القائمة", openSidebar: "فتح التنقل",
     groups: {
       start: "البدء", components: "المكوّنات", forms: "النماذج", "data-display": "عرض البيانات", overlays: "النوافذ المنبثقة",
-      navigation: "التنقل", feedback: "الحالة والتنبيهات", layout: "التخطيط", commerce: "التجارة", blocks: "القوالب", charts: "الرسوم البيانية",
+      navigation: "التنقل", feedback: "الحالة والتنبيهات", layout: "التخطيط", commerce: "التجارة", blocks: "القوالب", pages: "الصفحات", charts: "الرسوم البيانية",
       themes: "الثيمات", icons: "الأيقونات", foundations: "الأساسيات", ascii: "ASCII",
     },
     pages: { introduction: "مقدمة", installation: "التثبيت", typography: "الخطوط", tokens: "الألوان والمقاسات", icons: "الأيقونات", themes: "الثيمات", charts: "الرسوم البيانية", changelog: "سجل التغييرات", blocks: "القوالب", components: "المكوّنات", home: "اختر المظهر" },
