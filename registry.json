@@ -3318,6 +3318,31 @@
       ]
     },
     {
+      "name": "form-wizard",
+      "type": "registry:ui",
+      "title": "Form Wizard",
+      "description": "Multi-step form card with a numbered or dotted step header, a body that follows the step height, per-step validation, a back and next footer and a completion state. Steps slide from the end side and mirror in RTL.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/order-stepper",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/form-wizard.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ]
+    },
+    {
       "name": "navbar-01",
       "type": "registry:block",
       "title": "Navbar 01",

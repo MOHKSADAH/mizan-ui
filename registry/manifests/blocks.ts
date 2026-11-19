@@ -10,6 +10,7 @@ import { marketingBlocks } from './blocks-marketing';
 import { marketingBlocks2a } from './blocks-marketing-2a';
 import { storefrontProductBlocks } from './blocks-storefront-product';
 import { storefrontBlocks } from './blocks-storefront';
+import { flowBlocks } from './blocks-flows';
 import { landingFooterBlocks } from './blocks-landing-footers';
 
 export const blockItems: ManifestItem[] = [
@@ -25,4 +26,5 @@ export const blockItems: ManifestItem[] = [
   ...agentBlocks,
   ...aiChatBlocks,
   ...checkoutBlocks,
+  ...flowBlocks,
 ];
