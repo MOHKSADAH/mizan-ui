@@ -4516,6 +4516,40 @@
       ]
     },
     {
+      "name": "quick-view-01",
+      "type": "registry:block",
+      "title": "Quick View 01",
+      "description": "Product quick view in a dialog on desktop and a bottom drawer on a phone, with gallery, variants and add to cart.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/badge",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/carousel",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/dialog",
+        "MOHKSADAH/mizan-ui/drawer",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/product-gallery",
+        "MOHKSADAH/mizan-ui/quantity-stepper",
+        "MOHKSADAH/mizan-ui/rating",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/stock-indicator",
+        "MOHKSADAH/mizan-ui/swatch-select",
+        "MOHKSADAH/mizan-ui/use-mobile",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/quick-view/quick-view-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "theme-mizan-base",
       "type": "registry:theme",
       "title": "Base theme",

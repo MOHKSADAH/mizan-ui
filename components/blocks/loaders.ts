@@ -64,4 +64,5 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'product-detail-03': () => import('@/registry/blocks/product-detail/product-detail-03'),
   'product-reviews-01': () => import('@/registry/blocks/product-reviews/product-reviews-01'),
   'product-reviews-02': () => import('@/registry/blocks/product-reviews/product-reviews-02'),
+  'quick-view-01': () => import('@/registry/blocks/quick-view/quick-view-01'),
 };
