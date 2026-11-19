@@ -78,5 +78,8 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'product-reviews-01': () => import('@/registry/blocks/product-reviews/product-reviews-01'),
   'product-reviews-02': () => import('@/registry/blocks/product-reviews/product-reviews-02'),
   'quick-view-01': () => import('@/registry/blocks/quick-view/quick-view-01'),
+  'checkout-01': () => import('@/registry/blocks/checkout/checkout-01'),
+  'checkout-02': () => import('@/registry/blocks/checkout/checkout-02'),
+  'checkout-03': () => import('@/registry/blocks/checkout/checkout-03'),
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
 };
