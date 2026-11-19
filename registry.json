@@ -4506,6 +4506,7 @@
       "registryDependencies": [
         "MOHKSADAH/mizan-ui/block-types",
         "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
         "MOHKSADAH/mizan-ui/container",
         "MOHKSADAH/mizan-ui/empty",
         "MOHKSADAH/mizan-ui/format",
