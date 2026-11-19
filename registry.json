@@ -6714,6 +6714,30 @@
       ]
     },
     {
+      "name": "real-estate-page-01",
+      "type": "registry:block",
+      "title": "Real estate page 01",
+      "description": "Developer landing page: image-first hero with facts, project cards, a number strip, a financing estimate, a photo mosaic, a map split and the visit form.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/calculator-01",
+        "MOHKSADAH/mizan-ui/contact-01",
+        "MOHKSADAH/mizan-ui/footer-05",
+        "MOHKSADAH/mizan-ui/gallery-01",
+        "MOHKSADAH/mizan-ui/hero-11",
+        "MOHKSADAH/mizan-ui/location-01",
+        "MOHKSADAH/mizan-ui/navbar-01",
+        "MOHKSADAH/mizan-ui/project-grid-01",
+        "MOHKSADAH/mizan-ui/stats-05",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/real-estate-page/real-estate-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "store-home-page-01",
       "type": "registry:block",
       "title": "Store home page 01",

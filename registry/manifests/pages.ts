@@ -56,6 +56,16 @@ export const pageItems: ManifestItem[] = [
     files: ['registry/pages/product-page/product-page-01.tsx'],
   },
   {
+    name: 'real-estate-page-01',
+    type: 'registry:block',
+    family: 'real-estate-page',
+    kind: 'page',
+    badge: 'new',
+    title: 'Real estate page 01',
+    description: 'Developer landing page: image-first hero with facts, project cards, a number strip, a financing estimate, a photo mosaic, a map split and the visit form.',
+    files: ['registry/pages/real-estate-page/real-estate-page-01.tsx'],
+  },
+  {
     name: 'store-home-page-01',
     type: 'registry:block',
     family: 'store-home-page',
