@@ -19,4 +19,13 @@ export const sectionsUtilityBlocks: ManifestItem[] = [
     badge: 'new',
     files: ['registry/blocks/comparison/comparison-01.tsx'],
   },
+  {
+    name: 'app-download-01',
+    type: 'registry:block',
+    family: 'app-download',
+    title: 'App download 01',
+    description: 'App download strip: headline, App Store and Google Play text buttons, a rating line and a QR code.',
+    badge: 'new',
+    files: ['registry/blocks/app-download/app-download-01.tsx'],
+  },
 ];
