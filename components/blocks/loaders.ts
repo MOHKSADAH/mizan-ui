@@ -71,5 +71,12 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'product-reviews-01': () => import('@/registry/blocks/product-reviews/product-reviews-01'),
   'product-reviews-02': () => import('@/registry/blocks/product-reviews/product-reviews-02'),
   'quick-view-01': () => import('@/registry/blocks/quick-view/quick-view-01'),
+  'product-grid-01': () => import('@/registry/blocks/product-grid/product-grid-01'),
+  'product-grid-02': () => import('@/registry/blocks/product-grid/product-grid-02'),
+  'product-grid-03': () => import('@/registry/blocks/product-grid/product-grid-03'),
+  'category-grid-01': () => import('@/registry/blocks/category-grid/category-grid-01'),
+  'category-grid-02': () => import('@/registry/blocks/category-grid/category-grid-02'),
+  'wishlist-01': () => import('@/registry/blocks/wishlist/wishlist-01'),
+  'store-trust-01': () => import('@/registry/blocks/store-trust/store-trust-01'),
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
 };
