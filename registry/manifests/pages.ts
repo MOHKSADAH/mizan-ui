@@ -13,6 +13,16 @@ export const pageItems: ManifestItem[] = [
     description: 'Business home page: contact navbar, split hero with a live product panel, stat band, bento, steps, quote, one plan, FAQ, call card and legal footer.',
     files: ['registry/pages/home-page/home-page-01.tsx'],
   },
+  {
+    name: 'saas-page-01',
+    type: 'registry:block',
+    family: 'saas-page',
+    kind: 'page',
+    badge: 'new',
+    title: 'SaaS page 01',
+    description: 'Software landing page: mega-menu navbar, a hero with the live dashboard, brand strip, one-sentence problem, numbered steps, a tab switcher, plans, tabbed FAQ, changelog and a call card.',
+    files: ['registry/pages/saas-page/saas-page-01.tsx'],
+  },
   ...agentPages,
   ...aiChatPages,
   {

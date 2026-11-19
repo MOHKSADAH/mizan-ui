@@ -6580,6 +6580,37 @@
       ]
     },
     {
+      "name": "saas-page-01",
+      "type": "registry:block",
+      "title": "SaaS page 01",
+      "description": "Software landing page: mega-menu navbar, a hero with the live dashboard, brand strip, one-sentence problem, numbered steps, a tab switcher, plans, tabbed FAQ, changelog and a call card.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/cta-04",
+        "MOHKSADAH/mizan-ui/cta-06",
+        "MOHKSADAH/mizan-ui/editorial-02",
+        "MOHKSADAH/mizan-ui/faq-03",
+        "MOHKSADAH/mizan-ui/feature-switcher-01",
+        "MOHKSADAH/mizan-ui/footer-05",
+        "MOHKSADAH/mizan-ui/hero-09",
+        "MOHKSADAH/mizan-ui/how-it-works-01",
+        "MOHKSADAH/mizan-ui/logo-cloud-05",
+        "MOHKSADAH/mizan-ui/navbar-03",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/pricing-01",
+        "MOHKSADAH/mizan-ui/stat-card",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/saas-page/saas-page-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "agents-dashboard-page-01",
       "type": "registry:block",
       "title": "Agents dashboard page 01",
