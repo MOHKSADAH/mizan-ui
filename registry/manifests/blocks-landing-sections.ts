@@ -19,4 +19,22 @@ export const landingSectionBlocks: ManifestItem[] = [
     badge: 'new',
     files: ['registry/blocks/editorial/editorial-02.tsx'],
   },
+  {
+    name: 'feature-switcher-01',
+    type: 'registry:block',
+    family: 'feature-switcher',
+    title: 'Feature switcher 01',
+    description: 'Numbered feature rows on one side; the selected row swaps one large media panel on the other side (tabs pattern).',
+    badge: 'new',
+    files: ['registry/blocks/feature-switcher/feature-switcher-01.tsx'],
+  },
+  {
+    name: 'feature-switcher-02',
+    type: 'registry:block',
+    family: 'feature-switcher',
+    title: 'Feature switcher 02',
+    description: 'Horizontal tabs above a wide media panel with a caption, for product tours.',
+    badge: 'new',
+    files: ['registry/blocks/feature-switcher/feature-switcher-02.tsx'],
+  },
 ];

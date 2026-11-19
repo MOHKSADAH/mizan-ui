@@ -5008,6 +5008,56 @@
       ]
     },
     {
+      "name": "feature-switcher-01",
+      "type": "registry:block",
+      "title": "Feature switcher 01",
+      "description": "Numbered feature rows on one side; the selected row swaps one large media panel on the other side (tabs pattern).",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/bubble",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/stat-card",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/stock-indicator",
+        "MOHKSADAH/mizan-ui/tabs",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/feature-switcher/feature-switcher-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "feature-switcher-02",
+      "type": "registry:block",
+      "title": "Feature switcher 02",
+      "description": "Horizontal tabs above a wide media panel with a caption, for product tours.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/avatar-group",
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/order-stepper",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/stat-card",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/feature-switcher/feature-switcher-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "home-page-01",
       "type": "registry:block",
       "title": "Home page 01",

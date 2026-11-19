@@ -80,5 +80,7 @@ export const blockLoaders: Record<string, () => Promise<unknown>> = {
   'quick-view-01': () => import('@/registry/blocks/quick-view/quick-view-01'),
   'editorial-01': () => import('@/registry/blocks/editorial/editorial-01'),
   'editorial-02': () => import('@/registry/blocks/editorial/editorial-02'),
+  'feature-switcher-01': () => import('@/registry/blocks/feature-switcher/feature-switcher-01'),
+  'feature-switcher-02': () => import('@/registry/blocks/feature-switcher/feature-switcher-02'),
   'home-page-01': () => import('@/registry/pages/home-page/home-page-01'),
 };
