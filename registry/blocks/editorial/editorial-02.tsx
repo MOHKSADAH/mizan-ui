@@ -31,12 +31,12 @@ function Editorial02({ lang = "en", eyebrow, title, description, items, headingL
           {items.map(({ title: itemTitle, summary, href }, i) => (
             <li
               key={itemTitle}
-              className="relative grid items-baseline gap-x-6 gap-y-2 py-6 sm:grid-cols-[5.5rem_minmax(0,1fr)] md:grid-cols-[7rem_minmax(0,2fr)_minmax(0,3fr)] md:py-8"
+              className="relative grid items-baseline gap-x-6 gap-y-2 py-6 sm:grid-cols-[3rem_minmax(0,1fr)] md:grid-cols-[3rem_minmax(0,2fr)_minmax(0,3fr)] md:py-8"
             >
-              <span aria-hidden="true" className="text-5xl leading-none font-light text-muted-foreground tabular-nums md:text-6xl">
+              <span aria-hidden="true" className="text-lg leading-snug font-semibold text-muted-foreground tabular-nums md:text-xl">
                 <bdi>{formatNumber(i + 1, { lang }, { minimumIntegerDigits: 2 })}</bdi>
               </span>
-              <ItemHeading className="text-xl font-semibold md:text-2xl">
+              <ItemHeading className="text-lg font-semibold md:text-xl">
                 {href ? (
                   <a href={href} className="after:absolute after:inset-0 focus-visible:outline-2 focus-visible:outline-ring">
                     {itemTitle}
@@ -61,11 +61,7 @@ const demo: { en: Editorial02Props; ar: Editorial02Props } = {
   en: {
     lang: "en",
     eyebrow: "What we do",
-    title: (
-      <>
-        <span>Four tools</span> <span className="font-normal">for a calmer business</span>
-      </>
-    ),
+    title: "Four tools for a calmer business",
     items: [
       { title: "Invoicing", summary: "ZATCA-compliant invoices that reach your customer on WhatsApp.", href: "#invoicing" },
       { title: "Stock and branches", summary: "Every branch and warehouse in one screen, with an alert before an item runs out.", href: "#stock" },
@@ -76,11 +72,7 @@ const demo: { en: Editorial02Props; ar: Editorial02Props } = {
   ar: {
     lang: "ar",
     eyebrow: "ماذا نفعل",
-    title: (
-      <>
-        <span>أربع أدوات</span> <span className="font-normal">لتجارة أهدأ</span>
-      </>
-    ),
+    title: "أربع أدوات لتجارة أهدأ",
     items: [
       { title: "الفوترة", summary: "فواتير متوافقة مع هيئة الزكاة والضريبة والجمارك، تصل عميلك على واتساب.", href: "#invoicing" },
       { title: "المخزون والفروع", summary: "كميات كل فرع ومستودع في شاشة واحدة، وتنبيه قبل أن ينفد الصنف.", href: "#stock" },

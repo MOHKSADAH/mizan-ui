@@ -11,7 +11,7 @@ test('how-it-works-01 numbers the steps and draws a rule after each but the last
   const html = renderToString(<HowItWorks01 {...HowItWorks01Demo.en} />);
   const steps = HowItWorks01Demo.en.steps.length;
   expect(html.match(/<li/g)?.length).toBe(steps);
-  expect(html.match(/h-px flex-1 bg-foreground\/30/g)?.length).toBe(steps - 1);
+  expect(html.match(/me-4 h-px flex-1 bg-border/g)?.length).toBe(steps - 1);
   expect(html).toContain('<bdi>01</bdi>');
   expect(h1(html)).toBe(0);
 });

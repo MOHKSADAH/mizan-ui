@@ -6,7 +6,7 @@ import { formatNumber } from "@/registry/lib/format"
 import { cn } from "@/registry/lib/utils"
 import { buttonVariants } from "@/registry/ui/button"
 import { Container } from "@/registry/ui/container"
-import { Section } from "@/registry/ui/section"
+import { Section, SectionHeader } from "@/registry/ui/section"
 
 type Step = { title: string; description: string; meta?: React.ReactNode }
 
@@ -26,20 +26,22 @@ const labelsAr = {}
 function HowItWorks02({ lang = "en", eyebrow, title, description, action, steps, headingLevel = 2, id, className }: HowItWorks02Props) {
   const uid = React.useId()
   const sid = id ?? uid
-  const Heading = `h${headingLevel}` as "h2" | "h3"
   const StepHeading = `h${headingLevel + 1}` as "h3" | "h4"
   return (
     <Section id={sid} className={className}>
       <Container>
         <div className="grid gap-12 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:gap-20">
-          <div className="flex flex-col items-start gap-4 lg:sticky lg:top-24 lg:self-start">
-            {eyebrow ? <p className="text-sm font-medium text-primary">{eyebrow}</p> : null}
-            <Heading id={`${sid}-heading`} className="text-3xl leading-tight font-semibold text-balance md:text-4xl lg:text-5xl">
-              {title}
-            </Heading>
-            {description ? <p className="text-lg text-muted-foreground">{description}</p> : null}
+          <div className="flex flex-col items-start gap-6 lg:sticky lg:top-24 lg:self-start">
+            <SectionHeader
+              id={sid}
+              eyebrow={eyebrow}
+              title={title}
+              description={description}
+              headingLevel={headingLevel}
+              className="mb-0 md:mb-0 md:flex-col md:items-start md:justify-start"
+            />
             {action ? (
-              <a href={action.href} className={cn(buttonVariants({ size: "lg" }), "mt-2 gap-2")}>
+              <a href={action.href} className={cn(buttonVariants({ size: "lg" }), "gap-2")}>
                 {action.label}
                 <ArrowRightIcon aria-hidden="true" weight="bold" className="rtl:rotate-180" />
               </a>
@@ -61,7 +63,7 @@ function HowItWorks02({ lang = "en", eyebrow, title, description, action, steps,
                   <bdi>{formatNumber(i + 1, { lang })}</bdi>
                 </span>
                 <div className="flex flex-col items-start gap-2 pt-1.5">
-                  <StepHeading className="text-xl font-semibold md:text-2xl">{stepTitle}</StepHeading>
+                  <StepHeading className="text-lg font-semibold md:text-xl">{stepTitle}</StepHeading>
                   <p className="text-base text-muted-foreground">{stepDescription}</p>
                   {meta ? <p className="mt-1 text-sm font-medium text-primary">{meta}</p> : null}
                 </div>
@@ -78,11 +80,7 @@ const demo: { en: HowItWorks02Props; ar: HowItWorks02Props } = {
   en: {
     lang: "en",
     eyebrow: "How an order moves",
-    title: (
-      <>
-        <span>From the cart</span> <span className="font-normal">to the doorstep</span>
-      </>
-    ),
+    title: "From the cart to the doorstep",
     description: "Every step is tracked, so your customer never has to ask where the order is.",
     action: { label: "Start free", href: "#start" },
     steps: [
@@ -95,11 +93,7 @@ const demo: { en: HowItWorks02Props; ar: HowItWorks02Props } = {
   ar: {
     lang: "ar",
     eyebrow: "رحلة الطلب",
-    title: (
-      <>
-        <span>من سلة عميلك</span> <span className="font-normal">إلى باب بيته</span>
-      </>
-    ),
+    title: "من سلة عميلك إلى باب بيته",
     description: "كل خطوة موثّقة، فلا يحتاج عميلك أن يسأل أين طلبه.",
     action: { label: "ابدأ مجانًا", href: "#start" },
     steps: [

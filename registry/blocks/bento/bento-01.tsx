@@ -5,6 +5,7 @@ import { cn } from "@/registry/lib/utils"
 import { AvatarStack, avatarStackLabelsAr } from "@/registry/ui/avatar-group"
 import { Badge } from "@/registry/ui/badge"
 import { Bubble, BubbleContent, BubbleGroup } from "@/registry/ui/bubble"
+import { Card, CardContent } from "@/registry/ui/card"
 import { Container } from "@/registry/ui/container"
 import { Price } from "@/registry/ui/price"
 import { Progress } from "@/registry/ui/progress"
@@ -27,7 +28,7 @@ const labelsEn = {}
 const labelsAr = {}
 
 const AREAS = ["lg:col-span-7 lg:row-span-2", "lg:col-span-5", "lg:col-span-5", "lg:col-span-5", "lg:col-span-7"]
-const TONES: Record<BentoTone, string> = { default: "bg-card text-card-foreground ring-1 ring-foreground/10", muted: "bg-muted" }
+const TONES: Record<BentoTone, string> = { default: "", muted: "bg-muted ring-0" }
 
 function Bento01({ eyebrow, title, description, tiles, headingLevel = 2, id, className }: Bento01Props) {
   const uid = React.useId()
@@ -39,12 +40,14 @@ function Bento01({ eyebrow, title, description, tiles, headingLevel = 2, id, cla
         <SectionHeader id={sid} eyebrow={eyebrow} title={title} description={description} headingLevel={headingLevel} />
         <ul className="grid gap-4 lg:grid-cols-12">
           {tiles.map(({ title: tileTitle, description: tileDescription, visual, tone = "default" }, i) => (
-            <li key={tileTitle} className={cn("flex flex-col justify-between gap-8 overflow-hidden rounded-2xl p-6 md:p-8", TONES[tone], AREAS[i])}>
-              <div className="flex flex-1 flex-col justify-center gap-3">{visual}</div>
-              <div className="flex flex-col gap-2">
-                <TileHeading className="text-xl font-semibold">{tileTitle}</TileHeading>
-                <p className="text-base text-muted-foreground">{tileDescription}</p>
-              </div>
+            <li key={tileTitle} className={AREAS[i]}>
+              <Card data-slot="bento-tile" className={cn("h-full justify-between gap-8 md:[--card-spacing:--spacing(6)]", TONES[tone])}>
+                <CardContent className="flex flex-1 flex-col justify-center gap-3">{visual}</CardContent>
+                <CardContent className="flex flex-col gap-2">
+                  <TileHeading className="text-lg font-semibold md:text-xl">{tileTitle}</TileHeading>
+                  <p className="text-base text-muted-foreground">{tileDescription}</p>
+                </CardContent>
+              </Card>
             </li>
           ))}
         </ul>
@@ -64,6 +67,7 @@ function OrdersVisual({ lang }: { lang: Lang }) {
         { name: "مؤسسة الراشد للتجارة", number: "#10480", amount: 4720, status: "pending" },
         { name: "ريم الغامدي", number: "#10479", amount: 640, status: "shipped" },
         { name: "سلطان الحربي", number: "#10478", amount: 215, status: "refunded" },
+        { name: "هند الشمري", number: "#10477", amount: 980, status: "paid" },
       ]
     : [
         { name: "Fahad Al-Qahtani", number: "#10482", amount: 1250, status: "paid" },
@@ -71,17 +75,20 @@ function OrdersVisual({ lang }: { lang: Lang }) {
         { name: "Al-Rashed Trading", number: "#10480", amount: 4720, status: "pending" },
         { name: "Reem Al-Ghamdi", number: "#10479", amount: 640, status: "shipped" },
         { name: "Sultan Al-Harbi", number: "#10478", amount: 215, status: "refunded" },
+        { name: "Hind Al-Shammari", number: "#10477", amount: 980, status: "paid" },
       ]
   return (
     <ul className="grid gap-2">
       {orders.map((o) => (
-        <li key={o.number} className="flex items-center gap-3 rounded-xl bg-card p-3 text-sm ring-1 ring-foreground/10">
-          <div className="grid min-w-0 flex-1">
-            <span className="truncate font-medium">{o.name}</span>
-            <span className="text-xs text-muted-foreground"><bdi>{o.number}</bdi></span>
-          </div>
-          <Price amount={o.amount} lang={lang} className="font-medium" />
-          <StatusBadge status={o.status} labels={ar ? statusBadgeLabelsAr : undefined} />
+        <li key={o.number}>
+          <Card size="sm" className="flex-row items-center gap-3 px-3 text-sm">
+            <div className="grid min-w-0 flex-1">
+              <span className="truncate font-medium">{o.name}</span>
+              <span className="text-xs text-muted-foreground"><bdi>{o.number}</bdi></span>
+            </div>
+            <Price amount={o.amount} lang={lang} className="font-medium" />
+            <StatusBadge status={o.status} labels={ar ? statusBadgeLabelsAr : undefined} />
+          </Card>
         </li>
       ))}
     </ul>
@@ -139,6 +146,9 @@ function ChatVisual({ lang }: { lang: Lang }) {
           )}
         </BubbleContent>
       </Bubble>
+      <Bubble variant="outline">
+        <BubbleContent>{ar ? "ممتاز، يعطيكم العافية" : "Perfect, thank you"}</BubbleContent>
+      </Bubble>
     </BubbleGroup>
   )
 }
@@ -177,11 +187,7 @@ const arVisuals = visuals("ar")
 const demo: { en: Bento01Props; ar: Bento01Props } = {
   en: {
     eyebrow: "One dashboard",
-    title: (
-      <>
-        <span>Your whole store</span> <span className="font-normal">in five tiles</span>
-      </>
-    ),
+    title: "Your whole store in five tiles",
     description: "These are the same screens your team opens every morning.",
     tiles: [
       { title: "Orders as they arrive", description: "Payment, shipping and refund status on every row." },
@@ -193,11 +199,7 @@ const demo: { en: Bento01Props; ar: Bento01Props } = {
   },
   ar: {
     eyebrow: "لوحة واحدة",
-    title: (
-      <>
-        <span>متجرك كله</span> <span className="font-normal">في خمس بطاقات</span>
-      </>
-    ),
+    title: "متجرك كله في خمس بطاقات",
     description: "هذه الشاشات نفسها التي يفتحها فريقك كل صباح.",
     tiles: [
       { title: "الطلبات فور وصولها", description: "حالة الدفع والشحن والاسترجاع على كل سطر." },

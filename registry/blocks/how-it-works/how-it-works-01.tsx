@@ -30,16 +30,16 @@ function HowItWorks01({ lang = "en", eyebrow, title, description, steps, heading
         <SectionHeader id={sid} eyebrow={eyebrow} title={title} description={description} headingLevel={headingLevel} />
         <ol className="grid gap-12 lg:grid-flow-col lg:auto-cols-fr lg:gap-0">
           {steps.map(({ title: stepTitle, description: stepDescription, duration }, i) => (
-            <li key={stepTitle} className="flex flex-col gap-6">
+            <li key={stepTitle} className="flex flex-col gap-4">
               <div className="flex items-center gap-4">
-                <span aria-hidden="true" className="text-6xl leading-none font-light tabular-nums md:text-7xl">
+                <span aria-hidden="true" className="text-lg leading-none font-semibold text-muted-foreground tabular-nums md:text-xl">
                   <bdi>{formatNumber(i + 1, { lang }, { minimumIntegerDigits: 2 })}</bdi>
                 </span>
-                {i < steps.length - 1 ? <span aria-hidden="true" className="h-px flex-1 bg-foreground/30" /> : null}
+                {i < steps.length - 1 ? <span aria-hidden="true" className="me-4 h-px flex-1 bg-border" /> : null}
               </div>
               <div className="flex flex-col items-start gap-3 lg:pe-10">
                 {duration ? <Badge variant="secondary">{duration}</Badge> : null}
-                <StepHeading className="text-xl font-semibold md:text-2xl">{stepTitle}</StepHeading>
+                <StepHeading className="text-lg font-semibold md:text-xl">{stepTitle}</StepHeading>
                 <p className="text-base text-muted-foreground">{stepDescription}</p>
               </div>
             </li>
@@ -54,11 +54,7 @@ const demo: { en: HowItWorks01Props; ar: HowItWorks01Props } = {
   en: {
     lang: "en",
     eyebrow: "Getting started",
-    title: (
-      <>
-        <span>From sign-up to your first invoice</span> <span className="font-normal">in one afternoon</span>
-      </>
-    ),
+    title: "From sign-up to your first invoice in one afternoon",
     steps: [
       { title: "Create your account", description: "Enter your commercial registration and VAT numbers. We fill in the rest from the official records.", duration: "5 minutes" },
       { title: "Add your products", description: "Import an Excel sheet or add items one by one, with prices that include VAT.", duration: "30 minutes" },
@@ -69,11 +65,7 @@ const demo: { en: HowItWorks01Props; ar: HowItWorks01Props } = {
   ar: {
     lang: "ar",
     eyebrow: "ابدأ معنا",
-    title: (
-      <>
-        <span>من التسجيل إلى أول فاتورة</span> <span className="font-normal">في عصر يوم واحد</span>
-      </>
-    ),
+    title: "من التسجيل إلى أول فاتورة في عصر يوم واحد",
     steps: [
       { title: "أنشئ حسابك", description: "أدخل رقم السجل التجاري والرقم الضريبي، ونكمل بقية البيانات من السجلات الرسمية.", duration: <><bdi>5</bdi> دقائق</> },
       { title: "أضف منتجاتك", description: "ارفع ملف إكسل أو أضف الأصناف واحدًا واحدًا، بأسعار شاملة ضريبة القيمة المضافة.", duration: <><bdi>30</bdi> دقيقة</> },

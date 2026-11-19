@@ -8,6 +8,7 @@ import { sparklinePoints } from "@/registry/lib/sparkline"
 import { Avatar, AvatarFallback } from "@/registry/ui/avatar"
 import { AvatarStack, avatarStackLabelsAr } from "@/registry/ui/avatar-group"
 import { Bubble, BubbleContent, BubbleGroup } from "@/registry/ui/bubble"
+import { Card, CardContent } from "@/registry/ui/card"
 import { Container } from "@/registry/ui/container"
 import { Price } from "@/registry/ui/price"
 import { Progress } from "@/registry/ui/progress"
@@ -15,11 +16,10 @@ import { Section, SectionHeader } from "@/registry/ui/section"
 import { StatCard, statCardLabelsAr } from "@/registry/ui/stat-card"
 import { StatusBadge, statusBadgeLabelsAr, type OrderStatus } from "@/registry/ui/status-badge"
 
-type BentoTone = "default" | "muted" | "inverse"
+type BentoTone = "default" | "muted"
 type BentoTile = { title: string; description: string; visual: React.ReactNode; tone?: BentoTone }
 
 // Five tiles on three columns: a wide tile and a tall one on top, two small tiles, then one full-width tile.
-// The inverse tile is the dark one of the mix. Tones are theme tokens, so every theme keeps its own contrast.
 type Bento02Props = BlockBase & {
   eyebrow?: React.ReactNode
   title: React.ReactNode
@@ -31,11 +31,7 @@ const labelsEn = {}
 const labelsAr = {}
 
 const AREAS = ["md:col-span-2", "lg:row-span-2", "", "", "md:col-span-2 lg:col-span-3"]
-const TONES: Record<BentoTone, { box: string; text: string }> = {
-  default: { box: "bg-card text-card-foreground ring-1 ring-foreground/10", text: "text-muted-foreground" },
-  muted: { box: "bg-muted", text: "text-muted-foreground" },
-  inverse: { box: "bg-foreground text-background", text: "text-background/70" },
-}
+const TONES: Record<BentoTone, string> = { default: "", muted: "bg-muted ring-0" }
 
 function Bento02({ eyebrow, title, description, tiles, headingLevel = 2, id, className }: Bento02Props) {
   const uid = React.useId()
@@ -47,15 +43,14 @@ function Bento02({ eyebrow, title, description, tiles, headingLevel = 2, id, cla
         <SectionHeader id={sid} eyebrow={eyebrow} title={title} description={description} headingLevel={headingLevel} />
         <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {tiles.map(({ title: tileTitle, description: tileDescription, visual, tone = "default" }, i) => (
-            <li
-              key={tileTitle}
-              className={cn("flex flex-col justify-between gap-8 overflow-hidden rounded-3xl p-6 md:p-8", TONES[tone].box, AREAS[i])}
-            >
-              <div className="flex flex-1 flex-col justify-center gap-4">{visual}</div>
-              <div className="flex flex-col gap-2">
-                <TileHeading className="text-xl font-semibold">{tileTitle}</TileHeading>
-                <p className={cn("text-base", TONES[tone].text)}>{tileDescription}</p>
-              </div>
+            <li key={tileTitle} className={AREAS[i]}>
+              <Card data-slot="bento-tile" className={cn("h-full justify-between gap-8 md:[--card-spacing:--spacing(6)]", TONES[tone])}>
+                <CardContent className="flex flex-1 flex-col justify-center gap-4">{visual}</CardContent>
+                <CardContent className="flex flex-col gap-2">
+                  <TileHeading className="text-lg font-semibold md:text-xl">{tileTitle}</TileHeading>
+                  <p className="text-base text-muted-foreground">{tileDescription}</p>
+                </CardContent>
+              </Card>
             </li>
           ))}
         </ul>
@@ -73,15 +68,15 @@ function RevenueVisual({ lang }: { lang: Lang }) {
     <>
       <div className="flex items-end justify-between gap-4">
         <div className="grid gap-1">
-          <span className="text-sm text-background/70">{ar ? "مبيعات الأسبوع" : "This week's sales"}</span>
-          <Price amount={68240} lang={lang} className="text-4xl font-semibold md:text-5xl" />
+          <span className="text-sm text-muted-foreground">{ar ? "مبيعات الأسبوع" : "This week's sales"}</span>
+          <Price amount={68240} lang={lang} className="text-3xl font-semibold md:text-4xl" />
         </div>
-        <span className="flex items-center gap-1 text-sm font-medium">
+        <span className="flex items-center gap-1 text-sm font-medium text-success">
           <ArrowUpIcon aria-hidden="true" weight="bold" className="size-4" />
           <bdi dir="ltr">+{formatNumber(18.6, { lang }, { maximumFractionDigits: 1 })}%</bdi>
         </span>
       </div>
-      <svg aria-hidden="true" viewBox="0 0 300 80" preserveAspectRatio="none" className="h-24 w-full overflow-visible rtl:-scale-x-100">
+      <svg aria-hidden="true" viewBox="0 0 300 80" preserveAspectRatio="none" className="h-28 w-full flex-auto overflow-visible text-series-1 rtl:-scale-x-100">
         <polyline
           points={sparklinePoints([6, 8, 7, 11, 9, 14, 13, 17, 16, 21], 300, 80, 4)}
           fill="none"
@@ -92,10 +87,10 @@ function RevenueVisual({ lang }: { lang: Lang }) {
           vectorEffect="non-scaling-stroke"
         />
       </svg>
-      <dl className="grid grid-cols-3 gap-4 border-t border-background/20 pt-4 text-sm">
+      <dl className="grid grid-cols-3 gap-4 border-t pt-4 text-sm">
         {week.map(([day, amount]) => (
           <div key={day} className="grid gap-1">
-            <dt className="text-background/70">{day}</dt>
+            <dt className="text-muted-foreground">{day}</dt>
             <dd className="font-medium">
               <Price amount={amount} lang={lang} />
             </dd>
@@ -130,6 +125,12 @@ function ChatVisual({ lang }: { lang: Lang }) {
           <BubbleContent>{ar ? "ممتاز، أبغى اثنين مع التوصيل" : "Great, two please, with delivery"}</BubbleContent>
         </Bubble>
         <Bubble variant="tinted" align="end">
+          <BubbleContent>{ar ? "التوصيل داخل الرياض خلال يوم واحد." : "Delivery inside Riyadh takes one day."}</BubbleContent>
+        </Bubble>
+        <Bubble variant="muted">
+          <BubbleContent>{ar ? "تمام، أرسلوا الرابط" : "Fine, send the link"}</BubbleContent>
+        </Bubble>
+        <Bubble variant="tinted" align="end">
           <BubbleContent>
             {ar ? (
               <>تم، أرسلنا لك رابط الدفع. المجموع <Price amount={840} lang={lang} /></>
@@ -152,7 +153,7 @@ function StatusVisual({ lang }: { lang: Lang }) {
   const ar = lang === "ar"
   const counts: [OrderStatus, number][] = [["paid", 24], ["shipped", 31], ["delivered", 28], ["pending", 3]]
   return (
-    <ul className="grid gap-2">
+    <ul className="grid gap-4">
       {counts.map(([status, count]) => (
         <li key={status} className="flex items-center justify-between gap-3">
           <StatusBadge status={status} labels={ar ? statusBadgeLabelsAr : undefined} />
@@ -193,18 +194,14 @@ const visuals = (lang: Lang) => [
   <StatusVisual key="status" lang={lang} />,
   <GoalVisual key="goal" lang={lang} />,
 ]
-const tones: BentoTone[] = ["inverse", "default", "muted", "default", "muted"]
+const tones: BentoTone[] = ["default", "default", "muted", "default", "muted"]
 const enVisuals = visuals("en")
 const arVisuals = visuals("ar")
 
 const demo: { en: Bento02Props; ar: Bento02Props } = {
   en: {
     eyebrow: "Built for daily trade",
-    title: (
-      <>
-        <span>See the day</span> <span className="font-normal">before it ends</span>
-      </>
-    ),
+    title: "See the day before it ends",
     tiles: [
       { title: "Revenue you can read at a glance", description: "The week's total, the trend and the last three days, in riyals." },
       { title: "Sell on WhatsApp, keep the record", description: "A payment link in the chat, and the order lands in your dashboard." },
@@ -215,11 +212,7 @@ const demo: { en: Bento02Props; ar: Bento02Props } = {
   },
   ar: {
     eyebrow: "مصمّم للتجارة اليومية",
-    title: (
-      <>
-        <span>شاهد يومك</span> <span className="font-normal">قبل أن ينتهي</span>
-      </>
-    ),
+    title: "شاهد يومك قبل أن ينتهي",
     tiles: [
       { title: "إيراداتك بنظرة واحدة", description: "مجموع الأسبوع والاتجاه وآخر ثلاثة أيام، بالريال." },
       { title: "بِع على واتساب وسجّل كل شيء", description: "رابط الدفع داخل المحادثة، ويصل الطلب إلى لوحتك." },

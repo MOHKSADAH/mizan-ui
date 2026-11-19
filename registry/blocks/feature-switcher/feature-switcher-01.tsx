@@ -51,13 +51,13 @@ function FeatureSwitcher01({ lang = "en", eyebrow, title, description, items, de
               <TabsTrigger
                 key={item.id}
                 value={item.id}
-                className="group/row h-auto flex-none after:hidden items-start justify-start gap-4 rounded-xl px-4 py-4 text-start whitespace-normal text-foreground data-active:border-border data-active:bg-card data-active:shadow-sm"
+                className="group/row h-auto flex-none after:hidden items-start justify-start gap-4 rounded-xl px-4 py-4 text-start whitespace-normal text-foreground data-active:border-border data-active:bg-card"
               >
-                <span aria-hidden="true" className="w-8 shrink-0 text-2xl leading-8 font-light text-muted-foreground tabular-nums group-data-active/row:text-primary">
+                <span aria-hidden="true" className="w-8 shrink-0 text-lg leading-snug font-semibold text-muted-foreground tabular-nums group-data-active/row:text-primary">
                   <bdi>{formatNumber(i + 1, { lang }, { minimumIntegerDigits: 2 })}</bdi>
                 </span>
                 <span className="flex flex-col gap-1">
-                  <span className="text-lg font-semibold">{item.title}</span>
+                  <span className="text-lg font-semibold md:text-xl">{item.title}</span>
                   <span className="text-base font-normal text-muted-foreground">{item.description}</span>
                 </span>
               </TabsTrigger>
@@ -67,7 +67,7 @@ function FeatureSwitcher01({ lang = "en", eyebrow, title, description, items, de
             <TabsContent
               key={item.id}
               value={item.id}
-              className="flex min-h-[26rem] items-center justify-center rounded-2xl border bg-muted p-4 sm:p-8 lg:col-start-2 lg:row-start-1"
+              className="flex min-h-[26rem] items-center justify-center rounded-xl border bg-muted p-4 sm:p-8 lg:col-start-2 lg:row-start-1"
             >
               <div className="w-full max-w-md">{item.panel}</div>
             </TabsContent>
@@ -201,11 +201,7 @@ const demo: { en: FeatureSwitcher01Props; ar: FeatureSwitcher01Props } = {
   en: {
     lang: "en",
     eyebrow: "The product",
-    title: (
-      <>
-        <span>Everything on one screen,</span> <span className="font-normal">one tap away</span>
-      </>
-    ),
+    title: "Everything on one screen, one tap away",
     description: "Pick a feature to see it working with real store data.",
     items: [
       { id: "invoices", title: "Invoices", description: "Tax invoices with the QR code, ready to send." },
@@ -217,11 +213,7 @@ const demo: { en: FeatureSwitcher01Props; ar: FeatureSwitcher01Props } = {
   ar: {
     lang: "ar",
     eyebrow: "المنتج",
-    title: (
-      <>
-        <span>كل شيء في شاشة واحدة،</span> <span className="font-normal">على بُعد لمسة</span>
-      </>
-    ),
+    title: "كل شيء في شاشة واحدة، على بُعد لمسة",
     description: "اختر ميزة لتراها تعمل ببيانات متجر حقيقية.",
     items: [
       { id: "invoices", title: "الفواتير", description: "فواتير ضريبية برمز الاستجابة السريعة، جاهزة للإرسال." },
