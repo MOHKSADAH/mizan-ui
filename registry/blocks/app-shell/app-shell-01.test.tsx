@@ -1,6 +1,7 @@
 import { expect, test } from 'bun:test';
 import { renderToString } from 'react-dom/server';
 import { AppShell01, demo } from '@/registry/blocks/app-shell/app-shell-01';
+import { Dashboard01, demo as dashboard } from '@/registry/blocks/dashboard/dashboard-01';
 
 test('renders English with the sidebar on the left', () => {
   const html = renderToString(<AppShell01 {...demo.en} />);
@@ -16,4 +17,13 @@ test('renders Arabic with the sidebar on the right', () => {
   expect(html).toContain('dir="rtl"');
   expect(html).toContain('الطلبات');
   expect(html).toContain('data-side="right"');
+});
+
+test('a page block inside the shell is the only container', () => {
+  const html = renderToString(
+    <AppShell01 {...demo.en}>
+      <Dashboard01 {...dashboard.en} />
+    </AppShell01>
+  );
+  expect(html.match(/data-slot="container"/g)).toHaveLength(1);
 });

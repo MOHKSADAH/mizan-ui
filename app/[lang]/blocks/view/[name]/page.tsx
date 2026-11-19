@@ -11,13 +11,15 @@ export default async function Page(props: PageProps<'/[lang]/blocks/view/[name]'
   const { lang, name } = await props.params;
   const item = blockItems.find((b) => b.name === name);
   if (!item) notFound();
+  // A page renders its own <main>, so it gets a plain wrapper to avoid nested landmarks.
+  const Root = item.kind === 'page' ? 'div' : 'main';
   return (
-    <main id="content" className="bg-background">
+    <Root id="content" className="bg-background">
       <Suspense>
         <BlockView name={name} lang={lang as Lang} />
       </Suspense>
       <FrameHeight />
-    </main>
+    </Root>
   );
 }
 
