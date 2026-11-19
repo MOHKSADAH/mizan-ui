@@ -3366,6 +3366,29 @@
       ]
     },
     {
+      "name": "async-button",
+      "type": "registry:ui",
+      "title": "Async Button",
+      "description": "Button with idle, pending, done and error states. The label changes in place at a fixed width and a live region announces each state.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/spinner",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/async-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "feedback"
+      ]
+    },
+    {
       "name": "navbar-01",
       "type": "registry:block",
       "title": "Navbar 01",
