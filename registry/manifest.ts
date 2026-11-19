@@ -1,4 +1,5 @@
 import { agentItems } from './manifests/agents';
+import { aiItems } from './manifests/ai';
 import { asciiItems } from './manifests/ascii';
 import { blockItems } from './manifests/blocks';
 import { commerceItems } from './manifests/commerce';
@@ -65,6 +66,7 @@ export const uiItems: ManifestItem[] = [
   ...storefrontProductItems,
   ...storefrontItems,
   ...agentItems,
+  ...aiItems,
 ];
 
 export const manifest: ManifestItem[] = [
