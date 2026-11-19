@@ -3318,28 +3318,6 @@
       ]
     },
     {
-      "name": "slide-to-confirm",
-      "type": "registry:ui",
-      "title": "Slide To Confirm",
-      "description": "A handle you drag toward the inline end to confirm a payment or an order, with keyboard steps and an optional plain button.",
-      "dependencies": [
-        "@phosphor-icons/react@^2.1.10"
-      ],
-      "registryDependencies": [
-        "MOHKSADAH/mizan-ui/button",
-        "MOHKSADAH/mizan-ui/utils"
-      ],
-      "files": [
-        {
-          "path": "registry/ui/slide-to-confirm.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "categories": [
-        "forms"
-      ]
-    },
-    {
       "name": "view-switcher",
       "type": "registry:ui",
       "title": "View Switcher",
@@ -3354,25 +3332,6 @@
       "files": [
         {
           "path": "registry/ui/view-switcher.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "categories": [
-        "navigation"
-      ]
-    },
-    {
-      "name": "action-dock",
-      "type": "registry:ui",
-      "title": "Action Dock",
-      "description": "A phone bottom dock on the bottom nav where one item opens a tray (search) or an action list (New) right above it.",
-      "registryDependencies": [
-        "MOHKSADAH/mizan-ui/bottom-nav",
-        "MOHKSADAH/mizan-ui/utils"
-      ],
-      "files": [
-        {
-          "path": "registry/ui/action-dock.tsx",
           "type": "registry:ui"
         }
       ],
