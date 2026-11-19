@@ -2346,6 +2346,54 @@
       ]
     },
     {
+      "name": "card-input",
+      "type": "registry:ui",
+      "title": "Card Input",
+      "description": "Card number, expiry and CVC with brand detection, a Luhn check, a past-date check and a mada BIN list you pass in.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/gulf-validators",
+        "MOHKSADAH/mizan-ui/input-group",
+        "MOHKSADAH/mizan-ui/input-mask",
+        "MOHKSADAH/mizan-ui/label",
+        "MOHKSADAH/mizan-ui/mask",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/card-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
+      "name": "payment-result",
+      "type": "registry:ui",
+      "title": "Payment Result",
+      "description": "Processing, success and failed states after a payment or a provider redirect, with a reason and retry actions.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/spinner",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/payment-result.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "commerce"
+      ]
+    },
+    {
       "name": "installments",
       "type": "registry:ui",
       "title": "Installments",
@@ -4050,6 +4098,7 @@
         "MOHKSADAH/mizan-ui/format",
         "MOHKSADAH/mizan-ui/price",
         "MOHKSADAH/mizan-ui/select",
+        "MOHKSADAH/mizan-ui/stat-card",
         "MOHKSADAH/mizan-ui/table",
         "MOHKSADAH/mizan-ui/utils"
       ],
@@ -4328,6 +4377,194 @@
       "files": [
         {
           "path": "registry/blocks/notifications/notifications-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "cart-01",
+      "type": "registry:block",
+      "title": "Cart 01",
+      "description": "Cart page with line items, quantity steppers, a coupon field, a VAT summary and a checkout button.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/coupon-input",
+        "MOHKSADAH/mizan-ui/empty",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/quantity-stepper",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/stock-indicator",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cart/cart-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "cart-02",
+      "type": "registry:block",
+      "title": "Cart 02",
+      "description": "Slide-over cart in a Sheet with a free shipping progress bar and a pinned total and checkout footer.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/delivery-estimate",
+        "MOHKSADAH/mizan-ui/empty",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/quantity-stepper",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/sheet",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cart/cart-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "cart-03",
+      "type": "registry:block",
+      "title": "Cart 03",
+      "description": "Mini cart popover for a navbar with the first lines, an \"and n more\" count, a subtotal and two actions.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/popover",
+        "MOHKSADAH/mizan-ui/price"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cart/cart-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "order-summary-01",
+      "type": "registry:block",
+      "title": "Order summary 01",
+      "description": "Sticky checkout aside whose line items collapse behind a toggle with the total on mobile.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/utils",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/order-summary/order-summary-01.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "order-summary-02",
+      "type": "registry:block",
+      "title": "Order summary 02",
+      "description": "Checkout summary with a delivery estimate, free shipping progress and Tabby-style installments with an eligibility range.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/delivery-estimate",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/installments",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/order-summary/order-summary-02.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "order-summary-03",
+      "type": "registry:block",
+      "title": "Order summary 03",
+      "description": "Receipt-style confirmation with a payment result, a copyable order number, a status badge and the totals.",
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/block-types",
+        "MOHKSADAH/mizan-ui/button",
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/container",
+        "MOHKSADAH/mizan-ui/copy-button",
+        "MOHKSADAH/mizan-ui/format",
+        "MOHKSADAH/mizan-ui/payment-result",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/section",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/vat-summary"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/order-summary/order-summary-03.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "home-page-01",
+      "type": "registry:block",
+      "title": "Home page 01",
+      "description": "Business home page: contact navbar, split hero with a live product panel, stat band, bento, steps, quote, one plan, FAQ, call card and legal footer.",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "MOHKSADAH/mizan-ui/card",
+        "MOHKSADAH/mizan-ui/cta-04",
+        "MOHKSADAH/mizan-ui/faq-02",
+        "MOHKSADAH/mizan-ui/features-03",
+        "MOHKSADAH/mizan-ui/features-06",
+        "MOHKSADAH/mizan-ui/footer-04",
+        "MOHKSADAH/mizan-ui/hero-02",
+        "MOHKSADAH/mizan-ui/navbar-04",
+        "MOHKSADAH/mizan-ui/price",
+        "MOHKSADAH/mizan-ui/pricing-03",
+        "MOHKSADAH/mizan-ui/progress",
+        "MOHKSADAH/mizan-ui/stats-04",
+        "MOHKSADAH/mizan-ui/status-badge",
+        "MOHKSADAH/mizan-ui/testimonials-01",
+        "MOHKSADAH/mizan-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/home-page/home-page-01.tsx",
           "type": "registry:block"
         }
       ]

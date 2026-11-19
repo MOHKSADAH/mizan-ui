@@ -27,3 +27,6 @@ yarn-error.log*
 next-env.d.ts
 # shadcn registry build output
 /public/r/
+
+# screenshots (bun run shots)
+/.shots/
